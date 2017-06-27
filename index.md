@@ -4,7 +4,7 @@
 ## Why?
 **系统与网络研究组(Systems and Networking Research Group)** 的使命是探索和研究下一代计算系统（Next Generation Computing Systems）和下一代网络系统（Next Generation Networking Systems）中核心、关键的理论和实践问题，所涉及的领域包括：
 - 物联网技术：包括无线传感网，低功耗蓝牙，室内定位等。
-- 云计算网络：包括移动云计算，边缘计算，软件定义网络等。
+- 云计算网络：包括移动云计算，边缘计算，云数据中心网络等。
 - 网络化系统：包括4G/5G通信系统，空间信息网络及卫星数据处理，物联网溯源系统等。
 
 对于研究，我们的原则是：做理论要努力发表高水平文章([文章列表](http://scit.bjtu.edu.cn/faculty_show.action?id=349#paper))，做工程要创新地解决实际问题([系统展示](https://fangvv.github.io/Homepage/Demo.html))，尽全力在现有条件下做到更好！
