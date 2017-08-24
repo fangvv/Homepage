@@ -45,9 +45,11 @@
 - 最重要的原则：失败后获得的教训和成功后获得的经验同样重要，我们不强求成功，坚决不能为了发表成果而做出急功近利的事情
 - 如何作研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道")
 - 如何读研究生：[台湾国立交通大学王蒞君的话](http://cmbsd.cm.nctu.edu.tw/~lichun/to_student_principle.html "台湾国立交通大学王蒞君的话") [台湾中央研究院陈昇玮的建议](http://www.iis.sinica.edu.tw/~swc/talk/advices.html "台湾中央研究院陈昇玮的建议")
+- 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
 - 如何作网络通信领域的研究：[链接](http://wirelesslab.sjtu.edu.cn/resource/seminar/111201/How_to_do_research_in_wireless_area_Yanglet20111201.ppsm "链接")
 - 如何读论文：[链接](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接")
-- 如何写论文：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议")
+- 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议")
+- 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议")
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议")
 
 ## Quote
