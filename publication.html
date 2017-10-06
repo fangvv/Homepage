@@ -1,11 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>JabRef references</title>
+<title>学术论文</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 <script type="text/javascript">
 <!--
-// QuickSearch script for JabRef HTML export 
+// QuickSearch script for JabRef HTML export
 // Version: 3.0
 //
 // Copyright (c) 2006-2011, Mark Schenk
@@ -41,7 +48,7 @@ function initSearch() {
 
 	// load all the rows and sort into arrays
 	loadTableData();
-	
+
 	//find the query field
 	qsfield = document.getElementById('qs_field');
 
@@ -51,7 +58,7 @@ function initSearch() {
 	//find statistics location
 	stats = document.getElementById('stat');
 	setStatistics(-1);
-	
+
 	// set up preferences
 	initPreferences();
 
@@ -69,10 +76,10 @@ function loadTableData() {
 	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
 
 	// get data from each row
-	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
-	
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array();
+
 	BibTeXKeys = new Array();
-	
+
 	for (var i=0, k=0, j=0; i<allRows.length;i++) {
 		if (allRows[i].className.match(/entry/)) {
 			entryRows[j] = allRows[i];
@@ -99,7 +106,7 @@ function loadTableData() {
 }
 
 function quickSearch(){
-	
+
 	tInput = qsfield;
 
 	if (tInput.value.length == 0) {
@@ -111,7 +118,7 @@ function quickSearch(){
 		t = stripDiacritics(tInput.value);
 
 		if(!searchRegExp) { t = escapeRegExp(t); }
-			
+
 		// only search for valid RegExp
 		try {
 			textRegExp = new RegExp(t,"i");
@@ -124,7 +131,7 @@ function quickSearch(){
 			return;
 		}
 	}
-	
+
 	// count number of hits
 	var hits = 0;
 
@@ -133,19 +140,19 @@ function quickSearch(){
 
 		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
 		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
-			var found = false; 
+			var found = false;
 
-			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){
 				found = true;
 			} else {
 				if(searchAbstract && absRowsData[i]!=undefined) {
-					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; }
 				}
 				if(searchReview && revRowsData[i]!=undefined) {
-					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; }
 				}
 			}
-			
+
 			if (found){
 				cRow.className = 'entry show';
 				hits++;
@@ -157,7 +164,7 @@ function quickSearch(){
 
 	// update statistics
 	setStatistics(hits)
-	
+
 	// set previous search value
 	prevSearch = tInput.value;
 }
@@ -166,8 +173,8 @@ function quickSearch(){
 // Strip Diacritics from text
 // http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
 
-// String containing replacement characters for stripping accents 
-var stripstring = 
+// String containing replacement characters for stripping accents
+var stripstring =
     'AAAAAAACEEEEIIII'+
     'DNOOOOO.OUUUUY..'+
     'aaaaaaaceeeeiiii'+
@@ -214,23 +221,23 @@ function toggleInfo(articleid,info) {
 	var abs = document.getElementById('abs_'+articleid);
 	var rev = document.getElementById('rev_'+articleid);
 	var bib = document.getElementById('bib_'+articleid);
-	
+
 	if (abs && info == 'abstract') {
 		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
 	} else if (rev && info == 'review') {
 		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
 	} else if (bib && info == 'bibtex') {
 		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
-	} else { 
+	} else {
 		return;
 	}
 
 	// check if one or the other is available
 	var revshow; var absshow; var bibshow;
 	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
-	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;
 	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
-	
+
 	// highlight original entry
 	if(entry) {
 		if (revshow || absshow || bibshow) {
@@ -239,15 +246,15 @@ function toggleInfo(articleid,info) {
 		entry.className = 'entry show';
 		}
 	}
-	
+
 	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
 	if(absshow) {
 		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
-	} 
+	}
 	if (revshow) {
 		bibshow?rev.className = 'review nextshow': rev.className = 'review';
-	}	
-	
+	}
+
 }
 
 function setStatistics (hits) {
@@ -258,7 +265,7 @@ function setStatistics (hits) {
 function getTextContent(node) {
 	// Function written by Arve Bersvendsen
 	// http://www.virtuelvis.com
-	
+
 	if (node.nodeType == 3) {
 	return node.nodeValue;
 	} // text node
@@ -325,22 +332,22 @@ function initPreferences(){
 	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
 	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
 	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
-	
+
 	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
-	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}	
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
 }
 
 function toggleSettings(){
 	var togglebutton = document.getElementById('showsettings');
 	var settings = document.getElementById('settings');
-	
+
 	if(settings.className == "hidden"){
 		settings.className = "show";
 		togglebutton.innerText = "close settings";
 		togglebutton.textContent = "close settings";
 	}else{
 		settings.className = "hidden";
-		togglebutton.innerText = "settings...";		
+		togglebutton.innerText = "settings...";
 		togglebutton.textContent = "settings...";
 	}
 }
@@ -388,6 +395,18 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </style>
 </head>
 <body>
+
+	<section class="page-header">
+      <h2 class="project-name">北京交通大学系统与网络研究组</h2>
+      <h2 class="project-tagline">Systems and Networking Group @ BJTU</h2>
+      {% if site.github.is_project_page %}
+        <a href="index.html" class="btn">招生说明</a>
+        <a href="group.html" class="btn">研究近况</a>
+        <a href="Demo.html" class="btn">系统展示</a>
+		<a href="https://scholar.google.com/citations?user=xc5CaQEAAAAJ" class="btn" target="_blank">学术论文</a>
+        <a href="http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102" class="btn" target="_blank">学校主页</a>
+      {% endif %}
+    </section>
 
 <form action="" id="quicksearch">
 <input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
@@ -739,7 +758,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </pre></td>
 </tr>
 <tr id="fang2012cross" class="entry">
-	<td>Fang W, Liu Z and Liu F (2012), <i>"A CROSS-LAYER PROTOCOL FOR RELIABLE AND EFFICIENT COMMUNICATION IN WIRELESS SENSOR NETWORKS"</i>, International Journal of Innovative Computing, Information and Control (IJICIC). 
+	<td>Fang W, Liu Z and Liu F (2012), <i>"A CROSS-LAYER PROTOCOL FOR RELIABLE AND EFFICIENT COMMUNICATION IN WIRELESS SENSOR NETWORKS"</i>, International Journal of Innovative Computing, Information and Control (IJICIC).
 	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2012cross','bibtex')">BibTeX</a>]</p>
 	</td>
 </tr>
@@ -1158,7 +1177,7 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </pre></td>
 </tr>
 <tr id="李玉凯2009基于虚拟多路径的无线传感器网络可靠传输机制" class="entry">
-	<td>李玉凯, 白焰, 张健, 方维维 and 崔彦波 (2009), <i>"基于虚拟多路径的无线传感器网络可靠传输机制"</i>, In CWSN 2009. 
+	<td>李玉凯, 白焰, 张健, 方维维 and 崔彦波 (2009), <i>"基于虚拟多路径的无线传感器网络可靠传输机制"</i>, In CWSN 2009.
 	<p class="infolinks"> [<a href="javascript:toggleInfo('李玉凯2009基于虚拟多路径的无线传感器网络可靠传输机制','bibtex')">BibTeX</a>]</p>
 	</td>
 </tr>
@@ -1282,9 +1301,11 @@ p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
 </tr>
 </tbody>
 </table>
-<footer>
- <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 07/10/2017.</small>
-</footer>
+<footer class="site-footer">
+        {% if site.github.is_project_page %}
+          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">本页面源码</a>由<a href="http://scit.bjtu.edu.cn/faculty_show.action?id=349">方维维</a>维护.</span>
+        {% endif %}
+      </footer>
 <!-- file generated by JabRef -->
 </body>
 </html>
