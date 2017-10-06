@@ -1,0 +1,1290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchReview = true;	// search in review
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, review, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/review
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/review/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchReview && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'review') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'review noshow':rev.className = 'review show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/review/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'review nextshow': rev.className = 'review';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchReview=!searchReview;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchReview){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}	
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; width: 50em; margin: auto auto; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { border: 1px gray none; width: 100%; empty-cells: show; border-spacing: 0em 0.1em; margin: 1em 0em; }
+th, td { border: none; padding: 0.5em; vertical-align: top; text-align: justify; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.review td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom-style: none; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include review</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<tbody>
+<tr id="li2017smart" class="entry">
+	<td>Li Q, Zhong Z, Liu M and Fang W (2017), <i>"Smart Railway Based on the Internet of Things"</i>, In Big Data Analytics for Sensor-Network Collected Intelligence. , pp. 280-297. Elsevier.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('li2017smart','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_li2017smart" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@incollection{li2017smart,
+  author = {Li, Qingyong and Zhong, Zhangdui and Liu, Ming and Fang, Weiwei},
+  title = {Smart Railway Based on the Internet of Things},
+  booktitle = {Big Data Analytics for Sensor-Network Collected Intelligence},
+  publisher = {Elsevier},
+  year = {2017},
+  pages = {280--297}
+}
+</pre></td>
+</tr>
+<tr id="fang2016optimal" class="entry">
+	<td>Fang W, Zhao X, An Y, Li J, An Z and Liu Q (2016), <i>"Optimal scheduling for energy harvesting mobile sensing devices"</i>, Computer Communications.  Vol. 75, pp. 62-70. Elsevier.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2016optimal','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2016optimal" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2016optimal,
+  author = {Fang, Weiwei and Zhao, Xiaojie and An, Yuan and Li, Jing and An, Zhulin and Liu, Qiang},
+  title = {Optimal scheduling for energy harvesting mobile sensing devices},
+  journal = {Computer Communications},
+  publisher = {Elsevier},
+  year = {2016},
+  volume = {75},
+  pages = {62--70}
+}
+</pre></td>
+</tr>
+<tr id="fang2016stochastic" class="entry">
+	<td>Fang W, Yao X, Zhao X, Yin J and Xiong N (2016), <i>"A Stochastic Control Approach to Maximize Profit on Service Provisioning for Mobile Cloudlet Platforms"</i>, IEEE Transactions on Systems, Man, and Cybernetics: Systems.  IEEE.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2016stochastic','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2016stochastic" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2016stochastic,
+  author = {Fang, Weiwei and Yao, Xuening and Zhao, Xiaojie and Yin, Jianwei and Xiong, Naixue},
+  title = {A Stochastic Control Approach to Maximize Profit on Service Provisioning for Mobile Cloudlet Platforms},
+  journal = {IEEE Transactions on Systems, Man, and Cybernetics: Systems},
+  publisher = {IEEE},
+  year = {2016}
+}
+</pre></td>
+</tr>
+<tr id="fang2015comment" class="entry">
+	<td>Fang W, Yao Y, Huang L, Sharma A, Golubchik L and Neely M (2015), <i>"A Comment on “Power Cost Reduction in Distributed Data Centers: A two Time Scale Approach for Delay Tolerant Workloads”"</i>, IEEE Transactions on Parallel and Distributed Systems.  Vol. 26(5), pp. 1495-1496. IEEE.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2015comment','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2015comment" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2015comment,
+  author = {Fang, Weiwei and Yao, Yuan and Huang, Longbo and Sharma, AB and Golubchik, Leana and Neely, MJ},
+  title = {A Comment on “Power Cost Reduction in Distributed Data Centers: A two Time Scale Approach for Delay Tolerant Workloads”},
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  publisher = {IEEE},
+  year = {2015},
+  volume = {26},
+  number = {5},
+  pages = {1495--1496}
+}
+</pre></td>
+</tr>
+<tr id="fang2015optimal" class="entry">
+	<td>Fang W, Yin X, An Y, Xiong N, Guo Q and Li J (2015), <i>"Optimal scheduling for data transmission between mobile devices and cloud"</i>, Information Sciences.  Vol. 301, pp. 169-180. Elsevier.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2015optimal','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2015optimal" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2015optimal,
+  author = {Fang, Weiwei and Yin, Xiaoyan and An, Yuan and Xiong, Naixue and Guo, Qiwang and Li, Jing},
+  title = {Optimal scheduling for data transmission between mobile devices and cloud},
+  journal = {Information Sciences},
+  publisher = {Elsevier},
+  year = {2015},
+  volume = {301},
+  pages = {169--180}
+}
+</pre></td>
+</tr>
+<tr id="lai2015software" class="entry">
+	<td>Lai J, Jiang L, Lei M, Abdollahpouri A and Fang W (2015), <i>"Software-defined cellular networking: a practical path towards 5G"</i>, International Journal of Communication Networks and Distributed Systems.  Vol. 14(1), pp. 89-105. Inderscience Publishers.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('lai2015software','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_lai2015software" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{lai2015software,
+  author = {Lai, Junyu and Jiang, Lei and Lei, Ming and Abdollahpouri, Alireza and Fang, Weiwei},
+  title = {Software-defined cellular networking: a practical path towards 5G},
+  journal = {International Journal of Communication Networks and Distributed Systems},
+  publisher = {Inderscience Publishers},
+  year = {2015},
+  volume = {14},
+  number = {1},
+  pages = {89--105}
+}
+</pre></td>
+</tr>
+<tr id="an2014eese" class="entry">
+	<td>An Y, Li J, Fang W, Wang B, Guo Q, Li J, Li X and Du X (2014), <i>"EESE: Energy-efficient communication between satellite swarms and earth stations"</i>, In Advanced Communication Technology (ICACT), 2014 16th International Conference on. , pp. 845-850.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('an2014eese','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_an2014eese" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{an2014eese,
+  author = {An, Yuan and Li, Jiancheng and Fang, Weiwei and Wang, Baohua and Guo, Qiwang and Li, Jing and Li, Xiaolong and Du, Xing},
+  title = {EESE: Energy-efficient communication between satellite swarms and earth stations},
+  booktitle = {Advanced Communication Technology (ICACT), 2014 16th International Conference on},
+  year = {2014},
+  pages = {845--850}
+}
+</pre></td>
+</tr>
+<tr id="fang2014achieving" class="entry">
+	<td>Fang W, An Z, Shu L, Liu Q, Xu Y and An Y (2014), <i>"Achieving optimal admission control with dynamic scheduling in energy constrained network systems"</i>, Journal of Network and Computer Applications.  Vol. 44, pp. 152-160. Academic Press.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2014achieving','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2014achieving" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2014achieving,
+  author = {Fang, Weiwei and An, Zhulin and Shu, Lei and Liu, Qingyu and Xu, Yongjun and An, Yuan},
+  title = {Achieving optimal admission control with dynamic scheduling in energy constrained network systems},
+  journal = {Journal of Network and Computer Applications},
+  publisher = {Academic Press},
+  year = {2014},
+  volume = {44},
+  pages = {152--160}
+}
+</pre></td>
+</tr>
+<tr id="fang2014energy" class="entry">
+	<td>Fang W, An Y, He K, Li J, Wang B, Li J, Wang Q and Guo Q (2014), <i>"Energy-efficient network transmission between satellite swarms and earth stations based on Lyapunov optimization techniques"</i>, Mathematical Problems in Engineering.  Vol. 2014 Hindawi Publishing Corporation.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2014energy','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2014energy" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2014energy,
+  author = {Fang, Weiwei and An, Yuan and He, Kaidi and Li, Jiancheng and Wang, Baohua and Li, Jing and Wang, Qiancheng and Guo, Qiwang},
+  title = {Energy-efficient network transmission between satellite swarms and earth stations based on Lyapunov optimization techniques},
+  journal = {Mathematical Problems in Engineering},
+  publisher = {Hindawi Publishing Corporation},
+  year = {2014},
+  volume = {2014}
+}
+</pre></td>
+</tr>
+<tr id="fang2014optimising" class="entry">
+	<td>Fang W, Wang Z, LIoret J, Zhang D and Yang Z (2014), <i>"Optimising data placement and traffic routing for energy saving in Backbone Networks"</i>, Transactions on Emerging Telecommunications Technologies.  Vol. 25(9), pp. 914-925. John Wiley &amp; Sons, Ltd.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2014optimising','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2014optimising" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2014optimising,
+  author = {Fang, Weiwei and Wang, Zishuo and LIoret, Jaime and Zhang, Daqiang and Yang, Zhijun},
+  title = {Optimising data placement and traffic routing for energy saving in Backbone Networks},
+  journal = {Transactions on Emerging Telecommunications Technologies},
+  publisher = {John Wiley &amp; Sons, Ltd},
+  year = {2014},
+  volume = {25},
+  number = {9},
+  pages = {914--925}
+}
+</pre></td>
+</tr>
+<tr id="fang2014throughput" class="entry">
+	<td>Fang W, Li Y, Zhang H, Xiong N, Lai J and Vasilakos AV (2014), <i>"On the throughput-energy tradeoff for data transmission between cloud and mobile devices"</i>, Information Sciences.  Vol. 283, pp. 79-93. Elsevier.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2014throughput','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2014throughput" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2014throughput,
+  author = {Fang, Weiwei and Li, Yangchun and Zhang, Huijing and Xiong, Naixue and Lai, Junyu and Vasilakos, Athanasios V},
+  title = {On the throughput-energy tradeoff for data transmission between cloud and mobile devices},
+  journal = {Information Sciences},
+  publisher = {Elsevier},
+  year = {2014},
+  volume = {283},
+  pages = {79--93}
+}
+</pre></td>
+</tr>
+<tr id="junyu2014improve" class="entry">
+	<td>Junyu L, Bing H, Guolin S, Weiwei F and Kaiyu Q (2014), <i>"Improve channel availability in vehicular iptv systems by a hybrid transmission scheme"</i>, In Network Infrastructure and Digital Content (IC-NIDC), 2014 4th IEEE International Conference on. , pp. 180-185.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('junyu2014improve','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_junyu2014improve" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{junyu2014improve,
+  author = {Junyu, Lai and Bing, He and Guolin, Sun and Weiwei, Fang and Kaiyu, Qin},
+  title = {Improve channel availability in vehicular iptv systems by a hybrid transmission scheme},
+  booktitle = {Network Infrastructure and Digital Content (IC-NIDC), 2014 4th IEEE International Conference on},
+  year = {2014},
+  pages = {180--185}
+}
+</pre></td>
+</tr>
+<tr id="sun2014diamond" class="entry">
+	<td>Sun Y, Chen J, Lu Q and Fang W (2014), <i>"Diamond: an improved fat-tree architecture for large-scale data centers"</i>, Journal of Communications.  Vol. 9(1), pp. 91-98.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('sun2014diamond','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_sun2014diamond" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{sun2014diamond,
+  author = {Sun, Yantao and Chen, Jing and Lu, Q and Fang, Weiwei},
+  title = {Diamond: an improved fat-tree architecture for large-scale data centers},
+  journal = {Journal of Communications},
+  year = {2014},
+  volume = {9},
+  number = {1},
+  pages = {91--98}
+}
+</pre></td>
+</tr>
+<tr id="fang2013adaptive" class="entry">
+	<td>Fang W, Zhou Q, Wang Z and Liu Q (2013), <i>"An Adaptive Transmission Scheme for Wireless Sensor Networks"</i>, Int. J. Future Generation Commun. Netw.  Vol. 6(1), pp. 35-44.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2013adaptive','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2013adaptive" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2013adaptive,
+  author = {Fang, Weiwei and Zhou, Quan and Wang, Zishuo and Liu, Qiang},
+  title = {An Adaptive Transmission Scheme for Wireless Sensor Networks},
+  journal = {Int. J. Future Generation Commun. Netw},
+  year = {2013},
+  volume = {6},
+  number = {1},
+  pages = {35--44}
+}
+</pre></td>
+</tr>
+<tr id="fang2013comment" class="entry">
+	<td>Fang W (2013), <i>"Comment onRobust Cooperative Routing Protocol in Mobile Wireless Sensor Networks'"</i>, IEEE Transactions on Wireless Communications.  Vol. 12(8), pp. 4222-4223. IEEE.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2013comment','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2013comment" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2013comment,
+  author = {Fang, Weiwei},
+  title = {Comment onRobust Cooperative Routing Protocol in Mobile Wireless Sensor Networks'},
+  journal = {IEEE Transactions on Wireless Communications},
+  publisher = {IEEE},
+  year = {2013},
+  volume = {12},
+  number = {8},
+  pages = {4222--4223}
+}
+</pre></td>
+</tr>
+<tr id="fang2013cost" class="entry">
+	<td>Fang W, Zhou Q, An Y, Li Y and Zhang H (2013), <i>"Cost-aware Workload Dispatching and Server Provisioning for Distributed Cloud Data Centers"</i>, International Journal of Grid and Distributed Computing.  Vol. 6(5), pp. 51-60.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2013cost','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2013cost" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2013cost,
+  author = {Fang, Weiwei and Zhou, Quan and An, Yuan and Li, Yangchun and Zhang, Huijing},
+  title = {Cost-aware Workload Dispatching and Server Provisioning for Distributed Cloud Data Centers},
+  journal = {International Journal of Grid and Distributed Computing},
+  year = {2013},
+  volume = {6},
+  number = {5},
+  pages = {51--60}
+}
+</pre></td>
+</tr>
+<tr id="fang2013vmplanner" class="entry">
+	<td>Fang W, Liang X, Li S, Chiaraviglio L and Xiong N (2013), <i>"VMPlanner: Optimizing Virtual Machine Placement and Traffic Flow Routing to Reduce Network Power Costs in Cloud Data Centers"</i>, Computer Networks.  Elsevier.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2013vmplanner','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2013vmplanner" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2013vmplanner,
+  author = {Fang, Weiwei and Liang, Xiangmin and Li, Shengxin and Chiaraviglio, Luca and Xiong, Naixue},
+  title = {VMPlanner: Optimizing Virtual Machine Placement and Traffic Flow Routing to Reduce Network Power Costs in Cloud Data Centers},
+  journal = {Computer Networks},
+  publisher = {Elsevier},
+  year = {2013}
+}
+</pre></td>
+</tr>
+<tr id="fang2012cluster" class="entry">
+	<td>W FANG, S LI, LIANG X and Z LI (2012), <i>"Cluster-based Data Gathering in Long-Strip Wireless Sensor Networks"</i>, Advances in Electrical and Computer Engineering.  Vol. 12
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2012cluster','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2012cluster" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2012cluster,
+  author = {FANG, W and LI, S and LIANG, X and LI, Z},
+  title = {Cluster-based Data Gathering in Long-Strip Wireless Sensor Networks},
+  journal = {Advances in Electrical and Computer Engineering},
+  year = {2012},
+  volume = {12}
+}
+</pre></td>
+</tr>
+<tr id="fang2012cross" class="entry">
+	<td>Fang W, Liu Z and Liu F (2012), <i>"A CROSS-LAYER PROTOCOL FOR RELIABLE AND EFFICIENT COMMUNICATION IN WIRELESS SENSOR NETWORKS"</i>, International Journal of Innovative Computing, Information and Control (IJICIC). 
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2012cross','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2012cross" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2012cross,
+  author = {Fang, Weiwei and Liu, Zhen and Liu, Feng},
+  title = {A CROSS-LAYER PROTOCOL FOR RELIABLE AND EFFICIENT COMMUNICATION IN WIRELESS SENSOR NETWORKS},
+  journal = {International Journal of Innovative Computing, Information and Control (IJICIC)},
+  year = {2012}
+}
+</pre></td>
+</tr>
+<tr id="fang2012network" class="entry">
+	<td>Fang W, Liang X, Sun Y and Vasilakos AV (2012), <i>"Network Element Scheduling for Achieving Energy-Aware Data Center Networks"</i>, International Journal of Computers Communications &amp; Control.  Vol. 7(2), pp. 241-251.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2012network','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2012network" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2012network,
+  author = {Fang, Weiwei and Liang, Xiangmin and Sun, Yantao and Vasilakos, Athanasios V},
+  title = {Network Element Scheduling for Achieving Energy-Aware Data Center Networks},
+  journal = {International Journal of Computers Communications &amp; Control},
+  year = {2012},
+  volume = {7},
+  number = {2},
+  pages = {241--251}
+}
+</pre></td>
+</tr>
+<tr id="li2012ersvc" class="entry">
+	<td>Li J, An Y, Wang B and Fang W (2012), <i>"ERSVC: An Efficient Routing Scheme for Satellite Constellation Adapting Vector Composition"</i>, Procedia Computer Science.  Vol. 10, pp. 984-991. Elsevier.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('li2012ersvc','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_li2012ersvc" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{li2012ersvc,
+  author = {Li, Jiancheng and An, Yuan and Wang, Baohua and Fang, Weiwei},
+  title = {ERSVC: An Efficient Routing Scheme for Satellite Constellation Adapting Vector Composition},
+  journal = {Procedia Computer Science},
+  publisher = {Elsevier},
+  year = {2012},
+  volume = {10},
+  pages = {984--991}
+}
+</pre></td>
+</tr>
+<tr id="刘云璐2012一种无线传感器网络mac协议优化算法" class="entry">
+	<td>刘云璐, 蒲菊华, 方维维 and 熊璋 (2012), <i>"一种无线传感器网络MAC协议优化算法"</i>, 计算机学报.  Vol. 35(3), pp. 529-539.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('刘云璐2012一种无线传感器网络mac协议优化算法','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_刘云璐2012一种无线传感器网络mac协议优化算法" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{刘云璐2012一种无线传感器网络mac协议优化算法,
+  author = {刘云璐 and 蒲菊华 and 方维维 and 熊璋},
+  title = {一种无线传感器网络MAC协议优化算法},
+  journal = {计算机学报},
+  year = {2012},
+  volume = {35},
+  number = {3},
+  pages = {529--539}
+}
+</pre></td>
+</tr>
+<tr id="王迎春2012基于铁路无线网络" class="entry">
+	<td>王迎春, 李立明, 杨芳南, 方维维 and others (2012), <i>"基于铁路无线网络 AAA 系统的研究与实现"</i>, 铁路计算机应用. (2012 年 01), pp. 6-8. 中国铁道科学研究| 中国铁道学会计算机委员会.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('王迎春2012基于铁路无线网络','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_王迎春2012基于铁路无线网络" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{王迎春2012基于铁路无线网络,
+  author = {王迎春 and 李立明 and 杨芳南 and 方维维 and others},
+  title = {基于铁路无线网络 AAA 系统的研究与实现},
+  journal = {铁路计算机应用},
+  publisher = {中国铁道科学研究| 中国铁道学会计算机委员会},
+  year = {2012},
+  number = {2012 年 01},
+  pages = {6--8}
+}
+</pre></td>
+</tr>
+<tr id="钟源2012移动" class="entry">
+	<td>钟源, 方维维, 杨芳南, 梁相民 and 黄实 (2012), <i>"移动 WiMAX 网络测试系统的设计与实现"</i>, 计算机工程.  Vol. 38(21), pp. 78-80.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('钟源2012移动','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_钟源2012移动" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{钟源2012移动,
+  author = {钟源 and 方维维 and 杨芳南 and 梁相民 and 黄实},
+  title = {移动 WiMAX 网络测试系统的设计与实现},
+  journal = {计算机工程},
+  year = {2012},
+  volume = {38},
+  number = {21},
+  pages = {78--80}
+}
+</pre></td>
+</tr>
+<tr id="fang2011reliable" class="entry">
+	<td>Fang W, Liu F, Liu Z, Shu L and Nishio S (2011), <i>"Reliable broadcast transmission in wireless networks based on network coding"</i>, In Computer Communications Workshops (INFOCOM WKSHPS), 2011 IEEE Conference on. , pp. 555-559.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2011reliable','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2011reliable" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{fang2011reliable,
+  author = {Fang, Weiwei and Liu, Feng and Liu, Zhen and Shu, Lei and Nishio, Shojiro},
+  title = {Reliable broadcast transmission in wireless networks based on network coding},
+  booktitle = {Computer Communications Workshops (INFOCOM WKSHPS), 2011 IEEE Conference on},
+  year = {2011},
+  pages = {555--559}
+}
+</pre></td>
+</tr>
+<tr id="fang2011research" class="entry">
+	<td>Fang W, Liu Z, Liang X, Liu F, Huang S and Li L (2011), <i>"Research and implementation of an AAA system for railway WiMAX communication networks"</i>, International Journal of Digital Content Technology and its Applications.  Vol. 5(9) Advanced Institute of Convergence IT.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2011research','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2011research" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2011research,
+  author = {Fang, Weiwei and Liu, Zhen and Liang, Xiangmin and Liu, Feng and Huang, Shi and Li, Liming},
+  title = {Research and implementation of an AAA system for railway WiMAX communication networks},
+  journal = {International Journal of Digital Content Technology and its Applications},
+  publisher = {Advanced Institute of Convergence IT},
+  year = {2011},
+  volume = {5},
+  number = {9}
+}
+</pre></td>
+</tr>
+<tr id="zhen2011itdts" class="entry">
+	<td>Zhen L, Weiwei F, Konggui S, Feng L and Fangnan Y (2011), <i>"iTDTS: a SIP-based telephone system for train dispatching"</i>, JDCTA.  Vol. 4, pp. 88-100.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('zhen2011itdts','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_zhen2011itdts" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{zhen2011itdts,
+  author = {Zhen, Liu and Weiwei, Fang and Konggui, Shi and Feng, L and Fangnan, Y},
+  title = {iTDTS: a SIP-based telephone system for train dispatching},
+  journal = {JDCTA},
+  year = {2011},
+  volume = {4},
+  pages = {88--100}
+}
+</pre></td>
+</tr>
+<tr id="李玉凯2011基于协同簇与模糊评判的无线传感器网络转发协议" class="entry">
+	<td>李玉凯, 白焰, 方维维 and 高喜奎 (2011), <i>"基于协同簇与模糊评判的无线传感器网络转发协议"</i>, 仪器仪表学报. (12), pp. 2867-2874.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('李玉凯2011基于协同簇与模糊评判的无线传感器网络转发协议','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_李玉凯2011基于协同簇与模糊评判的无线传感器网络转发协议" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{李玉凯2011基于协同簇与模糊评判的无线传感器网络转发协议,
+  author = {李玉凯 and 白焰 and 方维维 and 高喜奎},
+  title = {基于协同簇与模糊评判的无线传感器网络转发协议},
+  journal = {仪器仪表学报},
+  year = {2011},
+  number = {12},
+  pages = {2867--2874}
+}
+</pre></td>
+</tr>
+<tr id="chu2010novel" class="entry">
+	<td>Chu T, Dai J, Qian D, Fang W and Liu Y (2010), <i>"A novel scheme for high performance finite-difference time-domain (FDTD) computations based on GPU"</i>, Algorithms and Architectures for Parallel Processing. , pp. 441-453. Springer Berlin/Heidelberg.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('chu2010novel','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_chu2010novel" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{chu2010novel,
+  author = {Chu, Tianshu and Dai, Jian and Qian, Depei and Fang, Weiwei and Liu, Yi},
+  title = {A novel scheme for high performance finite-difference time-domain (FDTD) computations based on GPU},
+  journal = {Algorithms and Architectures for Parallel Processing},
+  publisher = {Springer Berlin/Heidelberg},
+  year = {2010},
+  pages = {441--453}
+}
+</pre></td>
+</tr>
+<tr id="fang2010congestion" class="entry">
+	<td>Fang W-w, Chen J-m, Shu L, Chu T-s and Qian D-p (2010), <i>"Congestion avoidance, detection and alleviation in wireless sensor networks"</i>, Journal of Zhejiang University-Science C.  Vol. 11(1), pp. 63-73. Zhejiang University Press, co-published with Springer.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2010congestion','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2010congestion" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2010congestion,
+  author = {Fang, Wei-wei and Chen, Ji-ming and Shu, Lei and Chu, Tian-shu and Qian, De-pei},
+  title = {Congestion avoidance, detection and alleviation in wireless sensor networks},
+  journal = {Journal of Zhejiang University-Science C},
+  publisher = {Zhejiang University Press, co-published with Springer},
+  year = {2010},
+  volume = {11},
+  number = {1},
+  pages = {63--73}
+}
+</pre></td>
+</tr>
+<tr id="fang2010energy" class="entry">
+	<td>Fang W, Liu F, Yang F, Shu L and Nishio S (2010), <i>"Energy-efficient cooperative communication for data transmission in wireless sensor networks"</i>, IEEE Transactions on Consumer Electronics.  Vol. 56(4) IEEE.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2010energy','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2010energy" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{fang2010energy,
+  author = {Fang, Weiwei and Liu, Feng and Yang, Fangnan and Shu, Lei and Nishio, Shojiro},
+  title = {Energy-efficient cooperative communication for data transmission in wireless sensor networks},
+  journal = {IEEE Transactions on Consumer Electronics},
+  publisher = {IEEE},
+  year = {2010},
+  volume = {56},
+  number = {4}
+}
+</pre></td>
+</tr>
+<tr id="he2010adaptive" class="entry">
+	<td>He Y, Xiao F, Fang W, Wang R and Qian D (2010), <i>"An adaptive algorithm for real-time data transmission in multi-hop overlay networks"</i>, In Communications and Networking in China (CHINACOM), 2010 5th International ICST Conference on. , pp. 1-5.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('he2010adaptive','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_he2010adaptive" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{he2010adaptive,
+  author = {He, Ying and Xiao, Feng and Fang, Weiwei and Wang, Rui and Qian, Depei},
+  title = {An adaptive algorithm for real-time data transmission in multi-hop overlay networks},
+  booktitle = {Communications and Networking in China (CHINACOM), 2010 5th International ICST Conference on},
+  year = {2010},
+  pages = {1--5}
+}
+</pre></td>
+</tr>
+<tr id="liu2010transmission" class="entry">
+	<td>Liu Y, Fang W and Xiong Z (2010), <i>"Transmission Control Protocols for Wireless Sensor Networks"</i>, In Handbook of Research on Developments and Trends in Wireless Sensor Networks: From Principle to Practice. , pp. 159-183. IGI Global.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('liu2010transmission','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_liu2010transmission" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@incollection{liu2010transmission,
+  author = {Liu, Yunlu and Fang, Weiwei and Xiong, Zhang},
+  title = {Transmission Control Protocols for Wireless Sensor Networks},
+  booktitle = {Handbook of Research on Developments and Trends in Wireless Sensor Networks: From Principle to Practice},
+  publisher = {IGI Global},
+  year = {2010},
+  pages = {159--183}
+}
+</pre></td>
+</tr>
+<tr id="安源2010一种能量高效的无线传感器网络等值线监测技术" class="entry">
+	<td>安源, 孙利民, 马彩文, 朱红松 and 方维维 (2010), <i>"一种能量高效的无线传感器网络等值线监测技术"</i>, 西安交通大学学报. (002), pp. 56-60.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('安源2010一种能量高效的无线传感器网络等值线监测技术','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_安源2010一种能量高效的无线传感器网络等值线监测技术" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{安源2010一种能量高效的无线传感器网络等值线监测技术,
+  author = {安源 and 孙利民 and 马彩文 and 朱红松 and 方维维},
+  title = {一种能量高效的无线传感器网络等值线监测技术},
+  journal = {西安交通大学学报},
+  year = {2010},
+  number = {002},
+  pages = {56--60}
+}
+</pre></td>
+</tr>
+<tr id="安源2010基于贝塞尔曲线的" class="entry">
+	<td>安源, 马彩文, 孙利民, 张晨伟 and 方维维 (2010), <i>"基于贝塞尔曲线的 WSN 等值线绘制算法"</i>, 高技术通讯. (8), pp. 792-797.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('安源2010基于贝塞尔曲线的','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_安源2010基于贝塞尔曲线的" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{安源2010基于贝塞尔曲线的,
+  author = {安源 and 马彩文 and 孙利民 and 张晨伟 and 方维维},
+  title = {基于贝塞尔曲线的 WSN 等值线绘制算法},
+  journal = {高技术通讯},
+  year = {2010},
+  number = {8},
+  pages = {792--797}
+}
+</pre></td>
+</tr>
+<tr id="李玉凯2010一种无线传感器网络可靠传输协议及其仿真分析" class="entry">
+	<td>李玉凯, 白焰, 方维维, 崔彦波 and 张健 (2010), <i>"一种无线传感器网络可靠传输协议及其仿真分析"</i>, 系统仿真学报. (6), pp. 1551-1556.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('李玉凯2010一种无线传感器网络可靠传输协议及其仿真分析','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_李玉凯2010一种无线传感器网络可靠传输协议及其仿真分析" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{李玉凯2010一种无线传感器网络可靠传输协议及其仿真分析,
+  author = {李玉凯 and 白焰 and 方维维 and 崔彦波 and 张健},
+  title = {一种无线传感器网络可靠传输协议及其仿真分析},
+  journal = {系统仿真学报},
+  year = {2010},
+  number = {6},
+  pages = {1551--1556}
+}
+</pre></td>
+</tr>
+<tr id="chen2009link" class="entry">
+	<td>Chen H, Qian D, Wu W and Fang W (2009), <i>"Link-aware geographic routing in wireless sensor networks"</i>, In Computational Science and Engineering, 2009. CSE'09. International Conference on.  Vol. 2, pp. 937-942.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('chen2009link','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_chen2009link" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{chen2009link,
+  author = {Chen, Heng and Qian, Depei and Wu, Weiguo and Fang, Weiwei},
+  title = {Link-aware geographic routing in wireless sensor networks},
+  booktitle = {Computational Science and Engineering, 2009. CSE'09. International Conference on},
+  year = {2009},
+  volume = {2},
+  pages = {937--942}
+}
+</pre></td>
+</tr>
+<tr id="fang2009rrdd" class="entry">
+	<td>Fang W, Zhao X, Chu T, An Y, Liu Y and Qian D (2009), <i>"RRDD: Receiver-oriented robust data delivery in mobile sensor networks"</i>, In Mobile Adhoc and Sensor Systems, 2009. MASS'09. IEEE 6th International Conference on. , pp. 876-881.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2009rrdd','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2009rrdd" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{fang2009rrdd,
+  author = {Fang, Weiwei and Zhao, Xin and Chu, Tianshu and An, Yuan and Liu, Yi and Qian, Depei},
+  title = {RRDD: Receiver-oriented robust data delivery in mobile sensor networks},
+  booktitle = {Mobile Adhoc and Sensor Systems, 2009. MASS'09. IEEE 6th International Conference on},
+  year = {2009},
+  pages = {876--881}
+}
+</pre></td>
+</tr>
+<tr id="zhang2009compensation" class="entry">
+	<td>Zhang Y-Y, Luo X, Yang LT, Shu L, Fang W and Park M-S (2009), <i>"A compensation-based reliable data delivery for instant wireless sensor network"</i>, In High Performance Computing and Communications, 2009. HPCC'09. 11th IEEE International Conference on. , pp. 243-250.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('zhang2009compensation','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_zhang2009compensation" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{zhang2009compensation,
+  author = {Zhang, Yi-Ying and Luo, Xi and Yang, Laurence T and Shu, Lei and Fang, Weiwei and Park, Myong-Soon},
+  title = {A compensation-based reliable data delivery for instant wireless sensor network},
+  booktitle = {High Performance Computing and Communications, 2009. HPCC'09. 11th IEEE International Conference on},
+  year = {2009},
+  pages = {243--250}
+}
+</pre></td>
+</tr>
+<tr id="方维维2009一种相邻节点协作的无线传感器网络可靠传输方案" class="entry">
+	<td>方维维, 钱德沛 and 刘轶 (2009), <i>"一种相邻节点协作的无线传感器网络可靠传输方案"</i>, 西安交通大学学报.  Vol. 43(002), pp. 33-37.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('方维维2009一种相邻节点协作的无线传感器网络可靠传输方案','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_方维维2009一种相邻节点协作的无线传感器网络可靠传输方案" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{方维维2009一种相邻节点协作的无线传感器网络可靠传输方案,
+  author = {方维维 and 钱德沛 and 刘轶},
+  title = {一种相邻节点协作的无线传感器网络可靠传输方案},
+  journal = {西安交通大学学报},
+  year = {2009},
+  volume = {43},
+  number = {002},
+  pages = {33--37}
+}
+</pre></td>
+</tr>
+<tr id="方维维2009分簇无线传感器网络可靠高效的数据传输方案" class="entry">
+	<td>方维维, 钱德沛, 褚天舒 and 刘轶 (2009), <i>"分簇无线传感器网络可靠高效的数据传输方案"</i>, 西安交通大学学报.  Vol. 43(8), pp. 28-32.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('方维维2009分簇无线传感器网络可靠高效的数据传输方案','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_方维维2009分簇无线传感器网络可靠高效的数据传输方案" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{方维维2009分簇无线传感器网络可靠高效的数据传输方案,
+  author = {方维维 and 钱德沛 and 褚天舒 and 刘轶},
+  title = {分簇无线传感器网络可靠高效的数据传输方案},
+  journal = {西安交通大学学报},
+  year = {2009},
+  volume = {43},
+  number = {8},
+  pages = {28--32}
+}
+</pre></td>
+</tr>
+<tr id="李玉凯2009基于虚拟多路径的无线传感器网络可靠传输机制" class="entry">
+	<td>李玉凯, 白焰, 张健, 方维维 and 崔彦波 (2009), <i>"基于虚拟多路径的无线传感器网络可靠传输机制"</i>, In CWSN 2009. 
+	<p class="infolinks"> [<a href="javascript:toggleInfo('李玉凯2009基于虚拟多路径的无线传感器网络可靠传输机制','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_李玉凯2009基于虚拟多路径的无线传感器网络可靠传输机制" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{李玉凯2009基于虚拟多路径的无线传感器网络可靠传输机制,
+  author = {李玉凯 and 白焰 and 张健 and 方维维 and 崔彦波},
+  title = {基于虚拟多路径的无线传感器网络可靠传输机制},
+  booktitle = {CWSN 2009},
+  year = {2009}
+}
+</pre></td>
+</tr>
+<tr id="方维维2008无线传感器网络传输控制协议" class="entry">
+	<td>方维维, 钱德沛 and 刘轶 (2008), <i>"无线传感器网络传输控制协议"</i>, Journal of Software.  Vol. 19(6), pp. 1439-1451.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('方维维2008无线传感器网络传输控制协议','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_方维维2008无线传感器网络传输控制协议" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{方维维2008无线传感器网络传输控制协议,
+  author = {方维维 and 钱德沛 and 刘轶},
+  title = {无线传感器网络传输控制协议},
+  journal = {Journal of Software},
+  year = {2008},
+  volume = {19},
+  number = {6},
+  pages = {1439--1451}
+}
+</pre></td>
+</tr>
+<tr id="du2007pronet" class="entry">
+	<td>Du Z, Tong J, Huang J, Su Y, Yang X, Qian H, Fang W, Wu J, Liu Y and Qian D (2007), <i>"ProNet: A Wireless Sensor Network Testbed Supporting Performance Measurement and Background Traffic Generation"</i>, In Proc. 2nd Int. Conf. on the Latest Advances in Networks. , pp. 185-190.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('du2007pronet','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_du2007pronet" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{du2007pronet,
+  author = {Du, ZG and Tong, J and Huang, JH and Su, YM and Yang, XB and Qian, HH and Fang, WW and Wu, JF and Liu, Y and Qian, DP},
+  title = {ProNet: A Wireless Sensor Network Testbed Supporting Performance Measurement and Background Traffic Generation},
+  booktitle = {Proc. 2nd Int. Conf. on the Latest Advances in Networks},
+  year = {2007},
+  pages = {185--190}
+}
+</pre></td>
+</tr>
+<tr id="fang2007demand" class="entry">
+	<td>Fang W, Liu Y, Wu J and Qian D (2007), <i>"An on-demand address allocation scheme for query based sensor networks"</i>, In Autonomous Decentralized Systems, 2007. ISADS'07. Eighth International Symposium on. , pp. 173-179.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2007demand','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2007demand" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{fang2007demand,
+  author = {Fang, Weiwei and Liu, Yi and Wu, Jin and Qian, Depei},
+  title = {An on-demand address allocation scheme for query based sensor networks},
+  booktitle = {Autonomous Decentralized Systems, 2007. ISADS'07. Eighth International Symposium on},
+  year = {2007},
+  pages = {173--179}
+}
+</pre></td>
+</tr>
+<tr id="fang2007edds" class="entry">
+	<td>Fang W, Liu Y and Qian D (2007), <i>"EDDS: An efficient data delivery scheme for address-free wireless sensor networks"</i>, In International Conference on Networking, International Conference on Networking 2007 (ICN 2007). , pp. 7.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('fang2007edds','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_fang2007edds" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@inproceedings{fang2007edds,
+  author = {Fang, Weiwei and Liu, Yi and Qian, Depei},
+  title = {EDDS: An efficient data delivery scheme for address-free wireless sensor networks},
+  booktitle = {International Conference on Networking, International Conference on Networking 2007 (ICN 2007)},
+  year = {2007},
+  pages = {7}
+}
+</pre></td>
+</tr>
+<tr id="方维维2006并行网络仿真可视化建模平台的设计与实现" class="entry">
+	<td>方维维, 李越, 钱德沛 and 王鼎 (2006), <i>"并行网络仿真可视化建模平台的设计与实现"</i>, 计算机工程.  Vol. 32(5), pp. 112-115.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('方维维2006并行网络仿真可视化建模平台的设计与实现','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_方维维2006并行网络仿真可视化建模平台的设计与实现" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{方维维2006并行网络仿真可视化建模平台的设计与实现,
+  author = {方维维 and 李越 and 钱德沛 and 王鼎},
+  title = {并行网络仿真可视化建模平台的设计与实现},
+  journal = {计算机工程},
+  year = {2006},
+  volume = {32},
+  number = {5},
+  pages = {112--115}
+}
+</pre></td>
+</tr>
+<tr id="方维维2005网络模拟和仿真技术" class="entry">
+	<td>方维维 and 王锐 (2005), <i>"网络模拟和仿真技术"</i>, 计算机教育. (012), pp. 51-54.
+	<p class="infolinks"> [<a href="javascript:toggleInfo('方维维2005网络模拟和仿真技术','bibtex')">BibTeX</a>]</p>
+	</td>
+</tr>
+<tr id="bib_方维维2005网络模拟和仿真技术" class="bibtex noshow">
+<td><b>BibTeX</b>:
+<pre>
+@article{方维维2005网络模拟和仿真技术,
+  author = {方维维 and 王锐},
+  title = {网络模拟和仿真技术},
+  journal = {计算机教育},
+  year = {2005},
+  number = {012},
+  pages = {51--54}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 07/10/2017.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>
