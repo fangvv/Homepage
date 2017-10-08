@@ -6,7 +6,11 @@
 - 云计算网络：包括移动云计算，边缘计算，云数据中心网络等。
 - 网络化系统：包括4G/5G通信系统，空间信息网络及卫星数据处理，物联网溯源系统等。
 
-对于研究，我们的原则是：**做理论要努力发表高水平文章**([文章列表](http://scit.bjtu.edu.cn/cms/staff/8530/?cat=12#paper))，**做工程要创新地解决实际问题**([系统展示](https://fangvv.github.io/Homepage/Demo.html))，尽全力在现有条件下做到更好！
+对于研究，我们的原则是：
+
+- **做理论要努力发表高水平文章**([文章列表](https://fangvv.github.io/Homepage/publication.html))
+- **做工程要创新地解决实际问题**([系统展示](https://fangvv.github.io/Homepage/Demo.html))
+- 尽全力在现有条件下做到更好！
 
 ## How
 我会独立、手把手地指导学生做科研，自认为无论是科研或是生活上，对学生的指导、支持和帮助都是认真负责的，发放补助、推荐实习/工作/出国时会尽量给力。总之，希望师生的关系是亦师亦友，合作双赢！我的学生指导及毕业去向详情可以参见[页面](https://fangvv.github.io/Homepage/group.html "页面")。
