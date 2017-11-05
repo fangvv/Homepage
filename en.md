@@ -8,5 +8,3 @@ The systems and networking research group at BJTU engages in a wide range of exp
 Our group is affiliated with [Institute of Information Communication Networks](http://icn.bjtu.edu.cn) and [Institute of Cloud Computing and Data Science](http://ccd.bjtu.edu.cn) at Beijing Jiaotong University.
 
 Feel free to contact us and visit our group!
-
-<iframe src="map.html" width="697" height="550" frameborder="0" scrolling="no"></iframe>
