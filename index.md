@@ -43,6 +43,7 @@
 - 如何读研究生：[台湾国立交通大学王蒞君的话](http://cmbsd.cm.nctu.edu.tw/~lichun/to_student_principle.html "台湾国立交通大学王蒞君的话") [台湾中央研究院陈昇玮的建议](http://www.iis.sinica.edu.tw/~swc/talk/advices.html "台湾中央研究院陈昇玮的建议")
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
 - 如何作网络通信领域的研究：[链接](http://wirelesslab.sjtu.edu.cn/resource/seminar/111201/How_to_do_research_in_wireless_area_Yanglet20111201.ppsm "链接")
+- 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9)
 - 如何读论文：[链接](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接")
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议")
 - 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议")
