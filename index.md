@@ -55,8 +55,11 @@
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议")
 - 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议")
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议")
+- 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472)
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间")
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
+- 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](http://blog.sciencenet.cn/blog-800393-623681.html)
+- 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
 
 ## Contact
 ![](qrcode.jpg)
