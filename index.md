@@ -1,5 +1,5 @@
 **系统与网络研究组** 的使命是探索和研究下一代计算系统和下一代网络系统中核心、关键的理论和实践问题，所涉及的领域包括：
-- <font size 云计算网络：包括移动云计算(Mobile Cloud Computing)，边缘计算(Edge Computing)，云数据中心网络(DCN)等。
+- 云计算网络：包括移动云计算(Mobile Cloud Computing)，边缘计算(Edge Computing)，云数据中心网络(DCN)等。
 - 物联网技术：包括无线传感网(Zigbee/LoRaWAN)，室内定位导航(BLE/iBeacon/UWB/Video)，二维码(QR Code)等。
 - 分布式系统：包括分布式优化，区块链(Blockchain)，大数据处理(BigData)，空间信息网络(Deep Space Network)等。
 
