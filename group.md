@@ -28,9 +28,9 @@ title: 团队成员
 - Xiyao Zhang (2015年本科毕业后深造于中国香港大学 HKU)
 - Xiaojie Zhao (2016年硕士毕业后工作于北京交大微联科技有限公司)
 - Zhuo Yao (2017年硕士毕业后工作于微众银行)
-- Xuening Yao (2018年即将硕士毕业签约中国银行)
-- Mingxiang Hou (2018年即将硕士毕业签约滴滴出行)
-- Zhenyuan Liu (2018年即将硕士毕业签约百度外卖)
+- Xuening Yao (2018年硕士毕业后工作于中国银行)
+- Mingxiang Hou (2018年硕士毕业后工作于滴滴出行)
+- Zhenyuan Liu (2018年硕士毕业后工作于百度外卖)
 
 ## 理念
 
