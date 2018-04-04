@@ -53,7 +53,7 @@ title: 招生说明
 - 最重要的原则：失败后获得的教训和成功后获得的经验同样重要，我们不强求成功，坚决不能为了发表成果而做出急功近利的事情
 - 如何作研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道")
 - 如何读研究生：[台湾国立交通大学王蒞君的话](http://cmbsd.cm.nctu.edu.tw/~lichun/to_student_principle.html "台湾国立交通大学王蒞君的话") [台湾中央研究院陈昇玮的建议](http://www.iis.sinica.edu.tw/~swc/talk/advices.html "台湾中央研究院陈昇玮的建议")
-- 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman)](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
+- 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
 - 如何作网络通信领域的研究：[链接](http://wirelesslab.sjtu.edu.cn/resource/seminar/111201/How_to_do_research_in_wireless_area_Yanglet20111201.ppsm "链接")
 - 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9)
