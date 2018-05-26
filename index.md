@@ -52,6 +52,7 @@ title: 招生说明
 - 最基础的能力：编程语言（C/C++、Java、Python等），操作系统（Linux、Windows、Android、iOS），TCP/IP基础，代码Git操作
 - 最基本的素养：独立思考解决问题的能力，团队合作能力，英文阅读理解能力，逻辑思维能力
 - 最重要的原则：失败后获得的教训和成功后获得的经验同样重要，我们不强求成功，坚决不能为了发表成果而做出急功近利的事情
+- 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](http://blog.sciencenet.cn/blog-800393-623681.html)
 - 如何作研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道")
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
@@ -66,7 +67,7 @@ title: 招生说明
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472)
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间")
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
-- 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](http://blog.sciencenet.cn/blog-800393-623681.html)
+- 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249)
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
 
 ## 联系方式
