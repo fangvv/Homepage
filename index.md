@@ -3,7 +3,7 @@ layout: default
 title: 招生说明
 ---
 
-> 欢迎 全日制 硕士/博士 和 学有余力的本科实习生 加入我们的团队一起工作，请发送简历至fangww@bjtu.edu.cn。
+> 欢迎 全日制 硕士/博士 和 学有余力的本科实习生 加入我们的团队一起工作，请发送简历至fangww@bjtu.edu.cn或fangvv@qq.com。
 
 我组培养学生的原则是——谋：
 
