@@ -30,7 +30,7 @@ title: 团队成员
 - Zhuo Yao (2017年硕士毕业后工作于微众银行)
 - Xuening Yao (2018年硕士毕业后工作于中国银行)
 - Mingxiang Hou (2018年硕士毕业后工作于滴滴出行)
-- Zhenyuan Liu (2018年硕士毕业后工作于百度外卖)
+- Zhenyuan Liu (2018年硕士毕业后工作于阿里饿了么)
 - Wenrui Wang (2018年硕士毕业后工作于好未来教育集团)
 - Mingjie Zhou (2018年本科毕业后深造于中国香港浸会大学 HKBU)
 
