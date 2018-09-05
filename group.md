@@ -31,8 +31,9 @@ title: 团队成员
 - Xuening Yao (2018年硕士毕业后工作于中国银行)
 - Mingxiang Hou (2018年硕士毕业后工作于滴滴出行)
 - Zhenyuan Liu (2018年硕士毕业后工作于阿里饿了么)
-- Wenrui Wang (2018年硕士毕业后工作于好未来教育集团)
+- Wenrui Wang (2018年硕士毕业后工作于好未来教育)
 - Mingjie Zhou (2018年本科毕业后深造于中国香港浸会大学 HKBU)
+- Yuanjie Bai (2018年本科毕业后工作于今日头条)
 
 ## 理念
 
