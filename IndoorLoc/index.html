@@ -246,7 +246,31 @@
           <div class="col-lg-12 text-center" data-aos="fade-down">
             <h2 class="section-heading text-uppercase">成果转化</h2>
             <h3 class="section-subheading text-muted">我们的成果已经通过企业合作进行了技术转化和产品研发，正在提供面向大型医院内部的室内位置服务。</h3>
-            <iframe src="https://docs.zoho.com.cn/show/publish/pm6m639a13098232944c18b12c893fb92c6f1/params?toolbar=true&menu=false&loop=true" width="736" height="450" style="border:1px solid rgb(0, 0, 0);max-width: 100%;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <div id="yzdppt">
+            </div>          
+
+            <script>
+              //doesn't block the load event
+            function createIframe(){
+              var i = document.createElement("iframe");
+              var a = Math.random() + "";
+              var t = a * 1000;
+              i.src = "https://docs.zoho.com.cn/show/publish/pm6m639a13098232944c18b12c893fb92c6f1/params?toolbar=true&menu=false&loop=true";
+              i.scrolling = "auto";
+              i.frameborder = "0";
+              i.width = "736px";
+              i.height = "450px";
+              document.getElementById("yzdppt").appendChild(i);
+            };
+            
+            // Check for browser support of event handling capability
+            if (window.addEventListener)
+            window.addEventListener("load", createIframe, false);
+            else if (window.attachEvent)
+            window.attachEvent("onload", createIframe);
+            else window.onload = createIframe;
+            
+          </script>
           </div>
       </div>
       </div>
