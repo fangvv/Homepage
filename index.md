@@ -45,6 +45,7 @@ title: 招生说明
 - 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](http://blog.sciencenet.cn/blog-800393-623681.html)
 - 如何作研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道")
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
+- 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？ [王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695)
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
 - 如何作网络通信领域的研究：[链接](http://wirelesslab.sjtu.edu.cn/resource/seminar/111201/How_to_do_research_in_wireless_area_Yanglet20111201.ppsm "链接")
 - 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9)
