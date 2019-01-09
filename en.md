@@ -7,4 +7,6 @@ The systems and networking research group at BJTU engages in a wide range of exp
 
 Our group is affiliated with [Institute of Information Communication Networks](http://icn.bjtu.edu.cn), [School of Computer and Information Technology](http://scit.bjtu.edu.cn), [Beijing Jiaotong University](http://www.bjtu.edu.cn).
 
+Currently, we have some working groups on [Edge Computing](https://fangvv.gitee.io/homepage/Edgecomp/), [Indoor Localization](https://fangvv.gitee.io/homepage/IndoorLoc/), and [Blockchain Systems](https://fangvv.gitee.io/homepage/BlockchainBJTU/).
+
 Feel free to contact us and visit our group!
