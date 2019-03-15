@@ -54,6 +54,7 @@ title: 招生说明
 - Writing Perfect Papers：[多伦多大学李葆春教授的建议](http://isn.xidian.edu.cn/info/1003/2388.htm "多伦多大学李葆春教授的建议")
 - 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议")
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议")
+- 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](paper-organization.jpg)
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议")
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472)
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间")
