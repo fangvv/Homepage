@@ -62,6 +62,7 @@ title: 招生说明
 - 如何提问：[别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways)
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249)
+- CS研究生课余可以读的一些书：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw)
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
 - 如何正视中国科研：[科技日报总编辑刘亚东：除了那些核心技术，我们还缺什么？](http://economy.caijing.com.cn/20180623/4474816.shtml)
