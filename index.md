@@ -45,6 +45,7 @@ title: 招生说明
 - 如何做研究：[麻省理工学院人工智能实验室如何做研究的中文版](https://wenku.baidu.com/view/92ca9bde7cd184254a3535ab.html)
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
 - 如何读研究生：[王汎森：如果让我重做一次研究生](https://cul.qq.com/a/20171014/018545.htm)
+- 如何看待师生关系：[迷时师渡，悟了自度 侯捷](https://nieyong.github.io/wiki_ny/%E8%BF%B7%E6%97%B6%E5%B8%88%E5%BA%A6%20%E6%82%9F%E4%BA%86%E8%87%AA%E5%BA%A6.html)
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695)
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
 - 如何作网络通信领域的研究：[链接](http://wirelesslab.sjtu.edu.cn/resource/seminar/111201/How_to_do_research_in_wireless_area_Yanglet20111201.ppsm "链接")
@@ -57,6 +58,7 @@ title: 招生说明
 - 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议")
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议")
 - 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](paper-organization.jpg)
+- 如何写论文：[张华平老师：科技论文写作小经验漫谈](科技论文写作小经验漫谈.ppt)
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议")
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472)
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间")
@@ -64,6 +66,7 @@ title: 招生说明
 - 如何提问：[别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways)
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249)
+- 如何阅读程序源码：[潘爱民老师的分享](HowToReadSourceCode.pdf)
 - CS研究生课余可以读的一些书：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw)
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
