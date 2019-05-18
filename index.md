@@ -74,3 +74,4 @@ title: 招生说明
 - 如何正视中国科研：[中科院教授来信：为什么中国科学技术远落后于美国？](http://www.szeconomy.com/news/?494.html)
 - 如何正视中国科研：[不要培养人格低下的知识分子](http://www.sohu.com/a/124240276_354611)
 - 如何正视中国科研：[科学家的价值不只在SCI期刊里](http://zqb.cyol.com/html/2019-04/15/nw.D110000zgqnb_20190415_2-08.htm)
+- 如何正视中国科研：[独立和自由是最宝贵的学者精神](https://mp.weixin.qq.com/s/KGx5y6gAhLWeNMswlR1oKw)
