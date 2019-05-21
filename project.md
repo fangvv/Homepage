@@ -4,9 +4,10 @@ title: 承担项目
 ---
 
 **系统与网络研究组** 的使命是探索和研究下一代计算系统和下一代网络系统中核心、关键的理论和实践问题，所涉及的领域包括：
-- 云计算网络：包括边缘计算(Edge Computing)，边缘智能(AI@Edge)，移动云计算(Mobile Cloud Computing)等。
-- 物联网技术：包括室内定位导航(BLE/WiFi/UWB)，无线传感网(Zigbee/LoRaWAN)，面向行业的物联网系统研发等。
-- 分布式系统：包括区块链(Blockchain)，分布式优化理论技术，分布式大数据(BigData)，空间信息网络与数据处理等。
+
+- 计算与智能：边缘计算与智能(Edge Computing & AI@Edge) 详情 ，移动云计算(Mobile Cloud Computing)等。
+- 物联网应用：室内定位导航(BLE/WiFi/UWB) 详情，无线传感网(Zigbee/LoRa)，面向行业应用的物联网系统等。
+- 分布式系统：区块链应用(Blockchain) 详情，分布式优化理论与技术，大数据分析(BigData)，空间信息网络等。
 
 主持项目
 =====================
