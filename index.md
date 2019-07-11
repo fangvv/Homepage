@@ -5,7 +5,7 @@ title: 招生说明
 
 ## 招生说明
 
-> 总体上，我们是一个**普通**，但是**做事，做实事，做真事**的研究组，希望聚集一批个性简单，诚实乐观，自我驱动，热爱研发，肯做事能做事的同学一块儿学习和奋斗。 欢迎认同以上价值观的 全日制 硕/博 和 学有余力的本科实习生 加入我们，请您发送简历到邮箱fangww@bjtu.edu.cn或fangvv@qq.com。 组内学生及毕业生去向请见**[这里](http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102#quxiang)**，实验室科研环境与活动请见**[这里](https://share.weiyun.com/5cHEizu)**。
+> 总体上，我们是一个**普通**，但是**做事，做实事，做真事**的实验室，希望聚集一批个性简单，诚实乐观，自我驱动，热爱研发，肯做事能做事的同学一块儿学习和奋斗。 欢迎认同以上价值观的 全日制 硕/博 和 学有余力的本科实习生 加入我们，请您发送简历到邮箱fangww@bjtu.edu.cn或fangvv@qq.com。 组内学生及毕业生去向请见**[这里](http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102#quxiang)**，实验室科研环境与活动请见**[这里](https://share.weiyun.com/5cHEizu)**。
 
 > 注：**如仅是为了寻找一个备选学校和导师，而采用群发撒网或者空信探路等方式联系我，就请不要浪费我的时间和精力在无意义的事情上了，谢谢。**
 
@@ -67,7 +67,7 @@ title: 招生说明
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249)
 - 如何阅读程序源码：[潘爱民老师的分享](HowToReadSourceCode.pdf)
-- CS研究生课余可以读的一些书：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw)
+- 如何作好CS专业课外阅读：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw)
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
 - 如何正视中国科研：[科技日报总编辑刘亚东：除了那些核心技术，我们还缺什么？](http://economy.caijing.com.cn/20180623/4474816.shtml)

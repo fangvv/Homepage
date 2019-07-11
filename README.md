@@ -4,6 +4,6 @@ https://github.com/fangvv/Homepage.git
 
 https://gitee.com/fangvv/Homepage.git
 
-主要用来存放北京交通大学系统与网络研究组的主页。
+主要用来存放北京交通大学系统与网络实验室的主页。
 
 为什么不使用学校提供的主页服务？因为：烂！
