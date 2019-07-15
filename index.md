@@ -71,7 +71,7 @@ title: 招生说明
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
 - 如何正视中国科研：[科技日报总编辑刘亚东：除了那些核心技术，我们还缺什么？](http://economy.caijing.com.cn/20180623/4474816.shtml)
-- 如何正视中国科研：[中科院教授来信：为什么中国科学技术远落后于美国？](http://www.szeconomy.com/news/?494.html)
+- 如何正视中国科研：[中科院教授来信：为什么中国科学技术远落后于美国？](http://www.elecfans.com/d/710697.html)
 - 如何正视中国科研：[不要培养人格低下的知识分子](http://www.sohu.com/a/124240276_354611)
 - 如何正视中国科研：[科学家的价值不只在SCI期刊里](http://zqb.cyol.com/html/2019-04/15/nw.D110000zgqnb_20190415_2-08.htm)
 - 如何正视中国科研：[独立和自由是最宝贵的学者精神](https://mp.weixin.qq.com/s/KGx5y6gAhLWeNMswlR1oKw)
