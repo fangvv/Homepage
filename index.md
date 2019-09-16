@@ -68,6 +68,7 @@ title: 招生说明
 - 如何做好学术PPT：[一些方法](https://www.zhihu.com/question/22446174)
 - 如何提问：[别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways)
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
+- 如何提高基础的数据结构和算法的理解能力：我推荐认认真真学习[GeeksforGeeks](https://www.geeksforgeeks.org/)上的主题知识
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249)
 - 如何阅读程序源码：[潘爱民老师的分享](HowToReadSourceCode.pdf)
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481)
