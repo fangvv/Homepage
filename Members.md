@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Introduction
+title: 成员一览
 ---
 
 ## 在读学生
