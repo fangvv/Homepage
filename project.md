@@ -45,5 +45,6 @@ title: 项目论文
 论文列表
 =====================
 
-- 谷歌学术（大陆地区网络需翻墙访问）：[地址](https://scholar.google.com/citations?user=xc5CaQEAAAAJ&hl=en)
+- 本地镜像：[地址](publication.html)
 - 学校网页（部分敏感时间段无法访问）：[地址](http://faculty.bjtu.edu.cn/8530)
+
