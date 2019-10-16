@@ -51,6 +51,7 @@ title: 招生说明
 - 如何做研究：[零点花园科研经验集锦](research-experiences.pdf)
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
 - 如何读研究生：[王汎森：如果让我重做一次研究生](https://cul.qq.com/a/20171014/018545.htm)
+- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](practical_tips_for_doctoral_students.pdf)
 - 如何看待师生关系：[迷时师渡，悟了自度 侯捷](https://nieyong.github.io/wiki_ny/%E8%BF%B7%E6%97%B6%E5%B8%88%E5%BA%A6%20%E6%82%9F%E4%BA%86%E8%87%AA%E5%BA%A6.html)
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695)
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
