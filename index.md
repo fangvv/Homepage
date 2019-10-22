@@ -68,6 +68,7 @@ title: 招生说明
 - 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](paper-organization.jpg)
 - 如何写论文：[张华平老师：科技论文写作小经验漫谈](科技论文写作小经验漫谈.ppt)
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议")
+- 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html)
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472)
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间")
 - 如何做好学术PPT：[一些方法](https://www.zhihu.com/question/22446174)
