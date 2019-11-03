@@ -89,3 +89,4 @@ title: 招生说明
 - 如何正视中国科研：[独立和自由是最宝贵的学者精神](https://mp.weixin.qq.com/s/KGx5y6gAhLWeNMswlR1oKw)
 - 如何看待人工智能：[人工智能是当前最好的计算机专业吗?](https://www.zhihu.com/question/331449600/answer/737885701)
 - 如何看待中国学生：[普林斯顿中国籍教授：中国学生是怎样被一步步淘汰掉的？](https://cloud.tencent.com/developer/article/1422738)
+- 如何看待中国学生：[钱理群：大学里绝对精致的利己主义者](https://edu.qq.com/a/20150520/041737.htm)
