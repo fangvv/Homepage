@@ -51,6 +51,7 @@ title: 招生说明
 - 如何做研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道")
 - 如何做研究：[麻省理工学院人工智能实验室如何做研究的中文版](https://wenku.baidu.com/view/92ca9bde7cd184254a3535ab.html)
 - 如何做研究：[零点花园科研经验集锦](research-experiences.pdf)
+- 如何做研究：[刘知远：好的研究想法从哪里来](https://zhuanlan.zhihu.com/p/93765082)
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
 - 如何读研究生：[王汎森：如果让我重做一次研究生](https://cul.qq.com/a/20171014/018545.htm)
 - 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](practical_tips_for_doctoral_students.pdf)
