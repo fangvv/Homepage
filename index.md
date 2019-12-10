@@ -30,7 +30,7 @@ title: 招生说明
  1. **读不读博士**，建议首先读一读多伦多大学李葆春教授的随笔[**飞蛾扑火**](https://fangvv.gitee.io/homepage/feph.jpg)，再思考决定。
  1. **数学和英语，绝对不能差，不能差，不能差**，因为导师绝对不会替你推公式，写文章。
  1. 建议提前读一读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)这本书。
- 1. 学院毕业要求参考[截图](phdpaper.jpg)，对比本组论文列表[地址1](publication.html), [地址2](http://faculty.bjtu.edu.cn/8530/)，可知只要师生共同努力，毕业并不难。
+ 1. 学院毕业要求参考[截图](https://fangvv.gitee.io/homepage/phdpaper.jpg)，对比本组论文列表[地址1](https://fangvv.gitee.io/homepage/publication.html), [地址2](http://faculty.bjtu.edu.cn/8530/)，可知只要师生共同努力，毕业并不难。
 
 招收我校**本科实习生**(<=3人/年)的说明(**根据前期血泪教训总结**)
 
@@ -45,30 +45,30 @@ title: 招生说明
 
 - 最基本的素养：独立思考解决问题的能力，编程实现能力，团队合作能力，英文阅读理解能力，逻辑思维能力，搜索引擎和学术数据库使用能力
 - 最重要的原则：**失败后获得的教训和成功后获得的经验同样重要([中国航天的历次失败总结](https://www.bilibili.com/video/av19791318/))，我们不强求成功，坚决不能为了发表成果而做出急功近利的事情**
-- 如何看待成功：[张晓东教授: 对社会和他人的贡献是检验成功的重要标准](ZXD-Success.pdf)
+- 如何看待成功：[张晓东教授: 对社会和他人的贡献是检验成功的重要标准](https://fangvv.gitee.io/homepage/ZXD-Success.pdf)
 - 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](http://blog.sciencenet.cn/blog-800393-623681.html)
 - 如何做研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道")
 - 如何做研究：[麻省理工学院人工智能实验室如何做研究的中文版](https://wenku.baidu.com/view/92ca9bde7cd184254a3535ab.html)
-- 如何做研究：[零点花园科研经验集锦](research-experiences.pdf)
+- 如何做研究：[零点花园科研经验集锦](https://fangvv.gitee.io/homepage/research-experiences.pdf)
 - 如何做研究：[刘知远：好的研究想法从哪里来](https://zhuanlan.zhihu.com/p/93765082)
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644)
 - 如何读研究生：[王汎森：如果让我重做一次研究生](https://cul.qq.com/a/20171014/018545.htm)
-- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](practical_tips_for_doctoral_students.pdf)
+- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](https://fangvv.gitee.io/homepage/practical_tips_for_doctoral_students.pdf)
 - 如何看待师生关系：[迷时师渡，悟了自度 侯捷](https://nieyong.github.io/wiki_ny/%E8%BF%B7%E6%97%B6%E5%B8%88%E5%BA%A6%20%E6%82%9F%E4%BA%86%E8%87%AA%E5%BA%A6.html)
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695)
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/)
-- 如何作系统和网络领域的研究：[Prof. Srinivasan Keshav @ UWaterloo](ResearchAdvice.pdf)
+- 如何作系统和网络领域的研究：[Prof. Srinivasan Keshav @ UWaterloo](https://fangvv.gitee.io/homepage/ResearchAdvice.pdf)
 - 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9)
 - 如何看待论文：[在XX界，为什么论文灌水现象越来越严重？似乎已经没有干货了？](https://www.zhihu.com/question/39342238/answer/99408954)
 - 如何读论文：[Prof. Srinivasan Keshav @ UWaterloo](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接")
-- 如何读论文：[韦庆媛：文献阅读与论文写作](韦庆媛文献阅读与论文写作.pdf)
+- 如何读论文：[韦庆媛：文献阅读与论文写作](https://fangvv.gitee.io/homepage/韦庆媛文献阅读与论文写作.pdf)
 - 研究生新生要怎么看论文：[链接](https://www.zhihu.com/question/304334959 "链接")
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议")
 - Writing Perfect Papers：[多伦多大学李葆春教授的建议](http://isn.xidian.edu.cn/info/1003/2388.htm "多伦多大学李葆春教授的建议")
 - 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议")
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议")
-- 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](paper-organization.jpg)
-- 如何写论文：[张华平老师：科技论文写作小经验漫谈](科技论文写作小经验漫谈.ppt)
+- 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](https://fangvv.gitee.io/homepage/paper-organization.jpg)
+- 如何写论文：[张华平老师：科技论文写作小经验漫谈](https://fangvv.gitee.io/homepage/科技论文写作小经验漫谈.ppt)
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议")
 - 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html)
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472)
@@ -78,7 +78,7 @@ title: 招生说明
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf) 动手，动手，动手！
 - 如何提高基础的数据结构和算法的理解能力：我推荐认认真真学习[GeeksforGeeks](https://www.geeksforgeeks.org/)上的主题知识
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249)
-- 如何阅读程序源码：[潘爱民老师的分享](HowToReadSourceCode.pdf)
+- 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.gitee.io/homepage/HowToReadSourceCode.pdf)
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481)
 - 如何作好CS专业课外阅读：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw)
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)

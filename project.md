@@ -49,6 +49,6 @@ title: 项目论文
 论文列表
 =====================
 
-- 本地镜像：[地址](publication.html)
+- 本地镜像：[地址](https://fangvv.gitee.io/homepage/publication.html)
 - 学校网页（部分敏感时间段无法访问）：[地址](http://faculty.bjtu.edu.cn/8530)
 
