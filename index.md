@@ -81,7 +81,7 @@ title: 招生说明
 - 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.gitee.io/homepage/HowToReadSourceCode.pdf)
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481)
 - 如何作好CS专业课外阅读：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw)
-- 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)
+- 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](https://fangvv.gitee.io/homepage/不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf)
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/)
 - 如何正视中国科研：[科技日报总编辑刘亚东：除了那些核心技术，我们还缺什么？](https://tech.qq.com/a/20180622/024862.htm)
 - 如何正视中国科研：[中科院教授来信：为什么中国科学技术远落后于美国？](http://www.elecfans.com/d/710697.html)
