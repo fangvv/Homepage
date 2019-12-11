@@ -3,8 +3,6 @@ layout: default
 title: BJTU Synergy Lab 招生说明
 ---
 
-## 研究内容
-
 **系统与网络实验室** 的使命是探索和研究下一代计算系统和下一代网络系统中核心、关键的理论和实践问题，所涉及的领域包括：
 
 - 计算与智能:边缘计算与智能(Edge Computing&AI@Edge),移动云计算(Mobile Cloud Computing)等。
