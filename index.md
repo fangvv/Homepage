@@ -67,9 +67,9 @@ title: BJTU Synergy Lab 招生说明
 - 如何读论文：[Prof. Srinivasan Keshav @ UWaterloo](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接"){:target="_blank"} [中文版](http://www.sohu.com/a/228219407_156793){:target="_blank"}
 - 如何读论文：[韦庆媛：文献阅读与论文写作](https://fangvv.gitee.io/homepage/韦庆媛文献阅读与论文写作.pdf){:target="_blank"}
 - 研究生新生要怎么看论文：[链接](https://www.zhihu.com/question/304334959 "链接"){:target="_blank"}
-- 如何写论文(宏观角度){:target="_blank"}：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议"){:target="_blank"}
+- 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议"){:target="_blank"}
 - Writing Perfect Papers：[多伦多大学李葆春教授的建议](http://isn.xidian.edu.cn/info/1003/2388.htm "多伦多大学李葆春教授的建议"){:target="_blank"}
-- 如何写论文(微观角度){:target="_blank"}：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议"){:target="_blank"}
+- 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议"){:target="_blank"}
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议"){:target="_blank"}
 - 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](https://fangvv.gitee.io/homepage/paper-organization.jpg){:target="_blank"}
 - 如何写论文：[张华平老师：科技论文写作小经验漫谈](https://fangvv.gitee.io/homepage/科技论文写作小经验漫谈.ppt){:target="_blank"}
