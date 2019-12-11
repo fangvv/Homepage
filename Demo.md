@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 系统展示
+title: BJTU Synergy Lab 系统展示
 ---
 
 系统展示

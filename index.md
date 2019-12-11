@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 招生说明
+title: BJTU Synergy Lab 招生说明
 ---
 
 ## 研究内容

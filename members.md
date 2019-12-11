@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 成员一览
+title: BJTU Synergy Lab 成员一览
 ---
 
 ## 教师
