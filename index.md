@@ -60,7 +60,7 @@ title: 招生说明
 - 如何作系统和网络领域的研究：[Prof. Srinivasan Keshav @ UWaterloo](https://fangvv.gitee.io/homepage/ResearchAdvice.pdf)
 - 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9)
 - 如何看待论文：[在XX界，为什么论文灌水现象越来越严重？似乎已经没有干货了？](https://www.zhihu.com/question/39342238/answer/99408954)
-- 如何读论文：[Prof. Srinivasan Keshav @ UWaterloo](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接")
+- 如何读论文：[Prof. Srinivasan Keshav @ UWaterloo](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接") [中文版](http://www.sohu.com/a/228219407_156793)
 - 如何读论文：[韦庆媛：文献阅读与论文写作](https://fangvv.gitee.io/homepage/韦庆媛文献阅读与论文写作.pdf)
 - 研究生新生要怎么看论文：[链接](https://www.zhihu.com/question/304334959 "链接")
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议")
