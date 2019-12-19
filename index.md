@@ -15,7 +15,7 @@ title: BJTU Synergy Lab 招生说明
 
 ## 招生说明
 
- 我们是一个**普通**，但是**做事，做实事，做真事**的科研团队，希望聚集一批个性简单，诚实乐观，自我驱动，热爱研发，肯做事能做事的同学一块儿学习和奋斗。 欢迎 全日制硕/博 和 本科实习生 加入我们，简历请至fangww@bjtu.edu.cn或fangvv@qq.com。 [在读学生及毕业去向](members.html){:target="_blank"}，[科研环境与学术活动](https://share.weiyun.com/5mc24pC){:target="_blank"}。
+ 我们是一个**普通**，但是**做事，做实事，做真事**的科研团队，希望聚集一批个性简单，诚实乐观，自我驱动，热爱研发，肯做事能做事的同学一块儿学习和奋斗。 欢迎 全日制硕/博 和 本科实习生 加入我们，简历请至fangww@bjtu.edu.cn或fangvv@qq.com。 点击了解 [实验室学生及毕业去向](members.html){:target="_blank"}和[科研环境与学术活动](https://share.weiyun.com/5mc24pC){:target="_blank"}。
 
 # 诚信为人之本，如同学你仅是为了寻找一个备胎学校或备胎导师，请勿浪费我的时间和精力，谢谢。 #
 
