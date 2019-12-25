@@ -50,6 +50,8 @@ title: BJTU Synergy Lab 成员一览
 
 - Xue Wang (2019年硕士毕业后工作于民生银行民生科技)
 
+- Feng Xue (2020年硕士毕业后工作于徽商银行)
+
 **轨道交通**
 
 - Xiaojie Zhao (2016年硕士毕业后工作于北京交大微联科技)
