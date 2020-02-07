@@ -71,7 +71,9 @@
 
     <style>
 
-        ol { padding: 0px; margin: 0px; list-style: decimal-leading-zero inside; color: #ccc; width: 460px; border-top: 1px solid #ccc; font-size: 0.9em; }
+        #wrapper { width: 400px; margin: 40px auto; }
+
+        ol { padding: 0px; margin: 0px; list-style: decimal-leading-zero inside; color: #ccc; width: 100%; border-top: 1px solid #ccc; font-size: 0.9em; }
         ol li { position: relative; margin: 0px; padding: 9px 2px 10px; border-bottom: 1px solid #ccc; cursor: pointer; }
         ol li a { display: block; text-indent: -3.3ex; padding: 0px 0px 0px 20px; }
         li.playing { color: #aaa; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); }
@@ -137,6 +139,7 @@
 <section id="audio">
 <div id="wrapper" align="center">
     <h1>英语课文朗读</h1>
+    <h5>播放列表中，m指module;u指unit</h5>
     <audio preload></audio>
     <ol>
         <li><a href="#" data-src="./mp3/m1u1a1.mp3">m1u1a1</a></li>
