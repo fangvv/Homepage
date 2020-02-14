@@ -83,6 +83,7 @@ title: BJTU Synergy Lab 招生说明
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf){:target="_blank"} 动手，动手，动手！
 - 如何提高基础的数据结构和算法的理解能力：我推荐认认真真学习[GeeksforGeeks](https://www.geeksforgeeks.org/){:target="_blank"}上的主题知识
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249){:target="_blank"}
+- 如何想到不错的科研Idea：[来自王一教授的分享](https://www.zhihu.com/question/300967426/answer/631278925){:target="_blank"}
 - 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.gitee.io/homepage/HowToReadSourceCode.pdf){:target="_blank"}
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481){:target="_blank"}
 - 如何作好CS专业课外阅读：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw){:target="_blank"}
