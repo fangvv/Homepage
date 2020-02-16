@@ -5,9 +5,9 @@ title: BJTU Synergy Lab 招生说明
 
 **系统与网络实验室** 的使命是探索和研究下一代计算系统和下一代网络系统中核心、关键的理论和实践问题，所涉及的领域包括：
 
-- 计算与智能: 边缘计算与智能(Edge Computing&AI@Edge), 移动云计算(Mobile Cloud Computing)等。
-- 物联网应用: 室内定位导航(BLE/WiFi/UWB), 无线传感网(Zigbee/LoRa), 面向行业应用的物联网系统等。
-- 分布式系统: 区块链应用(Blockchain), 分布式优化理论与技术, 大数据分析(BigData), 空间信息网络等。
+- 计算与智能: 边缘计算与智能 (Edge Computing&AI@Edge), 移动云计算 (Mobile Cloud Computing)等。
+- 物联网应用: 室内定位导航 (BLE/WiFi/UWB), 无线传感网 (Zigbee/LoRa), 面向行业应用的物联网系统等。
+- 分布式系统: 区块链应用 (Blockchain), 分布式优化理论与技术, 大数据分析 (BigData), 空间信息网络等。
 
 ![](Vision.jpg)
 
@@ -15,7 +15,7 @@ title: BJTU Synergy Lab 招生说明
 
 ## 招生说明
 
- 我们是一个**普通**，但是**做事，做实事，做真事**的科研团队，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发，肯做事能做事**的同学一块儿学习和奋斗。 欢迎 全日制硕/博 和 本科实习生 加入我们，简历请至fangww@bjtu.edu.cn或fangvv@qq.com。 点击了解 [实验室学生及毕业去向](members.html){:target="_blank"}和[科研环境与学术活动](https://share.weiyun.com/5mc24pC){:target="_blank"}。
+ 我们是一个**普通**，但是**做事，做实事，做真事**的科研团队，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发，肯做事能做事**的同学一块儿学习和奋斗。 欢迎加入，简历请发送至fangww@bjtu.edu.cn或fangvv@qq.com。 点击了解 [实验室学生及毕业去向](members.html){:target="_blank"}和[科研环境与学术活动](https://share.weiyun.com/5mc24pC){:target="_blank"}。
 
 # 诚信为人之本，如同学你仅是为了寻找一个备胎学校或备胎导师，请勿浪费我的时间和精力，谢谢。 #
 
