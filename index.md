@@ -56,6 +56,7 @@ title: BJTU Synergy Lab 招生说明
 - 如何做研究：[麻省理工学院人工智能实验室如何做研究的中文版](https://wenku.baidu.com/view/92ca9bde7cd184254a3535ab.html){:target="_blank"}
 - 如何做研究：[零点花园科研经验集锦](https://fangvv.gitee.io/homepage/research-experiences.pdf){:target="_blank"}
 - 如何做研究：[刘知远：好的研究想法从哪里来](https://zhuanlan.zhihu.com/p/93765082){:target="_blank"}
+- 如何做研究：[顾津锦谈本科生如何做高质量的研究](https://www.bilibili.com/video/av91444475/){:target="_blank"}
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644){:target="_blank"}
 - 如何读研究生：[王汎森：如果让我重做一次研究生](https://cul.qq.com/a/20171014/018545.htm){:target="_blank"}
 - 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](https://fangvv.gitee.io/homepage/practical_tips_for_doctoral_students.pdf){:target="_blank"}
