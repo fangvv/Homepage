@@ -63,6 +63,9 @@ title: BJTU Synergy Lab 招生说明
 - 如何看待师生关系：[迷时师渡，悟了自度 侯捷](https://nieyong.github.io/wiki_ny/%E8%BF%B7%E6%97%B6%E5%B8%88%E5%BA%A6%20%E6%82%9F%E4%BA%86%E8%87%AA%E5%BA%A6.html){:target="_blank"}
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695){:target="_blank"}
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}
+- 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html){:target="_blank"}
+- 如何学位论文选题：[清华大学刘洋教授浅谈研究生学位论文选题方法 (分享密码：nqme)](https://pan.baidu.com/s/1SP0ysgzI6d9e93QkTfwGJw){:target="_blank"}
+- 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472){:target="_blank"}
 - 如何作系统和网络领域的研究：[Prof. Srinivasan Keshav @ UWaterloo](https://fangvv.gitee.io/homepage/ResearchAdvice.pdf){:target="_blank"}
 - 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9){:target="_blank"}
 - 如何看待论文：[在XX界，为什么论文灌水现象越来越严重？似乎已经没有干货了？](https://www.zhihu.com/question/39342238/answer/99408954){:target="_blank"}
@@ -76,8 +79,6 @@ title: BJTU Synergy Lab 招生说明
 - 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](https://fangvv.gitee.io/homepage/paper-organization.jpg){:target="_blank"}
 - 如何写论文：[张华平老师：科技论文写作小经验漫谈](https://fangvv.gitee.io/homepage/科技论文写作小经验漫谈.ppt){:target="_blank"}
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议"){:target="_blank"}
-- 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html){:target="_blank"}
-- 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472){:target="_blank"}
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间"){:target="_blank"}
 - 如何做好学术PPT：[一些方法](https://www.zhihu.com/question/22446174){:target="_blank"}
 - 如何提问：[别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways){:target="_blank"}
