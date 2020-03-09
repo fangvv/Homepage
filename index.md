@@ -64,7 +64,7 @@ title: BJTU Synergy Lab 招生说明
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695){:target="_blank"}
 - 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}
 - 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html){:target="_blank"}
-- 如何学位论文选题：[清华大学刘洋教授浅谈研究生学位论文选题方法 (分享密码：nqme)](https://pan.baidu.com/s/1SP0ysgzI6d9e93QkTfwGJw){:target="_blank"}
+- 如何学位论文选题：[清华大学刘洋教授浅谈研究生学位论文选题方法](https://www.bilibili.com/video/av94356099/){:target="_blank"}
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472){:target="_blank"}
 - 如何作系统和网络领域的研究：[Prof. Srinivasan Keshav @ UWaterloo](https://fangvv.gitee.io/homepage/ResearchAdvice.pdf){:target="_blank"}
 - 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9){:target="_blank"}
