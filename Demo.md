@@ -50,5 +50,10 @@ title: BJTU Synergy Lab 系统展示
 
 ----------
 
+- **面向异构空间信息网络的联合仿真验证系统（应用领域：军工领域）**
+![](sim.jpg)
+
+----------
+
 - **基于iBeacon/Eddystone的室内位置服务App（Google公司支持的大学生创新创业作品）**
 ![](dachuang.jpg)
