@@ -35,7 +35,7 @@
 </url>
 
 <url>
- <loc>https://fangvv.gitee.io/members.html</loc>
+ <loc>https://fangvv.gitee.io/homepage/members.html</loc>
  <priority>0.3</priority>
  <lastmod>2019-12-22</lastmod>
  <changefreq>weekly</changefreq>
@@ -63,7 +63,7 @@
 </url>
 
 <url>
- <loc>https://fangvv.gitee.io/Demo.html</loc>
+ <loc>https://fangvv.gitee.io/homepage/Demo.html</loc>
  <priority>0.3</priority>
  <lastmod>2019-12-22</lastmod>
  <changefreq>weekly</changefreq>
@@ -91,14 +91,21 @@
 </url>
 
 <url>
- <loc>https://fangvv.gitee.io/en.html</loc>
+ <loc>https://fangvv.gitee.io/homepage/en.html</loc>
  <priority>0.3</priority>
  <lastmod>2019-12-22</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>https://fangvv.gitee.io/project.html</loc>
+ <loc>https://fangvv.gitee.io/homepage/project.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-12-22</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://fangvv.gitee.io/homepage/activities/index.html</loc>
  <priority>0.3</priority>
  <lastmod>2019-12-22</lastmod>
  <changefreq>weekly</changefreq>
@@ -140,7 +147,7 @@
 </url>
 
 <url>
- <loc>https://fangvv.gitee.io/index.html</loc>
+ <loc>https://fangvv.gitee.io/homepage/index.html</loc>
  <priority>0.3</priority>
  <lastmod>2019-12-22</lastmod>
  <changefreq>weekly</changefreq>
