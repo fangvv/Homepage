@@ -78,6 +78,8 @@ title: BJTU Synergy Lab 招生说明
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议"){:target="_blank"}
 - 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](https://fangvv.gitee.io/homepage/paper-organization.jpg){:target="_blank"}
 - 如何写论文：[张华平老师：科技论文写作小经验漫谈](https://fangvv.gitee.io/homepage/科技论文写作小经验漫谈.ppt){:target="_blank"}
+- 如何写论文：[赵鑫老师：如何以初学者角度写好一篇国际学术论文？](https://cloud.tencent.com/developer/article/1603851){:target="_blank"}
+- 如何写论文：[施柏鑫老师：计算机视觉会议论文从投稿到接收](https://mp.weixin.qq.com/s/fFt7DAMztb9n7ybBSF--YA){:target="_blank"}
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议"){:target="_blank"}
 - 如何利用时间：[暗时间@刘未鹏](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间"){:target="_blank"}
 - 如何做好学术PPT：[一些方法](https://www.zhihu.com/question/22446174){:target="_blank"}
