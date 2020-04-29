@@ -89,3 +89,5 @@ title: BJTU Synergy Lab 成员一览
 - Haowei Chen (2020年本科毕业后深造于中国浙江大学 ZJU)
 
 - Bo Yuan (2020年本科毕业后深造于中国南京大学 NJU)
+
+- Yiming Li (2020年本科毕业后深造于美国德克萨斯A&M大学 TAMU)
