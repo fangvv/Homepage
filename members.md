@@ -8,7 +8,7 @@ title: BJTU Synergy Lab 成员一览
 - 方维维 博士, 副教授
 
 
-## 在读学生
+## 在读学生 ([相册](https://fangvv.gitee.io/homepage/activities))
 
 - 18级研：王云鹏(学, NXU)，刘梦然(学, TJPU)
 
