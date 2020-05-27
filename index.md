@@ -16,7 +16,7 @@ title: BJTU Synergy Lab 招生说明
 
 ## 招生说明
 
- 我们是一个**普通**，但是**做事，做实事，做真事**的[科研团队](https://fangvv.gitee.io/homepage/members.html)，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发，肯做事能做事**的同学一块儿学习和奋斗。 欢迎加入，简历请发送至fangww@bjtu.edu.cn或fangvv@qq.com。 ([为什么要求全日制？](http://blog.sciencenet.cn/blog-814548-1126528.html){:target="_blank"})
+ 我们是一个**普通**，但是**做事，做实事，做真事**的[科研团队](https://fangvv.gitee.io/homepage/members.html)，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发，肯做事能做事**的同学一块儿学习和奋斗。为了师生之间能够关系简单、团结一心地做好科研工作，请阅读以下的招生要求并慎重考虑，简历请发送至fangww@bjtu.edu.cn或fangvv@qq.com。
 
  ----------
 
