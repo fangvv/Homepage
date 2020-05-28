@@ -9,8 +9,6 @@ title: BJTU Synergy Lab 招生说明
 - 物联网应用: 室内定位导航 (BLE/WiFi/UWB), 无线传感网 (Zigbee/LoRa), 面向行业应用的物联网系统等。 [了解更多](https://fangvv.gitee.io/homepage/IndoorLoc/){:target="_blank"}
 - 分布式系统: 区块链应用 (Blockchain), 分布式优化理论与技术, 大数据分析 (BigData), 空间信息网络等。 [了解更多](https://fangvv.gitee.io/homepage/BlockchainBJTU/){:target="_blank"}
 
-![](Vision.jpg)
-
 ----------
 ----------
 
