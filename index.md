@@ -14,7 +14,7 @@ title: BJTU Synergy Lab 招生说明
 
 ## 招生说明
 
- 我们是一个**普通**，但是**做事，做实事，做真事**的[科研团队](https://fangvv.gitee.io/homepage/members.html)，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发，肯做事能做事**的同学一块儿学习和奋斗。为了在学校、学院的规章制度和招生原则下确保师生之间能够关系简单、团结一心地做好科研工作，请阅读以下的招生要求并慎重考虑，简历请发送至fangww@bjtu.edu.cn或fangvv@qq.com。
+ 我们是一个**普通**，但是**做事，做实事，做真事**的[科研团队](https://fangvv.gitee.io/homepage/members.html)，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发，肯做事能做事**的同学一块儿学习和奋斗。为了在学校、学院的规章制度和招生原则下确保师生之间能够关系简单、团结一心地做好科研工作，请阅读以下的招生要求并慎重考虑，有意者发送简历至fangww@bjtu.edu.cn或fangvv@qq.com。
 
  ----------
 
@@ -36,10 +36,6 @@ title: BJTU Synergy Lab 招生说明
  1. **数学和英语，绝对不能差，不能差，不能差**，因为导师绝对不会替你推公式，写文章。
  1. 如想了解博士科研的特点，可提前读一读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}这本书。
  1. 学院毕业要求参考[截图](https://fangvv.gitee.io/homepage/phdpaper.jpg){:target="_blank"}，对比本组论文列表[地址1](https://fangvv.gitee.io/homepage/publication.html){:target="_blank"}, [地址2](http://faculty.bjtu.edu.cn/8530/){:target="_blank"}，可知只要师生共同努力，毕业并不难。
-
-招收我校**本科实习生**(<=3人/年)的说明
-
-- 希望你是一个**有点儿技术上的追求，爱折腾，有时间，有想法**的学生，且学有余力，热爱编程和创新。
 
 ----------
 ----------
