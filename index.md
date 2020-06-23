@@ -86,6 +86,7 @@ title: BJTU Synergy Lab 招生说明
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249){:target="_blank"}
 - 如何想到不错的科研Idea：[来自王一教授的分享](https://www.zhihu.com/question/300967426/answer/631278925){:target="_blank"}
 - 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.gitee.io/homepage/HowToReadSourceCode.pdf){:target="_blank"}
+- 如何科学地使用人类互联网：[左耳朵耗子的分享](https://github.com/haoel/haoel.github.io){:target="_blank"}
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481){:target="_blank"}
 - 如何作好CS专业课外阅读：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw){:target="_blank"}
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](https://fangvv.gitee.io/homepage/不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf){:target="_blank"}
@@ -98,5 +99,6 @@ title: BJTU Synergy Lab 招生说明
 - 如何正视中国科研：[“重建”中国科研生态](https://mp.weixin.qq.com/s/QTTNmlm11iTlyNU2yEvZmA){:target="_blank"}
 - 如何看待科研圈子文化：[刘庆生教授的文章](http://www.qstheory.cn/science/2019-07/08/c_1124722448.htm){:target="_blank"}
 - 如何看待人工智能：[人工智能是当前最好的计算机专业吗?](https://www.zhihu.com/question/331449600/answer/737885701){:target="_blank"}
+- 如何看待人工智能：[孙贤和：学术的唯美追求](https://mp.weixin.qq.com/s/iUnIW4aX2JHWlNLYGgdzGA){:target="_blank"}
 - 如何看待中国学生：[普林斯顿中国籍教授：中国学生是怎样被一步步淘汰掉的？](https://cloud.tencent.com/developer/article/1422738){:target="_blank"}
 - 如何看待中国学生：[钱理群：大学里绝对精致的利己主义者](https://edu.qq.com/a/20150520/041737.htm){:target="_blank"}
