@@ -14,7 +14,7 @@ title: BJTU Synergy Lab 招生说明
 
 ## 招生说明
 
- 我们是一个**普通**，但是**做事，做实事，做真事**的[科研团队](https://fangvv.gitee.io/homepage/members.html)，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发**的同学一块儿学习和奋斗。请阅读以下招生要求并慎重考虑是否符合自己的价值观和意愿，确定有意(**人各有志，非诚勿扰，不是真心想来请勿浪费招生名额和宝贵时间**)再发送简历至fangww@bjtu.edu.cn或fangvv@qq.com。
+ 我们是一个**普通**，但是**做事，做实事，做真事**的[科研团队](https://fangvv.gitee.io/homepage/members.html)，希望聚集一批**个性简单，踏实乐观，自我驱动，热爱研发**的同学一块儿学习和奋斗。请阅读以下招生要求并慎重考虑是否符合自己的价值观和意愿，确定有意再发送简历至fangww@bjtu.edu.cn或fangvv@qq.com。**人各有志，非诚勿扰，不是真心想来的话请勿浪费招生名额和宝贵时间。**
 
  ----------
 
@@ -34,7 +34,7 @@ title: BJTU Synergy Lab 招生说明
 - 在满足以上硕士招生要求基础上：
  1. **读不读博士**，建议首先读一读多伦多大学李葆春教授的随笔[**飞蛾扑火**](https://fangvv.gitee.io/homepage/feph.jpg){:target="_blank"}，再思考决定。
  1. **数学和英语，绝对不能差，不能差，不能差**，因为导师绝对不会替你推公式，写文章。
- 1. 如想了解博士科研的特点，可提前读一读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}这本书。 [扫描版(密码ngvv)](https://fangvv.gitee.io/homepage/科研有方 科研需要“想好”再“做”.pdf){:target="_blank"}
+ 1. 如想了解博士科研的特点，推荐读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}这本书。 [扫描版(密码ngvv)](https://fangvv.gitee.io/homepage/科研有方 科研需要“想好”再“做”.pdf){:target="_blank"}
  1. 学院毕业要求参考[截图](https://fangvv.gitee.io/homepage/phdpaper.jpg){:target="_blank"}，对比本组[论文列表](http://faculty.bjtu.edu.cn/8530/){:target="_blank"}，可知只要师生共同努力，毕业并不难。
 
 ----------
