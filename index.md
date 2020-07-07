@@ -3,13 +3,14 @@ layout: default
 title: BJTU Synergy Lab 招生说明
 ---
 
+## 研究方向
+
 **系统与网络实验室** 的使命是探索和研究下一代计算系统和下一代网络系统中核心、关键的理论和实践问题，所涉及的领域包括：
 
 - 计算与智能: 边缘计算与智能 (Edge Computing&AI@Edge), 移动云计算 (Mobile Cloud Computing)等。 [了解更多](https://fangvv.gitee.io/homepage/Edgecomp/){:target="_blank"}
 - 物联网应用: 室内定位导航 (BLE/WiFi/UWB), 无线传感网 (Zigbee/LoRa), 面向行业应用的物联网系统等。 [了解更多](https://fangvv.gitee.io/homepage/IndoorLoc/){:target="_blank"}
 - 分布式系统: 区块链应用 (Blockchain), 分布式优化理论与技术, 大数据分析 (BigData), 空间信息网络等。 [了解更多](https://fangvv.gitee.io/homepage/BlockchainBJTU/){:target="_blank"}
 
-----------
 ----------
 
 ## 招生说明
@@ -40,7 +41,6 @@ title: BJTU Synergy Lab 招生说明
  1. 如想了解博士科研的特点，推荐读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}这本书。 [扫描版(密码ngvv)](https://fangvv.gitee.io/homepage/科研有方 科研需要“想好”再“做”.pdf){:target="_blank"}
  1. 学院毕业要求参考[截图](https://fangvv.gitee.io/homepage/phdpaper.jpg){:target="_blank"}，对比本组[论文列表](http://faculty.bjtu.edu.cn/8530/){:target="_blank"}，可知只要师生共同努力，毕业并不难。
 
-----------
 ----------
 
 ## 经验汇编
