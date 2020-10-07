@@ -29,7 +29,6 @@ title: BJTU Synergy Lab 招生说明
  1. **读不读博士**，建议首先读一读多伦多大学李葆春教授的随笔[**飞蛾扑火**](https://fangvv.gitee.io/homepage/feph.jpg){:target="_blank"}，再思考决定。
  1. **数学和英语，绝对不能差，不能差，不能差**，因为导师绝对不会替你推公式，写文章。
  1. 如想了解博士科研的特点，推荐读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}这本书。 [扫描版(密码ngvv)](https://fangvv.gitee.io/homepage/科研有方 科研需要“想好”再“做”.pdf){:target="_blank"}
- 1. 学院毕业要求参考[截图](https://fangvv.gitee.io/homepage/phdpaper.jpg){:target="_blank"}，对比本组[论文列表](http://faculty.bjtu.edu.cn/8530/){:target="_blank"}，可知只要师生共同努力，毕业并不难。
 
 ----------
 
