@@ -61,6 +61,7 @@ title: BJTU Synergy Lab 招生说明
 - 如何读论文：[Prof. Srinivasan Keshav @ UWaterloo](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接"){:target="_blank"} [中文版](http://www.sohu.com/a/228219407_156793){:target="_blank"}
 - 如何读论文：[韦庆媛：文献阅读与论文写作](https://fangvv.gitee.io/homepage/韦庆媛文献阅读与论文写作.pdf){:target="_blank"}
 - 研究生新生要怎么看论文：[链接](https://www.zhihu.com/question/304334959 "链接"){:target="_blank"}
+- 顶会paper越来越多，我该怎么看？ [链接](https://mp.weixin.qq.com/s/ofcDojai7qa1JPOjJYkP6g){:target="_blank"}
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议"){:target="_blank"}
 - Writing Perfect Papers：[多伦多大学李葆春教授的建议](http://isn.xidian.edu.cn/info/1003/2388.htm "多伦多大学李葆春教授的建议"){:target="_blank"}
 - 如何写论文(微观角度)：[山世光老师的建议](http://www.jdl.ac.cn/user/sgshan/PaperWriting.pdf "山世光老师的建议"){:target="_blank"}
@@ -91,6 +92,7 @@ title: BJTU Synergy Lab 招生说明
 - 如何正视中国科研：[独立和自由是最宝贵的学者精神](https://mp.weixin.qq.com/s/KGx5y6gAhLWeNMswlR1oKw){:target="_blank"}
 - 如何正视中国科研：[“重建”中国科研生态](https://mp.weixin.qq.com/s/QTTNmlm11iTlyNU2yEvZmA){:target="_blank"}
 - 如何正视中国科研：[对古老文化和强大体制的反思](https://mp.weixin.qq.com/s/2AF6InE-8FvI3n5UaQVQZg){:target="_blank"}
+- 如何正视中国科研：[黄朴民 南辕北辙：关于研究生培养的断想](http://www.guoxue.com/?p=19773){:target="_blank"}
 - 如何看待科研圈子文化：[刘庆生教授的文章](http://www.qstheory.cn/science/2019-07/08/c_1124722448.htm){:target="_blank"}
 - 如何看待人工智能：[人工智能是当前最好的计算机专业吗?](https://www.zhihu.com/question/331449600/answer/737885701){:target="_blank"}
 - 如何看待人工智能：[孙贤和：学术的唯美追求](https://mp.weixin.qq.com/s/iUnIW4aX2JHWlNLYGgdzGA){:target="_blank"}
