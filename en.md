@@ -1,7 +1,9 @@
 ---
 layout: default
-title: BJTU Synergy Lab Introduction
+title: BJTU Synergy Lab
 ---
+
+北京交通大学系统与网络实验室是北京交通大学计算机与信息技术学院的一个研究团队，主要在 移动与互联网络 和 人工智能及应用 及 两者的交叉领域 开展基础理论研究(目标：发表高水平的研究成果)和创新工程研发(目标：解决行业领域实际问题)，研究的关键字包括且不限于：移动计算（Mobile Computing）、室内定位（BLE/WiFi/UWB/BeiDou）、区块链系统（Blockchain）、云与云网络（Cloud & Data Center Network）以及边缘计算（Edge Computing）、联邦学习（Federated Learning）、移动端智能（Mobile On-Device AI）、AI行业应用（Railway/Transportation/Aerospace）等等。
 
 The Systems and Networking Laboratory (SyNergy，AKA 1 + 1 > 2) at BJTU engages in a wide range of experimental and theoretical research. Our current projects span Mobile Cloud Computing, Edge Computing, Data Center Networks, Internet of Things, Indoor Localization, Mobile Apps, Distributed Optimization Algorithms, Blockchain, Big Data, and Deep Space Network. Our laboratory consists of one faculty, several affiliated researchers and about 10 graduate students and undergraduate students.
 
