@@ -3,7 +3,7 @@ layout: default
 title: BJTU Synergy Lab 招生说明
 ---
 
-## 招生说明：非诚勿扰，宁缺毋滥，[不是真心想来](https://www.sohu.com/a/459217427_120873446){:target="_blank"}，请勿浪费招生名额和我的时间。
+[^_^]: ## 招生说明：非诚勿扰，宁缺毋滥，[不是真心想来](https://www.sohu.com/a/459217427_120873446){:target="_blank"}，请勿浪费招生名额和我的时间。
 
 请阅读招生要求并审慎考虑**是否符合自己的价值观和意愿**，确定有意再发简历至fangww@bjtu.edu.cn或fangvv@qq.com。
 
