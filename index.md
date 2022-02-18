@@ -97,6 +97,7 @@ title: BJTU Synergy Lab 招生说明
 - 如何做好学术PPT：[一些方法](https://www.zhihu.com/question/22446174){:target="_blank"}
 - 如何提问：[别像弱智一样提问](https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways){:target="_blank"}
 - 如何开始研发工作：[陶哲轩 Write a rapid prototype first](http://www.phy.pku.edu.cn/~wangdy/courses/howtophd/WriteARapidPrototypeFirst.pdf){:target="_blank"} 动手，动手，动手！
+- 如何转行CS(跨考)：[经验分享：非计算机专业的人如何转行程序员](https://www.bilibili.com/video/BV1R44y1H77u?zw){:target="_blank"} 程序都不会写还来读CS研究生是师生共同的痛苦！
 - 如何提高基础的数据结构和算法的理解能力：我推荐认认真真学习[GeeksforGeeks](https://www.geeksforgeeks.org/){:target="_blank"}上的主题知识
 - 如何开展研究工作：[发现自己的研究方向没啥可做的？](https://www.zhihu.com/question/268787249){:target="_blank"}
 - 如何想到不错的科研Idea：[来自王一教授的分享](https://www.zhihu.com/question/300967426/answer/631278925){:target="_blank"}
