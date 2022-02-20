@@ -3,8 +3,6 @@ layout: default
 title: BJTU Synergy Lab 经验汇编
 ---
 
-----------
-
 ## 经验汇编
 
 > 在我当学生的时候，也曾有过类似的诸多问题，却往往无人解答。后来发现国外导师们通常会在主页上提供学习指南供学生参考。由于国情和生源的差异，因此我注意在平时积累了一些接地气的中文资源，希望能对学生有用。内容来源于网络，版权属于原作者，仅供参考。
@@ -29,7 +27,6 @@ title: BJTU Synergy Lab 经验汇编
 - 如何学位论文选题：[清华大学刘洋教授浅谈研究生学位论文选题方法](https://www.bilibili.com/video/av94356099/){:target="_blank"}
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472){:target="_blank"}
 - 如何作系统和网络领域的研究：[Prof. Srinivasan Keshav @ UWaterloo](https://fangvv.gitee.io/homepage/ResearchAdvice.pdf){:target="_blank"}
-- 如何看待论文：[Yuanyuan Zhou教授对Elon Musk的“大部分学术论文是无用的”观点的评价](https://www.quora.com/Is-Elon-Musk-right-in-saying-most-academic-papers-are-useless/answer/Yuanyuan-Zhou?srid=ZqR9){:target="_blank"}
 - 如何看待论文：[在XX界，为什么论文灌水现象越来越严重？似乎已经没有干货了？](https://www.zhihu.com/question/39342238/answer/99408954){:target="_blank"}
 - 如何读论文：[Prof. Srinivasan Keshav @ UWaterloo](http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf "链接"){:target="_blank"} [中文版](http://www.sohu.com/a/228219407_156793){:target="_blank"}
 - 如何读论文：[韦庆媛：文献阅读与论文写作](https://fangvv.gitee.io/homepage/韦庆媛文献阅读与论文写作.pdf){:target="_blank"}
