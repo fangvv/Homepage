@@ -11,7 +11,7 @@ title: BJTU Synergy Lab 招生说明
 
 **总说明**
 
-> **重要**: 您是否了解我组的研究方向？在大致了解的基础上，您是否确实对这些方向感兴趣？研究之路可能充满挫败感，如果没有足够的兴趣支撑，可能会[感到压力和痛苦](https://www.zhihu.com/question/481624466){:target="_blank"}，希望您能享受研究的乐趣。
+> **重要**: 您是否了解我组的研究方向？在大致了解的基础上，您是否确实对这些方向([1](https://fangvv.gitee.io/homepage/Edgecomp/),[2](https://fangvv.gitee.io/homepage/IndoorLoc/),[3](https://fangvv.gitee.io/homepage/BlockchainBJTU/))感兴趣？研究之路可能充满挫败感，如果没有足够的兴趣支撑，可能会[感到压力和痛苦](https://www.zhihu.com/question/481624466){:target="_blank"}，希望您能享受研究的乐趣。
 
 > **重要**: 您是否有较大的经济压力？研究工作需要全心投入，在读期间还要考虑赚钱是件非常糟糕的事情。尽管课题组会通过项目资助提供助研金作为生活补贴，但如果这是您的主要考虑，来我组[读研可能不是您的最佳选择](https://www.zhihu.com/question/30046106){:target="_blank"}。
 
