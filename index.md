@@ -11,11 +11,11 @@ title: BJTU Synergy Lab 招生说明
 
 **总说明**
 
-> **重要**： 您是否了解我组的研究方向？在大致了解的基础上，您是否确实对这些方向([1](https://fangvv.gitee.io/homepage/Edgecomp/),[2](https://fangvv.gitee.io/homepage/IndoorLoc/),[3](https://fangvv.gitee.io/homepage/BlockchainBJTU/))感兴趣？研究之路可能充满挫败感，如果没有足够的兴趣支撑，可能会[感到压力和痛苦](https://www.zhihu.com/question/481624466){:target="_blank"}，希望您能享受研究的乐趣。
+> **重要**： 您是否了解我组的研究方向？在大致了解的基础上，您是否确实对这些方向([1](https://fangvv.gitee.io/homepage/Edgecomp/),[2](https://fangvv.gitee.io/homepage/IndoorLoc/),[3](https://fangvv.gitee.io/homepage/BlockchainBJTU/))感兴趣？研究之路可能充满挫败感，如果没有足够的兴趣支撑，可能会[感到压力和痛苦](https://www.zhihu.com/question/481624466){:target="_blank"}，希望您能**享受研究的乐趣**。
 
 > **重要**： 每一个科研人员可能都是从高考做题家起步的，但是读研不能[只会考试得高分](https://www.zhihu.com/question/36428206){:target="_blank"}(**尤其是女生**)也不能只为洗白本科专业或学校(**尤其是男生**)，甚至[进组了就摆烂](https://www.zhihu.com/question/502279646){:target="_blank"}，**研究生，顾名思义，就是来做研究的！**
 
-> **重要**： 我组重点关注您的专业技术能力(如编程能力强，算法和数据结构等基础知识扎实)、数学能力(如不畏惧理论证明和推导)、中文及逻辑表达能力(如写句子有主谓宾、了解口语和学术语言的不同等)、英文能力(如具备基本的英文论文阅读和写作能力)以及心理承受能力(如不怕挫折，接受批评等)。
+> **重要**： 我组重点关注您的**专业技术**能力(如编程能力强，算法和数据结构等基础知识扎实)、**数学**能力(如不畏惧理论证明和推导)、**中文及逻辑表达**能力(如写句子有主谓宾、了解口语和学术语言的不同等)、**英文**能力(如具备基本的英文论文阅读和写作能力)以及**心理承受**能力(如不怕挫折，接受批评等)。
 
  ----------
 
