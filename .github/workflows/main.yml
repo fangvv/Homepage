@@ -1,0 +1,14 @@
+name: Backup Website
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # runs at 15:00 Beijing time
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Backup website
+      run: |
+        curl -o 8530.html http://faculty.bjtu.edu.cn/8530/ 
+      # replace example.com with the URL you want to backup
