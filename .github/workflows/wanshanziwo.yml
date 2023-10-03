@@ -20,8 +20,7 @@ jobs:
     - name: Search source code
       run: |
         python .github/workflows/wanshanziwo.py
-        # 这里是上面给出的Python代码
+        cat 1.txt >> $GITHUB_STEP_SUMMARY
     - name: Output result
       run: |
         echo "Result:"
-        cat result.txt >> $GITHUB_STEP_SUMMARY
