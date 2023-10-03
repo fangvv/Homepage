@@ -23,5 +23,5 @@ jobs:
         # 这里是上面给出的Python代码
     - name: Output result
       run: |
-        echo "Result:"
+        echo "Result:" > result.txt
         cat result.txt >> $GITHUB_STEP_SUMMARY
