@@ -5,6 +5,7 @@ response = requests.get(url)
 html = response.text
 
 lines = html.split('\n')
+print(lines)
 search_str = 'https://wanshanziwo.eu.org/airport/'
 
 for line in lines:
