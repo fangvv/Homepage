@@ -24,6 +24,7 @@ jobs:
 
     - name: Search source code
       run: |
+        #!/usr/bin/env python3
         import requests
 
         url = 'https://wanshanziwo.eu.org/'
