@@ -19,8 +19,5 @@ jobs:
       run: pip install requests
     - name: Search source code
       run: |
-        python .github/workflows/wanshanziwo.py
-        cat 1.txt >> $GITHUB_STEP_SUMMARY
-    - name: Output result
-      run: |
-        echo "Result:"
+        output=$(python .github/workflows/wanshanziwo.py)
+        echo "::set-output $output"

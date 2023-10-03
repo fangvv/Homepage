@@ -16,9 +16,6 @@ for line in lines:
         url2 = line.strip()
 
         resp = requests.get(url2)
-        
-        with open('1.txt', 'w') as f:
-            f.write(resp.text)
        
         print(resp.text)
         break
