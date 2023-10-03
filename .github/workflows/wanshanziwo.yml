@@ -3,7 +3,7 @@ name: Search Source
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
 
