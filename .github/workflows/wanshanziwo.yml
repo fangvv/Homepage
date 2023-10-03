@@ -1,0 +1,44 @@
+# .github/workflows/search_source.yml
+
+name: Search Source
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Search source code
+      run: |
+        import requests
+
+        url = 'https://wanshanziwo.eu.org/'
+        response = requests.get(url)
+        html = response.text
+
+        lines = html.split('\n')
+        search_str = 'https://wanshanziwo.eu.org/airport/'
+
+        for line in lines:
+          if search_str in line:
+            print(line)
+            break
+
+    - name: Output result
+      run: |
+        echo "Result:" >> $GITHUB_STEP_SUMMARY
+        cat result.txt >> $GITHUB_STEP_SUMMARY
