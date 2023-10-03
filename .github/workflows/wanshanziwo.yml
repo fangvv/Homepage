@@ -1,10 +1,10 @@
 # .github/workflows/search_source.yml
 
 name: Search Source
+
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 */1 * * *'
 
 jobs:
   search:
