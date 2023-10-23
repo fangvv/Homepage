@@ -19,10 +19,11 @@ title: BJTU Synergy Lab 经验汇编
 - 如何做研究：[顾津锦谈本科生如何做高质量的研究](https://www.bilibili.com/video/av91444475/){:target="_blank"}
 - 如何读研究生：[哥伦比亚大学应用物理学教授赫曼提出的赫曼法则（The Laws of Herman）](http://blog.sciencenet.cn/home.php?mod=space&uid=41757&do=blog&id=1099644){:target="_blank"}
 - 如何读研究生：[王汎森：如果让我重做一次研究生](https://cul.qq.com/a/20171014/018545.htm){:target="_blank"}
-- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](https://fangvv.gitee.io/homepage/practical_tips_for_doctoral_students.pdf){:target="_blank"}
 - 如何看待师生关系：[迷时师渡，悟了自度 侯捷](https://nieyong.github.io/wiki_ny/%E8%BF%B7%E6%97%B6%E5%B8%88%E5%BA%A6%20%E6%82%9F%E4%BA%86%E8%87%AA%E5%BA%A6.html){:target="_blank"}
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695){:target="_blank"}
-- 如何读博士生：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}
+- 如何读博士：[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}
+- 如何读博士: [关于我博士毕业的这件小事](https://zhuanlan.zhihu.com/p/661406115){:target="_blank"}
+- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](https://fangvv.gitee.io/homepage/practical_tips_for_doctoral_students.pdf){:target="_blank"}
 - 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html){:target="_blank"}
 - 如何学位论文选题：[清华大学刘洋教授浅谈研究生学位论文选题方法](https://www.bilibili.com/video/av94356099/){:target="_blank"}
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472){:target="_blank"}
