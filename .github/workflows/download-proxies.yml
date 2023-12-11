@@ -1,4 +1,4 @@
-name: Download proxies
+name: Download wanshanziwo
 on:
   workflow_dispatch:
   push:
