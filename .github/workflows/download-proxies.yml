@@ -30,4 +30,4 @@ jobs:
           git config user.name "fangvv"
           git add *.txt
           git commit -m "Add v2ray proxies"
-          git push
+          git push https://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@github.com/fangvv/Homepage main
