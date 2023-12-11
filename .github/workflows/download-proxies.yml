@@ -27,7 +27,8 @@ jobs:
         run: |
           echo "Saving proxies to my repository..."
           git config --global user.email "fangvv@gmail.com"
-          git config user.name "fangvv"
+          git config --global user.name "fangvv"
           git add *.txt
           git commit -m "Add v2ray proxies"
-          git push https://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@github.com/fangvv/Homepage master
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+          git push
