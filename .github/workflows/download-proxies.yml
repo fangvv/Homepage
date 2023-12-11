@@ -1,0 +1,30 @@
+name: Download proxies
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 * * * *'
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone proxypool
+        uses: actions/checkout@v2
+        with:
+          repository: snakem982/proxypool
+          ref: main
+      - name: Find v2ray proxies
+        run: |
+          echo "Downloading v2ray proxies..."
+          for file in `find . -name "v2ray*.txt"`; do
+            echo "Downloading $file..."
+            curl -o "$file" https://raw.githubusercontent.com/snakem982/proxypool/main/$file
+            mv "$file" fww.txt
+          done
+      - name: Save proxies to my repository
+        run: |
+          echo "Saving proxies to my repository..."
+          git add *.txt
+          git commit -m "Add v2ray proxies"
+          git push
