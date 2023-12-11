@@ -26,6 +26,8 @@ jobs:
       - name: Save proxies to my repository
         run: |
           echo "Saving proxies to my repository..."
+          git config --global user.email "fangvv@gmail.com"
+          git config user.name "fangvv"
           git add *.txt
           git commit -m "Add v2ray proxies"
           git push
