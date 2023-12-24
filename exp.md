@@ -73,3 +73,4 @@ title: BJTU Synergy Lab 经验汇编
 - 如何看待中国学生：[普林斯顿中国籍教授：中国学生是怎样被一步步淘汰掉的？](https://cloud.tencent.com/developer/article/1422738){:target="_blank"}
 - 如何看待中国学生：[钱理群：大学里绝对精致的利己主义者](https://edu.qq.com/a/20150520/041737.htm){:target="_blank"}
 - 如何看待中国学生：[由招收研究生遇到的诚信问题引发的思考 (注：不诚信推免生常见套路)](https://www.sohu.com/a/459217427_120873446){:target="_blank"}
+- 如何看待中国学生：[牛新春：保研制度筛选了怎样的学生](https://www.sohu.com/a/426377403_387114){:target="_blank"}
