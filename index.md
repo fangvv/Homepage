@@ -1,50 +1,12 @@
 ---
 layout: default
-title: BJTU Synergy Lab 招生说明
+title: BJTU Synergy Lab
 ---
 
-**考虑好再报考，考虑好再报考，考虑好再报考**，确定有意再发简历至fangww@bjtu.edu.cn或fangvv@qq.com。
+The Systems and Networking Laboratory (SyNergy，AKA 1 + 1 > 2) at BJTU engages in a wide range of experimental and theoretical research. Our current projects span Mobile Cloud Computing, Edge Computing, Data Center Networks, Internet of Things, Indoor Localization, Mobile Apps, Distributed Optimization Algorithms, Blockchain, Big Data, and Deep Space Network. Our laboratory consists of one faculty, several affiliated researchers and more than 10 graduate students.
 
- ----------
+Now, we have some working groups on [Edge Computing](https://fangvv.gitee.io/homepage/Edgecomp/){:target="_blank"}, [Indoor Localization](https://fangvv.gitee.io/homepage/IndoorLoc/){:target="_blank"}, and [Blockchain Systems](https://fangvv.gitee.io/homepage/BlockchainBJTU/){:target="_blank"}.
 
-**总说明**
+We know that currently there are a lot of buzz words in the CS and IT area, but there are still some people who do interesting things in the area of systems and networking at top-ranked universitiies (e.g., [Yale](https://cpsc.yale.edu/research/computer-systems-and-networking){:target="_blank"}, [UCSD](https://www.sysnet.ucsd.edu/sysnet/){:target="_blank"}, and [Cornell](https://www.cs.cornell.edu/research/systems){:target="_blank"}) and cutting-edge companies (e.g., [MSR](https://www.microsoft.com/en-us/research/research-area/systems-and-networking/) and [Facebook](https://research.fb.com/category/systems-and-networking/){:target="_blank"}).
 
-> **兴趣：重要**： 您是否了解我组的研究方向？在大致了解的基础上，您是否确实对这些方向([1](https://fangvv.gitee.io/homepage/Edgecomp/),[2](https://fangvv.gitee.io/homepage/IndoorLoc/),[3](https://fangvv.gitee.io/homepage/BlockchainBJTU/))感兴趣？研究之路可能充满挫败感，如无足够的兴趣支撑，您可能会[感到压力和痛苦](https://www.zhihu.com/question/481624466){:target="_blank"}，同时也会严重影响课题组的科研产出，希望您能**享受研究的乐趣**。
-
-> **态度：重要**： 每一个科研人员可能都是从高考做题家起步的，但是读研不能[只会考试得高分](https://www.zhihu.com/question/36428206){:target="_blank"}(**尤其是女生**)也不能只为洗白本科专业或学校(**尤其是男生**)，甚至[进组了就摆烂](https://www.zhihu.com/question/502279646){:target="_blank"}，**研究生，顾名思义，就是来做研究的！**
-
-> **能力：重要**： 我组重点关注您的**专业技术**能力(如编程能力强，算法和数据结构等基础知识扎实)、**数学**能力(如不畏惧理论证明和推导)、**中文及逻辑表达**能力(如写句子有主谓宾、了解口语和学术语言的不同等)、**英文**能力(如具备基本的英文论文阅读和写作能力)以及**心理承受**能力(如不怕挫折，接受批评等)，这些能力可以在读研期间来雕琢打磨，却难以从根本上重新塑造。
-
- ----------
-
-招收**全日制**硕士研究生(<=4人/年)的说明
-
-[^_^]: > **保研生请注意**：据学院往年招生情况，**推免学硕（学制3年）优先给985/211高校且该校学科评估结果为B及以上的学校生源，因此优先招收**。同时，我校专硕（学制2年）培养时间短要求高，实难以保证质量，故原则上不招。
-
-> **考研生请注意**：学院近年来生源好，**计科不招收调剂生，请勿联系**。 学硕优先招收，因为学硕读3年，专硕读2年。非全研究生因经济原因需要在企业长期实习而无法正常参加实验室科研工作的，请勿联系。
-
-- 具体要求：
- 1. 混日子、言胜于行、自命不凡、招事惹事、矫情事多、爱犯拖延症、心理素质差、个性过于内向、易抑郁，**勿联系**。
- 1. 过度热衷于社交、社会活动、旅游、炒股、从业资格考试，或意欲长时间地以在外公司实习替代科研学习，**勿联系**。
- 1. 研究生是来做研究的，以洗白本科学历为目标、意欲入学起旋即醉心无关编程、考证、考公等而无心科研，**勿联系**。
-
- ----------
-
-招收**全日制**博士研究生(<=1人/年)的说明
-
-- 在满足以上硕士招生要求基础上：
- 1. **读不读博士**，建议首先读一读多伦多大学李葆春教授的随笔[**飞蛾扑火**](https://fangvv.gitee.io/homepage/feph.jpg){:target="_blank"}，再思考决定。
- 1. **数学和英语，绝对不能差，不能差，不能差**，因为导师绝对不会替你推公式，写文章。
- 1. 如想了解博士科研的特点，推荐读[《科研有方：科研需要“想好”再“做”》](https://book.douban.com/subject/26732439/){:target="_blank"}这本书。 [扫描版(密码ngvv)](https://fangvv.gitee.io/homepage/科研有方 科研需要“想好”再“做”.pdf){:target="_blank"}
-
-[^_^]:  ----------
-
-[^_^]: 招收本科实习生(<=3人/年)的说明
-[^_^]: - 具体要求：
-[^_^]:  1. 面向计算机学院有推免或出国深造意向的本科生同学，能够坚持一段较长的时间集中精力做研究或研发。
-[^_^]:  1. 本科生团队的培养模式以创新创业和学科竞赛为抓手，因此学生必须做到学有余力，热爱计算机技术。
-[^_^]:  1. 我们是一个踏踏实实做事的研究组，因此自我感觉特别牛气、急功近利和好高骛远的同学非常不建议来。
-
-----------
-
-> 注：以上仅是根据历年来我组在招生和培养过程中发现的问题所总结而成的最基本要求，未尽之处您可以参考[一位优秀的同行教授撰写的一份更为详细的要求](https://cs.nju.edu.cn/wujx/For_Students.html)，希望您能理解导师希望寻找到与自己match的研究生的苦心。
+Feel free to contact us by fangvv@qq.com and visit our laboratory at BJTU, Beijing!
