@@ -6,6 +6,8 @@ https://gitee.com/fangvv/Homepage.git
 
 主要用来存放北京交通大学系统与网络实验室的主页。
 
+20240124说明：最新一篇学术论文的信息在添加到主页时，因Gitee部署时反馈其可能包含WeiJinWeiGui内容，只能改成中英文混杂模式，特别别扭，也无法理解，特此记录。
+
 20231113说明：遇到测速不准的问题，查看[这个链接](https://github.com/XIU2/CloudflareSpeedTest/issues/168)，可以谷歌搜索 VPS looking glass 找替代的测速站点，10mb为宜。
 
 20230913说明：遇到github无法更新代码，解决方案 git config --global https.proxy 'socks5://127.0.0.1:10808' 写错无效，不开10808代理无效。
