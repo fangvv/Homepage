@@ -55,7 +55,6 @@ title: BJTU Synergy Lab 经验汇编
 - 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.gitee.io/homepage/HowToReadSourceCode.pdf){:target="_blank"}
 - 如何科学地使用人类互联网：[左耳朵耗子的分享](https://github.com/haoel/haoel.github.io){:target="_blank"}
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481){:target="_blank"}
-- 如何作好CS专业课外阅读：[我坚信这个世界应该不只有AI和炼丹](https://mp.weixin.qq.com/s/EjgtX2Wghia7ajn2AugCtw){:target="_blank"}
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](https://fangvv.gitee.io/homepage/不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf){:target="_blank"}
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/){:target="_blank"}
 - 如何看待中国大学：[刘道玉：“一流大学”的浮夸和浮躁](http://www.inewsweek.cn/society/2020-11-30/11065.shtml){:target="_blank"}
@@ -72,6 +71,5 @@ title: BJTU Synergy Lab 经验汇编
 - 如何看待人工智能：[人工智能是当前最好的计算机专业吗?](https://www.zhihu.com/question/331449600/answer/737885701){:target="_blank"}
 - 如何看待人工智能：[孙贤和：学术的唯美追求](https://mp.weixin.qq.com/s/iUnIW4aX2JHWlNLYGgdzGA){:target="_blank"}
 - 如何看待中国学生：[普林斯顿中国籍教授：中国学生是怎样被一步步淘汰掉的？](https://cloud.tencent.com/developer/article/1422738){:target="_blank"}
-- 如何看待中国学生：[钱理群：大学里绝对精致的利己主义者](https://edu.qq.com/a/20150520/041737.htm){:target="_blank"}
 - 如何看待中国学生：[由招收研究生遇到的诚信问题引发的思考 (注：不诚信推免生常见套路)](https://www.sohu.com/a/459217427_120873446){:target="_blank"}
 - 如何看待中国学生：[牛新春：保研制度筛选了怎样的学生](https://www.sohu.com/a/426377403_387114){:target="_blank"}
