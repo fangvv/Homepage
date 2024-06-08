@@ -6,7 +6,7 @@ https://gitee.com/fangvv/Homepage.git
 
 主要用来存放北京交通大学系统与网络实验室的主页。
 
-20240602说明：考虑到国内访问速度，使用https://tinypng.com/对网页上的图片进行了大幅度的压缩。
+20240602说明：考虑到国内访问速度，使用[TinyPNG](https://tinypng.com/)对网页上的图片进行了大幅度的压缩。
 
 20240503说明：刚看到gitee的pages下线了，查看[这个链接](https://gitee.com/VibMike/about-gitee-pages)，终于不用再纠结了。一声叹息。
 
