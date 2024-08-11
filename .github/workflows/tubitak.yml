@@ -1,7 +1,9 @@
 name: Daily Download
 on:
   schedule:
-    - cron: "0 18,6 * * *" # 每天在 UTC 3:00 和 15:00 运行 (北京时间 11:00 和 23:00)
+    - cron: "0 7 * * *" # runs at 15:00 Beijing time
+  workflow_dispatch:  # 添加这一行来启用手动触发
+
 jobs:
   download:
     runs-on: ubuntu-latest
