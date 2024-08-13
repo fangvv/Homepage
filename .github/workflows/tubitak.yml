@@ -1,7 +1,7 @@
 name: Daily Download
 on:
   schedule:
-    - cron: "0 7 * * *" # runs at 15:00 Beijing time
+    - cron: '0 * * * *'  # 每小时的第0分钟运行
   workflow_dispatch:  # 添加这一行来启用手动触发
 
 jobs:
