@@ -16,6 +16,6 @@
 
 7. 每位老师面临的情况和想法不尽相同，这里陈述的仅是我的个人观点，可能相对较为保守和片面，但目的是为了避免我无谓的付出和本不该有的烦恼。如果确有少量合适的、靠谱的同学，我们实验室愿意和你一同成长。
 
-8. 建议读一读和想一想知乎上的这个帖子(https://www.zhihu.com/question/475187560)，及清华大学CS黄老师的PPT(https://gitee.com/fangvv/Homepage/raw/master/undergraduate-res.pdf)。
+8. 建议认真读一读知乎上的这个帖子(https://www.zhihu.com/question/475187560)，及清华大学计算机黄老师的PPT(https://gitee.com/fangvv/Homepage/raw/master/undergraduate-res.pdf)。
 
 以上。
