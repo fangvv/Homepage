@@ -47,6 +47,7 @@ title: BJTU Synergy Lab 经验汇编
 - 如何在计算机应用领域寻找研究想法：[来自钱志云教授的分享](https://zhuanlan.zhihu.com/p/341685279){:target="_blank"}
 - 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.github.io/Homepage/HowToReadSourceCode.pdf){:target="_blank"}
 - 如何科学地使用人类互联网：[左耳朵耗子的分享](https://github.com/haoel/haoel.github.io){:target="_blank"}
+- 如何学计算机视觉研究生才能毕业找到一份好工作：[AI专业本科生适用](https://www.zhihu.com/question/396811409){:target="_blank"}
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481){:target="_blank"}
 - 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](https://fangvv.github.io/Homepage/不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf){:target="_blank"}
 - 如何看待中国大学：[李志文教授牛文——漫谈二流大学](https://blogs.harvard.edu/guorui/2015/08/13/%E6%9D%8E%E5%BF%97%E6%96%87%EF%BC%9A%E6%BC%AB%E8%B0%88%E4%BA%8C%E6%B5%81%E5%A4%A7%E5%AD%A6%EF%BC%88%E6%B8%85%E5%8D%8E%E5%8C%97%E5%A4%A7%E6%B5%99%E5%A4%A7%E5%8F%AA%E6%98%AF%E4%B8%89%E6%B5%81%E5%A4%A7/){:target="_blank"}
