@@ -11,7 +11,7 @@ title: BJTU Synergy Lab 经验汇编
 - 科研最重要的原则：**失败后获得的教训和成功后获得的经验同样重要([中国航天的历次失败总结](https://www.bilibili.com/video/av19791318/){:target="_blank"})，我们不强求成功**
 - 如何看待成功：[张晓东教授: 对社会和他人的贡献是检验成功的重要标准](https://fangvv.github.io/Homepage/ZXD-Success.pdf){:target="_blank"}
 - 如何看待失败：[数学家吴文俊：科学实验不怕承认失败公布失败](http://news.sina.com.cn/c/2003-11-19/19491149846s.shtml){:target="_blank"}
-- 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](http://www.valleytalk.org/2013/06/15/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E5%89%8D%E8%BF%9B%E7%9A%84%E8%B7%AF%E6%80%BB%E6%98%AF%E8%A2%AB%E8%87%AA%E5%B7%B1%E6%8C%A1%E4%BD%8F/){:target="_blank"}
+- 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](https://smartse.github.io/group/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E5%89%8D%E8%BF%9B%E7%9A%84%E8%B7%AF%E6%80%BB%E6%98%AF%E8%A2%AB%E8%87%AA%E5%B7%B1%E6%8C%A1%E4%BD%8F.pdf){:target="_blank"}
 - 如何做研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道"){:target="_blank"}
 - 如何做研究：[麻省理工学院人工智能实验室如何做研究的中文版](https://wenku.baidu.com/view/92ca9bde7cd184254a3535ab.html){:target="_blank"}
 - 如何做研究：[零点花园科研经验集锦](https://fangvv.github.io/Homepage/research-experiences.pdf){:target="_blank"}
