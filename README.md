@@ -1,10 +1,6 @@
-本项目为Github和Gitee双同步，地址分别是：
-
-https://github.com/fangvv/Homepage.git
-
-https://gitee.com/fangvv/Homepage.git
-
 主要用来存放北京交通大学系统与网络实验室的主页。
+
+20250105说明：gitee的原始文件共享会显示“The content may contain violation information”，综合考虑各种因素，决定放弃国内的git服务提供商。
 
 20240602说明：考虑到国内访问速度，使用[TinyPNG](https://tinypng.com/)对网页上的图片进行了大幅度的压缩。
 
