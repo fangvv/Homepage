@@ -14,6 +14,6 @@
 
 6. 每届我仅培养少量(0~2位)本科生，并非受限于工位等外在条件，而是从个人时间精力（我自己亲自指导）和当前学生的靠谱比例这两点出发。此外，我目前没有必要招大量的本科生进组来装饰门面，或养蛊冲业绩。
 
-7. 最后，建议认真读一读知乎上的这个帖子(https://www.zhihu.com/question/475187560)，及清华大学黄老师的这个讲座PPT(https://gitee.com/fangvv/Homepage/raw/master/undergraduate-res.pdf)。
+7. 最后，建议认真读一读知乎上的这个帖子(https://www.zhihu.com/question/475187560)，及清华大学黄老师的这个讲座PPT(https://fangvv.github.io/Homepage/undergraduate-res.pdf)。
 
 以上。
