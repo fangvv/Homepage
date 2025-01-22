@@ -33,7 +33,7 @@ title: BJTU Synergy Lab 经验汇编
 - 顶会paper越来越多，我该怎么看？ [链接](https://mp.weixin.qq.com/s/ofcDojai7qa1JPOjJYkP6g){:target="_blank"}
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议"){:target="_blank"}
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议"){:target="_blank"}
-- 如何端到端地写科研论文(实例详尽，重点推荐)：[来自邱锡鹏老师](https://fangvv.github.io/Homepage/如何端到端地写科研论文.pdf "来自邱锡鹏老师"){:target="_blank"}
+- 如何端到端地写科研论文(实例详尽，重点推荐)：[来自邱锡鹏老师](http://www.cips-cl.org/static/CCL2018/downloads/stuPPT/qiuxp.pdf "来自邱锡鹏老师"){:target="_blank"}
 - 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](https://fangvv.github.io/Homepage/paper-organization.jpg){:target="_blank"}
 - 如何写论文：[张华平老师：科技论文写作小经验漫谈](https://fangvv.github.io/Homepage/科技论文写作小经验漫谈.ppt){:target="_blank"}
 - 如何写论文：[赵鑫老师：如何以初学者角度写好一篇国际学术论文？](https://cloud.tencent.com/developer/article/1603851){:target="_blank"}
