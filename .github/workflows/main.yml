@@ -14,7 +14,7 @@ jobs:
       # replace example.com with the URL you want to backup
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: website-backup
         path: 8530.html
