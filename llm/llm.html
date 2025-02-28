@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local LLM on Edge Devices</title>
+    <!-- Bootstrap 5 CSS -->
+    <style>
+        @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+        
+        body {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+        }
+        
+        .header-title {
+            color: #2c3e50;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .card-vertical {
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            background: white;
+        }
+        
+        .img-container {
+            position: relative;
+            width: 100%;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            border-bottom: 3px solid #e0e0e0;
+        }
+        
+        .adaptive-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            padding: 15px;
+        }
+        
+        .card-body-vertical {
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        }
+        
+        .card-title-vertical {
+            color: #34495e;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        /* 竖图特殊处理 */
+        .vertical-img .adaptive-image {
+            max-height: 90vh;
+            max-width: 80%;
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .adaptive-image {
+                max-height: 60vh;
+            }
+            
+            .card-vertical {
+                margin: 1.5rem;
+                border-radius: 15px;
+            }
+
+            .vertical-img .adaptive-image {
+                max-height: 80vh;
+                max-width: 95%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .adaptive-image {
+                max-height: 50vh;
+                padding: 10px;
+            }
+            
+            .card-title-vertical {
+                font-size: 1.3rem;
+            }
+
+            .vertical-img .adaptive-image {
+                max-height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center header-title">Run Local LLM on Edge Devices</h1>
+        
+        <!-- Card 1 (GIF) -->
+        <div class="card card-vertical">
+            <div class="img-container">
+                <img src="1.gif" class="adaptive-image" alt="Model Deployment Demo">
+            </div>
+            <div class="card-body-vertical text-center">
+                <h3 class="card-title-vertical">Llama2 on Jetson Orin Nano</h3>
+            </div>
+        </div>
+
+        <!-- Card 2 (JPG) -->
+        <div class="card card-vertical">
+            <div class="img-container">
+                <img src="2.png" class="adaptive-image" alt="Hardware Optimization">
+            </div>
+            <div class="card-body-vertical text-center">
+                <h3 class="card-title-vertical">DeepSeek-R1 on Windows Laptop</h3>
+            </div>
+        </div>
+
+        <!-- Card 3 (GIF 竖图) -->
+        <div class="card card-vertical vertical-img">
+            <div class="img-container">
+                <img src="3.gif" class="adaptive-image" alt="Real-time Processing Demo">
+            </div>
+            <div class="card-body-vertical text-center">
+                <h3 class="card-title-vertical">Gemma on Android Phone</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
