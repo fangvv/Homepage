@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local LLM on Edge Devices</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>端侧本地大模型研究</title>
     <style>
         @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
         
@@ -17,10 +16,33 @@
             color: #2c3e50;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             font-size: 2.5rem;
         }
-        
+
+        /* 课题组介绍样式 */
+        .research-statement {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 1.5rem 2rem;
+            background: #ffffff;
+            border-left: 4px solid #2980b9;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .statement-text {
+            color: #34495e;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+            margin: 0;
+        }
+        .highlight {
+            color: #2c3e50;
+            font-weight: 600;
+            border-bottom: 2px dotted #2980b9;
+        }
+
+        /* 卡片样式 */
         .card-vertical {
             margin: 2rem auto;
             max-width: 800px;
@@ -29,7 +51,6 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.12);
             background: white;
         }
-        
         .img-container {
             position: relative;
             width: 100%;
@@ -38,7 +59,6 @@
             justify-content: center;
             border-bottom: 3px solid #e0e0e0;
         }
-        
         .adaptive-image {
             width: auto;
             height: auto;
@@ -47,92 +67,76 @@
             object-fit: contain;
             padding: 15px;
         }
-        
-        .card-body-vertical {
-            padding: 2rem;
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-        }
-        
-        .card-title-vertical {
-            color: #34495e;
-            font-weight: 600;
-            font-size: 1.5rem;
-            margin: 1rem 0;
-        }
-
-        /* 竖图特殊处理 */
         .vertical-img .adaptive-image {
             max-height: 90vh;
             max-width: 80%;
         }
-
-        @media (max-width: 768px) {
-            .header-title {
-                font-size: 2rem;
-                padding: 0 1rem;
-            }
-            
-            .adaptive-image {
-                max-height: 60vh;
-            }
-            
-            .card-vertical {
-                margin: 1.5rem;
-                border-radius: 15px;
-            }
-
-            .vertical-img .adaptive-image {
-                max-height: 80vh;
-                max-width: 95%;
-            }
+        .card-body-vertical {
+            padding: 2rem;
+            background: #ffffff;
+            text-align: center; /* 卡片标题居中 */
         }
-        
-        @media (max-width: 576px) {
-            .adaptive-image {
-                max-height: 50vh;
-                padding: 10px;
-            }
-            
-            .card-title-vertical {
-                font-size: 1.3rem;
-            }
+        .card-title-vertical {
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0;
+        }
 
-            .vertical-img .adaptive-image {
-                max-height: 70vh;
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .research-statement {
+                margin: 0 1.5rem 2rem;
+                padding: 1.2rem;
+            }
+            .card-body-vertical {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center header-title">Run Local LLM on Edge Devices</h1>
-        
-        <!-- Card 1 (GIF) -->
+        <h1 class="text-center header-title">On-Device Local LLM</h1>
+
+        <!-- 课题组介绍 -->
+        <div class="research-statement">
+            <p class="statement-text">
+                The <span class="highlight">BJTU Edge Computing & Edge Intelligence Group</span> is pioneering the integration of large language models with edge devices. Our current focus areas include:
+                <br><br>
+                ✓ <span class="highlight">LLM compression 压缩</span><br>
+                ✓ <span class="highlight">Model fine-tuning 微调</span><br>
+                ✓ <span class="highlight">Edge-Cloud inference 云边</span><br>
+                ✓ <span class="highlight">LLM applications 应用</span>
+            </p>
+        </div>
+
+        <!-- 卡片1 -->
         <div class="card card-vertical">
             <div class="img-container">
-                <img src="1.gif" class="adaptive-image" alt="Model Deployment Demo">
+                <img src="1.gif" class="adaptive-image" alt="Jetson Deployment">
             </div>
-            <div class="card-body-vertical text-center">
+            <div class="card-body-vertical">
                 <h3 class="card-title-vertical">Llama2 on Jetson Orin Nano</h3>
             </div>
         </div>
 
-        <!-- Card 2 (JPG) -->
+        <!-- 卡片2 -->
         <div class="card card-vertical">
             <div class="img-container">
-                <img src="2.png" class="adaptive-image" alt="Hardware Optimization">
+                <img src="2.png" class="adaptive-image" alt="Windows Optimization">
             </div>
-            <div class="card-body-vertical text-center">
+            <div class="card-body-vertical">
                 <h3 class="card-title-vertical">DeepSeek-R1 on Windows Laptop</h3>
             </div>
         </div>
 
-        <!-- Card 3 (GIF 竖图) -->
+        <!-- 卡片3 -->
         <div class="card card-vertical vertical-img">
             <div class="img-container">
-                <img src="3.gif" class="adaptive-image" alt="Real-time Processing Demo">
+                <img src="3.gif" class="adaptive-image" alt="Android Demo">
             </div>
-            <div class="card-body-vertical text-center">
+            <div class="card-body-vertical">
                 <h3 class="card-title-vertical">Gemma on Android Phone</h3>
             </div>
         </div>
