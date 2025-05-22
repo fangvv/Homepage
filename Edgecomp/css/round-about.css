@@ -13,3 +13,18 @@ body {
     padding-top: 56px;
   }
 }
+
+/* 在<head>的<style>标签或css文件中添加 */
+#team .rounded-circle {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 
+                0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    #border: 3px solid white; /* 添加白色边框增强对比 */
+    background: white; /* 确保透明区域显示阴影 */
+}
+
+#team .rounded-circle:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                0 10px 10px rgba(0,0,0,0.22);
+    transform: translateY(-5px);
+}
