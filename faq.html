@@ -35,26 +35,45 @@
         ol {
             counter-reset: section;
             list-style: none;
-            padding-left: 0
+            padding-left: 0;
         }
         ol li {
-            margin: 2rem 0;
+            margin: 2.2rem 0;
             counter-increment: section;
-            padding: 1.5rem;
+            padding: 1.8rem;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        ol li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
         }
         ol li::before {
-            content: counter(section)". ";
+            content: counter(section)".";
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.2em
+            font-size: 1.4rem;
+            position: absolute;
+            left: -1.8rem;
+            top: 1.4rem;
         }
         strong {
-            color: var(--accent);
-            font-weight: 700
-        }
+    color: var(--accent);
+    font-weight: 700;
+    background: rgba(255,228,214,0.3);
+    padding: 0.2em 0.3em;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(196,69,54,0.2);
+    transition: all 0.2s;
+}
+strong:hover {
+    background: rgba(255,228,214,0.5);
+    box-shadow: 0 0 0 1px var(--accent);
+    transform: translateY(-1px);
+}
         a {
             color: var(--primary);
             text-decoration: none;
@@ -72,16 +91,16 @@
     <p><span class="greeting">本科生同学，你好：</span>
 
     首先，感谢你的关注，欢迎你的加入。</p>
-   <p>以下是我根据多年来在<strong>课外</strong>指导我院的本科生进行<strong>大创/竞赛/学术研究</strong>的大量经验和教训总结而成，有兴趣的话你可以想想每一条背后都有过什么样的人和事。希望你能够阅读并在充分认同的前提下，我们再开展合作。当然，你不认同我也能理解，至少没有浪费彼此宝贵的时间，DeepSeek对此的描述是<strong>案头不置生徒卷，闲看流云漫煮茶</strong>，省下的时间用来享受生活的美好也很不错。</p>
+   <p>以下是我根据多年来<strong>课外</strong>指导我院的本科生进行<strong>大创/竞赛/学术研究</strong>的大量经验和教训总结而成，有兴趣的话你可以想想每一条背后都有过什么样的人和事。希望你能够阅读并在充分认同的前提下，我们再开展合作。当然，你不认同我也能理解，至少没有浪费彼此宝贵的时间，DeepSeek对此的描述是<strong>案头不置生徒卷，闲看流云漫煮茶</strong>，省下的时间用来享受生活的美好也很不错。</p>
 
     <ol>
-<li>客观条件所限，我组<strong>仅接收未来预期留组读硕博的本科生</strong>进组实习。若你对我的研究<strong>真感兴趣</strong>且想有所作为，那么真诚欢迎你来与我们共同成长。若只是为了学分或加分，或只是为了简历上加段科研经历，那么请不要找我。</li>
+<li>客观条件所限，我组<strong>仅接收未来预期留组读硕博的本科生</strong>进组实习。若你对我的研究<strong>真感兴趣</strong>且想有所作为，那么真诚欢迎你来与我们共同成长。若只是为了学分或加分，或只为了简历上加段科研经历，那么请不要找我。</li>
         
 <li>我理解同学或家长通常都希望你毕业后能在更好的大学或课题组读硕博的想法(<strong>尊重他人命运</strong>)，这说明我组距离你的预期仍有不小的差距。同时，在课外指导本科生并非必须的工作职责，且科创不拿国家级省部级奖不计业绩。这样的情况下，我更愿意(<strong>放下助人情结</strong>)培养好已在组的学生，而你也更适合由你的目标课题组来培养。</li>
 
-<li>有句话：以大多数人努力程度之低，根本轮不到拼天赋！我认为，努力最起码是用周末、节假日和寒暑假来投入。当前学术界高度内卷，老师业绩考核压力极大，指望送本科生成果是白日做梦。<strong>一分付出才可能有一分收获</strong>。同时，科研工作时常面临压力和失败，<strong>期待过多却没有一定的心理承受能力、抗压能力</strong>是很容易出问题的。</li>
+<li>有句话：以大多数人努力程度之低，根本轮不到拼天赋！我认为努力最起码是用周末、节假日和寒暑假来投入。当前学术界高度内卷，老师业绩考核压力极大，指望送本科生成果是白日做梦。<strong>一分付出才可能有一分收获</strong>。同时，科研工作时常面临压力和失败，<strong>期待过多却没有一定的心理承受能力、抗压能力</strong>是很容易出问题的。</li>
         
-<li>我认为，能以个人真实努力(非蹭挂名或共作)发表顶会顶刊论文的本科生是<strong>极少数</strong>的。另外，正常情况下，好的研究想法为什么老师不优先交给<strong>组里有经验的研究生</strong>而是给<strong>新手且未必一定会留组的本科生</strong>来主导执行和发表?</li>
+<li>我认为，能以个人真实努力(非蹭挂名或共作)发表顶会顶刊论文的本科生是<strong>极少数</strong>的。另外正常情况下，好的研究想法为什么老师不优先交给<strong>组里有经验的研究生</strong>而是给<strong>新手且未必一定会留组的本科生</strong>来主导执行和发表?</li>
         
 <li>为避免耽误学生前程，除了我组内的学生或其他同事课题组内的学生(必须导师知情且愿意)以外，我尽量避免给不熟悉的学生出具或签署各类推荐信，即便你选修过我的课程并取得高分，建议请其他知名学者推荐。</li>
         
