@@ -329,23 +329,6 @@
  });
 </script>
 
-<!-- 使用lozad.js（1KB轻量级库） -->
-<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-
-<script>
-// 初始化配置
-const observer = lozad('.lazy-load', {
-    rootMargin: '100px 0px', // 提前100px加载
-    threshold: 0.1,
-    loaded: function(el) {
-        el.classList.add('loaded')
-    }
-})
-observer.observe()
-</script>
-
-<!-- Default Statcounter code for BJTU Homepage
-http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102 -->
 <script type="text/javascript">
     var sc_project=11657787;
     var sc_invisible=1;
