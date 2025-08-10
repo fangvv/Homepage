@@ -4,19 +4,102 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="北京交通大学边缘计算与边缘智能研究小组" />
-  <meta name="keywords" content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU" />
+  <meta name="keywords" content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
 
   <title>北京交通大学边缘计算与边缘智能研究小组</title>
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom styles for this template -->
   <link href="css/round-about.css" rel="stylesheet" />
+  <style>
+/* 漂浮按钮样式 - 不干扰原页面布局 */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f1f8ff, #d1e6ff);
+    box-shadow: 
+        0 6px 16px rgba(0, 90, 255, 0.12),
+        0 0 0 1px rgba(209, 230, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: #3068d6;
+    text-decoration: none;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.floating-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 10px 20px rgba(0, 90, 255, 0.15),
+        0 0 0 1px rgba(209, 230, 255, 0.3);
+    background: linear-gradient(135deg, #e4f0ff, #c8e1ff);
+}
+
+.floating-btn:active {
+    transform: scale(0.95);
+    box-shadow: 
+        0 4px 8px rgba(0, 90, 255, 0.08),
+        0 0 0 1px rgba(209, 230, 255, 0.15);
+}
+
+.floating-btn i {
+    font-size: 28px;
+    transition: transform 0.3s ease;
+}
+
+.floating-btn:hover i {
+    transform: scale(1.1);
+}
+
+.floating-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.15);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.floating-btn:hover::before {
+    transform: scaleX(1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .floating-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .floating-btn i {
+        font-size: 24px;
+    }
+}
+</style>
+  
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
      <div class="container">
-        <a class="navbar-brand" href="#">Edge Computing & Edge Intelligence @ BJTU</a>
+        <a class="navbar-brand" href="index.html">Edge Computing & Edge Intelligence @ BJTU</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
            <ul class="navbar-nav ml-auto">
@@ -28,6 +111,12 @@
       </div>
   </div>
 </nav>
+
+<a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" title="访问方老师个人主页">
+    <i class="fas fa-user-graduate"></i>
+</a>
+    
+    
 <!-- Page Content -->
 <div class="container">
  <header class="jumbotron my-4">
