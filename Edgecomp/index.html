@@ -116,6 +116,156 @@ AI隐私安全, AI Privacy
         font-size: 24px;
     }
 }
+
+.vision-container {
+    padding: 16px;
+    background: linear-gradient(to bottom, #f8fbff, #ffffff);
+    border-radius: 12px;
+    border: 1px solid #e0ebff;
+    box-shadow: 0 2px 10px rgba(0, 90, 255, 0.06);
+    margin-bottom: 2rem;
+}
+
+.animated-vision {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 8px;
+}
+
+.animated-vision {
+    animation: fadeInUpScale 1s forwards;
+}
+
+.animated-vision:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 90, 255, 0.16);
+}
+
+@keyframes fadeInUpScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* 全局样式（放入 <style>） */
+.portfolio-item .card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+}
+
+.portfolio-item .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 90, 255, 0.15);
+    border-color: #3068d6;
+}
+
+.card-img-container {
+    position: relative;
+    height: 200px; /* 固定高度，避免错位 */
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.4s ease-out;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card-img-container:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(48, 104, 214, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px 12px 0 0;
+    font-size: 24px;
+}
+
+.card-img-container:hover .img-overlay {
+    opacity: 1;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .portfolio-item {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* 修复宽度问题：适配原有容器，不限制最大宽度 */
+.intro-section {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  margin: 3rem 0;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #ffffff, #f9fbff);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  /* 关键：不再限制最大宽度 */
+}
+
+/* 动画保持不变 */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 标题样式保持 */
+.intro-section h2 {
+  color: #3068d6;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.intro-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #3068d6;
+  border-radius: 2px;
+}
+
+.intro-section .lead {
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: #444;
+  font-weight: 500;
+}
+
+/* 悬停效果保持 */
+.intro-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
+  transition: all 0.4s ease;
+}
 </style>
   
 </head>
@@ -143,7 +293,7 @@ AI隐私安全, AI Privacy
     
 <!-- Page Content -->
 <div class="container">
- <header class="jumbotron my-4">
+ <header class="intro-section jumbotron my-4">
     <h1 class="display-3">边缘计算与边缘智能</h1>
     <br>
     <p class="lead"><b>边缘计算是在靠近物或数据源头的网络边缘侧，融合网络、计算、存储、应用核心能力的分布式开放平台，就近提供边缘智能服务，满足行业数字化在敏捷联接、实时业务、数据优化、应用智能、安全与隐私保护等方面的关键需求。 </b></p>
@@ -157,8 +307,8 @@ AI隐私安全, AI Privacy
 <section id="research">
 
 <h2 class="my-4 text-danger font-weight-bold">核心问题</h2>
-<div class="card">
-<img src="img/Vision.png" class="img-fluid">
+<div class="vision-container my-4">
+    <img src="img/Vision.png" class="img-fluid animated-vision" alt="Research Vision">
 </div>
 
  <div class="row">
@@ -402,11 +552,23 @@ AI隐私安全, AI Privacy
 
 
 <section id="contact">
-    <div class="row">
-       <div class="col-lg-12">
-          <h3 class="my-4"><b>无论您是业界专家，同行学者，亦或是莘莘学子，我们都希望与您交流探讨，共同进步！请电子邮件fangvv@qq.com或访问北京交通大学九号教学楼北201室。</b></h3>
-      </div>
+    <div class="contact-callout mt-5 mb-4 p-4 rounded" style="background: linear-gradient(to right, #f0f7ff, #f8fbff); border-left: 5px solid #3068d6; box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);">
+  <div class="text-center">
+    <h4 class="mb-3" style="color: #3068d6; font-weight: 600;">
+      <i class="fas fa-handshake"></i> 期待与您交流合作！
+    </h4>
+    <p class="lead text-secondary mb-3">
+      无论您是业界专家、同行学者，还是热爱科研的学子，
+    </p>
+    <p class="text-muted mb-3">
+      我们都诚挚欢迎您来信交流，共同探索边缘计算与边缘智能的无限可能！
+    </p>
+    <div class="contact-info d-flex justify-content-center flex-wrap text-center">
+  <span class="mb-2 mb-md-0 me-md-4">📧 <a href="mailto:fangvv@qq.com">fangvv@qq.com</a></span>
+  <span>📍 北京交通大学九号教学楼北201</span>
+</div>
   </div>
+</div>
 </section>
 </div>
 
