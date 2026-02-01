@@ -266,6 +266,119 @@ AI隐私安全, AI Privacy
   box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
   transition: all 0.4s ease;
 }
+
+/* 完全统一方案 - 无需修改HTML */
+#team .col-lg-4.col-sm-6.text-center.mb-4 {
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+#team .col-lg-4.col-sm-6.text-center.mb-4:hover {
+  transform: translateY(-3px);
+}
+
+/* 头像样式 */
+#team .col-lg-4.col-sm-6.text-center.mb-4 img {
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 名字样式 */
+#team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+  margin-top: 1.2rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 有链接的名字 */
+#team .col-lg-4.col-sm-6.text-center.mb-4 h3 a {
+  display: block;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+#team .col-lg-4.col-sm-6.text-center.mb-4 h3 a:hover {
+  color: #2d3748;
+  transform: translateY(-2px);
+}
+
+/* 普通名字（无链接） */
+#team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+#team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 {
+  color: #2d3748;
+  transform: translateY(-2px);
+}
+
+/* 身份标签 - 完全统一 */
+#team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4a5568;
+  background: #f8fafc;
+  padding: 0.3rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-top: 0.3rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.3px;
+}
+
+/* 导师标签也完全一样 */
+#team .col-lg-4.col-sm-6.text-center.mb-4:first-child h3 small {
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  border-width: 1px;
+  border-color: #e2e8f0;
+  background: #f8fafc;
+  color: #4a5568;
+}
+
+/* 统一hover效果 */
+#team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 small {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  background: white;
+  border-color: #cbd5e0;
+  color: #2d3748;
+}
+
+/* 响应式设计 */
+@media (max-width: 991px) {
+  #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a,
+  #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+    font-size: 1.3rem;
+  }
+  
+  #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.9rem;
+  }
+}
+
 </style>
   
 </head>
@@ -475,7 +588,7 @@ AI隐私安全, AI Privacy
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt="" />
-          <h3><a href="http://faculty.bjtu.edu.cn/8530/">方维维</a> <small>导师</small> </h3>
+          <h3><a href="http://faculty.bjtu.edu.cn/8530/">方维维</a> <small>教授，导师</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto" src="img/wwq.jpg" alt="" />
