@@ -31,143 +31,352 @@ AI隐私安全, AI Privacy
     <title>致有意来我组科研实习的本科生同学</title>
     <style>
         :root {
-            --primary: #2B3A67;
-            --accent: #C44536;
-            --text: #2D3748
+            --primary: #243B66;
+            --primary-soft: #EEF4FF;
+            --accent: #2563EB;
+            --accent-soft: #EFF6FF;
+            --text: #243042;
+            --muted: #6B7280;
+            --card: rgba(255, 255, 255, 0.92);
+            --border: rgba(36, 59, 102, 0.12);
+            --shadow: 0 18px 45px rgba(36, 59, 102, 0.10);
         }
-        .greeting {
-		font-size: 1.8em;
-		display: block;
-		margin-bottom: 1rem;
-		color: var(--accent);
-		font-weight: 700;
-		}
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, sans-serif;
-            line-height: 1.8;
-            margin: 1rem auto;
-            padding: 0 1rem;
-            max-width: 850px;
-            background: #F8F9FA
+            min-height: 100vh;
+            margin: 0;
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.9;
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 32rem),
+                radial-gradient(circle at top right, rgba(36, 59, 102, 0.14), transparent 30rem),
+                linear-gradient(135deg, #F8FAFC 0%, #F2F5FA 52%, #F8FBFF 100%);
         }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(36, 59, 102, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(36, 59, 102, 0.035) 1px, transparent 1px);
+            background-size: 36px 36px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
+        }
+
+        .page {
+            width: min(980px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 48px 0 34px;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 46px 48px;
+            color: #fff;
+            background: linear-gradient(135deg, #22365F 0%, #2B4A7F 58%, #2563EB 140%);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 28px;
+            box-shadow: 0 24px 70px rgba(36, 59, 102, 0.24);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            right: -86px;
+            top: -98px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.13);
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0;
+            font-size: clamp(1.65rem, 3.8vw, 2.6rem);
+            line-height: 1.22;
+            letter-spacing: -0.04em;
+        }
+
+        .hero p {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 18px 0 0;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 1.05rem;
+        }
+
+        .content-card {
+            margin-top: 28px;
+            padding: 34px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(14px);
+        }
+
+        .greeting {
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            font-size: 1.8em;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .lead {
+            margin: 0 0 1.5rem;
+            font-size: 1.04rem;
+        }
+
         .alert {
+            margin: 2rem 0;
+            padding: 1.5rem;
             background: #FFF3E0;
             border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px
+            border-radius: 14px;
         }
+
         ol {
-            counter-reset: section;
+            margin: 0;
+            padding: 0;
             list-style: none;
-            padding-left: 0;
+            counter-reset: section;
         }
+
         ol li {
-            margin: 2.2rem 0;
-            counter-increment: section;
-            padding: 1.8rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
+            margin: 18px 0;
+            padding: 24px 26px 24px 82px;
+            overflow: hidden;
+            counter-increment: section;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FCFDFF 100%);
+            border: 1px solid rgba(36, 59, 102, 0.10);
+            border-radius: 22px;
+            box-shadow: 0 12px 28px rgba(36, 59, 102, 0.075);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
         }
-        ol li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-        }
+
         ol li::before {
-            content: counter(section)".";
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1.4rem;
+            content: counter(section);
             position: absolute;
-            left: -1.8rem;
-            top: 1.4rem;
+            left: 24px;
+            top: 26px;
+            display: grid;
+            width: 38px;
+            height: 38px;
+            place-items: center;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent), #38BDF8);
+            border-radius: 14px;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
         }
+
+        ol li:hover {
+            transform: translateY(-4px);
+            border-color: rgba(37, 99, 235, 0.22);
+            box-shadow: 0 18px 38px rgba(36, 59, 102, 0.13);
+        }
+
         strong {
-    color: var(--accent);
-    font-weight: 700;
-    background: rgba(255,228,214,0.3);
-    padding: 0.2em 0.3em;
-    border-radius: 2px;
-    box-shadow: 0 0 0 1px rgba(196,69,54,0.2);
-    transition: all 0.2s;
-}
-strong:hover {
-    background: rgba(255,228,214,0.5);
-    box-shadow: 0 0 0 1px var(--accent);
-    transform: translateY(-1px);
-}
+            padding: 0.12em 0.35em;
+            color: var(--accent);
+            font-weight: 800;
+            background: linear-gradient(180deg, rgba(239, 246, 255, 0.58), rgba(239, 246, 255, 0.98));
+            border-radius: 8px;
+            box-shadow: inset 0 -1px 0 rgba(37, 99, 235, 0.14);
+        }
+
         a {
             color: var(--primary);
+            font-weight: 650;
             text-decoration: none;
-            border-bottom: 1px dashed
+            border-bottom: 1px dashed rgba(36, 59, 102, 0.42);
+            transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
+
+        a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background: rgba(239, 246, 255, 0.82);
+        }
+
+        .section-title {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin: 42px 0 16px;
+            color: var(--primary);
+            font-size: 1.55rem;
+            letter-spacing: -0.03em;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 8px;
+            height: 28px;
+            background: var(--accent);
+            border-radius: 999px;
+        }
+
+        .reference-list {
+            margin: 0;
+            padding: 22px 24px 22px 44px;
+            background: linear-gradient(135deg, var(--primary-soft), #FFFFFF);
+            border: 1px solid rgba(36, 59, 102, 0.10);
+            border-radius: 22px;
+            box-shadow: 0 12px 28px rgba(36, 59, 102, 0.07);
+        }
+
+        .reference-list li {
+            margin: 10px 0;
+            padding-left: 4px;
+        }
+
+        .contact {
+            margin: 26px 0 0;
+            padding: 22px 24px;
+            background: linear-gradient(135deg, var(--accent-soft), #FFFFFF);
+            border: 1px solid rgba(37, 99, 235, 0.13);
+            border-radius: 22px;
+        }
+
+        footer {
+            padding: 28px 96px 0 0;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .back-home {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 22px;
+            color: #fff !important;
+            font-weight: 750;
+            background: linear-gradient(135deg, var(--accent), #38BDF8);
+            border: 0;
+            border-radius: 999px;
+            box-shadow: 0 14px 30px rgba(37, 99, 235, 0.22);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .back-home:hover {
+            color: #fff !important;
+            background: linear-gradient(135deg, #1D4ED8, var(--accent));
+            box-shadow: 0 18px 38px rgba(37, 99, 235, 0.30);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
-            body {font-size: 15px}
-            ol li {margin: 1.5rem 0}
+            .page {
+                width: min(100% - 24px, 980px);
+                padding: 22px 0 26px;
+            }
+
+            .hero {
+                padding: 34px 24px;
+                border-radius: 22px;
+            }
+
+            .content-card {
+                padding: 22px 16px;
+                border-radius: 22px;
+            }
+
+            .greeting {
+                font-size: 1.45em;
+            }
+
+            ol li {
+                margin: 14px 0;
+                padding: 68px 18px 20px;
+                border-radius: 18px;
+            }
+
+            ol li::before {
+                left: 18px;
+                top: 18px;
+            }
+
+            .reference-list {
+                padding: 18px 18px 18px 32px;
+            }
+
+            footer {
+                padding: 24px 0 74px;
+            }
+
+            .back-home {
+                right: 16px;
+                bottom: 16px;
+                min-height: 44px;
+                padding: 10px 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1 style="color:var(--primary);border-bottom:3px solid var(--accent);padding-bottom:1rem">致有意来我组科研实习的本科生同学</h1>
-    
-    <p><span class="greeting">本科生同学，你好：</span>
+    <main class="page">
+        <section class="hero">
+            <h1>致有意来我组科研实习的本科生同学</h1>
+        </section>
 
-    时常有<strong>本校大一到大三的同学</strong>联系进组，因此我想有必要谈谈<strong>我的个人观点和做法</strong>，主要是根据多年<strong>课外</strong>指导本科生大创/竞赛/研究(对老师都无强制要求)的<strong>大量经验教训</strong>总结而成。人生匆匆，希望我们都能<strong>把时间用在对的人和事上</strong>。</p>
+        <section class="content-card">
+            <p class="lead"><span class="greeting">本科生同学，你好：</span>
 
-    <ol>
-<li>受客观条件如工位、精力所限，我组<strong>仅接收预期留组读硕博的本科生</strong>进组实习。若你对我的研究<strong>真感兴趣</strong>且想有所作为，那么真诚欢迎你来与我共同成长，彼此成就。如你有更高的追求，不妨直接找更高水平的老师带你。</li>
-        
-<li>当前学术界高度内卷，老师考核<a href="https://www.zhihu.com/question/1976088728318538595" target="_blank">压力极大</a>。<strong>课外培养本科生非必要的考核指标</strong>。同时对本科生来说，大创往往是临了突击完成且最终评级的不确定性高，竞赛仅有学校认定目录中的且至少获省部级奖才记为老师的工作量，做研究学生缺乏时间、经验甚至只为了拿共X作者而来。因此，我们提出上一条说明并将其作为唯一<strong>正向激励</strong>。</li>
+            时常有<strong>本校大一到大三的同学</strong>联系进组，因此我想有必要谈谈<strong>我的个人观点和做法</strong>，主要是根据多年<strong>课外</strong>指导本科生大创/竞赛/研究(对老师都无强制要求)的<strong>大量经验教训</strong>总结而成。人生匆匆，希望我们都能<strong>把时间用在对的人和事上</strong>。</p>
 
-<li>对于多数本科生来说，应付学业及杂事等已筋疲力尽，有空更愿<strong>睡懒觉或玩游戏</strong>，可以理解。但是，我投入没有产出就等于浪费资源和时间。希望你是<strong>自来"卷"</strong>，有极强的好胜心和上进心：<strong>要么别做，要么狂卷</strong>。</li>
+            <ol>
+                <li>受客观条件如工位、精力所限，我组<strong>仅接收预期留组读硕博的本科生</strong>进组实习。若你对我的研究<strong>真感兴趣</strong>且想有所作为，那么真诚欢迎你来与我共同成长，彼此成就。如你有更高的追求，不妨直接找更高水平的老师带你。</li>
+                <li>当前学术界高度内卷，老师考核<a href="https://www.zhihu.com/question/1976088728318538595" target="_blank">压力极大</a>。<strong>课外培养本科生非必要的考核指标</strong>。同时对本科生来说，大创往往是临了突击完成且最终评级的不确定性高，竞赛仅有学校认定目录中的且至少获省部级奖才记为老师的工作量，做研究学生缺乏时间、经验甚至只为了拿共X作者而来。因此，我们提出上一条说明并将其作为唯一<strong>正向激励</strong>。</li>
+                <li>对于多数本科生来说，应付学业及杂事等已筋疲力尽，有空更愿<strong>睡懒觉或玩游戏</strong>，可以理解。但是，我投入没有产出就等于浪费资源和时间。希望你是<strong>自来"卷"</strong>，有极强的好胜心和上进心：<strong>要么别做，要么狂卷</strong>。</li>
+                <li>我认为，能以个人真正努力(<strong>非蹭挂名或所谓共同X作</strong>)发表顶会顶刊论文的本科生是<strong>极少数</strong>的。正常逻辑下，好的idea为什么老师不优先交给<strong>有经验且毕业有要求的研究生</strong>而是给<strong>新手本科生</strong>来做和发表?</li>
+                <li><strong>大一学生请谨慎选择进组</strong>，一是课程学习和社会活动极为繁重且未上专业课程，二是成绩排名仍不稳定，三是人生规划尚未成型。即便有少数优秀的特例，也基本志不在此，意欲外推。一般来说，投入打水漂的概率极高。</li>
+                <li>为避免耽误学生前程，除了我组内的学生或其他同事请求帮忙推荐其学生以外，我<strong>尽量避免给不熟悉的学生出具或签署各类推荐信 (因非工作职责)</strong>，即便你选修过我教的课程并取得高分，建议请学院里的其他知名学者推荐。</li>
+                <li>PS：我组有三位22级本科生留组读硕博，他/她们分别来自计科(22281291, <strong>综排第九</strong>)、人工智能(22281269, <strong>综排第一</strong>)和物联网(22281184, <strong>综排第三</strong>)等专业。如你有需要，可以先电邮他/她们了解到我组的更多信息。</li>
+            </ol>
 
-<li>我认为，能以个人真正努力(<strong>非蹭挂名或所谓共同X作</strong>)发表顶会顶刊论文的本科生是<strong>极少数</strong>的。正常逻辑下，好的idea为什么老师不优先交给<strong>有经验且毕业有要求的研究生</strong>而是给<strong>新手本科生</strong>来做和发表?</li>
+            <p class="contact">
+                如果你有意加入我们，请发邮件：<strong>fangww@bjtu.edu.cn</strong>和<strong>fangvv@qq.com</strong>。
+            </p>
 
-<li><strong>大一学生请谨慎选择进组</strong>，一是课程学习和社会活动极为繁重且未上专业课程，二是成绩排名仍不稳定，三是人生规划尚未成型。即便有少数优秀的特例，也基本志不在此，意欲外推。一般来说，投入打水漂的概率极高。</li>
+            <h2 class="section-title">参考链接</h2>
+            <ul class="reference-list">
+                <li><a href="https://www.zhihu.com/question/475187560" target="_blank">知乎讨论：大学教授是如何看待想进组搞科研的本科生的？</a></li>
+                <li><a href="https://www.zhihu.com/question/278197431/answer/2910447485" target="_blank">知乎回答：作为过来人，你想给想在本科进行科研的大二、三本科生什么建议？</a></li>
+                <li><a href="https://www.zhihu.com/question/2764739758/answer/25738779170" target="_blank">知乎回答：我大三，导师把我塞给了博士生学姐，学姐人很好，但我感觉学不到什么东西，我该怎么办呢？</a></li>
+                <li><a href="https://www.zhihu.com/question/1972034209557243354/answer/1975544790780241380" target="_blank">知乎回答：CS本科生进组科研，能拿到几作？</a></li>
+                <li><a href="https://fangvv.github.io/Homepage/undergraduate-res.pdf" target="_blank">清华大学黄民烈教授观点：本科生如何做出好的科研</a></li>
+                <li><a href="https://zhuanlan.zhihu.com/p/200786141" target="_blank">北京大学钱理群教授观点：大学里绝对精致的利己主义者</a></li>
+                <li><a href="https://jyywiki.cn/Letter.md" target="_blank">南京大学蒋炎岩教授观点：给各位天命人的劝退信</a></li>
+            </ul>
+        </section>
 
-<li>为避免耽误学生前程，除了我组内的学生或其他同事请求帮忙推荐其学生以外，我<strong>尽量避免给不熟悉的学生出具或签署各类推荐信 (因非工作职责)</strong>，即便你选修过我教的课程并取得高分，建议请学院里的其他知名学者推荐。</li>
-
-<li>PS：我组有三位22级本科生留组读硕博，他/她们分别来自计科(22281291, <strong>综排第九</strong>)、人工智能(22281269, <strong>综排第一</strong>)和物联网(22281184, <strong>综排第三</strong>)等专业。如你有需要，可以先电邮他/她们了解到我组的更多信息。</li>
-
-    </ol>
-
-<p>
-如果你有意加入我们，请发邮件：<strong>fangww@bjtu.edu.cn</strong>和<strong>fangvv@qq.com</strong>。
-</p>
-
-    <h2 style="color:var(--primary);margin-top:3rem">参考链接</h2>
-    <ul style="background:#E3F2FD;padding:1.5rem;border-radius:8px">
-        <li><a href="https://www.zhihu.com/question/475187560" target="_blank">知乎讨论：大学教授是如何看待想进组搞科研的本科生的？</a></li>
-        <li><a href="https://www.zhihu.com/question/278197431/answer/2910447485" target="_blank">知乎回答：作为过来人，你想给想在本科进行科研的大二、三本科生什么建议？</a></li>
-        <li><a href="https://www.zhihu.com/question/2764739758/answer/25738779170" target="_blank">知乎回答：我大三，导师把我塞给了博士生学姐，学姐人很好，但我感觉学不到什么东西，我该怎么办呢？</a></li>
-        <li><a href="https://www.zhihu.com/question/1972034209557243354/answer/1975544790780241380" target="_blank">知乎回答：CS本科生进组科研，能拿到几作？</a></li>
-        <li><a href="https://fangvv.github.io/Homepage/undergraduate-res.pdf" target="_blank">清华大学黄民烈教授观点：本科生如何做出好的科研</a></li>
-        <li><a href="https://zhuanlan.zhihu.com/p/200786141" target="_blank">北京大学钱理群教授观点：大学里绝对精致的利己主义者</a></li>
-        <li><a href="https://jyywiki.cn/Letter.md" target="_blank">南京大学蒋炎岩教授观点：给各位天命人的劝退信</a></li>
-    </ul>
-    
-    <footer style="text-align:center; padding:1.5rem; color:#666; margin-top:2rem">
-    © 2026 Weiwei Fang. All Rights Reserved. Designed by DeepSeek.<br>
-    <a href="https://faculty.bjtu.edu.cn/8530" 
-   style="
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #f8f9fa;
-    color: var(--accent) !important;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border: 1px solid rgba(196,69,54,0.3);
-    transition: all 0.3s;
-    font-weight: 600">
-    返回主页
-</a>
-</footer>
+        <footer>
+            © 2026 Weiwei Fang. All Rights Reserved. Designed by GPT5.5.<br>
+            <a class="back-home" href="https://faculty.bjtu.edu.cn/8530">返回主页</a>
+        </footer>
+    </main>
 
 <!-- Default Statcounter code for BJTU Homepage
 http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102 -->
