@@ -1,8 +1,8 @@
-name: Merge V2Ray Subscriptions
+name: Update V2Ray Subscription
 
-on:
+"on":
   schedule:
-    - cron: "10 * * * *"
+    - cron: "30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -14,6 +14,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Print trigger info
+        run: |
+          date -u
+          echo "event_name=${{ github.event_name }}"
 
       - name: Download, merge and deduplicate subscriptions
         shell: python
