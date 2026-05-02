@@ -21,6 +21,7 @@ jobs:
           import base64
           import re
           import urllib.request
+          from datetime import datetime, timezone
           from pathlib import Path
 
           urls = [
@@ -81,7 +82,8 @@ jobs:
 
           output = Path("v2ray.txt")
           output.unlink(missing_ok=True)
-          output.write_text("\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
+          generated_at = datetime.now(timezone.utc).isoformat()
+          output.write_text(f"# Generated at {generated_at}\n" + "\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
           print(f"Merged {len(nodes)} unique nodes into {output}")
 
       - name: Commit and push changes
