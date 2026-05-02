@@ -1,0 +1,98 @@
+name: Merge V2Ray Subscriptions
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download, merge and deduplicate subscriptions
+        shell: python
+        run: |
+          import base64
+          import re
+          import urllib.request
+          from pathlib import Path
+
+          urls = [
+              "https://raw.githubusercontent.com/xiaoji235/airport-free/main/v2ray.txt",
+              "https://raw.githubusercontent.com/thirtysixpw/v2ray-reaper/main/normal/mix",
+              "https://raw.githubusercontent.com/crackbest/V2ray-Config/refs/heads/main/config.txt",
+              "https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt",
+          ]
+
+          schemes = (
+              "ss://",
+              "ssr://",
+              "vmess://",
+              "vless://",
+              "trojan://",
+              "hysteria://",
+              "hysteria2://",
+              "hy2://",
+              "tuic://",
+          )
+
+          def try_decode_base64(text):
+              compact = re.sub(r"\s+", "", text)
+              if not compact:
+                  return text
+              padding = "=" * (-len(compact) % 4)
+              try:
+                  decoded = base64.b64decode(compact + padding, validate=False).decode("utf-8", errors="ignore")
+              except Exception:
+                  return text
+              if any(scheme in decoded for scheme in schemes):
+                  return decoded
+              return text
+
+          nodes = []
+          seen = set()
+
+          for url in urls:
+              try:
+                  request = urllib.request.Request(url, headers={"User-Agent": "GitHub Actions"})
+                  with urllib.request.urlopen(request, timeout=60) as response:
+                      content = response.read().decode("utf-8", errors="ignore")
+              except Exception as error:
+                  print(f"Failed to download {url}: {error}")
+                  continue
+
+              content = try_decode_base64(content)
+              for line in content.splitlines():
+                  node = line.strip()
+                  if not node or node.startswith("#"):
+                      continue
+                  if not node.startswith(schemes):
+                      continue
+                  if node in seen:
+                      continue
+                  seen.add(node)
+                  nodes.append(node)
+
+          output = Path("v2ray.txt")
+          output.write_text("\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
+          print(f"Merged {len(nodes)} unique nodes into {output}")
+
+      - name: Commit and push changes
+        shell: bash
+        run: |
+          if git diff --quiet -- v2ray.txt; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add v2ray.txt
+          git commit -m "Update merged v2ray subscription"
+          git push
