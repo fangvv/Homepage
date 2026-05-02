@@ -1,15 +1,23 @@
+# 北京交通大学系统与网络实验室主页
+
 主要用来存放北京交通大学系统与网络实验室的主页。
 
-20260501说明：接入大模型编程，工具trae+gpt5.5，目前实现了对四个v2ray源的抓取、整理和发布，真的是革命性创新！
+## 更新说明
 
-20251121说明：Profile中增加对研究工作代码公开的[声明](https://github.com/fangvv)，如遇持不正当目的使用本账户公开的代码，将考虑使用法律手段维护正当权益。
+- **20260501说明**：接入大模型编程，工具trae+gpt5.5，目前实现了对四个v2ray源的抓取、整理和发布，真的是革命性创新！
 
-20250205说明：更新Github Actions脚本中的API版本@3到@4，目前经过测试后运行恢复正常。删除对国内Git服务的更新说明。
+- **20251121说明**：Profile中增加对研究工作代码公开的[声明](https://github.com/fangvv)，如遇持不正当目的使用本账户公开的代码，将考虑使用法律手段维护正当权益。
 
-20240602说明：考虑到国内访问速度，使用[TinyPNG](https://tinypng.com/)对网页上的图片进行了大幅度的压缩。
+- **20250205说明**：更新Github Actions脚本中的API版本@3到@4，目前经过测试后运行恢复正常。删除对国内Git服务的更新说明。
 
-20231113说明：遇到测速不准的问题，查看[这个链接](https://github.com/XIU2/CloudflareSpeedTest/issues/168)，可以谷歌搜索 VPS looking glass 找替代的测速站点，10mb为宜。
+- **20240602说明**：考虑到国内访问速度，使用[TinyPNG](https://tinypng.com/)对网页上的图片进行了大幅度的压缩。
 
-20230913说明：遇到github无法更新代码，解决方案 git config --global https.proxy 'socks5://127.0.0.1:10808' 写错无效，不开10808代理无效。
+- **20231113说明**：遇到测速不准的问题，查看[这个链接](https://github.com/XIU2/CloudflareSpeedTest/issues/168)，可以谷歌搜索 VPS looking glass 找替代的测速站点，10mb为宜。
 
-20211025说明：请拷贝使用本网站网页代码的用户注意，请在使用前务必去除HTML页面包含的statcounter计数器代码（不会影响您的正常使用），否则在您调试时该计数器会影响本网站的正常计数。另外，也不欢迎直接拷贝本站的文字或图片等内容，这些内容都是本人或者实验室相关的，一字不改地拷贝抄袭不觉得丢人吗？
+- **20230913说明**：遇到github无法更新代码，解决方案 git config --global https.proxy 'socks5://127.0.0.1:10808' 写错无效，不开10808代理无效。
+
+- **20211025说明**：请拷贝使用本网站网页代码的用户注意，请在使用前务必去除HTML页面包含的statcounter计数器代码（不会影响您的正常使用），否则在您调试时该计数器会影响本网站的正常计数。另外，也不欢迎直接拷贝本站的文字或图片等内容，这些内容都是本人或者实验室相关的，一字不改地拷贝抄袭不觉得丢人吗？
+
+---
+
+最后一次库提交时间：[![GitHub last commit](https://img.shields.io/github/last-commit/fangvv/Homepage?label=last%20commit&style=flat-square)](https://github.com/fangvv/Homepage/commits/main)
