@@ -1,8 +1,8 @@
 name: Update V2Ray Subscription
 
-"on":
+on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "40 * * * *"
   workflow_dispatch:
 
 permissions:
