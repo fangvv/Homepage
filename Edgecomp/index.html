@@ -203,9 +203,16 @@ AI隐私安全, AI Privacy
 }
 
 .research-slogan {
-    margin: 1rem 0 0;
-    font-size: 1.35rem;
-    font-weight: 600;
+    margin: 1.25rem 0 0;
+    text-align: center;
+}
+
+.research-slogan .badge {
+    display: inline-block;
+    white-space: normal;
+    font-size: 1.45rem;
+    line-height: 1.4;
+    padding: 0.45rem 0.8rem;
 }
 
 /* 响应式 */
@@ -214,9 +221,18 @@ AI隐私安全, AI Privacy
         margin-bottom: 1.5rem;
     }
     
-    .research-slogan {
-        font-size: 1rem;
+    .research-slogan .badge {
+        font-size: 1.15rem;
+        line-height: 1.35;
     }
+}
+
+.content-section {
+    margin: 2rem 0;
+}
+
+.intro-spacer {
+    height: 1rem;
 }
 
 /* 修复宽度问题：适配原有容器，不限制最大宽度 */
@@ -418,7 +434,7 @@ AI隐私安全, AI Privacy
 <div class="container">
  <header class="intro-section jumbotron my-4">
     <h1 class="display-3">边缘计算与边缘智能</h1>
-    <br>
+    <div class="intro-spacer"></div>
     <p class="lead"><b>边缘计算是在靠近物或数据源头的网络边缘侧，融合网络、计算、存储、应用核心能力的分布式开放平台，就近提供边缘智能服务，满足行业数字化在敏捷联接、实时业务、数据优化、应用智能、安全与隐私保护等方面的关键需求。 </b></p>
 
     <p class="lead"><b>简而言之，我们的研究工作是在设备资源受限的条件下，实现边缘侧实时智能计算，为工业应用和终端用户提供服务。</b></p>
@@ -431,7 +447,7 @@ AI隐私安全, AI Privacy
 
 <h2 class="my-4 text-danger font-weight-bold">核心问题</h2>
 <div class="vision-container my-4">
-    <img src="img/Vision.png" class="img-fluid animated-vision" alt="Research Vision">
+    <img width="1084" height="515" src="img/Vision.png" class="img-fluid animated-vision" alt="Research Vision" fetchpriority="high" decoding="async">
 </div>
 
  <div class="row">
@@ -440,7 +456,7 @@ AI隐私安全, AI Privacy
    </div>
    <div class="col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
-         <a href="#"><img class="card-img-top" src="img/1.jpg" alt="" loading="lazy" decoding="async" /></a>
+         <a href="#"><img width="700" height="400" class="card-img-top" src="img/1.jpg" alt="" loading="lazy" decoding="async" /></a>
          <div class="card-body">
             <h5 class="card-title"> <a href="#">边缘计算资源的高效优化调度</a> </h5>
             <p class="card-text">考虑到边缘计算对规模性、实时性和安全性等方面的要求，研究实现高效率、低能耗的分布式资源优化调度算法，实现对通信、计算、网络和存储等资源的优化利用。</p>
@@ -450,7 +466,7 @@ AI隐私安全, AI Privacy
 </div>
 <div class="col-lg-4 col-sm-6 portfolio-item">
   <div class="card h-100">
-     <a href="#"><img class="card-img-top" src="img/2.jpg" alt="" loading="lazy" decoding="async" /></a>
+     <a href="#"><img width="700" height="400" class="card-img-top" src="img/2.jpg" alt="" loading="lazy" decoding="async" /></a>
      <div class="card-body">
         <h5 class="card-title"> <a href="#">边缘硬件上部署深度学习功能</a> </h5>
         <p class="card-text">传统机器学习特别是深度学习对硬件设备的计算能力要求非常高，面向具体应用需求，研究专门针对资源受限边缘设备的分布式计算训练模式和精简深度网络模型。</p>
@@ -460,7 +476,7 @@ AI隐私安全, AI Privacy
 </div>
 <div class="col-lg-4 col-sm-6 portfolio-item">
   <div class="card h-100">
-     <a href="#"><img class="card-img-top" src="img/3.jpg" alt="" loading="lazy" decoding="async" /></a>
+     <a href="#"><img width="700" height="400" class="card-img-top" src="img/3.jpg" alt="" loading="lazy" decoding="async" /></a>
      <div class="card-body">
         <h5 class="card-title"> <a href="#">智能边缘计算技术的行业应用</a> </h5>
         <p class="card-text">与轨道交通、网联汽车、船舶制造和工业控制等领域的专家、工程师协同工作，研究将边缘计算和边缘智能的研究思想和技术成果落地，投入实用，发挥其独特作用。</p>
@@ -469,7 +485,9 @@ AI隐私安全, AI Privacy
 </div>
 </div>
 </div>
-<br>
+</section>
+
+<section id="projects" class="content-section">
 <div class="card">
   <h2 class="card-header text-danger font-weight-bold">承担项目：感谢对我们科研工作的资助</h2>
   <div class="card-body">
@@ -500,10 +518,12 @@ AI隐私安全, AI Privacy
   </ul>
   </div>
 </div>
-<br>
+</section>
+
+<section id="platform" class="content-section">
 <div class="card">
   <h2 class="card-header text-danger font-weight-bold">科研平台：作真正可部署可运行的研究</h2>
-  <img src="img/hardware.png" class="img-fluid" loading="lazy" decoding="async">
+  <img width="1099" height="428" src="img/hardware.png" class="img-fluid" loading="lazy" decoding="async">
   <div class="card-body">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">AI深度学习服务器：RTX 2080Ti/4090/A100 Deep-Learning Server, MATPOOL/PARATERA Cloud GPU Server</li>
@@ -520,18 +540,20 @@ AI隐私安全, AI Privacy
         <li>非接触式无线生命体征监测雷达模组</li>
         <li>To be added...</li>
         </ul>
+      </li>
       <li class="list-group-item">智能无人车：AlphaBot2-Pi, ROSMASTER X3</li>
       <li class="list-group-item">智能无人机：Crazypony</li>
       <li class="list-group-item">网络仿真实验平台：OPNET，NS-2，NS-3</li>
   </ul>
   </div>
 </div>
-<br>
+</section>
 
+<section id="products" class="content-section">
 <div class="card">
   <h2 class="card-header text-danger font-weight-bold">技术输出与产品化：把论文写在祖国的大地上</h2>
-  <img src="img/product.png" class="img-fluid" loading="lazy" decoding="async">
-  <img src="img/product2.png" class="img-fluid" loading="lazy" decoding="async">
+  <img width="1033" height="925" src="img/product.png" class="img-fluid" loading="lazy" decoding="async">
+  <img width="1033" height="221" src="img/product2.png" class="img-fluid" loading="lazy" decoding="async">
   <div class="card-body">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">面向物流车辆高精度实时融合定位的边缘系统及设备：与YuQing公司合作研发，可将定位误差控制在20厘米以内，成果已实用</li>
@@ -542,8 +564,9 @@ AI隐私安全, AI Privacy
     </ul>
   </div>
 </div>
-<br>
+</section>
 
+<section id="publications" class="content-section">
 <div class="card">
   <h2 class="card-header text-danger font-weight-bold">论文与获奖：当然我们也有写在纸上的研究成果</h2>
   <div class="card-body">
@@ -587,9 +610,8 @@ AI隐私安全, AI Privacy
   </ul>
   </div>
 </div>
-<br>
-
 </section>
+
 <!-- Team Members Row -->
 <section id="team">
     <div class="row">
@@ -597,91 +619,91 @@ AI隐私安全, AI Privacy
           <h2 class="my-4 text-danger font-weight-bold">团队现状</h2>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt="" loading="lazy" decoding="async" />
           <h3><a href="https://faculty.bjtu.edu.cn/8530/">方维维</a> <small>教授，导师</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/wwq.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/wwq.jpg" alt="" loading="lazy" decoding="async" />
           <h3>王婉祺 <small>23级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/ql.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ql.jpg" alt="" loading="lazy" decoding="async" />
           <h3>钱亮 <small>24级博士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/lhy.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lhy.jpg" alt="" loading="lazy" decoding="async" />
           <h3>李昊远 <small>24级博士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/sfj.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/sfj.jpg" alt="" loading="lazy" decoding="async" />
           <h3>施璠洁 <small>24级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/chw.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/chw.jpg" alt="" loading="lazy" decoding="async" />
           <h3>蔡鸿蔚 <small>24级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/tyhw.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tyhw.jpg" alt="" loading="lazy" decoding="async" />
           <h3>谭宇红玮 <small>24级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/lzj.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lzj.jpg" alt="" loading="lazy" decoding="async" />
           <h3>吕振杰 <small>25级博士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/zyj.png" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/zyj.png" alt="" loading="lazy" decoding="async" />
           <h3>张勇杰 <small>25级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/yzy.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yzy.jpg" alt="" loading="lazy" decoding="async" />
           <h3>尹志远 <small>25级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/hyj.png" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hyj.png" alt="" loading="lazy" decoding="async" />
           <h3>郝一杰 <small>25级非全硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/fkx.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fkx.jpg" alt="" loading="lazy" decoding="async" />
           <h3>方珂欣 <small>25级非全硕士生</small> </h3>
       </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/cs.png" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/cs.png" alt="" loading="lazy" decoding="async" />
           <h3>陈彡 <small>26级直博生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/ycw.png" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ycw.png" alt="" loading="lazy" decoding="async" />
           <h3>余承武 <small>26级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/hsy.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hsy.jpg" alt="" loading="lazy" decoding="async" />
           <h3>何书宇 <small>26级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/tpf.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tpf.jpg" alt="" loading="lazy" decoding="async" />
           <h3>唐鹏飞 <small>26级硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/yqj.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yqj.jpg" alt="" loading="lazy" decoding="async" />
           <h3>尹庆佳 <small>26级非全硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/lrr.png" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lrr.png" alt="" loading="lazy" decoding="async" />
           <h3>李融荣 <small>26级非全硕士生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/yl.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yl.jpg" alt="" loading="lazy" decoding="async" />
           <h3>岳靓 <small>27级本博生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/jbr.png" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/jbr.png" alt="" loading="lazy" decoding="async" />
           <h3>井博冉 <small>24级拔尖班本科生</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/gc.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/gc.jpg" alt="" loading="lazy" decoding="async" />
           <h3>郭超 <small>研究助理</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="img/joinus.jpg" alt="" loading="lazy" decoding="async" />
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/joinus.jpg" alt="" loading="lazy" decoding="async" />
           <h3>虚位以待</h3>
       </div>
   </div>
@@ -746,4 +768,5 @@ AI隐私安全, AI Privacy
 
 </body>
 </html>
+
 
