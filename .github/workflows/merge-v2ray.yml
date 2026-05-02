@@ -86,7 +86,7 @@ jobs:
       - name: Commit and push changes
         shell: bash
         run: |
-          if git diff --quiet -- v2ray.txt; then
+          if [ -z "$(git status --porcelain -- v2ray.txt)" ]; then
             echo "No changes to commit."
             exit 0
           fi
