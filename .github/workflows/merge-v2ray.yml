@@ -2,7 +2,7 @@ name: Merge V2Ray Subscriptions
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "* * * * *"
   workflow_dispatch:
 
 permissions:
