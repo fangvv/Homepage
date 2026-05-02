@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -202,10 +202,20 @@ AI隐私安全, AI Privacy
     opacity: 1;
 }
 
+.research-slogan {
+    margin: 1rem 0 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
 /* 响应式 */
 @media (max-width: 768px) {
     .portfolio-item {
         margin-bottom: 1.5rem;
+    }
+    
+    .research-slogan {
+        font-size: 1rem;
     }
 }
 
@@ -399,7 +409,7 @@ AI隐私安全, AI Privacy
   </div>
 </nav>
 
-<a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" title="访问方老师个人主页">
+<a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" rel="noopener noreferrer" title="访问方老师个人主页">
     <i class="fas fa-user-graduate"></i>
 </a>
     
@@ -413,7 +423,7 @@ AI隐私安全, AI Privacy
 
     <p class="lead"><b>简而言之，我们的研究工作是在设备资源受限的条件下，实现边缘侧实时智能计算，为工业应用和终端用户提供服务。</b></p>
 
-    <p class="lead"><b>我们崇尚学以致用的科研模式：<strong>理论研究 + 系统实践 + 工程应用 + 人才培养</strong>，欢迎产学研合作，欢迎加入<a href="https://faculty.bjtu.edu.cn/8530/" target="_blank" title="访问方老师个人主页">我们</a>。</b></p>
+    <p class="lead"><b>我们崇尚学以致用的科研模式：<strong>理论研究 + 系统实践 + 工程应用 + 人才培养</strong>，欢迎产学研合作，欢迎加入<a href="https://faculty.bjtu.edu.cn/8530/" target="_blank" rel="noopener noreferrer" title="访问方老师个人主页">我们</a>。</b></p>
 </header>
 <!-- Introduction Row -->
 
@@ -430,31 +440,31 @@ AI隐私安全, AI Privacy
    </div>
    <div class="col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
-         <a href="#"><img class="card-img-top" src="img/1.jpg" alt="" /></a>
+         <a href="#"><img class="card-img-top" src="img/1.jpg" alt="" loading="lazy" decoding="async" /></a>
          <div class="card-body">
             <h5 class="card-title"> <a href="#">边缘计算资源的高效优化调度</a> </h5>
             <p class="card-text">考虑到边缘计算对规模性、实时性和安全性等方面的要求，研究实现高效率、低能耗的分布式资源优化调度算法，实现对通信、计算、网络和存储等资源的优化利用。</p>
-            <p><h1><span class="badge badge-warning">运筹帷幄，各司其职</span></h1></p>
+            <p class="research-slogan"><span class="badge badge-warning">运筹帷幄，各司其职</span></p>
         </div>
     </div>
 </div>
 <div class="col-lg-4 col-sm-6 portfolio-item">
   <div class="card h-100">
-     <a href="#"><img class="card-img-top" src="img/2.jpg" alt="" /></a>
+     <a href="#"><img class="card-img-top" src="img/2.jpg" alt="" loading="lazy" decoding="async" /></a>
      <div class="card-body">
         <h5 class="card-title"> <a href="#">边缘硬件上部署深度学习功能</a> </h5>
         <p class="card-text">传统机器学习特别是深度学习对硬件设备的计算能力要求非常高，面向具体应用需求，研究专门针对资源受限边缘设备的分布式计算训练模式和精简深度网络模型。</p>
-        <p><h1><span class="badge badge-warning">麻雀虽小，五脏俱全</span></h1></p>
+        <p class="research-slogan"><span class="badge badge-warning">麻雀虽小，五脏俱全</span></p>
     </div>
 </div>
 </div>
 <div class="col-lg-4 col-sm-6 portfolio-item">
   <div class="card h-100">
-     <a href="#"><img class="card-img-top" src="img/3.jpg" alt="" /></a>
+     <a href="#"><img class="card-img-top" src="img/3.jpg" alt="" loading="lazy" decoding="async" /></a>
      <div class="card-body">
         <h5 class="card-title"> <a href="#">智能边缘计算技术的行业应用</a> </h5>
         <p class="card-text">与轨道交通、网联汽车、船舶制造和工业控制等领域的专家、工程师协同工作，研究将边缘计算和边缘智能的研究思想和技术成果落地，投入实用，发挥其独特作用。</p>
-        <p><h1><span class="badge badge-warning">面向行业，聚焦应用</span></h1></p>
+        <p class="research-slogan"><span class="badge badge-warning">面向行业，聚焦应用</span></p>
     </div>
 </div>
 </div>
@@ -504,8 +514,8 @@ AI隐私安全, AI Privacy
         <li>CUDA GPU：NVIDIA Jetson Nano，NVIDIA Jetson Orin Nano</li>
         <li>AI计算棒：Intel Movidius NCS 2</li>
         <li>国产NPU芯片：Sipeed K210 DEV KIT, YahBoom K210 DEV KIT</li>
-        <li>ARM CPU + 国产NPU芯片：地平线旭日X3 Pi
-        <li>异构移动计算设备(CPU/GPU/DSP)：高通骁龙855
+        <li>ARM CPU + 国产NPU芯片：地平线旭日X3 Pi</li>
+        <li>异构移动计算设备(CPU/GPU/DSP)：高通骁龙855</li>
         <li>TinyML MCU芯片：STM32 SensorTile DevKit</li>
         <li>非接触式无线生命体征监测雷达模组</li>
         <li>To be added...</li>
@@ -588,7 +598,7 @@ AI隐私安全, AI Privacy
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt="" loading="lazy" decoding="async" />
-          <h3><a href="http://faculty.bjtu.edu.cn/8530/">方维维</a> <small>教授，导师</small> </h3>
+          <h3><a href="https://faculty.bjtu.edu.cn/8530/">方维维</a> <small>教授，导师</small> </h3>
       </div>
       <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto" src="img/wwq.jpg" alt="" loading="lazy" decoding="async" />
@@ -692,7 +702,7 @@ AI隐私安全, AI Privacy
       我们都诚挚欢迎您来信交流，共同探索边缘计算与边缘智能的无限可能！
     </p>
     <div class="contact-info d-flex justify-content-center flex-wrap text-center">
-  <span class="mb-2 mb-md-0 me-md-4">📧 <a href="mailto:fangvv@qq.com">fangvv@qq.com</a></span>
+  <span class="mb-2 mb-md-0 mr-md-4">📧 <a href="mailto:fangvv@qq.com">fangvv@qq.com</a></span>
   <span>📍 北京交通大学九号教学楼北201</span>
 </div>
   </div>
@@ -728,13 +738,12 @@ AI隐私安全, AI Privacy
     src="https://www.statcounter.com/counter/counter.js"
     async></script>
     <noscript><div class="statcounter"><a title="Web Analytics"
-    href="http://statcounter.com/" target="_blank"><img
+    href="https://statcounter.com/" target="_blank" rel="noopener noreferrer"><img
     class="statcounter"
     src="//c.statcounter.com/11657787/0/268d6588/1/" alt="Web
     Analytics"></a></div></noscript>
     <!-- End of Statcounter Code -->
 
-</div>
 </body>
 </html>
 
