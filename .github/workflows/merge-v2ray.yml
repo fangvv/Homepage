@@ -80,19 +80,15 @@ jobs:
                   nodes.append(node)
 
           output = Path("v2ray.txt")
+          output.unlink(missing_ok=True)
           output.write_text("\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
           print(f"Merged {len(nodes)} unique nodes into {output}")
 
       - name: Commit and push changes
         shell: bash
         run: |
-          if [ -z "$(git status --porcelain -- v2ray.txt)" ]; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add v2ray.txt
-          git commit -m "Update merged v2ray subscription"
+          git commit --allow-empty -m "Update merged v2ray subscription"
           git push
