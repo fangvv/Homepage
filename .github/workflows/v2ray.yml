@@ -2,9 +2,7 @@ name: Update V2Ray Subscription
 
 on:
   schedule:
-    # GitHub Actions cron uses UTC. This runs at 00:30, 03:30, 06:30, 09:30, 12:30, 15:30, 18:30, 21:30 UTC.
-    # Beijing time: 08:30, 11:30, 14:30, 17:30, 20:30, 23:30, 02:30, 05:30.
-    - cron: "30 */3 * * *"
+    - cron: "30 */6 * * *"
   workflow_dispatch:
   push:
     branches:
