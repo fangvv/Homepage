@@ -40,6 +40,7 @@ jobs:
               "https://raw.githubusercontent.com/thirtysixpw/v2ray-reaper/main/normal/mix",
               "https://raw.githubusercontent.com/crackbest/V2ray-Config/refs/heads/main/config.txt",
               "https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt",
+              "https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt",
           ]
 
           schemes = (
