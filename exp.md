@@ -9,7 +9,7 @@ title: 北京交通大学系统与网络实验室
 
 - 中国知识分子的精神追求和价值取向：**独立之精神，自由之思想** —— 陈寅恪
 - 科研最重要的原则：**失败后获得的教训和成功后获得的经验同样重要([中国航天的历次失败总结](https://www.bilibili.com/video/av19791318/){:target="_blank"})，我们不强求成功**
-- 如何看待成功：[张晓东教授: 对社会和他人的贡献是检验成功的重要标准](https://fangvv.github.io/Homepage/ZXD-Success.pdf){:target="_blank"}
+- 如何看待成功：[张晓东教授: 对社会和他人的贡献是检验成功的重要标准](expfile/ZXD-Success.pdf){:target="_blank"}
 - 如何看待失败：[数学家吴文俊：科学实验不怕承认失败公布失败](http://news.sina.com.cn/c/2003-11-19/19491149846s.shtml){:target="_blank"}
 - 如何规划自己的科研人生：[熊辉教授牛文——为什么人前进的路总是被自己挡住](https://smartse.github.io/group/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E5%89%8D%E8%BF%9B%E7%9A%84%E8%B7%AF%E6%80%BB%E6%98%AF%E8%A2%AB%E8%87%AA%E5%B7%B1%E6%8C%A1%E4%BD%8F.pdf){:target="_blank"}
 - 如何做研究（方法学）：[像外行一样思考，像专家一样实践——科研成功之道](http://book.douban.com/subject/1867455/ "像外行一样思考，像专家一样实践——科研成功之道"){:target="_blank"}
@@ -21,7 +21,7 @@ title: 北京交通大学系统与网络实验室
 - 如何看待师生关系：[迷时师渡，悟了自度 侯捷](https://nieyong.github.io/wiki_ny/%E8%BF%B7%E6%97%B6%E5%B8%88%E5%BA%A6%20%E6%82%9F%E4%BA%86%E8%87%AA%E5%BA%A6.html){:target="_blank"}
 - 在没有导师的指导下，研究生如何阅读文献、提出创见、写出论文？：[王鸿伟博士的回答](https://www.zhihu.com/question/23647187/answer/568803695){:target="_blank"}
 - 如何读博士: [关于我博士毕业的这件小事](https://zhuanlan.zhihu.com/p/661406115){:target="_blank"}
-- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](https://fangvv.github.io/Homepage/practical_tips_for_doctoral_students.pdf){:target="_blank"}
+- 如何读博士：[博士生实用技巧 Practical Tips for Doctoral Students](expfile/practical_tips_for_doctoral_students.pdf){:target="_blank"}
 - 如何与导师有效沟通你的论文选题：[王树义教授的经验](http://blog.sciencenet.cn/blog-377709-1202867.html){:target="_blank"}
 - 如何学位论文选题：[清华大学刘洋教授浅谈研究生学位论文选题方法](https://www.bilibili.com/video/av94356099/){:target="_blank"}
 - 如何论文开题：[论文开题报告怎么写](https://www.zhihu.com/question/19891472){:target="_blank"}
@@ -32,7 +32,7 @@ title: 北京交通大学系统与网络实验室
 - 如何写论文(宏观角度)：[微软Simon Peyton Jones的建议](https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/ "微软Simon Peyton Jones的建议"){:target="_blank"}
 - 如何写论文(机器翻译, 其它方向亦可参考)：[清华刘洋老师的建议：学术论文写作方法和技巧](http://nlp.csai.tsinghua.edu.cn/~ly/talks/cwmt14_tut.pdf "刘洋老师的建议"){:target="_blank"}
 - 如何端到端地写科研论文(实例详尽，重点推荐)：[来自邱锡鹏老师](http://www.cips-cl.org/static/CCL2018/downloads/stuPPT/qiuxp.pdf "来自邱锡鹏老师"){:target="_blank"}
-- 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](https://fangvv.github.io/Homepage/paper-organization.jpg){:target="_blank"}
+- 如何写论文：[一篇论文的组织结构是怎样的，每部分表达什么意思](expfile/paper-organization.jpg){:target="_blank"}
 - 如何写论文：[赵鑫老师：如何以初学者角度写好一篇国际学术论文？](https://cloud.tencent.com/developer/article/1603851){:target="_blank"}
 - 如何写论文：[施柏鑫老师：计算机视觉会议论文从投稿到接收](https://mp.weixin.qq.com/s/fFt7DAMztb9n7ybBSF--YA){:target="_blank"}
 - 如何做报告：[多伦多大学李葆春教授的建议](http://www.cs.cityu.edu.hk/~jia/research/the-art-of-presentation.pdf "多伦多大学李葆春教授的建议"){:target="_blank"}
@@ -42,11 +42,11 @@ title: 北京交通大学系统与网络实验室
 - 如何提高基础的数据结构和算法的理解能力：我推荐认认真真学习[GeeksforGeeks](https://www.geeksforgeeks.org/){:target="_blank"}上的主题知识
 - 如何想到不错的科研Idea：[来自王一教授的分享](https://www.zhihu.com/question/300967426/answer/631278925){:target="_blank"}
 - 如何在计算机应用领域寻找研究想法：[来自钱志云教授的分享](https://zhuanlan.zhihu.com/p/341685279){:target="_blank"}
-- 如何阅读程序源码：[潘爱民老师的分享](https://fangvv.github.io/Homepage/HowToReadSourceCode.pdf){:target="_blank"}
+- 如何阅读程序源码：[潘爱民老师的分享](expfile/HowToReadSourceCode.pdf){:target="_blank"}
 - 如何科学地使用人类互联网：[左耳朵耗子的分享](https://github.com/haoel/haoel.github.io){:target="_blank"}
 - 如何学计算机视觉研究生才能毕业找到一份好工作：[AI专业本科生适用](https://www.zhihu.com/question/396811409){:target="_blank"}
 - 如何利用好Google Scholar：[谷歌学术](https://www.zhihu.com/question/39852481){:target="_blank"}
-- 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](https://fangvv.github.io/Homepage/不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf){:target="_blank"}
+- 如何写一篇**失败**的学位论文：[不合格学术型硕士研究生学位论文的典型特征](expfile/不合格学术型硕士研究生学位论文的典型特征-基于论文抽检专家评阅意见的分析.pdf){:target="_blank"}
 - 如何看待中国大学：[图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量](https://www.sohu.com/a/499058260_686587){:target="_blank"}
 - 如何正视中国科研：[不要培养人格低下的知识分子](http://www.sohu.com/a/124240276_354611){:target="_blank"}
 - 如何正视中国科研：[科学家的价值不只在SCI期刊里](http://zqb.cyol.com/html/2019-04/15/nw.D110000zgqnb_20190415_2-08.htm){:target="_blank"}
