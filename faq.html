@@ -2,6 +2,14 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme');
+            if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
     <meta name="keywords" content="
@@ -360,11 +368,154 @@ PyTorch Mobile, 移动端深度学习,
                 padding: 10px 18px;
             }
         }
+
+        /* === 深色模式 === */
+        [data-theme="dark"] {
+            --primary: #A8C4E0;
+            --primary-soft: #1E2A3A;
+            --accent: #E85D5D;
+            --accent-soft: #2A1A1A;
+            --text: #E8ECF2;
+            --muted: #9CA3AF;
+            --card: rgba(30, 40, 55, 0.92);
+            --border: rgba(168, 196, 224, 0.15);
+            --shadow: 0 18px 45px rgba(0, 0, 0, 0.30);
+        }
+
+        [data-theme="dark"] body {
+            background:
+                radial-gradient(circle at top left, rgba(232, 93, 93, 0.08), transparent 32rem),
+                radial-gradient(circle at top right, rgba(50, 80, 130, 0.15), transparent 30rem),
+                linear-gradient(135deg, #0F1724 0%, #141E30 52%, #1A1218 100%);
+        }
+
+        [data-theme="dark"] body::before {
+            background-image: linear-gradient(rgba(168, 196, 224, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 196, 224, 0.025) 1px, transparent 1px);
+        }
+
+        [data-theme="dark"] .hero {
+            background: linear-gradient(135deg, #162035 0%, #1E3258 58%, #6B1212 145%);
+            border-color: rgba(168, 196, 224, 0.12);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        [data-theme="dark"] .hero::after {
+            background: rgba(168, 196, 224, 0.06);
+        }
+
+        [data-theme="dark"] ol li {
+            background: linear-gradient(180deg, #1C2840 0%, #1A2438 100%);
+            border-color: rgba(168, 196, 224, 0.10);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
+        }
+
+        [data-theme="dark"] ol li::before {
+            background: linear-gradient(135deg, var(--accent), #C0392B);
+        }
+
+        [data-theme="dark"] ol li:hover {
+            border-color: rgba(232, 93, 93, 0.30);
+            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+        }
+
+        [data-theme="dark"] strong {
+            background: linear-gradient(180deg, rgba(42, 26, 26, 0.58), rgba(42, 26, 26, 0.98));
+            box-shadow: inset 0 -1px 0 rgba(232, 93, 93, 0.20);
+        }
+
+        [data-theme="dark"] a {
+            color: var(--primary);
+            border-bottom-color: rgba(168, 196, 224, 0.35);
+        }
+
+        [data-theme="dark"] a:hover {
+            color: var(--accent);
+            background: rgba(42, 26, 26, 0.58);
+        }
+
+        [data-theme="dark"] .reference-list {
+            background: linear-gradient(135deg, var(--primary-soft), #1C2840);
+            border-color: rgba(168, 196, 224, 0.10);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+        }
+
+        [data-theme="dark"] .contact {
+            background: linear-gradient(135deg, var(--accent-soft), #1C2840);
+            border-color: rgba(232, 93, 93, 0.18);
+        }
+
+        /* === 主题切换按钮 === */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            backdrop-filter: blur(8px);
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: scale(1.08);
+        }
+
+        .theme-toggle .icon-sun,
+        .theme-toggle .icon-moon {
+            position: absolute;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .theme-toggle .icon-sun {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        .theme-toggle .icon-moon {
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+
+        [data-theme="dark"] .theme-toggle .icon-sun {
+            opacity: 0;
+            transform: rotate(90deg);
+        }
+
+        [data-theme="dark"] .theme-toggle .icon-moon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        /* 全局过渡 */
+        body,
+        .hero,
+        .content-card,
+        ol li,
+        .reference-list,
+        .contact,
+        strong,
+        a,
+        footer {
+            transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
     </style>
 </head>
 <body>
     <main class="page">
         <section class="hero">
+            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式">
+                <span class="icon-sun">&#9728;&#65039;</span>
+                <span class="icon-moon">&#127769;</span>
+            </button>
             <h1>致有意来我组科研实习的本科生同学</h1>
         </section>
 
@@ -410,6 +561,29 @@ PyTorch Mobile, 移动端深度学习,
             <a class="back-home" href="https://faculty.bjtu.edu.cn/8530">返回主页</a>
         </footer>
     </main>
+
+    <!-- 主题切换逻辑 -->
+    <script>
+        (function() {
+            var root = document.documentElement;
+            var btn = document.getElementById('themeToggle');
+            var stored = localStorage.getItem('theme');
+
+            // 初始化：优先读 localStorage，否则读系统偏好
+            if (stored) {
+                root.setAttribute('data-theme', stored);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                root.setAttribute('data-theme', 'dark');
+            }
+
+            btn.addEventListener('click', function() {
+                var isDark = root.getAttribute('data-theme') === 'dark';
+                var next = isDark ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+    </script>
 
     <!-- Default Statcounter code for BJTU Homepage http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102 -->
     <script type="text/javascript">
