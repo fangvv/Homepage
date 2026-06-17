@@ -2,6 +2,18 @@
 
 主要用来存放北京交通大学系统与网络实验室的主页。
 
+## 仓库内容
+
+| 目录/文件 | 说明 |
+|-----------|------|
+| `index.html`、`_layouts/`、`assets/` | 实验室主页及相关资源 |
+| `Edgecomp/index.html` | 边缘计算与边缘智能研究展示页 |
+| `faq.html` | 本科生科研实习 FAQ |
+| `faq2.html` | 硕博招生 FAQ |
+| `exp.md`、`expfile/` | 科研经验分享及附件 |
+| `.github/workflows/v2ray.yml` | V2Ray 订阅自动抓取与合并 |
+| `.github/workflows/main.yml` | 网页定时备份 |
+
 ## 更新说明
 
 - **20260501说明**：接入大模型编程，工具trae+gpt5.5，目前实现了对四个v2ray源的抓取、整理和发布，真的是革命性创新！
