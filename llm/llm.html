@@ -1,266 +1,676 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="
-大语言模型, Large Language Model, LLM, 
-模型部署, Model Deployment, 
-边缘智能, Edge AI, 
-Ollama模型, Ollama Models, 
-Llama 3, Llama2, Gemma, DeepSeek-R1, 
-Qwen, 通义千问, 文心一言, 混元大模型, 
-Phi-3, Mistral, Yi-34B, Aquila, 
-具身智能, Embodied Intelligence, 
-模型量化, Model Quantization, 
-低功耗AI, Low-Power AI, 
-终端侧推理, On-Device Inference, 
-Jetson部署, Jetson Deployment, 
-Android AI, Windows端侧AI, 
-NPU加速, NPU Acceleration, 
-异构计算, Heterogeneous Computing, 
-模型微调, Model Fine-tuning, 
-知识蒸馏, Knowledge Distillation, 
-国产大模型, Chinese LLM, 
-AI芯片, AI Chip, 
-端云协同, Edge-Cloud Collaboration, 
-多模态大模型, Multimodal LLM, 
-AI隐私安全, AI Privacy
+大语言模型, Large Language Model, LLM,
+模型部署, Model Deployment,
+边缘智能, Edge AI,
+Ollama模型, Ollama Models,
+Llama 3, Llama2, Gemma, DeepSeek-R1,
+Qwen, 通义千问, Phi-3, Mistral,
+具身智能, Embodied Intelligence,
+模型量化, Model Quantization,
+低功耗AI, Low-Power AI,
+终端侧推理, On-Device Inference,
+Jetson部署, Jetson Deployment,
+Android AI, Windows端侧AI,
+NPU加速, NPU Acceleration,
+异构计算, Heterogeneous Computing,
+模型微调, Model Fine-tuning,
+知识蒸馏, Knowledge Distillation,
+端云协同, Edge-Cloud Collaboration,
+多模态大模型, Multimodal LLM,
+Token Optimization,
+Distributed Inference,
+Speculative Decoding,
+LLM Routing
 ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>端侧本地大模型研究</title>
+    <title>Make LLM Efficient Again - 端侧本地大模型研究</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
-        
+        /* ============================================================
+               全局基线与配色
+               ============================================================ */
+        :root {
+            --bg: #f0f4f8;
+            --bg-end: #e2e8f0;
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-border: rgba(148, 163, 184, 0.15);
+            --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --accent-orange: #f59e0b;
+            --radius-card: 24px;
+            --radius-pill: 999px;
+        }
+
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(145deg, var(--bg) 0%, var(--bg-end) 100%);
+            min-height: 100vh;
             padding: 2rem 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
         }
-        
+
+        .section-960 {
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============================================================
+               标题区
+               ============================================================ */
         .header-title {
-            color: #2c3e50;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
         }
 
-        /* 课题组介绍样式 */
-        .research-statement {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            padding: 1.5rem 2rem;
-            background: #ffffff;
-            border-left: 4px solid #2980b9;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        .header-sub {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
         }
-        .statement-text {
-            color: #34495e;
+
+        /* ============================================================
+               通用卡片（所有区块共用）
+               ============================================================ */
+        .card-block {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-card);
+            box-shadow: var(--card-shadow);
+            padding: 1.8rem 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* 区块标题（带 accent 竖条） */
+        .section-title {
+            font-weight: 700;
             font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: left;
-            margin: 0;
-        }
-        .highlight {
-            color: #2c3e50;
-            font-weight: 600;
-            border-bottom: 2px dotted #2980b9;
-        }
-
-        /* 卡片样式 */
-        .card-vertical {
-            margin: 2rem auto;
-            max-width: 800px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            background: white;
-        }
-        .img-container {
-            position: relative;
-            width: 100%;
-            background: #f0f0f0;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
             display: flex;
-            justify-content: center;
-            border-bottom: 3px solid #e0e0e0;
+            align-items: center;
+            gap: 10px;
         }
-        .adaptive-image {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 70vh;
-            object-fit: contain;
-            padding: 15px;
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 20px;
+            background: var(--accent-blue);
+            border-radius: var(--radius-pill);
+            flex-shrink: 0;
         }
-        .vertical-img .adaptive-image {
-            max-height: 90vh;
-            max-width: 80%;
-        }
-        .card-body-vertical {
-            padding: 2rem;
-            background: #ffffff;
-            text-align: center; /* 卡片标题居中 */
-        }
-        .card-title-vertical {
-            color: #2c3e50;
-            font-weight: 700;
-            font-size: 1.4rem;
+
+        /* ============================================================
+               研究方向陈述（无标题版）
+               ============================================================ */
+        .research-statement p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
             margin: 0;
         }
 
-        /* 响应式设计 */
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .research-tags .badge {
+            padding: 0.45em 1em;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: var(--radius-pill);
+            background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+            color: #fff;
+            border: none;
+        }
+
+        .badge-spec {
+            background: linear-gradient(135deg, var(--accent-purple), #7c3aed) !important;
+        }
+
+        .badge-inf {
+            background: linear-gradient(135deg, var(--accent-cyan), #0891b2) !important;
+        }
+
+        .badge-rout {
+            background: linear-gradient(135deg, var(--accent-orange), #d97706) !important;
+        }
+
+        /* ============================================================
+               走马灯
+               ============================================================ */
+        .carousel-wrapper {
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            background: #fff;
+            margin-bottom: 2.5rem;
+        }
+
+        .carousel-inner {
+            border-radius: var(--radius-card) var(--radius-card) 0 0;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 3rem 2rem 1.8rem;
+            text-align: left;
+        }
+
+        .carousel-caption h5 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+
+        .carousel-caption p {
+            font-size: 0.92rem;
+            opacity: 0.88;
+            max-width: 600px;
+            margin: 0;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 12%;
+            opacity: 0.6;
+            transition: opacity 0.25s ease;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+        }
+
+        .carousel-indicators {
+            margin-bottom: 0.6rem;
+        }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .carousel-indicators button.active {
+            background: #fff;
+        }
+
+        /* ============================================================
+               方向详解卡片
+               ============================================================ */
+        .direction-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 2.5rem;
+        }
+
+        .direction-card {
+            padding: 1.6rem 1.8rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-card);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .direction-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.10);
+        }
+
+        .direction-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+        }
+
+        .direction-card .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .direction-card h5 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .direction-card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin: 0 0 0.6rem;
+        }
+
+        .direction-card .card-tagline {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 500;
+        }
+
+        /* ============================================================
+               技术栈与平台
+               ============================================================ */
+        .tech-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .tech-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-group .group-label {
+            width: 64px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            padding-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .tech-item {
+            display: inline-block;
+            padding: 0.3em 0.85em;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: #fff;
+            border: 1px solid rgba(148, 163, 184, 0.20);
+            border-radius: var(--radius-pill);
+            color: #334155;
+        }
+
+        .tech-item.plat {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.20);
+        }
+
+        .tech-item.tool {
+            background: rgba(139, 92, 246, 0.08);
+            border-color: rgba(139, 92, 246, 0.20);
+        }
+
+        .tech-item.fmt {
+            background: rgba(6, 182, 212, 0.08);
+            border-color: rgba(6, 182, 212, 0.20);
+        }
+
+        .tech-item.model {
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.20);
+        }
+
+        /* ============================================================
+               联系我们
+               ============================================================ */
+        .contact-wrapper {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-wrapper .section-title {
+            justify-content: center;
+        }
+
+        .contact-wrapper .section-title::before {
+            display: none;
+        }
+
+        .contact-wrapper .contact-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.6rem 1.6rem;
+            background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-pill);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .email-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+        }
+
+        /* ============================================================
+               返回 & 页脚
+               ============================================================ */
+        .homepage-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.85rem 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-pill);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .homepage-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+            color: var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        .mt-section {
+            margin-top: 2rem;
+        }
+
+        /* ============================================================
+               响应式
+               ============================================================ */
         @media (max-width: 768px) {
-            .research-statement {
-                margin: 0 1.5rem 2rem;
-                padding: 1.2rem;
+            body {
+                padding: 1rem 0;
             }
-            .card-body-vertical {
-                padding: 1.5rem;
+
+            .card-block,
+            .direction-card {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .carousel-inner img {
+                height: 260px;
+            }
+
+            .carousel-caption {
+                padding: 2rem 1rem 1rem;
+            }
+
+            .carousel-caption h5 {
+                font-size: 1.05rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.82rem;
+            }
+
+            .direction-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-group {
+                flex-wrap: wrap;
+            }
+
+            .tech-group .group-label {
+                width: 100%;
+                margin-bottom: 0.2rem;
+            }
+
+            .homepage-link {
+                margin: 0 0.75rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1 class="text-center header-title">Make LLM Efficient Again!</h1>
+        <!-- ===== 标题 ===== -->
+        <div class="text-center mb-2">
+            <h1 class="header-title">Make LLM Efficient Again!</h1>
+            <p class="header-sub">BJTU Edge Computing &amp; Edge Intelligence Group · 端侧大模型部署与推理优化</p>
+        </div>
 
-        <!-- 课题组介绍 -->
-        <div class="research-statement">
-            <p class="statement-text">
-                The <span class="highlight">BJTU Edge Computing & Edge Intelligence Group</span> is pioneering the integration of large language models with edge devices. Our current focus areas include:
-                <br>
-                ✓ <span class="highlight">Token Optimization</span><br>
-                ✓ <span class="highlight">Distributed Inference</span><br>
-                ✓ <span class="highlight">Speculative Decoding</span><br>
-                ✓ <span class="highlight">LLM Routing</span>
+        <!-- ===== 研究方向陈述 ===== -->
+        <div class="section-960 card-block research-statement">
+            <p>
+                本课题组致力于<strong>大模型在端侧设备上的高效部署与推理优化</strong>，
+                围绕 LLM 推理效率瓶颈，从算法、系统、硬件三个层面开展研究。
+                当前重点方向包括：
             </p>
-        </div>
-
-        <!-- 卡片1 -->
-        <div class="card card-vertical">
-            <div class="img-container">
-                <img src="1.gif" class="adaptive-image" alt="Jetson Deployment">
-            </div>
-            <div class="card-body-vertical">
-                <h3 class="card-title-vertical">Llama2 on Jetson Orin Nano</h3>
+            <div class="research-tags">
+                <span class="badge">Token Optimization</span>
+                <span class="badge badge-spec">Speculative Decoding</span>
+                <span class="badge badge-inf">Distributed Inference</span>
+                <span class="badge badge-rout">LLM Routing</span>
             </div>
         </div>
 
-        <!-- 卡片2 -->
-        <div class="card card-vertical">
-            <div class="img-container">
-                <img src="2.png" class="adaptive-image" alt="Windows Optimization">
-            </div>
-            <div class="card-body-vertical">
-                <h3 class="card-title-vertical">DeepSeek-R1 on Windows Laptop</h3>
+        <!-- ===== 走马灯 ===== -->
+        <div class="section-960 carousel-wrapper">
+            <div id="llmCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#llmCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#llmCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#llmCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#llmCarousel" data-bs-slide-to="3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/slide1.jpg" class="d-block w-100" alt="神经网络与人工智能概念图" loading="eager">
+                        <div class="carousel-caption">
+                            <h5>Token Optimization</h5>
+                            <p>通过高效 token 管理与压缩技术，减少推理延迟与带宽占用，适配边缘设备算力约束。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide2.jpg" class="d-block w-100" alt="数据网络与分布式系统架构" loading="lazy">
+                        <div class="carousel-caption">
+                            <h5>Distributed Inference</h5>
+                            <p>多边缘节点协同推理框架，实现大模型在资源受限设备上的分布式部署与推理加速。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide3.jpg" class="d-block w-100" alt="人脑与思维模拟概念" loading="lazy">
+                        <div class="carousel-caption">
+                            <h5>Speculative Decoding</h5>
+                            <p>投机解码策略：以小模型草稿加速大模型推理，在不降低生成质量的前提下提升吞吐量。</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide4.jpg" class="d-block w-100" alt="服务器与云计算数据中心" loading="lazy">
+                        <div class="carousel-caption">
+                            <h5>LLM Routing</h5>
+                            <p>智能路由分发策略，根据任务特性和设备状态将请求调度到最优模型或推理节点。</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#llmCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">上一张</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#llmCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">下一张</span>
+                </button>
             </div>
         </div>
 
-        <!-- 卡片3 -->
-        <div class="card card-vertical vertical-img">
-            <div class="img-container">
-                <img src="3.gif" class="adaptive-image" alt="Android Demo">
+        <!-- ===== 方向详解卡片 ===== -->
+        <div class="section-960 direction-grid mt-section">
+            <!-- Token Optimization -->
+            <div class="direction-card">
+                <div class="card-header">
+                    <span class="dot" style="background:var(--accent-blue);"></span>
+                    <h5 style="color:#2563eb;">Token Optimization</h5>
+                </div>
+                <p>token 的生成与传输是 LLM 推理的核心瓶颈之一。我们通过 token 剪枝、动态上下文压缩、KV cache 量化等技术，降低每轮交互的 token 开销，提升端侧设备的响应速度。</p>
+                <span class="card-tagline">降低 token 开销 · 适配边缘算力</span>
             </div>
-            <div class="card-body-vertical">
-                <h3 class="card-title-vertical">Gemma on Android Phone</h3>
+            <!-- Speculative Decoding -->
+            <div class="direction-card">
+                <div class="card-header">
+                    <span class="dot" style="background:var(--accent-purple);"></span>
+                    <h5 style="color:#7c3aed;">Speculative Decoding</h5>
+                </div>
+                <p>传统自回归解码串行生成，难以充分利用边缘设备的并行算力。我们以小模型草稿先行推测、大模型并行验证，在保证生成质量的同时显著提升推理吞吐量和响应速度。</p>
+                <span class="card-tagline">以草稿推测代替串行生成 · 提升并行效率</span>
+            </div>
+            <!-- Distributed Inference -->
+            <div class="direction-card">
+                <div class="card-header">
+                    <span class="dot" style="background:var(--accent-cyan);"></span>
+                    <h5 style="color:#0891b2;">Distributed Inference</h5>
+                </div>
+                <p>单一边缘设备算力有限，难以独立运行完整大模型。我们研究跨设备模型切分与协同推理，将任务分解到多个边缘节点并行执行，在资源受限集群上实现高效部署和推理。</p>
+                <span class="card-tagline">跨节点协同推理 · 突破单设备算力天花板</span>
+            </div>
+            <!-- LLM Routing -->
+            <div class="direction-card">
+                <div class="card-header">
+                    <span class="dot" style="background:var(--accent-orange);"></span>
+                    <h5 style="color:#d97706;">LLM Routing</h5>
+                </div>
+                <p>端侧环境中，任务复杂度和设备状态差异显著。我们研究智能路由分发策略，根据输入任务特性与各节点负载情况，动态调度请求至最优模型或推理端点，平衡服务质量与资源效率。</p>
+                <span class="card-tagline">动态路由调度 · 平衡质量与效率</span>
             </div>
         </div>
-        
-        <!-- 在三个卡片之后添加以下代码 -->
-<div class="container mt-5">
-  <div class="homepage-link d-flex justify-content-center align-items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2c3e50" class="bi bi-person-circle" viewBox="0 0 16 16">
-      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-    </svg>
-    <a href="https://faculty.bjtu.edu.cn/8530" 
-       class="text-decoration-none link-dark fw-light"
-       style="transition: all 0.3s ease;"
-       onmouseover="this.style.opacity='0.8';this.style.transform='translateX(4px)'" 
-       onmouseout="this.style.opacity='1';this.style.transform='translateX(0)'">
-      Learn More →
-    </a>
-  </div>
-</div>
 
-<style>
-.homepage-link {
-  padding: 1.5rem;
-  background: rgba(255,255,255,0.9);
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  width: fit-content;
-  margin: 3rem auto;
-  border: 1px solid rgba(0,0,0,0.05);
-}
+        <!-- ===== 技术栈与硬件平台 ===== -->
+        <div class="section-960 card-block mt-section">
+            <h4 class="section-title" style="margin-bottom:1.2rem;">技术栈与硬件平台</h4>
+            <div class="tech-group">
+                <span class="group-label">平台</span>
+                <span class="tech-item plat">NVIDIA Jetson Orin</span>
+                <span class="tech-item plat">Raspberry Pi 5</span>
+                <span class="tech-item plat">Android Phone</span>
+                <span class="tech-item plat">Windows Laptop</span>
+                <span class="tech-item plat">Edge Server</span>
+            </div>
+            <div class="tech-group">
+                <span class="group-label">工具</span>
+                <span class="tech-item tool">Ollama</span>
+                <span class="tech-item tool">vLLM</span>
+                <span class="tech-item tool">TensorRT-LLM</span>
+                <span class="tech-item tool">ONNX Runtime</span>
+                <span class="tech-item tool">llama.cpp</span>
+                <span class="tech-item tool">PyTorch Mobile</span>
+                <span class="tech-item tool">TensorFlow Lite</span>
+            </div>
+            <div class="tech-group">
+                <span class="group-label">格式</span>
+                <span class="tech-item fmt">GGUF</span>
+                <span class="tech-item fmt">GPTQ</span>
+                <span class="tech-item fmt">AWQ</span>
+                <span class="tech-item fmt">ONNX</span>
+                <span class="tech-item fmt">Safetensors</span>
+                <span class="tech-item fmt">BitsandBytes</span>
+            </div>
+            <div class="tech-group">
+                <span class="group-label">模型</span>
+                <span class="tech-item model">Llama 3</span>
+                <span class="tech-item model">DeepSeek-R1</span>
+                <span class="tech-item model">Gemma 2</span>
+                <span class="tech-item model">Qwen 2.5</span>
+                <span class="tech-item model">Phi-3</span>
+                <span class="tech-item model">Mistral</span>
+                <span class="tech-item model">Yi-34B</span>
+            </div>
+        </div>
 
-.homepage-link:hover {
-  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-}
+        <!-- ===== 联系我们 ===== -->
+        <div class="section-960 card-block contact-wrapper mt-section">
+            <h4 class="section-title">联系我们</h4>
+            <p class="contact-desc">
+                欢迎对<strong>大模型端侧部署、推理优化、边缘智能</strong>感兴趣的同学与我们联系。
+            </p>
+            <a href="mailto:fangww@bjtu.edu.cn" class="email-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757ZM16 4.697v7.104l-5.803-3.558L16 4.697Z" />
+                </svg>
+                fangww@bjtu.edu.cn
+            </a>
+        </div>
 
-@media (max-width: 576px) {
-  .homepage-link {
-    font-size: 0.9rem;
-    padding: 1rem;
-  }
-}
-</style>
+        <!-- ===== 返回链接 ===== -->
+        <div class="text-center">
+            <a href="https://faculty.bjtu.edu.cn/8530" class="homepage-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+                Learn More →
+            </a>
+        </div>
 
-<!-- 在个人主页链接之后添加 -->
-<div class="copyright-container mt-5 pt-4">
-  <div class="container text-center">
-    <div class="copyright-text font-serif" 
-         style="color: #a0aec0;
-                font-size: 0.85rem;
-                line-height: 1.7;
-                letter-spacing: 0.5px;">
-      <div>© 2026 Weiwei Fang. All Rights Reserved.</div>
-      <div class="mt-1">内容未经允许不得复制、镜像。</div>
+        <footer>
+            <div>&copy; 2026 Weiwei Fang. All Rights Reserved.</div>
+            <div class="mt-1">内容未经允许不得复制、镜像。</div>
+        </footer>
     </div>
-  </div>
-</div>
 
-<style>
-.copyright-container {
-  position: relative;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
-
-.copyright-container::before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: rgba(0,0,0,0.1);
-  margin: -1px auto 2rem;
-}
-
-.copyright-text {
-  transition: opacity 0.3s ease;
-}
-
-.copyright-text:hover {
-  opacity: 0.9;
-}
-</style>
-
-
-    </div>
-
-<!-- Default Statcounter code for BJTU Homepage
-http://scit.bjtu.edu.cn/cms/staff/8530/?cat=102 -->
-<script type="text/javascript">
-    var sc_project=11657787;
-    var sc_invisible=1;
-    var sc_security="268d6588";
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        var sc_project = 11657787;
+        var sc_invisible = 1;
+        var sc_security = "268d6588";
     </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="http://statcounter.com/" target="_blank"><img
-    class="statcounter"
-    src="//c.statcounter.com/11657787/0/268d6588/1/" alt="Web
-    Analytics"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter">
+            <a title="Web Analytics" href="http://statcounter.com/" target="_blank">
+                <img class="statcounter" src="//c.statcounter.com/11657787/0/268d6588/1/" alt="Web Analytics">
+            </a>
+        </div>
+    </noscript>
 </body>
+
 </html>
