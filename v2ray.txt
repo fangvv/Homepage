@@ -1,4 +1,4 @@
-# Generated at 2026-06-20T09:48:51.142529+00:00
+# Generated at 2026-06-20T10:00:43.362072+00:00
 vless://9c10d8b0-e1fb-48d5-af5d-03ad736f37bb@188.114.97.6:2086?encryption=none&security=none&type=ws&host=snowy-fire-7369.mmdiborobav.workers.dev&path=%2FeyJqdW5rIjoiMENyWGlPUjVmIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOlsiODcuMTIwLjE2Ni4xNCJdfQ#%E5%B7%B4%E8%A5%BF%E8%81%96%E4%BF%9D%E7%BE%85%E4%B8%A8yoyapai.com
 trojan://eeb6823c-b926-4ea2-866a-5542edd26e59@211.49.57.175:443?security=tls&sni=hhcm.hhxaf.cc.cd&insecure=0&allowInsecure=0&type=ws&path=%2F#%E9%9F%93%E5%9C%8B%E4%B8%A8yoyapai.com
 vless://23cb9aa7-9756-459f-aa84-3a27bdf6ad64@211.49.57.178:443?encryption=none&security=tls&sni=s5.868001.xyz&insecure=0&allowInsecure=0&type=ws&host=s5.868001.xyz&path=%2F#%E9%9F%93%E5%9C%8B%E4%B8%A8yoyapai.com
