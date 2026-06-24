@@ -1,4 +1,4 @@
-# Generated at 2026-06-24T09:57:23.611122+00:00
+# Generated at 2026-06-24T10:00:46.786998+00:00
 vless://0058c215-ab1e-400c-a403-b5b2fda7e846@199.232.197.131:80?encryption=none&security=none&sni=max-gb1.global.ssl.fastly.net&type=ws&host=max-gb1.global.ssl.fastly.net&path=%2F#US%E7%BE%8E%E5%9C%8B%E4%B8%A8yoyapai.com
 vless://f9255507-1b65-433f-bfd8-193b35e068e2@199.68.156.140:80?encryption=none&security=none&type=ws&host=s5.868001.xyz&path=Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2#%F0%9F%87%BA%F0%9F%87%B8US%E7%BE%8E%E5%9C%8B%E4%B8%A8yoyapai.com
 vless://0058c215-ab1e-400c-a403-b5b2fda7e846@151.101.109.223:80?encryption=none&security=none&sni=max-gb1.global.ssl.fastly.net&type=ws&host=max-gb1.global.ssl.fastly.net&path=%2F#JP%E6%97%A5%E6%9C%AC%E4%B8%A8yoyapai.com
