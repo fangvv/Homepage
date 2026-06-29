@@ -1,4 +1,4 @@
-# Generated at 2026-06-29T16:00:43.323144+00:00
+# Generated at 2026-06-29T16:23:26.069466+00:00
 vless://SoonTeam@198.41.207.201:8880?encryption=none&security=none&type=xhttp&host=sudo.domain.direct.Pannel.admin.soon.ab841.com&path=%2F%40SoonTeam&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#CA%E5%8A%A0%E6%8B%BF%E5%A4%A7%E4%B8%A8yoyapai.com
 hysteria2://gdubbi2zb6gdp0c8@103.251.167.168:443?sni=gettestin.xxee.ru&insecure=0&allowInsecure=0&obfs=salamander&obfs-password=2a7e8084206388f4#%E5%85%8D%E8%B2%BB%E7%AF%80%E9%BB%9E%E4%B8%A8yoyapai.com
 vless://SoonTeam@108.162.195.19:8880?encryption=none&security=none&type=xhttp&host=sudo.domain.direct.Pannel.admin.soon.ab841.com&path=%2F%40SoonTeam&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#CA%E5%8A%A0%E6%8B%BF%E5%A4%A7%E4%B8%A8yoyapai.com
