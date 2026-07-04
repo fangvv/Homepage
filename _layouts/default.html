@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{ page.title | default: site.title }}</title>
-    <meta name="description" content="北京交通大学系统与网络实验室，主要研究：物联网，移动计算，室内定位，区块链系统，云与云网络，边缘智能，边缘计算，联邦学习，移动端智能，人工智能，深度学习。"/>
-    <meta name="keywords" content="物联网，移动计算，室内定位，区块链系统，云与云网络，边缘智能，边缘计算，联邦学习，移动端智能，人工智能，深度学习"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="/homepage/assets/css/style.css">
-  </head>
-  <body>
-    <section class="page-header">
-      <h2 class="project-name">北京交通大学系统与网络实验室</h2>
-      <h2 class="project-tagline">Systems and Networking Laboratory (SyNergy) @ BJTU</h2>
-        <a href="index.html" class="btn">首页</a>
-        <a href="http://faculty.bjtu.edu.cn/8530/" class="btn">导师主页</a>
-        <a href="https://fangvv.github.io/Homepage/Edgecomp/#team" class="btn">研究团队</a>
-        <a href="exp.html" class="btn">研究之道</a>
-    </section>
+<html lang="{{ site.lang | default: " en-US" }}">
 
-    <section class="main-content">
-      {{ content }}
+<head>
+  <meta charset="UTF-8">
+  <link rel="llms.txt" href="https://fangvv.github.io/Homepage/llms.txt" />
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="北京交通大学系统与网络实验室，主要研究：物联网，移动计算，室内定位，区块链系统，云与云网络，边缘智能，边缘计算，联邦学习，移动端智能，人工智能，深度学习。" />
+  <meta name="keywords" content="物联网，移动计算，室内定位，区块链系统，云与云网络，边缘智能，边缘计算，联邦学习，移动端智能，人工智能，深度学习" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="/homepage/assets/css/style.css">
+</head>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner">© 2026 Weiwei Fang. All Rights Reserved. 内容未经允许不得复制、镜像。 <a href="http://statcounter.com/" target="_blank" title="Web Analytics Made Easy - StatCounter"><img alt="Web Analytics Made Easy - StatCounter" src="//c.statcounter.com/11657787/0/268d6588/1/" /></a>
-      </footer>
-    </section>
-  </body>
+<body>
+  <section class="page-header">
+    <h2 class="project-name">北京交通大学系统与网络实验室</h2>
+    <h2 class="project-tagline">Systems and Networking Laboratory (SyNergy) @ BJTU</h2>
+    <a href="index.html" class="btn">首页</a>
+    <a href="http://faculty.bjtu.edu.cn/8530/" class="btn">导师主页</a>
+    <a href="https://fangvv.github.io/Homepage/Edgecomp/#team" class="btn">研究团队</a>
+    <a href="exp.html" class="btn">研究之道</a>
+  </section>
+
+  <section class="main-content">
+    {{ content }}
+
+    <footer class="site-footer">
+      <span class="site-footer-owner">© 2026 Weiwei Fang. All Rights Reserved. 内容未经允许不得复制、镜像。 <a
+          href="http://statcounter.com/" target="_blank" title="Web Analytics Made Easy - StatCounter"><img
+            alt="Web Analytics Made Easy - StatCounter" src="//c.statcounter.com/11657787/0/268d6588/1/" /></a>
+    </footer>
+  </section>
+</body>
+
 </html>

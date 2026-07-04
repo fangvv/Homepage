@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8" />
+  <link rel="llms.txt" href="https://fangvv.github.io/Homepage/llms.txt" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="北京交通大学边缘计算与边缘智能研究小组" />
-  <meta name="keywords" content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
+  <meta name="keywords"
+    content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
   <meta name="keywords" content="
 大语言模型, Large Language Model, LLM, 
 模型部署, Model Deployment, 
@@ -64,740 +67,808 @@ PyTorch Mobile, 移动端深度学习,
   <!-- Custom styles for this template -->
   <link href="css/round-about.css" rel="stylesheet" />
   <style>
-/* 漂浮按钮样式 - 不干扰原页面布局 */
-.floating-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #f1f8ff, #d1e6ff);
-    box-shadow: 
+    /* 漂浮按钮样式 - 不干扰原页面布局 */
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f1f8ff, #d1e6ff);
+      box-shadow:
         0 6px 16px rgba(0, 90, 255, 0.12),
         0 0 0 1px rgba(209, 230, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    color: #3068d6;
-    text-decoration: none;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      color: #3068d6;
+      text-decoration: none;
+      transform: translateY(0);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
 
-.floating-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 
+    .floating-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow:
         0 10px 20px rgba(0, 90, 255, 0.15),
         0 0 0 1px rgba(209, 230, 255, 0.3);
-    background: linear-gradient(135deg, #e4f0ff, #c8e1ff);
-}
+      background: linear-gradient(135deg, #e4f0ff, #c8e1ff);
+    }
 
-.floating-btn:active {
-    transform: scale(0.95);
-    box-shadow: 
+    .floating-btn:active {
+      transform: scale(0.95);
+      box-shadow:
         0 4px 8px rgba(0, 90, 255, 0.08),
         0 0 0 1px rgba(209, 230, 255, 0.15);
-}
+    }
 
-.floating-btn i {
-    font-size: 28px;
-    transition: transform 0.3s ease;
-}
+    .floating-btn i {
+      font-size: 28px;
+      transition: transform 0.3s ease;
+    }
 
-.floating-btn:hover i {
-    transform: scale(1.1);
-}
+    .floating-btn:hover i {
+      transform: scale(1.1);
+    }
 
-.floating-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.15);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
-    border-radius: 50%;
-    z-index: -1;
-}
+    .floating-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+      border-radius: 50%;
+      z-index: -1;
+    }
 
-.floating-btn:hover::before {
-    transform: scaleX(1);
-}
+    .floating-btn:hover::before {
+      transform: scaleX(1);
+    }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .floating-btn {
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .floating-btn {
         bottom: 20px;
         right: 20px;
         width: 60px;
         height: 60px;
-    }
-    
-    .floating-btn i {
+      }
+
+      .floating-btn i {
         font-size: 24px;
+      }
     }
-}
 
-.vision-container {
-    padding: 16px;
-    background: linear-gradient(to bottom, #f8fbff, #ffffff);
-    border-radius: 12px;
-    border: 1px solid #e0ebff;
-    box-shadow: 0 2px 10px rgba(0, 90, 255, 0.06);
-    margin-bottom: 2rem;
-}
+    .vision-container {
+      padding: 16px;
+      background: linear-gradient(to bottom, #f8fbff, #ffffff);
+      border-radius: 12px;
+      border: 1px solid #e0ebff;
+      box-shadow: 0 2px 10px rgba(0, 90, 255, 0.06);
+      margin-bottom: 2rem;
+    }
 
-.animated-vision {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 8px;
-}
+    .animated-vision {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 8px;
+    }
 
-.animated-vision {
-    animation: fadeInUpScale 1s forwards;
-}
+    .animated-vision {
+      animation: fadeInUpScale 1s forwards;
+    }
 
-.animated-vision:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 24px rgba(0, 90, 255, 0.16);
-}
+    .animated-vision:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(0, 90, 255, 0.16);
+    }
 
-@keyframes fadeInUpScale {
-    0% {
+    @keyframes fadeInUpScale {
+      0% {
         opacity: 0;
         transform: scale(0.95) translateY(20px);
-    }
-    100% {
+      }
+
+      100% {
         opacity: 1;
         transform: scale(1) translateY(0);
+      }
     }
-}
 
-/* 全局样式（放入 <style>） */
-.portfolio-item .card {
-    border: 1px solid #e9ecef;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease-out;
-    overflow: hidden;
-}
-
-.portfolio-item .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 90, 255, 0.15);
-    border-color: #3068d6;
-}
-
-.card-img-container {
-    position: relative;
-    height: 200px; /* 固定高度，避免错位 */
-    overflow: hidden;
-}
-
-.card-img-top {
-    transition: transform 0.4s ease-out;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.card-img-container:hover .card-img-top {
-    transform: scale(1.05);
-}
-
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(48, 104, 214, 0.6);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 12px 12px 0 0;
-    font-size: 24px;
-}
-
-.card-img-container:hover .img-overlay {
-    opacity: 1;
-}
-
-.research-slogan {
-    margin: 1.25rem 0 0;
-    text-align: center;
-}
-
-.research-slogan .badge {
-    display: inline-block;
-    white-space: normal;
-    font-size: 1.45rem;
-    line-height: 1.4;
-    padding: 0.45rem 0.8rem;
-}
-
-/* 响应式 */
-@media (max-width: 768px) {
-    .portfolio-item {
-        margin-bottom: 1.5rem;
+    /* 全局样式（放入 <style>） */
+    .portfolio-item .card {
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease-out;
+      overflow: hidden;
     }
-    
+
+    .portfolio-item .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 90, 255, 0.15);
+      border-color: #3068d6;
+    }
+
+    .card-img-container {
+      position: relative;
+      height: 200px;
+      /* 固定高度，避免错位 */
+      overflow: hidden;
+    }
+
+    .card-img-top {
+      transition: transform 0.4s ease-out;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-img-container:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(48, 104, 214, 0.6);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 12px 12px 0 0;
+      font-size: 24px;
+    }
+
+    .card-img-container:hover .img-overlay {
+      opacity: 1;
+    }
+
+    .research-slogan {
+      margin: 1.25rem 0 0;
+      text-align: center;
+    }
+
     .research-slogan .badge {
+      display: inline-block;
+      white-space: normal;
+      font-size: 1.45rem;
+      line-height: 1.4;
+      padding: 0.45rem 0.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .portfolio-item {
+        margin-bottom: 1.5rem;
+      }
+
+      .research-slogan .badge {
         font-size: 1.15rem;
         line-height: 1.35;
+      }
     }
-}
 
-.content-section {
-    margin: 2rem 0;
-}
+    .content-section {
+      margin: 2rem 0;
+    }
 
-.intro-spacer {
-    height: 1rem;
-}
+    .intro-spacer {
+      height: 1rem;
+    }
 
-/* 修复宽度问题：适配原有容器，不限制最大宽度 */
-.intro-section {
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeInUp 0.8s ease-out forwards;
-  margin: 3rem 0;
-  padding: 2.5rem;
-  border-radius: 16px;
-  background: linear-gradient(to bottom, #ffffff, #f9fbff);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  position: relative;
-  overflow: hidden;
-  /* 关键：不再限制最大宽度 */
-}
+    /* 修复宽度问题：适配原有容器，不限制最大宽度 */
+    .intro-section {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.8s ease-out forwards;
+      margin: 3rem 0;
+      padding: 2.5rem;
+      border-radius: 16px;
+      background: linear-gradient(to bottom, #ffffff, #f9fbff);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+      /* 关键：不再限制最大宽度 */
+    }
 
-/* 动画保持不变 */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    /* 动画保持不变 */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-/* 标题样式保持 */
-.intro-section h2 {
-  color: #3068d6;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
-}
+    /* 标题样式保持 */
+    .intro-section h2 {
+      color: #3068d6;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
 
-.intro-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: #3068d6;
-  border-radius: 2px;
-}
+    .intro-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #3068d6;
+      border-radius: 2px;
+    }
 
-.intro-section .lead {
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-  color: #444;
-  font-weight: 500;
-}
+    .intro-section .lead {
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      color: #444;
+      font-weight: 500;
+    }
 
-/* 悬停效果保持 */
-.intro-section:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
-  transition: all 0.4s ease;
-}
+    /* 悬停效果保持 */
+    .intro-section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
+      transition: all 0.4s ease;
+    }
 
-/* 完全统一方案 - 无需修改HTML */
-#team .col-lg-4.col-sm-6.text-center.mb-4 {
-  transition: all 0.3s ease;
-  margin-bottom: 2rem;
-}
+    /* 完全统一方案 - 无需修改HTML */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 {
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
 
-#team .col-lg-4.col-sm-6.text-center.mb-4:hover {
-  transform: translateY(-3px);
-}
+    #team .col-lg-4.col-sm-6.text-center.mb-4:hover {
+      transform: translateY(-3px);
+    }
 
-/* 头像样式 */
-#team .col-lg-4.col-sm-6.text-center.mb-4 img {
-  border: 3px solid white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
+    /* 头像样式 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 img {
+      border: 3px solid white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
 
-#team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
+    #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
 
-/* 名字样式 */
-#team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
-  margin-top: 1.2rem;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    /* 名字样式 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+      margin-top: 1.2rem;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* 有链接的名字 */
-#team .col-lg-4.col-sm-6.text-center.mb-4 h3 a {
-  display: block;
-  color: #2d3748;
-  font-weight: 600;
-  font-size: 1.4rem;
-  text-decoration: none;
-  margin-bottom: 0.4rem;
-  transition: all 0.3s ease;
-}
+    /* 有链接的名字 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a {
+      display: block;
+      color: #2d3748;
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+      transition: all 0.3s ease;
+    }
 
-#team .col-lg-4.col-sm-6.text-center.mb-4 h3 a:hover {
-  color: #2d3748;
-  transform: translateY(-2px);
-}
+    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a:hover {
+      color: #2d3748;
+      transform: translateY(-2px);
+    }
 
-/* 普通名字（无链接） */
-#team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
-  color: #2d3748;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  transition: all 0.3s ease;
-}
+    /* 普通名字（无链接） */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+      color: #2d3748;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      transition: all 0.3s ease;
+    }
 
-#team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 {
-  color: #2d3748;
-  transform: translateY(-2px);
-}
+    #team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 {
+      color: #2d3748;
+      transform: translateY(-2px);
+    }
 
-/* 身份标签 - 完全统一 */
-#team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
-  display: inline-block;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #4a5568;
-  background: #f8fafc;
-  padding: 0.3rem 1rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  margin-top: 0.3rem;
-  transition: all 0.3s ease;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  letter-spacing: 0.3px;
-}
+    /* 身份标签 - 完全统一 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #4a5568;
+      background: #f8fafc;
+      padding: 0.3rem 1rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      margin-top: 0.3rem;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      letter-spacing: 0.3px;
+    }
 
-/* 导师标签也完全一样 */
-#team .col-lg-4.col-sm-6.text-center.mb-4:first-child h3 small {
-  font-weight: 600;
-  padding: 0.3rem 1rem;
-  font-size: 0.8rem;
-  border-width: 1px;
-  border-color: #e2e8f0;
-  background: #f8fafc;
-  color: #4a5568;
-}
+    /* 导师标签也完全一样 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4:first-child h3 small {
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+      border-width: 1px;
+      border-color: #e2e8f0;
+      background: #f8fafc;
+      color: #4a5568;
+    }
 
-/* 统一hover效果 */
-#team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 small {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  background: white;
-  border-color: #cbd5e0;
-  color: #2d3748;
-}
+    /* 统一hover效果 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 small {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      background: white;
+      border-color: #cbd5e0;
+      color: #2d3748;
+    }
 
-/* 响应式设计 */
-@media (max-width: 991px) {
-  #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a,
-  #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
-    font-size: 1.3rem;
-  }
-  
-  #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.9rem;
-  }
-}
+    /* 响应式设计 */
+    @media (max-width: 991px) {
 
-</style>
-  
+      #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a,
+      #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+        font-size: 1.3rem;
+      }
+
+      #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.9rem;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-     <div class="container">
-        <a class="navbar-brand" href="index.html">Edge Computing & Edge Intelligence @ BJTU</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-           <ul class="navbar-nav ml-auto">
-              <li class="nav-item active"> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span> </a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#research">Research</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#team">Team</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
-          </ul>
-      </div>
-  </div>
-</nav>
-
-<a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" rel="noopener noreferrer" title="访问方老师个人主页">
-    <i class="fas fa-user-graduate"></i>
-</a>
-    
-    
-<!-- Page Content -->
-<div class="container">
- <header class="intro-section jumbotron my-4">
-    <h1 class="display-3">边缘计算与边缘智能</h1>
-    <div class="intro-spacer"></div>
-    <p class="lead"><b>边缘计算是在靠近物或数据源头的网络边缘侧，融合网络、计算、存储、应用核心能力的分布式开放平台，就近提供边缘智能服务，满足行业数字化在敏捷联接、实时业务、数据优化、应用智能、安全与隐私保护等方面的关键需求。 </b></p>
-
-    <p class="lead"><b>简而言之，我们的研究工作是在设备资源受限的条件下，实现边缘侧实时智能计算，为工业应用和终端用户提供服务。</b></p>
-
-    <p class="lead"><b>我们崇尚学以致用的科研模式：<strong>理论研究 + 系统实践 + 工程应用 + 人才培养</strong>，欢迎产学研合作，欢迎加入<a href="https://faculty.bjtu.edu.cn/8530/" target="_blank" rel="noopener noreferrer" title="访问方老师个人主页">我们</a>。</b></p>
-</header>
-<!-- Introduction Row -->
-
-<section id="research">
-
-<h2 class="my-4 text-danger font-weight-bold">核心问题</h2>
-<div class="vision-container my-4">
-    <img width="1084" height="515" src="img/Vision.png" class="img-fluid animated-vision" alt="Research Vision" fetchpriority="high" decoding="async">
-</div>
-
- <div class="row">
-    <div class="col-lg-12">
-       <h2 class="my-4 text-danger font-weight-bold">研究内容</h2>
-   </div>
-   <div class="col-lg-4 col-sm-6 portfolio-item">
-      <div class="card h-100">
-         <a href="#"><img width="700" height="400" class="card-img-top" src="img/1.jpg" alt="" loading="lazy" decoding="async" /></a>
-         <div class="card-body">
-            <h5 class="card-title"> <a href="#">边缘计算资源的高效优化调度</a> </h5>
-            <p class="card-text">考虑到边缘计算对规模性、实时性和安全性等方面的要求，研究实现高效率、低能耗的分布式资源优化调度算法，实现对通信、计算、网络和存储等资源的优化利用。</p>
-            <p class="research-slogan"><span class="badge badge-warning">运筹帷幄，各司其职</span></p>
-        </div>
-    </div>
-</div>
-<div class="col-lg-4 col-sm-6 portfolio-item">
-  <div class="card h-100">
-     <a href="#"><img width="700" height="400" class="card-img-top" src="img/2.jpg" alt="" loading="lazy" decoding="async" /></a>
-     <div class="card-body">
-        <h5 class="card-title"> <a href="#">边缘硬件上部署深度学习功能</a> </h5>
-        <p class="card-text">传统机器学习特别是深度学习对硬件设备的计算能力要求非常高，面向具体应用需求，研究专门针对资源受限边缘设备的分布式计算训练模式和精简深度网络模型。</p>
-        <p class="research-slogan"><span class="badge badge-warning">麻雀虽小，五脏俱全</span></p>
-    </div>
-</div>
-</div>
-<div class="col-lg-4 col-sm-6 portfolio-item">
-  <div class="card h-100">
-     <a href="#"><img width="700" height="400" class="card-img-top" src="img/3.jpg" alt="" loading="lazy" decoding="async" /></a>
-     <div class="card-body">
-        <h5 class="card-title"> <a href="#">智能边缘计算技术的行业应用</a> </h5>
-        <p class="card-text">与轨道交通、网联汽车、船舶制造和工业控制等领域的专家、工程师协同工作，研究将边缘计算和边缘智能的研究思想和技术成果落地，投入实用，发挥其独特作用。</p>
-        <p class="research-slogan"><span class="badge badge-warning">面向行业，聚焦应用</span></p>
-    </div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="projects" class="content-section">
-<div class="card">
-  <h2 class="card-header text-danger font-weight-bold">承担项目：感谢对我们科研工作的资助</h2>
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">主持国家自然科学基金面上项目：面向工业物联网中时效敏感DNN推理计算的边缘智能关键技术研究</li>
-      <li class="list-group-item">主持北京市自然科学基金-丰台轨道交通前沿研究联合基金：面向资源受限的轨道交通车载设备高效推理的边缘计算关键技术</li>
-      <li class="list-group-item">指导北京市自然科学基金-本科生启研计划：异构资源条件下基于多边缘计算设备的AI大模型并行推理</li>
-      <li class="list-group-item">主持校企合作项目：基于智能大模型的高铁道岔部件探伤数据分析系统</li>
-      <li class="list-group-item">主持校企合作项目：基于边缘智能的船舶工业互联网边缘计算系统</li>
-      <li class="list-group-item">主持校企合作项目：基于边缘计算的铁路道岔智能测量系统</li>
-      <li class="list-group-item">主持校企合作项目：基于物联网和数字孪生的铁路转辙机智能分析系统</li>
-      <li class="list-group-item">主持复杂零部件智能检测与识别湖北省工程研究中心开放课题：面向钢材表面缺陷检测的边缘AI技术研究</li>
-      <li class="list-group-item">主持中国轻工业工业互联网与大数据重点实验室开放课题：面向边缘计算深度神经网络模型的协同推理机制</li>
-      <li class="list-group-item">主持工业物联网与网络化控制教育部重点实验室开放课题：面向工业互联网实时数据处理的边缘计算与缓存优化技术</li>
-      <li class="list-group-item">主持赛尔网络下一代互联网技术创新项目：面向IPv6物联网智能识别应用的边缘计算技术研究</li>
-      <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和Android技术的边远地区留守群体人身安全关爱系统</li>
-      <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和边缘智能的交通路面健康状况监测</li>
-      <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和边缘智能技术的MCU声音事件检测系统</li>
-      <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow平台和Android终端的轻量级边缘联邦计算</li>
-      <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和边缘智能技术的中药材AI鉴别系统</li>
-      <li class="list-group-item">主持北京市智能物流系统协同创新中心开放课题：面向智慧物流的智能边缘计算关键理论与技术研究</li>
-      <li class="list-group-item">主持中央高校基本科研业务费项目：面向物联网的边缘智能关键技术研究</li>
-      <li class="list-group-item">主持中央高校基本科研业务费项目：移动边缘计算中面向多用户的资源管理与优化技术研究</li>
-      <li class="list-group-item">主持校企合作项目：移动边缘云计算资源管理与优化技术研究</li>
-      <li class="list-group-item">主持校企合作项目：基于室内定位、物联网和大数据的客流分析和引导技术 </li>
-      <li class="list-group-item">参与中国铁路总公司系统性重大项目课题：高速铁路基础设施检测监测体系框架及关键技术研究</li>
-      <li class="list-group-item">参与国家重点研发计划项目课题：异构交通主体群体智能协同行为仿真分析与评估</li>
-      <li class="list-group-item">参与国家重点研发计划项目任务：软件定义的工业5.5G功能化集成化通信与管理软件</li>
-  </ul>
-  </div>
-</div>
-</section>
-
-<section id="platform" class="content-section">
-<div class="card">
-  <h2 class="card-header text-danger font-weight-bold">科研平台：作真正可部署可运行的研究</h2>
-  <img width="1099" height="428" src="img/hardware.png" class="img-fluid" loading="lazy" decoding="async">
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">AI深度学习服务器：RTX 2080Ti/4090/A100 Deep-Learning Server, MATPOOL/PARATERA Cloud GPU Server</li>
-      <li class="list-group-item">边缘智能计算模组/板卡：
-        <ul>
-        <li>低功耗桌面型CPU：Intel J1900 HTPC</li>
-        <li>移动ARM CPU：Raspberry Pi 3 & 4，Orange Pi 3 LTS</li>
-        <li>CUDA GPU：NVIDIA Jetson Nano，NVIDIA Jetson Orin Nano</li>
-        <li>AI计算棒：Intel Movidius NCS 2</li>
-        <li>国产NPU芯片：Sipeed K210 DEV KIT, YahBoom K210 DEV KIT</li>
-        <li>ARM CPU + 国产NPU芯片：地平线旭日X3 Pi</li>
-        <li>异构移动计算设备(CPU/GPU/DSP)：高通骁龙855</li>
-        <li>TinyML MCU芯片：STM32 SensorTile DevKit</li>
-        <li>非接触式无线生命体征监测雷达模组</li>
-        <li>To be added...</li>
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Edge Computing & Edge Intelligence @ BJTU</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+          class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span>
+            </a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#research">Research</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#team">Team</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
         </ul>
-      </li>
-      <li class="list-group-item">智能无人车：AlphaBot2-Pi, ROSMASTER X3</li>
-      <li class="list-group-item">智能无人机：Crazypony</li>
-      <li class="list-group-item">网络仿真实验平台：OPNET，NS-2，NS-3</li>
-  </ul>
-  </div>
-</div>
-</section>
+      </div>
+    </div>
+  </nav>
 
-<section id="products" class="content-section">
-<div class="card">
-  <h2 class="card-header text-danger font-weight-bold">技术输出与产品化：把论文写在祖国的大地上</h2>
-  <img width="1033" height="925" src="img/product.png" class="img-fluid" loading="lazy" decoding="async">
-  <img width="1033" height="221" src="img/product2.png" class="img-fluid" loading="lazy" decoding="async">
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">面向物流车辆高精度实时融合定位的边缘系统及设备：与YuQing公司合作研发，可将定位误差控制在20厘米以内，成果已实用</li>
-      <li class="list-group-item">面向铁路基础设施运维智能测量工具的边缘系统及设备：与JiaoKongZhiXin公司合作研发，实现了测具的联网与测值电子化记录，成果已实用</li>
-      <li class="list-group-item">面向铁路基础设施运维的数字孪生与工况智能分析系统，与JiaoKongZhiXin公司合作研发，实现了转辙机行程的物联网化监控，成果已实用</li>
-      <li class="list-group-item">面向船舶工业互联网的智能边缘计算系统，与中船某所合作研发，正在研发中</li>
-      <li class="list-group-item">基于智能大模型的高铁道岔部件探伤数据分析系统，与JiaoKongZhiXin公司合作研发，正在研发中</li>
-    </ul>
-  </div>
-</div>
-</section>
+  <a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" rel="noopener noreferrer"
+    title="访问方老师个人主页">
+    <i class="fas fa-user-graduate"></i>
+  </a>
 
-<section id="publications" class="content-section">
-<div class="card">
-  <h2 class="card-header text-danger font-weight-bold">论文与获奖：当然我们也有写在纸上的研究成果</h2>
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">轨道表观伤损智能识别关键技术及应用，中国铁道学会科学技术奖二等奖(贡献排名第3), 2020.</li>
-      <li class="list-group-item">EdgeATP: An Adaptvie Tensor Parallelism Framework for Scalable and Efficient Transformer Inference on Edge Clusters, Journal of Systems Architecture, Accepted.</li>
-      <li class="list-group-item">Joint Service Caching and Computation Offloading in Mobile Edge Networks: A Hierarchical DRL Approach with Active Inference, IEEE Internet of Things Journal, Accepted.</li>
-       <li class="list-group-item">Automated Spatial-Temporal Graph Neural Network Search for Skeleton-based Human Action Recognition on Edge Devices, IEEE Internet of Things Journal, Accepted.</li>
-        <li class="list-group-item">EBP: Accelerating Graph Neural Network Inference via Entropy-based Pruning, Networking, Accepted.</li>
-      <li class="list-group-item">Automated Design for Hardware-aware Graph Neural Networks on Edge Devices, IEEE Transactions on Network Science and Engineering, 2026.</li>
-      <li class="list-group-item">Joint Adaptive Resolution Selection and Conditional Early Exiting for Efficient Video Recognition on Edge Devices, Big Data Mining and Analytics, 2025.</li>
-      <li class="list-group-item">LyDRL: Lyapunov-guided Deep Reinforcement Learning for Stable Task Offlaoding in Connected Autonomous Vehicles, ACM Transactions on Autonomous and Adaptive Systems, 2025.</li>
-      <li class="list-group-item">Efficient NPU-GPU Scheduling for Real-time Deep Learning Inference on Mobile Devices, Journal of Real-time Image Processing, 2025.</li>
-      <li class="list-group-item">Efficient Deep Neural Network Compression for Environmental Sound Classification on Microcontroller Units, Turkish Journal of Electrical Engineering and Computer Sciences, 2024.</li>
-      <li class="list-group-item">EdgeCI: Distributed Workload Assignment and Model Partitioning for CNN Inference on Edge Clusters, ACM Transactions on Internet Technology, 2024.</li>
-      <li class="list-group-item">An Intelligent Co-Scheduling Framework for Efficient Super-Resolution on Edge Platforms with Heterogeneous Processors, IEEE Internet of Things Journal, 2024.</li>
-      <li class="list-group-item">TLEE: Temporal-wise and Layer-wise Early Exiting Network for Efficient Video Recognition on Edge Devices, IEEE Internet of Things Journal, 2024.</li>
-      <li class="list-group-item">Model Parallelism Optimization for Distributed DNN Inference on Edge Devices, PAAP Conference, 2023. <b>Runner-ups Award</b></li>
-      <li class="list-group-item">Dynamic Deep Neural Network Inference via Adaptive Channel Skipping, Turkish Journal of Electrical Engineering and Computer Sciences, 2023.</li>
-      <li class="list-group-item">Deep Reinforcement Learning Based Multi-Task Automated Channel Pruning for DNNs, IEEE IJCNN Conference, 2023.</li>
-      <li class="list-group-item">面向轨道缺陷检测的联邦学习轻量化模型训练技术研究, 铁道学报, 2023.</li>
-      <li class="list-group-item">Classification-based Dynamic Network for Efficient Super-Resolution, IEEE ICASSP Conference, 2023.</li>
-      <li class="list-group-item">Joint Architecture Design and Workload Partitioning for DNN Inference on Industrial IoT Clusters, ACM Transactions on Internet Technolog, 2023.</li>
-      <li class="list-group-item">JMDC: A Joint Model and Data Compression System for Deep Neural Networks Collaborative Computing in Edge-Cloud Networks, Journal of Parallel and Distributed Computing, 2023.</li>
-      <li class="list-group-item">一种基于知识蒸馏的目标检测模型增量深度学习方法, 工程科学与技术, 2022. <b>该刊2024年高影响力论文</b></li>
-      <li class="list-group-item">基于多智能体深度强化学习的车联网通信资源分配优化, 北京交通大学学报, 2022.</li>
-      <li class="list-group-item">A Comprehensive Trustworthy Data Collection Approach in Sensor-Cloud System, IEEE Transactions on Big Data, IEEE Transactions on Big Data, 2022. <b>ESI高被引论文, 广东省计算机学会优秀论文二等奖</b></li>
-      <li class="list-group-item">An ADMM based Incentive Approach for Cooperative Data Analysis in Edge Computing, Turkish Journal of Electrical Engineering and Computer Sciences, 2021.</li>
-      <li class="list-group-item">Channel Pruning Guided by Spatial and Channel Attention for DNNs in Intelligent Edge Computing, Applied Soft Computing, 2021.</li>
-      <li class="list-group-item">EdgeKE: An On-Demand Deep Learning IoT System for Cognitive Big Data on Industrial Edge Devices, IEEE Transactions on Industrial Informatics, 2021.</li>
-      <li class="list-group-item">Computation Offloading Optimization for UAV-assisted Mobile Edge Computing: A Deep Deterministic Policy Gradient Approach, Wireless Networks, 2021.</li>
-      <li class="list-group-item">Accelerating Federated Learning for IoT in Big Data Analytics with Pruning, Quantization and Selective Updating, IEEE Access, 2021.</li>
-      <li class="list-group-item">EdgeLD: Locally Distributed Deep Learning Inference on Edge Device Clusters, IEEE HPCC Conference, 2020</li>
-      <li class="list-group-item">面向物联网隐私数据分析的分布式弹性网络回归学习算法, 电子与信息学报, 2020</li>
-      <li class="list-group-item">A Markov Approximation Algorithm for Computation Offloading and Resource Scheduling in Mobile Edge Computing, CyberDI Conference, 2019.</li>
-      <li class="list-group-item">OKRA: Optimal Task and Resource Allocation for Energy Minimization in Mobile Edge Computing Systems，Wireless Networks, 2019.</li>
-      <li class="list-group-item">Markov Approximation for Task Offloading and Computation Scaling in Mobile Edge Computing, Mobile Information Systems，2019.</li>
-      <li class="list-group-item">A Distributed ADMM Approach for Collaborative Regression Learning in Edge Computing, Computers, Materials & Continua，2019. <b>Best Paper Award</b></li>
-      <li class="list-group-item">Android Malware Identification based on Traffic Analysis, ICAIS Conference, 2019.</li>
-      <li class="list-group-item">移动边缘计算中分布式的设备发射功率优化算法, 西安交通大学学报, 2018.</li>
-      <li class="list-group-item">A Distributed ADMM Approach for Energy-efficient Resource Allocation in Mobile Edge Computing, Turkish Journal of Electrical Engineering and Computer Sciences, 2018.</li>
-      <li class="list-group-item">A Stochastic Control Approach to Maximize Profit on Service Provisioning for Mobile Cloudlet Platforms, IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2018.</li>
-      <li class="list-group-item">基于蓝牙信标和微信的位置服务系统研究, 计算机技术与发展, 2017.</li>
-      <li class="list-group-item">Optimal Scheduling for Energy Harvesting Mobile Sensing Devices, Computer Communications, 2016.</li>
-  </ul>
-  </div>
-</div>
-</section>
 
-<!-- Team Members Row -->
-<section id="team">
-    <div class="row">
-       <div class="col-lg-12">
+  <!-- Page Content -->
+  <div class="container">
+    <header class="intro-section jumbotron my-4">
+      <h1 class="display-3">边缘计算与边缘智能</h1>
+      <div class="intro-spacer"></div>
+      <p class="lead">
+        <b>边缘计算是在靠近物或数据源头的网络边缘侧，融合网络、计算、存储、应用核心能力的分布式开放平台，就近提供边缘智能服务，满足行业数字化在敏捷联接、实时业务、数据优化、应用智能、安全与隐私保护等方面的关键需求。 </b>
+      </p>
+
+      <p class="lead"><b>简而言之，我们的研究工作是在设备资源受限的条件下，实现边缘侧实时智能计算，为工业应用和终端用户提供服务。</b></p>
+
+      <p class="lead"><b>我们崇尚学以致用的科研模式：<strong>理论研究 + 系统实践 + 工程应用 + 人才培养</strong>，欢迎产学研合作，欢迎加入<a
+            href="https://faculty.bjtu.edu.cn/8530/" target="_blank" rel="noopener noreferrer"
+            title="访问方老师个人主页">我们</a>。</b></p>
+    </header>
+    <!-- Introduction Row -->
+
+    <section id="research">
+
+      <h2 class="my-4 text-danger font-weight-bold">核心问题</h2>
+      <div class="vision-container my-4">
+        <img width="1084" height="515" src="img/Vision.png" class="img-fluid animated-vision" alt="Research Vision"
+          fetchpriority="high" decoding="async">
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="my-4 text-danger font-weight-bold">研究内容</h2>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img width="700" height="400" class="card-img-top" src="img/1.jpg" alt="" loading="lazy"
+                decoding="async" /></a>
+            <div class="card-body">
+              <h5 class="card-title"> <a href="#">边缘计算资源的高效优化调度</a> </h5>
+              <p class="card-text">考虑到边缘计算对规模性、实时性和安全性等方面的要求，研究实现高效率、低能耗的分布式资源优化调度算法，实现对通信、计算、网络和存储等资源的优化利用。</p>
+              <p class="research-slogan"><span class="badge badge-warning">运筹帷幄，各司其职</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img width="700" height="400" class="card-img-top" src="img/2.jpg" alt="" loading="lazy"
+                decoding="async" /></a>
+            <div class="card-body">
+              <h5 class="card-title"> <a href="#">边缘硬件上部署深度学习功能</a> </h5>
+              <p class="card-text">传统机器学习特别是深度学习对硬件设备的计算能力要求非常高，面向具体应用需求，研究专门针对资源受限边缘设备的分布式计算训练模式和精简深度网络模型。</p>
+              <p class="research-slogan"><span class="badge badge-warning">麻雀虽小，五脏俱全</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img width="700" height="400" class="card-img-top" src="img/3.jpg" alt="" loading="lazy"
+                decoding="async" /></a>
+            <div class="card-body">
+              <h5 class="card-title"> <a href="#">智能边缘计算技术的行业应用</a> </h5>
+              <p class="card-text">与轨道交通、网联汽车、船舶制造和工业控制等领域的专家、工程师协同工作，研究将边缘计算和边缘智能的研究思想和技术成果落地，投入实用，发挥其独特作用。</p>
+              <p class="research-slogan"><span class="badge badge-warning">面向行业，聚焦应用</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section">
+      <div class="card">
+        <h2 class="card-header text-danger font-weight-bold">承担项目：感谢对我们科研工作的资助</h2>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">主持国家自然科学基金面上项目：面向工业物联网中时效敏感DNN推理计算的边缘智能关键技术研究</li>
+            <li class="list-group-item">主持北京市自然科学基金-丰台轨道交通前沿研究联合基金：面向资源受限的轨道交通车载设备高效推理的边缘计算关键技术</li>
+            <li class="list-group-item">指导北京市自然科学基金-本科生启研计划：异构资源条件下基于多边缘计算设备的AI大模型并行推理</li>
+            <li class="list-group-item">主持校企合作项目：基于智能大模型的高铁道岔部件探伤数据分析系统</li>
+            <li class="list-group-item">主持校企合作项目：基于边缘智能的船舶工业互联网边缘计算系统</li>
+            <li class="list-group-item">主持校企合作项目：基于边缘计算的铁路道岔智能测量系统</li>
+            <li class="list-group-item">主持校企合作项目：基于物联网和数字孪生的铁路转辙机智能分析系统</li>
+            <li class="list-group-item">主持复杂零部件智能检测与识别湖北省工程研究中心开放课题：面向钢材表面缺陷检测的边缘AI技术研究</li>
+            <li class="list-group-item">主持中国轻工业工业互联网与大数据重点实验室开放课题：面向边缘计算深度神经网络模型的协同推理机制</li>
+            <li class="list-group-item">主持工业物联网与网络化控制教育部重点实验室开放课题：面向工业互联网实时数据处理的边缘计算与缓存优化技术</li>
+            <li class="list-group-item">主持赛尔网络下一代互联网技术创新项目：面向IPv6物联网智能识别应用的边缘计算技术研究</li>
+            <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和Android技术的边远地区留守群体人身安全关爱系统</li>
+            <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和边缘智能的交通路面健康状况监测</li>
+            <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和边缘智能技术的MCU声音事件检测系统</li>
+            <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow平台和Android终端的轻量级边缘联邦计算</li>
+            <li class="list-group-item">主持教育部产学合作协同育人项目(谷歌)：基于TensorFlow和边缘智能技术的中药材AI鉴别系统</li>
+            <li class="list-group-item">主持北京市智能物流系统协同创新中心开放课题：面向智慧物流的智能边缘计算关键理论与技术研究</li>
+            <li class="list-group-item">主持中央高校基本科研业务费项目：面向物联网的边缘智能关键技术研究</li>
+            <li class="list-group-item">主持中央高校基本科研业务费项目：移动边缘计算中面向多用户的资源管理与优化技术研究</li>
+            <li class="list-group-item">主持校企合作项目：移动边缘云计算资源管理与优化技术研究</li>
+            <li class="list-group-item">主持校企合作项目：基于室内定位、物联网和大数据的客流分析和引导技术 </li>
+            <li class="list-group-item">参与中国铁路总公司系统性重大项目课题：高速铁路基础设施检测监测体系框架及关键技术研究</li>
+            <li class="list-group-item">参与国家重点研发计划项目课题：异构交通主体群体智能协同行为仿真分析与评估</li>
+            <li class="list-group-item">参与国家重点研发计划项目任务：软件定义的工业5.5G功能化集成化通信与管理软件</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" class="content-section">
+      <div class="card">
+        <h2 class="card-header text-danger font-weight-bold">科研平台：作真正可部署可运行的研究</h2>
+        <img width="1099" height="428" src="img/hardware.png" class="img-fluid" loading="lazy" decoding="async">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">AI深度学习服务器：RTX 2080Ti/4090/A100 Deep-Learning Server, MATPOOL/PARATERA Cloud GPU
+              Server</li>
+            <li class="list-group-item">边缘智能计算模组/板卡：
+              <ul>
+                <li>低功耗桌面型CPU：Intel J1900 HTPC</li>
+                <li>移动ARM CPU：Raspberry Pi 3 & 4，Orange Pi 3 LTS</li>
+                <li>CUDA GPU：NVIDIA Jetson Nano，NVIDIA Jetson Orin Nano</li>
+                <li>AI计算棒：Intel Movidius NCS 2</li>
+                <li>国产NPU芯片：Sipeed K210 DEV KIT, YahBoom K210 DEV KIT</li>
+                <li>ARM CPU + 国产NPU芯片：地平线旭日X3 Pi</li>
+                <li>异构移动计算设备(CPU/GPU/DSP)：高通骁龙855</li>
+                <li>TinyML MCU芯片：STM32 SensorTile DevKit</li>
+                <li>非接触式无线生命体征监测雷达模组</li>
+                <li>To be added...</li>
+              </ul>
+            </li>
+            <li class="list-group-item">智能无人车：AlphaBot2-Pi, ROSMASTER X3</li>
+            <li class="list-group-item">智能无人机：Crazypony</li>
+            <li class="list-group-item">网络仿真实验平台：OPNET，NS-2，NS-3</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="content-section">
+      <div class="card">
+        <h2 class="card-header text-danger font-weight-bold">技术输出与产品化：把论文写在祖国的大地上</h2>
+        <img width="1033" height="925" src="img/product.png" class="img-fluid" loading="lazy" decoding="async">
+        <img width="1033" height="221" src="img/product2.png" class="img-fluid" loading="lazy" decoding="async">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">面向物流车辆高精度实时融合定位的边缘系统及设备：与YuQing公司合作研发，可将定位误差控制在20厘米以内，成果已实用</li>
+            <li class="list-group-item">面向铁路基础设施运维智能测量工具的边缘系统及设备：与JiaoKongZhiXin公司合作研发，实现了测具的联网与测值电子化记录，成果已实用</li>
+            <li class="list-group-item">面向铁路基础设施运维的数字孪生与工况智能分析系统，与JiaoKongZhiXin公司合作研发，实现了转辙机行程的物联网化监控，成果已实用</li>
+            <li class="list-group-item">面向船舶工业互联网的智能边缘计算系统，与中船某所合作研发，正在研发中</li>
+            <li class="list-group-item">基于智能大模型的高铁道岔部件探伤数据分析系统，与JiaoKongZhiXin公司合作研发，正在研发中</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="content-section">
+      <div class="card">
+        <h2 class="card-header text-danger font-weight-bold">论文与获奖：当然我们也有写在纸上的研究成果</h2>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">轨道表观伤损智能识别关键技术及应用，中国铁道学会科学技术奖二等奖(贡献排名第3), 2020.</li>
+            <li class="list-group-item">EdgeATP: An Adaptvie Tensor Parallelism Framework for Scalable and Efficient
+              Transformer Inference on Edge Clusters, Journal of Systems Architecture, Accepted.</li>
+            <li class="list-group-item">Joint Service Caching and Computation Offloading in Mobile Edge Networks: A
+              Hierarchical DRL Approach with Active Inference, IEEE Internet of Things Journal, Accepted.</li>
+            <li class="list-group-item">Automated Spatial-Temporal Graph Neural Network Search for Skeleton-based Human
+              Action Recognition on Edge Devices, IEEE Internet of Things Journal, Accepted.</li>
+            <li class="list-group-item">EBP: Accelerating Graph Neural Network Inference via Entropy-based Pruning,
+              Networking, Accepted.</li>
+            <li class="list-group-item">Automated Design for Hardware-aware Graph Neural Networks on Edge Devices, IEEE
+              Transactions on Network Science and Engineering, 2026.</li>
+            <li class="list-group-item">Joint Adaptive Resolution Selection and Conditional Early Exiting for Efficient
+              Video Recognition on Edge Devices, Big Data Mining and Analytics, 2025.</li>
+            <li class="list-group-item">LyDRL: Lyapunov-guided Deep Reinforcement Learning for Stable Task Offlaoding in
+              Connected Autonomous Vehicles, ACM Transactions on Autonomous and Adaptive Systems, 2025.</li>
+            <li class="list-group-item">Efficient NPU-GPU Scheduling for Real-time Deep Learning Inference on Mobile
+              Devices, Journal of Real-time Image Processing, 2025.</li>
+            <li class="list-group-item">Efficient Deep Neural Network Compression for Environmental Sound Classification
+              on Microcontroller Units, Turkish Journal of Electrical Engineering and Computer Sciences, 2024.</li>
+            <li class="list-group-item">EdgeCI: Distributed Workload Assignment and Model Partitioning for CNN Inference
+              on Edge Clusters, ACM Transactions on Internet Technology, 2024.</li>
+            <li class="list-group-item">An Intelligent Co-Scheduling Framework for Efficient Super-Resolution on Edge
+              Platforms with Heterogeneous Processors, IEEE Internet of Things Journal, 2024.</li>
+            <li class="list-group-item">TLEE: Temporal-wise and Layer-wise Early Exiting Network for Efficient Video
+              Recognition on Edge Devices, IEEE Internet of Things Journal, 2024.</li>
+            <li class="list-group-item">Model Parallelism Optimization for Distributed DNN Inference on Edge Devices,
+              PAAP Conference, 2023. <b>Runner-ups Award</b></li>
+            <li class="list-group-item">Dynamic Deep Neural Network Inference via Adaptive Channel Skipping, Turkish
+              Journal of Electrical Engineering and Computer Sciences, 2023.</li>
+            <li class="list-group-item">Deep Reinforcement Learning Based Multi-Task Automated Channel Pruning for DNNs,
+              IEEE IJCNN Conference, 2023.</li>
+            <li class="list-group-item">面向轨道缺陷检测的联邦学习轻量化模型训练技术研究, 铁道学报, 2023.</li>
+            <li class="list-group-item">Classification-based Dynamic Network for Efficient Super-Resolution, IEEE ICASSP
+              Conference, 2023.</li>
+            <li class="list-group-item">Joint Architecture Design and Workload Partitioning for DNN Inference on
+              Industrial IoT Clusters, ACM Transactions on Internet Technolog, 2023.</li>
+            <li class="list-group-item">JMDC: A Joint Model and Data Compression System for Deep Neural Networks
+              Collaborative Computing in Edge-Cloud Networks, Journal of Parallel and Distributed Computing, 2023.</li>
+            <li class="list-group-item">一种基于知识蒸馏的目标检测模型增量深度学习方法, 工程科学与技术, 2022. <b>该刊2024年高影响力论文</b></li>
+            <li class="list-group-item">基于多智能体深度强化学习的车联网通信资源分配优化, 北京交通大学学报, 2022.</li>
+            <li class="list-group-item">A Comprehensive Trustworthy Data Collection Approach in Sensor-Cloud System,
+              IEEE Transactions on Big Data, IEEE Transactions on Big Data, 2022. <b>ESI高被引论文, 广东省计算机学会优秀论文二等奖</b></li>
+            <li class="list-group-item">An ADMM based Incentive Approach for Cooperative Data Analysis in Edge
+              Computing, Turkish Journal of Electrical Engineering and Computer Sciences, 2021.</li>
+            <li class="list-group-item">Channel Pruning Guided by Spatial and Channel Attention for DNNs in Intelligent
+              Edge Computing, Applied Soft Computing, 2021.</li>
+            <li class="list-group-item">EdgeKE: An On-Demand Deep Learning IoT System for Cognitive Big Data on
+              Industrial Edge Devices, IEEE Transactions on Industrial Informatics, 2021.</li>
+            <li class="list-group-item">Computation Offloading Optimization for UAV-assisted Mobile Edge Computing: A
+              Deep Deterministic Policy Gradient Approach, Wireless Networks, 2021.</li>
+            <li class="list-group-item">Accelerating Federated Learning for IoT in Big Data Analytics with Pruning,
+              Quantization and Selective Updating, IEEE Access, 2021.</li>
+            <li class="list-group-item">EdgeLD: Locally Distributed Deep Learning Inference on Edge Device Clusters,
+              IEEE HPCC Conference, 2020</li>
+            <li class="list-group-item">面向物联网隐私数据分析的分布式弹性网络回归学习算法, 电子与信息学报, 2020</li>
+            <li class="list-group-item">A Markov Approximation Algorithm for Computation Offloading and Resource
+              Scheduling in Mobile Edge Computing, CyberDI Conference, 2019.</li>
+            <li class="list-group-item">OKRA: Optimal Task and Resource Allocation for Energy Minimization in Mobile
+              Edge Computing Systems，Wireless Networks, 2019.</li>
+            <li class="list-group-item">Markov Approximation for Task Offloading and Computation Scaling in Mobile Edge
+              Computing, Mobile Information Systems，2019.</li>
+            <li class="list-group-item">A Distributed ADMM Approach for Collaborative Regression Learning in Edge
+              Computing, Computers, Materials & Continua，2019. <b>Best Paper Award</b></li>
+            <li class="list-group-item">Android Malware Identification based on Traffic Analysis, ICAIS Conference,
+              2019.</li>
+            <li class="list-group-item">移动边缘计算中分布式的设备发射功率优化算法, 西安交通大学学报, 2018.</li>
+            <li class="list-group-item">A Distributed ADMM Approach for Energy-efficient Resource Allocation in Mobile
+              Edge Computing, Turkish Journal of Electrical Engineering and Computer Sciences, 2018.</li>
+            <li class="list-group-item">A Stochastic Control Approach to Maximize Profit on Service Provisioning for
+              Mobile Cloudlet Platforms, IEEE Transactions on Systems, Man, and Cybernetics: Systems, 2018.</li>
+            <li class="list-group-item">基于蓝牙信标和微信的位置服务系统研究, 计算机技术与发展, 2017.</li>
+            <li class="list-group-item">Optimal Scheduling for Energy Harvesting Mobile Sensing Devices, Computer
+              Communications, 2016.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Members Row -->
+    <section id="team">
+      <div class="row">
+        <div class="col-lg-12">
           <h2 class="my-4 text-danger font-weight-bold">团队现状</h2>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3><a href="https://faculty.bjtu.edu.cn/8530/">方维维</a> <small>教授，导师</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ql.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ql.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>钱亮 <small>24级博士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lhy.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lhy.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>李昊远 <small>24级博士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/sfj.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/sfj.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>施璠洁 <small>24级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/chw.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/chw.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>蔡鸿蔚 <small>24级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tyhw.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tyhw.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>谭宇红玮 <small>24级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lzj.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lzj.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>吕振杰 <small>25级博士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/zyj.png" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/zyj.png" alt=""
+            loading="lazy" decoding="async" />
           <h3>张勇杰 <small>25级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yzy.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yzy.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>尹志远 <small>25级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hyj.png" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hyj.png" alt=""
+            loading="lazy" decoding="async" />
           <h3>郝一杰 <small>25级非全硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fkx.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fkx.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>方珂欣 <small>25级非全硕士生</small> </h3>
-      </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/cs.png" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/cs.png" alt=""
+            loading="lazy" decoding="async" />
           <h3>陈彡 <small>26级直博生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ycw.png" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ycw.png" alt=""
+            loading="lazy" decoding="async" />
           <h3>余承武 <small>26级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hsy.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hsy.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>何书宇 <small>26级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tpf.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tpf.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>唐鹏飞 <small>26级硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yqj.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yqj.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>尹庆佳 <small>26级非全硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lrr.png" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lrr.png" alt=""
+            loading="lazy" decoding="async" />
           <h3>李融荣 <small>26级非全硕士生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yl.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yl.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>岳靓 <small>27级本博生</small> </h3>
-      </div>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/jbr.png" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/jbr.png" alt=""
+            loading="lazy" decoding="async" />
           <h3>井博冉 <small>24级拔尖班本科生</small> </h3>
-      </div>
-      
-<!--
+        </div>
+
+        <!--
       <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/gc.jpg" alt="" loading="lazy" decoding="async" />
           <h3>郭超 <small>研究助理</small> </h3>
       </div>
 -->
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/joinus.jpg" alt="" loading="lazy" decoding="async" />
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/joinus.jpg" alt=""
+            loading="lazy" decoding="async" />
           <h3>虚位以待</h3>
+        </div>
       </div>
+    </section>
+    <!-- /.container -->
+
+
+    <section id="contact">
+      <div class="contact-callout mt-5 mb-4 p-4 rounded"
+        style="background: linear-gradient(to right, #f0f7ff, #f8fbff); border-left: 5px solid #3068d6; box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);">
+        <div class="text-center">
+          <h4 class="mb-3" style="color: #3068d6; font-weight: 600;">
+            <i class="fas fa-handshake"></i> 期待与您交流合作！
+          </h4>
+          <p class="lead text-secondary mb-3">
+            无论您是业界专家、同行学者，还是热爱科研的学子，
+          </p>
+          <p class="text-muted mb-3">
+            我们都诚挚欢迎您来信交流，共同探索边缘计算与边缘智能的无限可能！
+          </p>
+          <div class="contact-info d-flex justify-content-center flex-wrap text-center">
+            <span class="mb-2 mb-md-0 mr-md-4">📧 <a href="mailto:fangvv@qq.com">fangvv@qq.com</a></span>
+            <span>📍 北京交通大学九号教学楼北201</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
-<!-- /.container -->
 
 
-<section id="contact">
-    <div class="contact-callout mt-5 mb-4 p-4 rounded" style="background: linear-gradient(to right, #f0f7ff, #f8fbff); border-left: 5px solid #3068d6; box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);">
-  <div class="text-center">
-    <h4 class="mb-3" style="color: #3068d6; font-weight: 600;">
-      <i class="fas fa-handshake"></i> 期待与您交流合作！
-    </h4>
-    <p class="lead text-secondary mb-3">
-      无论您是业界专家、同行学者，还是热爱科研的学子，
-    </p>
-    <p class="text-muted mb-3">
-      我们都诚挚欢迎您来信交流，共同探索边缘计算与边缘智能的无限可能！
-    </p>
-    <div class="contact-info d-flex justify-content-center flex-wrap text-center">
-  <span class="mb-2 mb-md-0 mr-md-4">📧 <a href="mailto:fangvv@qq.com">fangvv@qq.com</a></span>
-  <span>📍 北京交通大学九号教学楼北201</span>
-</div>
-  </div>
-</div>
-</section>
-</div>
-
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
     <div class="container">
-       <p class="m-0 text-center text-white">&copy; Edge Computing and Edge Intelligence @ BJTU 2026. All Rights Reserved. </p>
-   </div>
-   <!-- /.container -->
-</footer>
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <p class="m-0 text-center text-white">&copy; Edge Computing and Edge Intelligence @ BJTU 2026. All Rights
+        Reserved. </p>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script>
-   var a = document.querySelector(".navbar-toggler");
-   $(".navbar-nav li a").on("click",function () {
-     a.click();
- });
-</script>
+  <script>
+    var a = document.querySelector(".navbar-toggler");
+    $(".navbar-nav li a").on("click", function () {
+      a.click();
+    });
+  </script>
 
-<script type="text/javascript">
-    var sc_project=11657787;
-    var sc_invisible=1;
-    var sc_security="268d6588";
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank" rel="noopener noreferrer"><img
-    class="statcounter"
-    src="//c.statcounter.com/11657787/0/268d6588/1/" alt="Web
-    Analytics"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+  <script type="text/javascript">
+    var sc_project = 11657787;
+    var sc_invisible = 1;
+    var sc_security = "268d6588";
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"
+        rel="noopener noreferrer"><img class="statcounter" src="//c.statcounter.com/11657787/0/268d6588/1/" alt="Web
+    Analytics"></a></div>
+  </noscript>
+  <!-- End of Statcounter Code -->
 
 </body>
+
 </html>
-
-
