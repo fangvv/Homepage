@@ -1,4 +1,4 @@
-# Generated at 2026-07-22T03:57:13.330099+00:00
+# Generated at 2026-07-22T04:00:29.531344+00:00
 vless://eab915bc-d2df-73d1-47d0-6eb240497055@fn.fifapes.monster:2090?encryption=none&security=none&fp=chrome&type=tcp&headerType=none&host=fn.fifapes.monster#%F0%9F%87%AE%F0%9F%87%B7%20%E4%BC%8A%E6%9C%97%E4%BC%8A%E6%9C%97%E4%B8%A8yoyapai.com
 vless://eeb6823c-b926-4ea2-866a-5542edd26e59@yx.cloudflare.182682.xyz:443?encryption=none&security=tls&sni=t1s1.rittbo.kdns.fr&fp=chrome&insecure=0&allowInsecure=0&ech=cloudflare-ech.com%2Bhttps%3A%2F%2Fdns.alidns.com%2Fdns-query&type=ws&host=t1s1.rittbo.kdns.fr&path=%2F#%E7%BE%8E%E5%9B%BD%E4%B8%A8yoyapai.com
 trojan://b490740312aedb5f9f6b84c7aebd08c0@95.40.51.248:38937?security=tls&sni=www.nintendogames.net&insecure=0&allowInsecure=0&type=tcp&headerType=none#%E6%97%A5%E6%9C%AC%E4%B8%A8yoyapai.com
