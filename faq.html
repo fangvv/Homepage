@@ -13,504 +13,15 @@
         })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="北京交通大学方维维教授致有意来组科研实习的本科生同学的常见问题解答" />
     <meta name="keywords"
-        content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
-    <meta name="keywords" content="
-大语言模型, Large Language Model, LLM, 
-模型部署, Model Deployment, 
-边缘智能, Edge AI, 
-Ollama模型, Ollama Models, 
-Llama 3, Llama2, Gemma, DeepSeek-R1, 
-Qwen, 通义千问, 文心一言, 混元大模型, 
-Phi-3, Mistral, Yi-34B, Aquila, 
-具身智能, Embodied Intelligence, 
-模型量化, Model Quantization, 
-低功耗AI, Low-Power AI, 
-终端侧推理, On-Device Inference, 
-Jetson部署, Jetson Deployment, 
-Android AI, Windows端侧AI, 
-NPU加速, NPU Acceleration, 
-异构计算, Heterogeneous Computing, 
-模型微调, Model Fine-tuning, 
-知识蒸馏, Knowledge Distillation, 
-国产大模型, Chinese LLM, 
-AI芯片, AI Chip, 
-端云协同, Edge-Cloud Collaboration, 
-多模态大模型, Multimodal LLM, 
-AI隐私安全, AI Privacy,
-智能体, AI Agent, Multi-Agent, 
-RAG, 检索增强生成, Retrieval-Augmented Generation, 
-向量数据库, Vector Database, 
-提示工程, Prompt Engineering, 
-思维链, Chain of Thought, 
-少样本学习, Few-Shot Learning, 
-RLHF, 人类反馈强化学习, 
-DPO, 直接偏好优化, 
-LoRA, 低秩适配, QLoRA, 量化低秩适配, 
-vLLM, 高效推理引擎, 
-TensorRT, NVIDIA推理优化, 
-ONNX, 开放神经网络交换格式, 
-GGUF, 通用模型格式, 
-GPTQ, 模型量化方法, AWQ, 激活感知量化, 
-树莓派, Raspberry Pi, 
-NVIDIA Jetson, 边缘计算平台, 
-TensorFlow Lite, 轻量级推理框架, 
-PyTorch Mobile, 移动端深度学习, 
-边缘服务器, Edge Server, 
-物联网, IoT, Internet of Things, 
-5G边缘计算, 6G边缘计算, 
-边缘云, Edge Cloud, 
-联邦学习, Federated Learning, 
-分布式训练, Distributed Training, 
-模型压缩, Model Compression, 
-剪枝, Pruning, 
-量化, Quantization
-">
+        content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning，大语言模型，Large Language Model，LLM，模型部署，Model Deployment，边缘智能，Edge AI，Ollama模型，Llama 3，DeepSeek-R1，Qwen，通义千问，具身智能，Embodied Intelligence，模型量化，Model Quantization，低功耗AI，终端侧推理，On-Device Inference，Jetson部署，NPU加速，异构计算，模型微调，知识蒸馏，国产大模型，AI芯片，端云协同，多模态大模型，AI隐私安全，智能体，AI Agent，Multi-Agent，RAG，检索增强生成，向量数据库，提示工程，思维链，少样本学习，RLHF，DPO，LoRA，vLLM，TensorRT，ONNX，GGUF，GPTQ，AWQ，树莓派，Raspberry Pi，NVIDIA Jetson，TensorFlow Lite，PyTorch Mobile，边缘服务器，Edge Server，物联网，IoT，5G边缘计算，6G边缘计算，边缘云，联邦学习，分布式训练，模型压缩，剪枝，量化" />
+    <meta property="og:title" content="致有意来我组科研实习的本科生同学" />
+    <meta property="og:description" content="北京交通大学方维维教授组FAQ" />
+    <meta property="og:url" content="https://fangvv.github.io/Homepage/faq.html" />
+    <meta property="og:type" content="website" />
     <title>致有意来我组科研实习的本科生同学</title>
-    <style>
-        :root {
-            --primary: #243B66;
-            --primary-soft: #EEF4FF;
-            --accent: #B91C1C;
-            --accent-soft: #FEF2F2;
-            --text: #243042;
-            --muted: #6B7280;
-            --card: rgba(255, 255, 255, 0.92);
-            --border: rgba(36, 59, 102, 0.12);
-            --shadow: 0 18px 45px rgba(36, 59, 102, 0.10);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            margin: 0;
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            line-height: 1.9;
-            background:
-                radial-gradient(circle at top left, rgba(185, 28, 28, 0.095), transparent 32rem),
-                radial-gradient(circle at top right, rgba(36, 59, 102, 0.14), transparent 30rem),
-                linear-gradient(135deg, #F8FAFC 0%, #F2F5FA 52%, #FFF8F8 100%);
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            background-image: linear-gradient(rgba(36, 59, 102, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(36, 59, 102, 0.035) 1px, transparent 1px);
-            background-size: 36px 36px;
-            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
-        }
-
-        .page {
-            width: min(980px, calc(100% - 32px));
-            margin: 0 auto;
-            padding: 48px 0 34px;
-        }
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            padding: 46px 48px;
-            color: #fff;
-            background: linear-gradient(135deg, #22365F 0%, #2B4A7F 58%, #B91C1C 145%);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: 28px;
-            box-shadow: 0 24px 70px rgba(36, 59, 102, 0.24);
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 280px;
-            height: 280px;
-            right: -86px;
-            top: -98px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.13);
-        }
-
-        .hero h1 {
-            position: relative;
-            z-index: 1;
-            max-width: 760px;
-            margin: 0;
-            font-size: clamp(1.65rem, 3.8vw, 2.6rem);
-            line-height: 1.22;
-            letter-spacing: -0.04em;
-        }
-
-        .hero p {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
-            margin: 18px 0 0;
-            color: rgba(255, 255, 255, 0.84);
-            font-size: 1.05rem;
-        }
-
-        .content-card {
-            margin-top: 28px;
-            padding: 34px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(14px);
-        }
-
-        .greeting {
-            display: block;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            font-size: 1.8em;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        .lead {
-            margin: 0 0 1.5rem;
-            font-size: 1.04rem;
-        }
-
-        .alert {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #FFF3E0;
-            border-left: 4px solid var(--accent);
-            border-radius: 14px;
-        }
-
-        ol {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            counter-reset: section;
-        }
-
-        ol li {
-            position: relative;
-            margin: 18px 0;
-            padding: 24px 26px 24px 82px;
-            overflow: hidden;
-            counter-increment: section;
-            background: linear-gradient(180deg, #FFFFFF 0%, #FCFDFF 100%);
-            border: 1px solid rgba(36, 59, 102, 0.10);
-            border-radius: 22px;
-            box-shadow: 0 12px 28px rgba(36, 59, 102, 0.075);
-            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-        }
-
-        ol li::before {
-            content: counter(section);
-            position: absolute;
-            left: 24px;
-            top: 26px;
-            display: grid;
-            width: 38px;
-            height: 38px;
-            place-items: center;
-            color: #fff;
-            font-size: 1.05rem;
-            font-weight: 800;
-            line-height: 1;
-            background: linear-gradient(135deg, var(--accent), #DC2626);
-            border-radius: 14px;
-            box-shadow: 0 10px 20px rgba(185, 28, 28, 0.18);
-        }
-
-        ol li:hover {
-            transform: translateY(-4px);
-            border-color: rgba(185, 28, 28, 0.22);
-            box-shadow: 0 18px 38px rgba(36, 59, 102, 0.13);
-        }
-
-        strong {
-            padding: 0.12em 0.35em;
-            color: var(--accent);
-            font-weight: 800;
-            background: linear-gradient(180deg, rgba(254, 242, 242, 0.58), rgba(254, 242, 242, 0.98));
-            border-radius: 8px;
-            box-shadow: inset 0 -1px 0 rgba(185, 28, 28, 0.14);
-        }
-
-        a {
-            color: var(--primary);
-            font-weight: 650;
-            text-decoration: none;
-            border-bottom: 1px dashed rgba(36, 59, 102, 0.42);
-            transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-        }
-
-        a:hover {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-            background: rgba(254, 242, 242, 0.78);
-        }
-
-        .section-title {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            margin: 42px 0 16px;
-            color: var(--primary);
-            font-size: 1.55rem;
-            letter-spacing: -0.03em;
-        }
-
-        .section-title::before {
-            content: "";
-            width: 8px;
-            height: 28px;
-            background: var(--accent);
-            border-radius: 999px;
-        }
-
-        .reference-list {
-            margin: 0;
-            padding: 22px 24px 22px 44px;
-            background: linear-gradient(135deg, var(--primary-soft), #FFFFFF);
-            border: 1px solid rgba(36, 59, 102, 0.10);
-            border-radius: 22px;
-            box-shadow: 0 12px 28px rgba(36, 59, 102, 0.07);
-        }
-
-        .reference-list li {
-            margin: 10px 0;
-            padding-left: 4px;
-        }
-
-        .contact {
-            margin: 26px 0 0;
-            padding: 22px 24px;
-            background: linear-gradient(135deg, var(--accent-soft), #FFFFFF);
-            border: 1px solid rgba(185, 28, 28, 0.13);
-            border-radius: 22px;
-        }
-
-        footer {
-            padding: 28px 96px 0 0;
-            color: var(--muted);
-            text-align: center;
-        }
-
-        .back-home {
-            position: fixed;
-            right: 30px;
-            bottom: 30px;
-            z-index: 10;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 12px 22px;
-            color: #fff !important;
-            font-weight: 750;
-            background: linear-gradient(135deg, var(--accent), #DC2626);
-            border: 0;
-            border-radius: 999px;
-            box-shadow: 0 14px 30px rgba(185, 28, 28, 0.22);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .back-home:hover {
-            color: #fff !important;
-            background: linear-gradient(135deg, #991B1B, var(--accent));
-            box-shadow: 0 18px 38px rgba(185, 28, 28, 0.30);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .page {
-                width: min(100% - 24px, 980px);
-                padding: 22px 0 26px;
-            }
-
-            .hero {
-                padding: 34px 24px;
-                border-radius: 22px;
-            }
-
-            .content-card {
-                padding: 22px 16px;
-                border-radius: 22px;
-            }
-
-            .greeting {
-                font-size: 1.45em;
-            }
-
-            ol li {
-                margin: 14px 0;
-                padding: 68px 18px 20px;
-                border-radius: 18px;
-            }
-
-            ol li::before {
-                left: 18px;
-                top: 18px;
-            }
-
-            .reference-list {
-                padding: 18px 18px 18px 32px;
-            }
-
-            footer {
-                padding: 24px 0 74px;
-            }
-
-            .back-home {
-                right: 16px;
-                bottom: 16px;
-                min-height: 44px;
-                padding: 10px 18px;
-            }
-        }
-
-        /* === 深色模式 === */
-        [data-theme="dark"] {
-            --primary: #A8C4E0;
-            --primary-soft: #1E2A3A;
-            --accent: #E85D5D;
-            --accent-soft: #2A1A1A;
-            --text: #E8ECF2;
-            --muted: #9CA3AF;
-            --card: rgba(30, 40, 55, 0.92);
-            --border: rgba(168, 196, 224, 0.15);
-            --shadow: 0 18px 45px rgba(0, 0, 0, 0.30);
-        }
-
-        [data-theme="dark"] body {
-            background:
-                radial-gradient(circle at top left, rgba(232, 93, 93, 0.08), transparent 32rem),
-                radial-gradient(circle at top right, rgba(50, 80, 130, 0.15), transparent 30rem),
-                linear-gradient(135deg, #0F1724 0%, #141E30 52%, #1A1218 100%);
-        }
-
-        [data-theme="dark"] body::before {
-            background-image: linear-gradient(rgba(168, 196, 224, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 196, 224, 0.025) 1px, transparent 1px);
-        }
-
-        [data-theme="dark"] .hero {
-            background: linear-gradient(135deg, #162035 0%, #1E3258 58%, #6B1212 145%);
-            border-color: rgba(168, 196, 224, 0.12);
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-        }
-
-        [data-theme="dark"] .hero::after {
-            background: rgba(168, 196, 224, 0.06);
-        }
-
-        [data-theme="dark"] ol li {
-            background: linear-gradient(180deg, #1C2840 0%, #1A2438 100%);
-            border-color: rgba(168, 196, 224, 0.10);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
-        }
-
-        [data-theme="dark"] ol li::before {
-            background: linear-gradient(135deg, var(--accent), #C0392B);
-        }
-
-        [data-theme="dark"] ol li:hover {
-            border-color: rgba(232, 93, 93, 0.30);
-            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
-        }
-
-        [data-theme="dark"] strong {
-            background: linear-gradient(180deg, rgba(42, 26, 26, 0.58), rgba(42, 26, 26, 0.98));
-            box-shadow: inset 0 -1px 0 rgba(232, 93, 93, 0.20);
-        }
-
-        [data-theme="dark"] a {
-            color: var(--primary);
-            border-bottom-color: rgba(168, 196, 224, 0.35);
-        }
-
-        [data-theme="dark"] a:hover {
-            color: var(--accent);
-            background: rgba(42, 26, 26, 0.58);
-        }
-
-        [data-theme="dark"] .reference-list {
-            background: linear-gradient(135deg, var(--primary-soft), #1C2840);
-            border-color: rgba(168, 196, 224, 0.10);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-        }
-
-        [data-theme="dark"] .contact {
-            background: linear-gradient(135deg, var(--accent-soft), #1C2840);
-            border-color: rgba(232, 93, 93, 0.18);
-        }
-
-        /* === 主题切换按钮 === */
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 2;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            backdrop-filter: blur(8px);
-            transition: background 0.25s ease, transform 0.25s ease;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.28);
-            transform: scale(1.08);
-        }
-
-        .theme-toggle .icon-sun,
-        .theme-toggle .icon-moon {
-            position: absolute;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .theme-toggle .icon-sun {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
-
-        .theme-toggle .icon-moon {
-            opacity: 0;
-            transform: rotate(-90deg);
-        }
-
-        [data-theme="dark"] .theme-toggle .icon-sun {
-            opacity: 0;
-            transform: rotate(90deg);
-        }
-
-        [data-theme="dark"] .theme-toggle .icon-moon {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
-
-        /* 全局过渡 */
-        body,
-        .hero,
-        .content-card,
-        ol li,
-        .reference-list,
-        .contact,
-        strong,
-        a,
-        footer {
-            transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="faq-common.css">
 </head>
 
 <body>
@@ -533,30 +44,35 @@ PyTorch Mobile, 移动端深度学习,
                 <li>我的学生都是我自己带。受客观条件如工位、精力所限，我组<strong>仅接收预期留组读硕博的本科生</strong>进组实习。如果你对我的研究<strong>真感兴趣</strong>且想有所作为，那么欢迎你来与我共同成长，彼此成就。如果你水平很高，估计在我们这里做科研也收获不到什么，那你开始就应去找你认为水平更高的导师。我们都没必要在不match的人身上浪费时间。
                 </li>
 
-                <li>当前学术界高度内卷，老师考核<a href="https://www.zhihu.com/question/1976088728318538595"
-                        target="_blank">压力极大</a>。<strong>课外培养本科生<a
+                <li>当前学术界高度内卷，老师考核<a href="https://www.zhihu.com/question/1976088728318538595" target="_blank"
+                        rel="noopener noreferrer">压力极大</a>。<strong>课外培养本科生<a
                             href="https://www.zhihu.com/question/1993742963784848897/answer/1993748322066920997"
-                            target="_blank">非必要的考核指标</a></strong>。同时对<a
+                            target="_blank" rel="noopener noreferrer">非必要的考核指标</a></strong>。同时对<a
                         href="https://www.zhihu.com/question/2029984179363038791/answer/2052120711435655043"
-                        target="_blank">多数本科生</a>来说，大创是为拿学分、临了突击且最终评级不确定性高，竞赛仅学校认定目录中的、本院学生带队的且至少省部级奖才记老师工作量，做研究缺少时间经验甚至只为蹭个共同作者而来。因此，为课题组培养未来研究生是我们唯一的<strong>激励</strong>。
+                        target="_blank"
+                        rel="noopener noreferrer">多数本科生</a>来说，大创是为拿学分、临了突击且最终评级不确定性高，竞赛仅学校认定目录中的、本院学生带队的且至少省部级奖才记老师工作量，做研究缺少时间经验甚至只为蹭个共同作者而来。因此，为课题组培养未来研究生是我们唯一的<strong>激励</strong>。
                 </li>
 
                 <li>对<a href="https://www.zhihu.com/question/2029984179363038791/answer/2052120711435655043"
-                        target="_blank">多数本科生</a>来说，应付学业及杂事等已筋疲力尽，有空更愿<strong>睡懒觉或玩游戏</strong>，甚至讨厌优绩主义，可以理解。但这对指导教师来说，等于时间和资源的浪费。因此，希望你有<a
+                        target="_blank"
+                        rel="noopener noreferrer">多数本科生</a>来说，应付学业及杂事等已筋疲力尽，有空更愿<strong>睡懒觉或玩游戏</strong>，甚至讨厌优绩主义，可以理解。但这对指导教师来说，等于时间和资源的浪费。因此，希望你有<a
                         href="https://p9.itc.cn/q_70/images03/20211231/97b9e0e41e424e699d87b0a6c46add0e.jpeg"
-                        target="_blank">极强的好胜心和上进心</a>：<strong>要么别来，要么狂卷</strong>。对我而言，本科生能拿到的奖项和荣誉大多数只会带来片刻的心理满足而非职业发展，所以搞清楚你才是主角。</li>
+                        target="_blank"
+                        rel="noopener noreferrer">极强的好胜心和上进心</a>：<strong>要么别来，要么狂卷</strong>。对我而言，本科生能拿到的奖项和荣誉大多数只会带来片刻的心理满足而非职业发展，所以搞清楚你才是主角。
+                </li>
 
                 <li>我认为，能以个人真正努力(<strong>非挂名或共同X作</strong>)发表顶会顶刊论文的本科生是<strong>极少数</strong>的，需要长期的厚积薄发，个人能力和投稿运气都缺一不可。正常逻辑下，好的idea，为什么老师不优先交给<strong>有经验且毕业有要求的研究生</strong>而是给<strong>新手本科生</strong>来做和发表？<a
                         href="https://www.zhihu.com/question/2014876930340569682/answer/2015195763613914710"
-                        target="_blank">除非是...</a></li>
+                        target="_blank" rel="noopener noreferrer">除非是...</a></li>
 
                 <li><strong>大一学生请谨慎进组</strong>，因为没分专业，没有计算机知识和技能，不确定性高，想法多变，老师容易<a
-                        href="https://www.zhihu.com/question/519787074/answer/3389339862" target="_blank">吃力不讨好</a>。
+                        href="https://www.zhihu.com/question/519787074/answer/3389339862" target="_blank"
+                        rel="noopener noreferrer">吃力不讨好</a>。
                 </li>
 
                 <li>为避免耽误学生前程，我<strong>尽量避免给不熟悉的学生签署各类推荐信 </strong><a
-                        href="https://opinion.cw.com.tw/blog/profile/52/article/12180"
-                        target="_blank">(因非工作职责)</a>，建议请其他知名学者推荐。</li>
+                        href="https://opinion.cw.com.tw/blog/profile/52/article/12180" target="_blank"
+                        rel="noopener noreferrer">(因非工作职责)</a>，建议请其他知名学者推荐。</li>
 
             </ol>
 
@@ -566,18 +82,21 @@ PyTorch Mobile, 移动端深度学习,
 
             <h2 class="section-title">参考链接</h2>
             <ul class="reference-list">
-                <li><a href="https://www.zhihu.com/question/475187560" target="_blank">知乎讨论：大学教授是如何看待想进组搞科研的本科生的？</a>
+                <li><a href="https://www.zhihu.com/question/475187560" target="_blank"
+                        rel="noopener noreferrer">知乎讨论：大学教授是如何看待想进组搞科研的本科生的？</a>
                 </li>
-                <li><a href="https://www.zhihu.com/question/278197431/answer/2910447485"
-                        target="_blank">知乎回答：作为过来人，你想给想在本科进行科研的大二、三本科生什么建议？</a></li>
-                <li><a href="https://www.zhihu.com/question/2764739758/answer/25738779170"
-                        target="_blank">知乎回答：我大三，导师把我塞给了博士生学姐，学姐人很好，但我感觉学不到什么东西，我该怎么办呢？</a></li>
+                <li><a href="https://www.zhihu.com/question/278197431/answer/2910447485" target="_blank"
+                        rel="noopener noreferrer">知乎回答：作为过来人，你想给想在本科进行科研的大二、三本科生什么建议？</a></li>
+                <li><a href="https://www.zhihu.com/question/2764739758/answer/25738779170" target="_blank"
+                        rel="noopener noreferrer">知乎回答：我大三，导师把我塞给了博士生学姐，学姐人很好，但我感觉学不到什么东西，我该怎么办呢？</a></li>
                 <li><a href="https://www.zhihu.com/question/1972034209557243354/answer/1975544790780241380"
-                        target="_blank">知乎回答：CS本科生进组科研，能拿到几作？</a></li>
-                <li><a href="https://fangvv.github.io/Homepage/undergraduate-res.pdf"
-                        target="_blank">清华大学黄民烈教授观点：本科生如何做出好的科研</a></li>
-                <li><a href="https://zhuanlan.zhihu.com/p/200786141" target="_blank">北京大学钱理群教授观点：大学里绝对精致的利己主义者</a></li>
-                <li><a href="https://jyywiki.cn/Letter.md" target="_blank">南京大学蒋炎岩教授观点：给各位天命人的劝退信</a></li>
+                        target="_blank" rel="noopener noreferrer">知乎回答：CS本科生进组科研，能拿到几作？</a></li>
+                <li><a href="https://fangvv.github.io/Homepage/undergraduate-res.pdf" target="_blank"
+                        rel="noopener noreferrer">清华大学黄民烈教授观点：本科生如何做出好的科研</a></li>
+                <li><a href="https://zhuanlan.zhihu.com/p/200786141" target="_blank"
+                        rel="noopener noreferrer">北京大学钱理群教授观点：大学里绝对精致的利己主义者</a></li>
+                <li><a href="https://jyywiki.cn/Letter.md" target="_blank"
+                        rel="noopener noreferrer">南京大学蒋炎岩教授观点：给各位天命人的劝退信</a></li>
             </ul>
         </section>
 
@@ -619,7 +138,7 @@ PyTorch Mobile, 移动端深度学习,
     <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
     <noscript>
         <div class="statcounter">
-            <a title="Web Analytics" href="http://statcounter.com/" target="_blank">
+            <a title="Web Analytics" href="http://statcounter.com/" target="_blank" rel="noopener noreferrer">
                 <img class="statcounter" src="//c.statcounter.com/11657787/0/268d6588/1/" alt="Web Analytics">
             </a>
         </div>
