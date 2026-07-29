@@ -1,4 +1,4 @@
-# Generated at 2026-07-29T09:21:59.299224+00:00
+# Generated at 2026-07-29T10:00:42.843497+00:00
 vless://eab915bc-d2df-73d1-47d0-6eb240497055@fn.fifapes.monster:2090?encryption=none&security=none&fp=chrome&type=tcp&headerType=none&host=fn.fifapes.monster#%F0%9F%87%AE%F0%9F%87%B7%20%E4%BC%8A%E6%9C%97%E4%BC%8A%E6%9C%97%E4%B8%A8yoyapai.com
 vless://f27894bf-349c-44e6-a0ce-4c787e18476f@18.244.214.36:80?encryption=none&security=none&type=ws&host=duatoup3wk8q2.cloudfront.net&path=%2FGDkX4xpB%2F#%E7%BE%8E%E5%9C%8B%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%E5%AD%B8%E9%99%A2%E4%B8%A8yoyapai.com
 vless://da7685a7-15ef-41e4-a0d9-009bb4be7220@140.233.160.24:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=ya.ru&fp=edge&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&sid=abcd&type=tcp&headerType=none#%E7%BE%8E%E5%9C%8B%E6%98%8E%E5%BE%B7%E5%A4%A7%E5%AD%B8%E4%B8%A8yoyapai.com
