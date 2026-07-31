@@ -25,6 +25,9 @@ jobs:
           echo "UTC time: $(date -u '+%Y-%m-%d %H:%M:%S %Z')"
           echo "Beijing time: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S %Z')"
           echo "event_name=${{ github.event_name }}"
+      
+      - name: Pull latest changes from remote
+        run: git pull origin master --rebase
 
       - name: Download, merge and deduplicate subscriptions
         shell: python
@@ -97,9 +100,6 @@ jobs:
           generated_at = datetime.now(timezone.utc).isoformat()
           output.write_text(f"# Generated at {generated_at}\n" + "\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
           print(f"Merged {len(nodes)} unique nodes into {output}")
-
-      - name: Pull latest changes from remote
-        run: git pull origin master --rebase
 
       - name: Commit and push changes
         shell: bash
