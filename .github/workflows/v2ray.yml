@@ -98,6 +98,9 @@ jobs:
           output.write_text(f"# Generated at {generated_at}\n" + "\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
           print(f"Merged {len(nodes)} unique nodes into {output}")
 
+      - name: Pull latest changes from remote
+        run: git pull origin master --rebase
+
       - name: Commit and push changes
         shell: bash
         run: |
