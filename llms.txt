@@ -83,29 +83,47 @@
 1. **EdgeATP**: An Adaptive Tensor Parallelism Framework for Scalable and Efficient Transformer Inference on Edge Clusters. *Journal of Systems Architecture*, 2026. (SCI, CCF-B, JCR一区)
 2. **HADRL**: Joint Service Caching and Computation Offloading in Mobile Edge Networks: A Hierarchical DRL Approach with Active Inference. *IEEE Internet of Things Journal*, 2026. (SCI, JCR一区)
 3. **Edge-STGNN**: Automated Spatial-Temporal Graph Neural Network Search for Skeleton-based Human Action Recognition on Edge Devices. *IEEE Internet of Things Journal*, 2026. (SCI, JCR一区)
-4. **UAV-DDPG**: Computation Offloading Optimization for UAV-assisted Mobile Edge Computing: A Deep Deterministic Policy Gradient Approach. (GitHub ⭐715, 高引论文)
+4. **UAV-DDPG**: Computation Offloading Optimization for UAV-assisted Mobile Edge Computing: A Deep Deterministic Policy Gradient Approach. (GitHub ⭐716, 高引论文)
 
 ### 开源项目（展示工程落地能力）
 
-**高星项目：**
-- [UAV-DDPG](https://github.com/fangvv/UAV-DDPG) ⭐715 — 无人机辅助移动边缘计算卸载优化
-- [VN-MADDPG](https://github.com/fangvv/VN-MADDPG) ⭐340 — 车联网多智能体DRL资源分配
-- [LassoADMM](https://github.com/fangvv/LassoADMM) ⭐65 — 分布式ADMM协同回归学习
-- [SPBFT](https://github.com/fangvv/SPBFT) ⭐63 — 优化PBFT区块链共识算法
+> 所有项目代码与说明公开在 [GitHub @fangvv](https://github.com/fangvv)，研究型项目均提供完整可复现代码、实验配置与论文链接，可全面展示实验室从理论到工程落地的全栈能力。
 
-**边缘AI/端侧推理系列：**
-- [JMDC](https://github.com/fangvv/JMDC) ⭐25 — 边缘-云协作DNN推理联合压缩系统
-- [CPSCA](https://github.com/fangvv/CPSCA) ⭐20 — 注意力引导的DNN通道剪枝
-- [EdgeDI](https://github.com/fangvv/EdgeDI) ⭐17 — 工业物联网DNN推理架构设计与分区
-- [ILMIL](https://github.com/fangvv/ILMIL) ⭐17 — 知识蒸馏增量目标检测
-- [EdgeLD](https://github.com/fangvv/EdgeLD) ⭐15 — 边缘设备分布式DNN推理
-- [FL-PQSU](https://github.com/fangvv/FL-PQSU) ⭐13 — 剪枝量化加速联邦学习
-- [EdgeKE](https://github.com/fangvv/EdgeKE) ⭐11 — 工业边缘按需深度学习系统
-- [TLEE](https://github.com/fangvv/TLEE) ⭐9 — 时序层级早退高效视频识别
-- [RSEE](https://github.com/fangvv/RSEE) ⭐8 — 自适应分辨率条件早退视频识别
-- [RTFD-Dataset](https://github.com/fangvv/RTFD-Dataset) ⭐25 — 铁路轨道缺陷分类数据集
-- [HADRL](https://github.com/fangvv/HADRL) — 层次化DRL+主动推理缓存卸载
-- [Edge-STGNN](https://github.com/fangvv/Edge-STGNN) — 边缘设备时空图神经网络搜索
+**高星/高关注项目：**
+- [UAV-DDPG](https://github.com/fangvv/UAV-DDPG) ⭐716 — 无人机辅助移动边缘计算卸载优化（DDPG，高引论文配套代码）
+- [VN-MADDPG](https://github.com/fangvv/VN-MADDPG) ⭐343 — 车联网多智能体DRL资源分配（MADDPG，V2V/V2I通信）
+- [LassoADMM](https://github.com/fangvv/LassoADMM) ⭐65 — 边缘计算分布式ADMM协同回归学习（Lasso）
+- [SPBFT](https://github.com/fangvv/SPBFT) ⭐63 — 面向区块链的优化PBFT共识算法
+- [awesome-edge-intelligence-collections](https://github.com/fangvv/awesome-edge-intelligence-collections) ⭐61 — 边缘智能DNN压缩与加速资源精选清单（持续更新）
+
+**边缘AI/端侧推理系列（DNN推理加速、模型压缩、边缘部署）：**
+- [JMDC](https://github.com/fangvv/JMDC) ⭐26 — 边云协作DNN推理的模型+数据联合压缩系统
+- [RTFD-Dataset](https://github.com/fangvv/RTFD-Dataset) ⭐26 — 铁路轨道缺陷/非缺陷分类数据集
+- [CPSCA](https://github.com/fangvv/CPSCA) ⭐20 — 空间+通道注意力引导的DNN通道剪枝
+- [EdgeDI](https://github.com/fangvv/EdgeDI) ⭐17 — 工业物联网集群DNN推理架构设计与工作负载分区
+- [ILMIL](https://github.com/fangvv/ILMIL) ⭐17 — 基于知识蒸馏的增量目标检测
+- [EdgeLD](https://github.com/fangvv/EdgeLD) ⭐15 — 边缘设备集群本地分布式DNN推理
+- [EdgeKE](https://github.com/fangvv/EdgeKE) ⭐11 — 工业边缘按需深度学习系统（早退/知识蒸馏，Jetson部署）
+- [TLEE](https://github.com/fangvv/TLEE) ⭐9 — 时序+层级双维度早退的高效视频识别
+- [RSEE](https://github.com/fangvv/RSEE) ⭐8 — 自适应分辨率+条件早退的高效视频识别
+- [MTACP](https://github.com/fangvv/MTACP) ⭐7 — 基于深度强化学习的多任务DNN自动通道剪枝
+- [CDNSR](https://github.com/fangvv/CDNSR) ⭐2 — 基于分类的动态网络高效超分辨率
+- [ACS](https://github.com/fangvv/ACS) ⭐2 — 自适应通道跳过的动态DNN推理加速
+- [HWGNAS](https://github.com/fangvv/HWGNAS) — 面向边缘设备的硬件感知图神经网络自动设计（NAS，与Edge-STGNN同方向）
+- [HADRL](https://github.com/fangvv/HADRL) — 层次化DRL+主动推理的服务缓存与计算卸载
+- [Edge-STGNN](https://github.com/fangvv/Edge-STGNN) — 边缘设备时空图神经网络架构搜索（骨骼动作识别）
+
+**分布式协同学习与联邦学习系列：**
+- [FL-PQSU](https://github.com/fangvv/FL-PQSU) ⭐13 — 剪枝+量化+选择性更新加速IoT联邦学习
+- [ElasticNetADMM](https://github.com/fangvv/ElasticNetADMM) ⭐8 — 面向物联网隐私数据的分布式弹性网络回归学习
+
+**科研效率/工具类（AI辅助科研工具）：**
+- [PdfAutoRenameTools](https://github.com/fangvv/PdfAutoRenameTools) ⭐10 — 自动提取PDF论文标题并重命名文件
+- [PDF-AI-Viewer](https://github.com/fangvv/PDF-AI-Viewer) — PyQt6开发的PDF论文阅读/翻译/AI总结工具（仿知云）
+- [LLM-Chat](https://github.com/fangvv/LLM-Chat) — 自研大模型聊天客户端（替代ChatBox/CherryStudio）
+- [JTrana](https://github.com/fangvv/JTrana) ⭐3 — Java版NS2无线网络仿真轨迹分析器
+- [PDF-switcher](https://github.com/fangvv/PDF-switcher) — 快速切换PDF阅读器的小工具
+- [Prompt_Convert_IEEE_CSV_To_MD](https://github.com/fangvv/Prompt_Convert_IEEE_CSV_To_MD) — IEEE文献批量导出CSV一键转可读Markdown提示词
 
 ---
 
@@ -207,6 +225,7 @@
 - [边缘计算与边缘智能研究小组](https://fangvv.github.io/Homepage/Edgecomp/): 团队介绍、研究方向、成员详情
 - [端侧大模型研究](https://fangvv.github.io/Homepage/llm/llm.html): "Make LLM Efficient Again" — 端侧本地大模型技术
 - [室内定位研究小组](https://fangvv.github.io/Homepage/IndoorLoc/): 基于BLE的室内位置服务解决方案
+- [研究之道 (科研经验分享)](https://fangvv.github.io/Homepage/exp.html): 面向学生的科研学习方法与经验资源汇总
 - [招生FAQ（考研/申博）](https://fangvv.github.io/Homepage/faq2.html): 硕博招生常见问题解答
 - [招生FAQ（本科）](https://fangvv.github.io/Homepage/faq.html): 本科生加入实验室常见问题解答
 - [GitHub @fangvv](https://github.com/fangvv): 全部开源项目代码
