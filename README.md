@@ -6,17 +6,20 @@
 
 | 目录/文件 | 说明 |
 |-----------|------|
-| `index.html`、`_layouts/`、`assets/` | 实验室主页及相关资源 |
+| `index.md`、`_layouts/`、`assets/` | 实验室主页及相关资源 |
 | `Edgecomp/index.html` | 边缘计算与边缘智能研究展示页 |
+| `IndoorLoc/index.html` | 室内定位研究小组 |
+| `llm/llm.html` | 端侧大模型研究 |
 | `faq.html` | 本科生科研实习 FAQ |
 | `faq2.html` | 硕博招生 FAQ |
 | `exp.md`、`expfile/` | 科研经验分享及附件 |
 | `.github/workflows/v2ray.yml` | V2Ray 订阅自动抓取与合并 |
-| `.github/workflows/main.yml` | 网页定时备份 |
+| `.github/workflows/main.yml` | 导师主页(8530)每日定时备份 |
+| `llms.txt` | 面向 LLM 爬虫的站点摘要与导航 |
 
 ## 更新说明
 
-- **20260501说明**：接入大模型编程，工具trae+gpt5.5，目前实现了对四个v2ray源的抓取、整理和发布，真的是革命性创新！
+- **20260501说明**：接入大模型编程，工具trae+gpt5.5，目前实现了对五个v2ray源的抓取、整理和发布，真的是革命性创新！
 
 - **20251121说明**：Profile中增加对研究工作代码公开的[声明](https://github.com/fangvv)，如遇持不正当目的使用本账户公开的代码，将考虑使用法律手段维护正当权益。
 
@@ -32,4 +35,4 @@
 
 ---
 
-最后一次库提交时间：[![GitHub last commit](https://img.shields.io/github/last-commit/fangvv/Homepage?label=last%20commit&style=flat-square)](https://github.com/fangvv/Homepage/commits/main)
+最后一次库提交时间：[![GitHub last commit](https://img.shields.io/github/last-commit/fangvv/Homepage?label=last%20commit&style=flat-square)](https://github.com/fangvv/Homepage/commits/master)
