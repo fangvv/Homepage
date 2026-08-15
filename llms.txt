@@ -7,7 +7,6 @@
 - 姓名：方维维（Weiwei Fang）
 - 职称：教授、博士生导师
 - 单位：北京交通大学 计算机科学与技术学院 数据与网络工程系
-- 邮箱：fangww@bjtu.edu.cn / fangvv@qq.com
 - 办公地点：北京交通大学第九教学楼北201
 - 个人主页：[http://faculty.bjtu.edu.cn/8530/](http://faculty.bjtu.edu.cn/8530/)
 - 实验室主页：[https://fangvv.github.io/Homepage/](https://fangvv.github.io/Homepage/)
