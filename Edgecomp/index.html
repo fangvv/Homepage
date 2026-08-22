@@ -9,54 +9,54 @@
   <meta name="keywords"
     content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
   <meta name="keywords" content="
-大语言模型, Large Language Model, LLM, 
-模型部署, Model Deployment, 
-边缘智能, Edge AI, 
-Ollama模型, Ollama Models, 
-Llama 3, Llama2, Gemma, DeepSeek-R1, 
-Qwen, 通义千问, 文心一言, 混元大模型, 
-Phi-3, Mistral, Yi-34B, Aquila, 
-具身智能, Embodied Intelligence, 
-模型量化, Model Quantization, 
-低功耗AI, Low-Power AI, 
-终端侧推理, On-Device Inference, 
-Jetson部署, Jetson Deployment, 
-Android AI, Windows端侧AI, 
-NPU加速, NPU Acceleration, 
-异构计算, Heterogeneous Computing, 
-模型微调, Model Fine-tuning, 
-知识蒸馏, Knowledge Distillation, 
-国产大模型, Chinese LLM, 
-AI芯片, AI Chip, 
-端云协同, Edge-Cloud Collaboration, 
-多模态大模型, Multimodal LLM, 
+大语言模型, Large Language Model, LLM,
+模型部署, Model Deployment,
+边缘智能, Edge AI,
+Ollama模型, Ollama Models,
+Llama 3, Llama2, Gemma, DeepSeek-R1,
+Qwen, 通义千问, 文心一言, 混元大模型,
+Phi-3, Mistral, Yi-34B, Aquila,
+具身智能, Embodied Intelligence,
+模型量化, Model Quantization,
+低功耗AI, Low-Power AI,
+终端侧推理, On-Device Inference,
+Jetson部署, Jetson Deployment,
+Android AI, Windows端侧AI,
+NPU加速, NPU Acceleration,
+异构计算, Heterogeneous Computing,
+模型微调, Model Fine-tuning,
+知识蒸馏, Knowledge Distillation,
+国产大模型, Chinese LLM,
+AI芯片, AI Chip,
+端云协同, Edge-Cloud Collaboration,
+多模态大模型, Multimodal LLM,
 AI隐私安全, AI Privacy,
-智能体, AI Agent, Multi-Agent, 
-RAG, 检索增强生成, Retrieval-Augmented Generation, 
-向量数据库, Vector Database, 
-提示工程, Prompt Engineering, 
-思维链, Chain of Thought, 
-少样本学习, Few-Shot Learning, 
-RLHF, 人类反馈强化学习, 
-DPO, 直接偏好优化, 
-LoRA, 低秩适配, QLoRA, 量化低秩适配, 
-vLLM, 高效推理引擎, 
-TensorRT, NVIDIA推理优化, 
-ONNX, 开放神经网络交换格式, 
-GGUF, 通用模型格式, 
-GPTQ, 模型量化方法, AWQ, 激活感知量化, 
-树莓派, Raspberry Pi, 
-NVIDIA Jetson, 边缘计算平台, 
-TensorFlow Lite, 轻量级推理框架, 
-PyTorch Mobile, 移动端深度学习, 
-边缘服务器, Edge Server, 
-物联网, IoT, Internet of Things, 
-5G边缘计算, 6G边缘计算, 
-边缘云, Edge Cloud, 
-联邦学习, Federated Learning, 
-分布式训练, Distributed Training, 
-模型压缩, Model Compression, 
-剪枝, Pruning, 
+智能体, AI Agent, Multi-Agent,
+RAG, 检索增强生成, Retrieval-Augmented Generation,
+向量数据库, Vector Database,
+提示工程, Prompt Engineering,
+思维链, Chain of Thought,
+少样本学习, Few-Shot Learning,
+RLHF, 人类反馈强化学习,
+DPO, 直接偏好优化,
+LoRA, 低秩适配, QLoRA, 量化低秩适配,
+vLLM, 高效推理引擎,
+TensorRT, NVIDIA推理优化,
+ONNX, 开放神经网络交换格式,
+GGUF, 通用模型格式,
+GPTQ, 模型量化方法, AWQ, 激活感知量化,
+树莓派, Raspberry Pi,
+NVIDIA Jetson, 边缘计算平台,
+TensorFlow Lite, 轻量级推理框架,
+PyTorch Mobile, 移动端深度学习,
+边缘服务器, Edge Server,
+物联网, IoT, Internet of Things,
+5G边缘计算, 6G边缘计算,
+边缘云, Edge Cloud,
+联邦学习, Federated Learning,
+分布式训练, Distributed Training,
+模型压缩, Model Compression,
+剪枝, Pruning,
 量化, Quantization
 ">
 
@@ -336,14 +336,25 @@ PyTorch Mobile, 移动端深度学习,
     #team .col-lg-4.col-sm-6.text-center.mb-4 {
       transition: all 0.3s ease;
       margin-bottom: 2rem;
+      border-radius: 16px;
+      padding: 0.75rem 0.5rem;
     }
 
+    /* 卡片 hover 浮起：浅蓝底 + 主题色阴影，与全站卡片风格一致 */
     #team .col-lg-4.col-sm-6.text-center.mb-4:hover {
       transform: translateY(-3px);
+      background: linear-gradient(to bottom, #ffffff, #f9fbff);
+      box-shadow: 0 10px 24px rgba(0, 90, 255, 0.08);
     }
 
-    /* 头像样式 */
+    /* 头像样式 — 正方形居中裁剪，避免照片被拉伸变形 */
     #team .col-lg-4.col-sm-6.text-center.mb-4 img {
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: cover;
+      object-position: center 30%;
       border: 3px solid white;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
@@ -351,7 +362,8 @@ PyTorch Mobile, 移动端深度学习,
 
     #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
       transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      border-color: #3068d6;
+      box-shadow: 0 6px 20px rgba(48, 104, 214, 0.28);
     }
 
     /* 名字样式 */
@@ -442,6 +454,13 @@ PyTorch Mobile, 移动端深度学习,
       #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
         font-size: 0.75rem;
         padding: 0.25rem 0.9rem;
+      }
+    }
+
+    /* 小屏时头像缩小，保持圆形比例 */
+    @media (max-width: 576px) {
+      #team .col-lg-4.col-sm-6.text-center.mb-4 img {
+        max-width: 140px;
       }
     }
   </style>
@@ -708,7 +727,7 @@ PyTorch Mobile, 移动端深度学习,
     <section id="team">
       <div class="row">
         <div class="col-lg-12">
-          <h2 class="my-4 text-danger font-weight-bold">团队现状</h2>
+          <h2 class="my-4 text-danger font-weight-bold">科研团队</h2>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt=""
