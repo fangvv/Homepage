@@ -877,9 +877,13 @@ PyTorch Mobile, 移动端深度学习,
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    var a = document.querySelector(".navbar-toggler");
+    var toggler = document.querySelector(".navbar-toggler");
     $(".navbar-nav li a").on("click", function () {
-      a.click();
+      // 移动端：点击导航项后收起折叠菜单
+      toggler.click();
+      // 将高亮（active）移动到被点击的导航项
+      $(".navbar-nav li").removeClass("active");
+      $(this).parent("li").addClass("active");
     });
   </script>
 
