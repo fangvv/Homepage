@@ -137,20 +137,24 @@ LLM Routing
         }
 
         .research-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
             margin-top: 1rem;
         }
 
         .research-tags .badge {
-            padding: 0.45em 1em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6em 0.5em;
             font-size: 0.85rem;
             font-weight: 600;
-            border-radius: var(--radius-pill);
+            border-radius: 8px;
             background: linear-gradient(135deg, var(--accent-blue), #2563eb);
             color: #fff;
             border: none;
+            white-space: nowrap;
         }
 
         .badge-spec {
@@ -522,6 +526,10 @@ LLM Routing
                 grid-template-columns: 1fr;
             }
 
+            .research-tags {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .tech-node {
                 flex-direction: column;
                 align-items: stretch;
@@ -560,7 +568,7 @@ LLM Routing
         <!-- ===== 研究方向陈述 ===== -->
         <div class="section-960 card-block research-statement">
             <p>
-                本课题组致力于<strong>大模型在端侧设备上的高效部署与推理优化</strong>，
+                我们致力于<strong>大模型在端侧设备上的高效部署与推理优化</strong>，
                 围绕 LLM 推理效率瓶颈，从算法、系统、硬件三个层面开展研究。
                 当前重点方向包括：
             </p>
