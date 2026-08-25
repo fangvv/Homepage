@@ -225,16 +225,27 @@ LLM Routing
             margin-bottom: 0.6rem;
         }
 
-        .carousel-indicators button {
+        /* 覆盖 Bootstrap 默认横条指示器,压成真正的圆点(Bootstrap 的
+           [data-bs-target] 选择器优先级更高,需同层覆盖) */
+        .carousel-indicators [data-bs-target] {
+            box-sizing: content-box;
             width: 10px;
             height: 10px;
-            border-radius: 50%;
+            margin: 0 5px;
+            padding: 0;
             border: 0;
-            background: rgba(255, 255, 255, 0.5);
+            border-top: 0;
+            border-bottom: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.55);
+            background-clip: padding-box;
+            opacity: 1;
+            text-indent: -999px;
         }
 
-        .carousel-indicators button.active {
-            background: #fff;
+        .carousel-indicators [data-bs-target].active {
+            background-color: #fff;
+            transform: scale(1.15);
         }
 
         /* ============================================================
@@ -297,26 +308,79 @@ LLM Routing
         }
 
         /* ============================================================
-               技术栈与平台
+               技术栈与平台 · 三层管线图
                ============================================================ */
-        .tech-group {
+        .tech-node {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1rem;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.55);
         }
 
-        .tech-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .tech-group .group-label {
-            width: 64px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            padding-top: 0.25rem;
+        .node-label {
             flex-shrink: 0;
+            width: 76px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            padding-top: 0.3rem;
+        }
+
+        .node-label .node-sub {
+            display: block;
+            font-size: 0.66rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        .node-tags {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            flex: 1;
+        }
+
+        .node-tags .tech-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 36px;
+            white-space: normal;
+        }
+
+        .tech-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 0.45rem 0;
+            color: var(--accent-cyan);
+        }
+
+        .flow-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(6, 182, 212, 0.10);
+            border: 1px solid rgba(6, 182, 212, 0.20);
+        }
+
+        .flow-label {
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.20);
+            padding: 0.22em 0.85em;
+            border-radius: var(--radius-pill);
         }
 
         .tech-item {
@@ -338,11 +402,6 @@ LLM Routing
         .tech-item.tool {
             background: rgba(139, 92, 246, 0.08);
             border-color: rgba(139, 92, 246, 0.20);
-        }
-
-        .tech-item.fmt {
-            background: rgba(6, 182, 212, 0.08);
-            border-color: rgba(6, 182, 212, 0.20);
         }
 
         .tech-item.model {
@@ -463,13 +522,24 @@ LLM Routing
                 grid-template-columns: 1fr;
             }
 
-            .tech-group {
-                flex-wrap: wrap;
+            .tech-node {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.6rem;
             }
 
-            .tech-group .group-label {
+            .node-label {
                 width: 100%;
-                margin-bottom: 0.2rem;
+                padding-top: 0;
+            }
+
+            .node-label .node-sub {
+                display: inline;
+                margin-left: 0.4rem;
+            }
+
+            .node-tags {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .homepage-link {
@@ -595,42 +665,63 @@ LLM Routing
         <!-- ===== 技术栈与硬件平台 ===== -->
         <div class="section-960 card-block mt-section">
             <h4 class="section-title" style="margin-bottom:1.2rem;">技术栈与硬件平台</h4>
-            <div class="tech-group">
-                <span class="group-label">平台</span>
-                <span class="tech-item plat">NVIDIA Jetson Orin</span>
-                <span class="tech-item plat">Raspberry Pi 5</span>
-                <span class="tech-item plat">Android Phone</span>
-                <span class="tech-item plat">Windows Laptop</span>
-                <span class="tech-item plat">Edge Server</span>
+
+            <!-- 模型层 -->
+            <div class="tech-node">
+                <div class="node-label">模型层<span class="node-sub">Model Zoo</span></div>
+                <div class="node-tags">
+                    <span class="tech-item model">DeepSeek-V4</span>
+                    <span class="tech-item model">Llama 4</span>
+                    <span class="tech-item model">Qwen 3</span>
+                    <span class="tech-item model">Gemma 3</span>
+                    <span class="tech-item model">GLM-4.6</span>
+                    <span class="tech-item model">Kimi K2</span>
+                    <span class="tech-item model">Phi-4-mini</span>
+                </div>
             </div>
-            <div class="tech-group">
-                <span class="group-label">工具</span>
-                <span class="tech-item tool">Ollama</span>
-                <span class="tech-item tool">vLLM</span>
-                <span class="tech-item tool">TensorRT-LLM</span>
-                <span class="tech-item tool">ONNX Runtime</span>
-                <span class="tech-item tool">llama.cpp</span>
-                <span class="tech-item tool">PyTorch Mobile</span>
-                <span class="tech-item tool">TensorFlow Lite</span>
+
+            <!-- 模型 → 引擎:量化 -->
+            <div class="tech-flow">
+                <span class="flow-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+                <span class="flow-label">GGUF · GPTQ · AWQ 量化</span>
             </div>
-            <div class="tech-group">
-                <span class="group-label">格式</span>
-                <span class="tech-item fmt">GGUF</span>
-                <span class="tech-item fmt">GPTQ</span>
-                <span class="tech-item fmt">AWQ</span>
-                <span class="tech-item fmt">ONNX</span>
-                <span class="tech-item fmt">Safetensors</span>
-                <span class="tech-item fmt">BitsandBytes</span>
+
+            <!-- 推理引擎层 -->
+            <div class="tech-node">
+                <div class="node-label">引擎层<span class="node-sub">Inference</span></div>
+                <div class="node-tags">
+                    <span class="tech-item tool">Ollama</span>
+                    <span class="tech-item tool">vLLM</span>
+                    <span class="tech-item tool">SGLang</span>
+                    <span class="tech-item tool">TensorRT-LLM</span>
+                    <span class="tech-item tool">llama.cpp</span>
+                    <span class="tech-item tool">MLC-LLM</span>
+                    <span class="tech-item tool">ExecuTorch</span>
+                </div>
             </div>
-            <div class="tech-group">
-                <span class="group-label">模型</span>
-                <span class="tech-item model">Llama 3</span>
-                <span class="tech-item model">DeepSeek-R1</span>
-                <span class="tech-item model">Gemma 2</span>
-                <span class="tech-item model">Qwen 2.5</span>
-                <span class="tech-item model">Phi-3</span>
-                <span class="tech-item model">Mistral</span>
-                <span class="tech-item model">Yi-34B</span>
+
+            <!-- 引擎 → 硬件:跨端部署 -->
+            <div class="tech-flow">
+                <span class="flow-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+                <span class="flow-label">ONNX · Safetensors · BitsandBytes</span>
+            </div>
+
+            <!-- 硬件平台层 -->
+            <div class="tech-node">
+                <div class="node-label">硬件层<span class="node-sub">Hardware</span></div>
+                <div class="node-tags">
+                    <span class="tech-item plat">NVIDIA Jetson Orin</span>
+                    <span class="tech-item plat">NVIDIA Jetson Thor</span>
+                    <span class="tech-item plat">Raspberry Pi 5</span>
+                    <span class="tech-item plat">Android Phone</span>
+                    <span class="tech-item plat">Windows Laptop (NPU)</span>
+                    <span class="tech-item plat">Apple Silicon Mac</span>
+                    <span class="tech-item plat">Edge Server</span>
+                </div>
             </div>
         </div>
 
