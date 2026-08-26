@@ -463,6 +463,80 @@ PyTorch Mobile, 移动端深度学习,
         max-width: 140px;
       }
     }
+
+    /* ===== 头像显示效果 ===== */
+
+    /* 1. 滚动到可视区域时，头像依次入场（上浮 + 回弹） */
+    #team .col-lg-4.col-sm-6.text-center.mb-4.avatar-show {
+      animation: avatarIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+      animation-delay: var(--d, 0s);
+    }
+
+    @keyframes avatarIn {
+      0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.9);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* 依次出场：每个头像延迟一点 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(2) { --d: .03s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(3) { --d: .07s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(4) { --d: .11s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(5) { --d: .15s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(6) { --d: .19s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(7) { --d: .23s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(8) { --d: .27s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(9) { --d: .31s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(10) { --d: .35s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(11) { --d: .39s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(12) { --d: .43s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(13) { --d: .47s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(14) { --d: .51s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(15) { --d: .55s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(16) { --d: .59s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(17) { --d: .63s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(18) { --d: .67s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(19) { --d: .71s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(20) { --d: .75s; }
+    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(21) { --d: .79s; }
+
+    /* 2. 悬停：卡片光带扫过（需要裁切 + 相对定位） */
+    #team .col-lg-4.col-sm-6.text-center.mb-4 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #team .col-lg-4.col-sm-6.text-center.mb-4::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.55s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #team .col-lg-4.col-sm-6.text-center.mb-4:hover::before {
+      left: 130%;
+    }
+
+    /* 3. 悬停增强：头像放大 + 主题色光晕 */
+    #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
+      box-shadow:
+        0 0 0 4px rgba(48, 104, 214, 0.18),
+        0 0 22px rgba(0, 90, 255, 0.35),
+        0 8px 24px rgba(48, 104, 214, 0.35);
+    }
   </style>
 
 </head>
@@ -884,6 +958,26 @@ PyTorch Mobile, 移动端深度学习,
       $(".navbar-nav li").removeClass("active");
       $(this).parent("li").addClass("active");
     });
+
+    // 头像入场动画：滚动到 #team 时依次浮现
+    (function () {
+      var cards = document.querySelectorAll("#team .col-lg-4.col-sm-6.text-center.mb-4");
+      if (!cards.length) return;
+      if (!("IntersectionObserver" in window)) {
+        // 不支持时直接全部显示
+        cards.forEach(function (c) { c.classList.add("avatar-show"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("avatar-show");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(function (c) { io.observe(c); });
+    })();
   </script>
 
   <script type="text/javascript">
