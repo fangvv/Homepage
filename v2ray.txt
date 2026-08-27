@@ -1,4 +1,4 @@
-# Generated at 2026-08-27T10:00:27.303529+00:00
+# Generated at 2026-08-27T10:08:12.692365+00:00
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@155.46.167.30:8880?encryption=none&security=none&type=ws&host=vms.lifetime50.workers.dev#%F0%9F%87%A8%F0%9F%87%A6CA%E5%8A%A0%E6%8B%BF%E5%A4%A7%E4%B8%A8yoyapai.com
 vless://407ecce0-dc85-465f-89f5-e520e9378baf@104.24.9.6:443?encryption=none&security=tls&sni=ld.223350.xyz&fp=chrome&insecure=0&allowInsecure=0&ech=cloudflare-ech.com%2Bhttps%3A%2F%2Fdns.alidns.com%2Fdns-query&type=ws&host=ld.223350.xyz&path=%2F#%F0%9F%87%AB%F0%9F%87%B7FR%E6%B3%95%E5%9C%8B%E4%B8%A8yoyapai.com
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@50.62.194.30:8880?encryption=none&security=none&type=ws&host=vms.lifetime37.workers.dev&path=%2F#%E2%9D%93%E6%9C%AA%E7%9F%A5%E4%B8%A8yoyapai.com
