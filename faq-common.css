@@ -34,6 +34,7 @@ body::before {
     pointer-events: none;
     background-image: linear-gradient(rgba(36, 59, 102, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(36, 59, 102, 0.035) 1px, transparent 1px);
     background-size: 36px 36px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
 }
 

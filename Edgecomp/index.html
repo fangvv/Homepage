@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="llms.txt" href="https://fangvv.github.io/Homepage/llms.txt" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="北京交通大学系统与网络实验室 - 边缘计算与边缘智能研究小组" />
   <meta name="keywords"
@@ -70,7 +71,12 @@ PyTorch Mobile, 移动端深度学习,
   <meta property="og:image" content="https://fangvv.github.io/Homepage/Edgecomp/img/Vision.png" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome 仅用于 2 个图标；用 print-swap 手法加载，避免阻塞首屏渲染 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
   <!-- Custom styles for this template -->
   <link href="css/round-about.css" rel="stylesheet" />
   <style>
@@ -163,15 +169,14 @@ PyTorch Mobile, 移动端深度学习,
       margin-bottom: 2rem;
     }
 
+    /* 基态即动画终态：不用 fill-mode 锁住 transform，下方 hover 缩放才能生效 */
     .animated-vision {
-      opacity: 0;
-      transform: scale(0.95);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border-radius: 8px;
     }
 
     .animated-vision {
-      animation: fadeInUpScale 1s forwards;
+      animation: fadeInUpScale 1s;
     }
 
     .animated-vision:hover {
@@ -276,9 +281,8 @@ PyTorch Mobile, 移动端深度学习,
 
     /* 修复宽度问题：适配原有容器，不限制最大宽度 */
     .intro-section {
-      opacity: 0;
-      transform: translateY(15px);
-      animation: fadeInUp 0.8s ease-out forwards;
+      animation: fadeInUp 0.8s ease-out;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
       margin: 3rem 0;
       padding: 2.5rem;
       border-radius: 16px;
@@ -289,8 +293,13 @@ PyTorch Mobile, 移动端深度学习,
       /* 关键：不再限制最大宽度 */
     }
 
-    /* 动画保持不变 */
+    /* 必须显式写 from：基态已改为可见，隐式 from 会让淡入失效 */
     @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -325,11 +334,10 @@ PyTorch Mobile, 移动端深度学习,
       font-weight: 500;
     }
 
-    /* 悬停效果保持 */
+    /* transition 移到基态：写在 :hover 内部会导致鼠标移出时瞬间弹回 */
     .intro-section:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
-      transition: all 0.4s ease;
     }
 
     /* 完全统一方案 - 无需修改HTML */
@@ -464,9 +472,11 @@ PyTorch Mobile, 移动端深度学习,
       }
     }
 
-    /* ===== 头像显示效果 ===== */
+    /* ===== 头像显示效果 =====
+       性能考量：只动 opacity/transform（合成层，不触发重排）；
+       光效限 hover 设备，触屏设备不创建该图层；尊重减少动效偏好。 */
 
-    /* 1. 滚动到可视区域时，头像依次入场（上浮 + 回弹） */
+    /* 1. 入场：由 JS 在滚动到 #team 时添加 .avatar-show；--d 为同一批内的错峰延迟 */
     #team .col-lg-4.col-sm-6.text-center.mb-4.avatar-show {
       animation: avatarIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
       animation-delay: var(--d, 0s);
@@ -484,58 +494,50 @@ PyTorch Mobile, 移动端深度学习,
       }
     }
 
-    /* 依次出场：每个头像延迟一点 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(2) { --d: .03s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(3) { --d: .07s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(4) { --d: .11s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(5) { --d: .15s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(6) { --d: .19s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(7) { --d: .23s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(8) { --d: .27s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(9) { --d: .31s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(10) { --d: .35s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(11) { --d: .39s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(12) { --d: .43s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(13) { --d: .47s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(14) { --d: .51s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(15) { --d: .55s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(16) { --d: .59s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(17) { --d: .63s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(18) { --d: .67s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(19) { --d: .71s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(20) { --d: .75s; }
-    #team .col-lg-4.col-sm-6.text-center.mb-4:nth-child(21) { --d: .79s; }
+    /* 2. 悬停：光带扫过 + 头像光晕 */
+    @media (hover: hover) {
+      #team .col-lg-4.col-sm-6.text-center.mb-4 {
+        position: relative;
+        overflow: hidden;
+      }
 
-    /* 2. 悬停：卡片光带扫过（需要裁切 + 相对定位） */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 {
-      position: relative;
-      overflow: hidden;
+      #team .col-lg-4.col-sm-6.text-center.mb-4::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+        transform: skewX(-20deg) translateX(-180%);
+        transition: transform 0.55s ease;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      #team .col-lg-4.col-sm-6.text-center.mb-4:hover::before {
+        transform: skewX(-20deg) translateX(300%);
+      }
+
+      /* 模糊半径控制在卡片 padding 内，避免被 overflow 裁切；阴影层数越少重绘越省 */
+      #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
+        box-shadow:
+          0 0 0 3px rgba(48, 104, 214, 0.18),
+          0 0 12px rgba(0, 90, 255, 0.3);
+      }
     }
 
-    #team .col-lg-4.col-sm-6.text-center.mb-4::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -80%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-      transform: skewX(-20deg);
-      transition: left 0.55s ease;
-      pointer-events: none;
-      z-index: 1;
-    }
+    /* 3. 系统要求减少动效时，所有动效退化为静态（JS 也会跳过观察器） */
+    @media (prefers-reduced-motion: reduce) {
 
-    #team .col-lg-4.col-sm-6.text-center.mb-4:hover::before {
-      left: 130%;
-    }
-
-    /* 3. 悬停增强：头像放大 + 主题色光晕 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
-      box-shadow:
-        0 0 0 4px rgba(48, 104, 214, 0.18),
-        0 0 22px rgba(0, 90, 255, 0.35),
-        0 8px 24px rgba(48, 104, 214, 0.35);
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 
@@ -959,21 +961,20 @@ PyTorch Mobile, 移动端深度学习,
       $(this).parent("li").addClass("active");
     });
 
-    // 头像入场动画：滚动到 #team 时依次浮现
+    // 头像入场：滚动到 #team 时逐张浮现
     (function () {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var cards = document.querySelectorAll("#team .col-lg-4.col-sm-6.text-center.mb-4");
-      if (!cards.length) return;
-      if (!("IntersectionObserver" in window)) {
-        // 不支持时直接全部显示
-        cards.forEach(function (c) { c.classList.add("avatar-show"); });
-        return;
-      }
+      // 无卡片、不支持观察器、或用户要求减少动效：头像保持默认静态显示，不创建观察器
+      if (!cards.length || reduce || !("IntersectionObserver" in window)) return;
       var io = new IntersectionObserver(function (entries) {
+        // 只在本次进入视口的这一批内错峰，不累积历史延迟
+        var i = 0;
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("avatar-show");
-            io.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.style.setProperty("--d", (Math.min(i++, 12) * 0.05) + "s");
+          entry.target.classList.add("avatar-show");
+          io.unobserve(entry.target);
         });
       }, { threshold: 0.15 });
       cards.forEach(function (c) { io.observe(c); });

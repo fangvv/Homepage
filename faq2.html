@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="llms.txt" href="https://fangvv.github.io/Homepage/llms.txt" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#F8FAFC">
+    <link rel="canonical" href="https://fangvv.github.io/Homepage/faq2.html">
     <script>
         (function () {
-            var t = localStorage.getItem('theme');
+            try { var t = localStorage.getItem('theme'); } catch (e) { var t = null; }
             if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.setAttribute('data-theme', 'dark');
+                var m = document.querySelector('meta[name="theme-color"]');
+                if (m) m.setAttribute('content', '#0F1724');
             }
         })();
     </script>
@@ -29,7 +34,7 @@
 <body>
     <main class="page">
         <section class="hero">
-            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式">
+            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式" aria-pressed="false">
                 <span class="icon-sun">&#9728;&#65039;</span>
                 <span class="icon-moon">&#127769;</span>
             </button>
@@ -79,20 +84,30 @@
         (function () {
             var root = document.documentElement;
             var btn = document.getElementById('themeToggle');
-            var stored = localStorage.getItem('theme');
+            var meta = document.querySelector('meta[name="theme-color"]');
+
+            // 同步开关状态与浏览器地址栏颜色
+            function sync(dark) {
+                btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+                if (meta) meta.setAttribute('content', dark ? '#0F1724' : '#F8FAFC');
+            }
 
             // 初始化：优先读 localStorage，否则读系统偏好
+            try { var stored = localStorage.getItem('theme'); } catch (e) { var stored = null; }
+
             if (stored) {
                 root.setAttribute('data-theme', stored);
             } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 root.setAttribute('data-theme', 'dark');
             }
+            sync(root.getAttribute('data-theme') === 'dark');
 
             btn.addEventListener('click', function () {
                 var isDark = root.getAttribute('data-theme') === 'dark';
                 var next = isDark ? 'light' : 'dark';
                 root.setAttribute('data-theme', next);
-                localStorage.setItem('theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) { }
+                sync(next === 'dark');
             });
         })();
     </script>
