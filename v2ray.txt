@@ -1,4 +1,4 @@
-# Generated at 2026-08-29T16:00:30.301883+00:00
+# Generated at 2026-08-29T16:50:07.304242+00:00
 vless://c20a0bcf-aa6f-4c35-9e62-a39b47b04e73@91.206.71.8:80?encryption=none&security=none&type=ws&host=round-haze-8783.294.workers.dev&path=%2Fpyip%3DTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2#%F0%9F%87%A9%F0%9F%87%AA%E5%BE%B7%E5%9C%8B%E4%B8%A8yoyapai.com
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@50.62.194.30:8880?encryption=none&security=none&type=ws&host=vms.lifetime37.workers.dev&path=%2F#%E2%9D%93%E6%9C%AA%E7%9F%A5%E4%B8%A8yoyapai.com
 vless://c20a0bcf-aa6f-4c35-9e62-a39b47b04e73@91.206.71.8:80?encryption=none&security=none&type=ws&host=round-haze-8783.294.workers.dev&path=%2Fpyip%3DTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%40WangCai2#%E2%9D%93%E6%9C%AA%E7%9F%A5%E4%B8%A8yoyapai.com
