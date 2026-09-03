@@ -1,4 +1,4 @@
-# Generated at 2026-09-03T16:00:39.402465+00:00
+# Generated at 2026-09-03T16:36:41.915968+00:00
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.35:443?#%F0%9F%87%B3%F0%9F%87%B1_NL%E8%8D%B7%E8%98%AD%E4%B8%A8yoyapai.com
 vless://72c2b7cc-fcd9-494f-8a2e-21dcd062ff11@45.40.150.4:80?encryption=none&security=none&type=ws&host=holy-breeze-0bac.47-dec.workers.dev&path=%2Fpyip%3DTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%2B#%E2%9D%93%E5%85%8D%E8%B2%BB%E7%AF%80%E9%BB%9E%E4%B8%A8yoyapai.com
 vless://72c2b7cc-fcd9-494f-8a2e-21dcd062ff11@45.40.150.4:80?encryption=none&security=none&type=ws&host=holy-breeze-0bac.47-dec.workers.dev&path=%2Fpyip%3DTelegram%F0%9F%87%A8%F0%9F%87%B3%2B%2B#%F0%9F%87%BA%F0%9F%87%B8%E7%BE%8E%E5%9C%8B%E4%B8%A8yoyapai.com
