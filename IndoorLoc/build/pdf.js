@@ -1577,6 +1577,9 @@ var DOMCMapReaderFactory = function () {
       if (!name) {
         return Promise.reject(new Error('CMap name must be specified.'));
       }
+      if (!/^[a-zA-Z0-9_-]+$/.test(name)) {
+        return Promise.reject(new Error('Invalid CMap name.'));
+      }
       return new Promise(function (resolve, reject) {
         var url = _this.baseUrl + name + (_this.isCompressed ? '.bcmap' : '');
         var request = new XMLHttpRequest();
