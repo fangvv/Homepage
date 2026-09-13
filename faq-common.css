@@ -3,6 +3,7 @@
     --primary-soft: #EEF4FF;
     --accent: #B91C1C;
     --accent-soft: #FEF2F2;
+    --accent-text: var(--accent);
     --text: #243042;
     --muted: #6B7280;
     --card: rgba(255, 255, 255, 0.92);
@@ -49,7 +50,7 @@ body::before {
     overflow: hidden;
     padding: 46px 48px;
     color: #fff;
-    background: linear-gradient(135deg, #22365F 0%, #2B4A7F 58%, #B91C1C 145%);
+    background: linear-gradient(135deg, #22365F 0%, #2B4A7F 58%, #B91C1C 118%);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 28px;
     box-shadow: 0 24px 70px rgba(36, 59, 102, 0.24);
@@ -113,7 +114,7 @@ body::before {
     margin: 2rem 0;
     padding: 1.5rem;
     background: #FFF3E0;
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid #C2410C;
     border-radius: 14px;
 }
 
@@ -162,12 +163,8 @@ ol li:hover {
 }
 
 strong {
-    padding: 0.12em 0.35em;
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 800;
-    background: linear-gradient(180deg, rgba(254, 242, 242, 0.58), rgba(254, 242, 242, 0.98));
-    border-radius: 8px;
-    box-shadow: inset 0 -1px 0 rgba(185, 28, 28, 0.14);
 }
 
 a {
@@ -309,6 +306,7 @@ footer {
     --primary-soft: #1E2A3A;
     --accent: #E85D5D;
     --accent-soft: #2A1A1A;
+    --accent-text: #F08585;
     --text: #E8ECF2;
     --muted: #9CA3AF;
     --card: rgba(30, 40, 55, 0.92);
@@ -328,7 +326,7 @@ footer {
 }
 
 [data-theme="dark"] .hero {
-    background: linear-gradient(135deg, #162035 0%, #1E3258 58%, #6B1212 145%);
+    background: linear-gradient(135deg, #162035 0%, #1E3258 58%, #6B1212 118%);
     border-color: rgba(168, 196, 224, 0.12);
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
 }
@@ -350,11 +348,6 @@ footer {
 [data-theme="dark"] ol li:hover {
     border-color: rgba(232, 93, 93, 0.30);
     box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
-}
-
-[data-theme="dark"] strong {
-    background: linear-gradient(180deg, rgba(42, 26, 26, 0.58), rgba(42, 26, 26, 0.98));
-    box-shadow: inset 0 -1px 0 rgba(232, 93, 93, 0.20);
 }
 
 [data-theme="dark"] a {
