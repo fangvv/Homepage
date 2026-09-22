@@ -1,4 +1,4 @@
-# Generated at 2026-09-22T16:00:45.931601+00:00
+# Generated at 2026-09-22T17:09:59.370017+00:00
 vless://c5694dc5-39fd-4a92-8430-3837baa522a3@194.93.63.246:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=pl.bubahero.com&fp=chrome&pbk=GmZv3anSeAeHr_cMFKr-6MPLli-nyKNatnY6P3AFK00&sid=9c2378562188c3cb&type=tcp&headerType=none#%F0%9F%87%B5%F0%9F%87%B1PL%E6%B3%A2%E5%85%B0%E4%B8%A8yoyapai.com
 trojan://humanity@88.198.82.150:443?security=tls&sni=www.ignitelimit.com&insecure=0&allowInsecure=0&type=ws&path=%2Fassignment#%F0%9F%87%A9%F0%9F%87%AADE%E5%BE%B7%E5%9B%BD%E4%B8%A8yoyapai.com
 vless://de78ba38-5600-47d1-b93b-b45bdf280ac0@195.123.212.60:15392?encryption=none&flow=xtls-rprx-vision&security=reality&sni=intel.com&fp=firefox&pbk=TgaE-83sqLrJ6auwPP2Nq7vDO_xuFqa6uMnG4Au18jg&sid=82&type=tcp&headerType=none#%F0%9F%87%B1%F0%9F%87%BBLV%E6%8B%89%E8%84%B1%E7%BB%B4%E4%BA%9A%E4%B8%A8yoyapai.com
