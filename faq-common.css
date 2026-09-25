@@ -162,6 +162,34 @@ ol li:hover {
     box-shadow: 0 18px 38px rgba(36, 59, 102, 0.13);
 }
 
+/* === 重点条目：需主动添加 .li-priority 才生效 === */
+ol li.li-priority {
+    background: linear-gradient(180deg, #FFF7F7 0%, var(--accent-soft) 100%);
+    border-color: rgba(185, 28, 28, 0.38);
+    box-shadow: 0 14px 32px rgba(185, 28, 28, 0.16);
+}
+
+ol li.li-priority:hover {
+    border-color: rgba(185, 28, 28, 0.55);
+    box-shadow: 0 20px 42px rgba(185, 28, 28, 0.24);
+}
+
+.li-priority .badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 10px 2px;
+    color: #fff;
+    font-size: 0.72em;
+    font-weight: 700;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    vertical-align: 0.12em;
+    background: linear-gradient(135deg, var(--accent), #DC2626);
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(185, 28, 28, 0.25);
+}
+
 strong {
     color: var(--accent-text);
     font-weight: 800;
@@ -348,6 +376,23 @@ footer {
 [data-theme="dark"] ol li:hover {
     border-color: rgba(232, 93, 93, 0.30);
     box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] ol li.li-priority {
+    background: linear-gradient(180deg, rgba(232, 93, 93, 0.12), rgba(232, 93, 93, 0.04)), linear-gradient(180deg, #1C2840 0%, #1A2438 100%);
+    border-color: rgba(232, 93, 93, 0.38);
+    box-shadow: 0 14px 32px rgba(232, 93, 93, 0.14);
+}
+
+[data-theme="dark"] ol li.li-priority:hover {
+    border-color: rgba(232, 93, 93, 0.55);
+    box-shadow: 0 20px 42px rgba(232, 93, 93, 0.22);
+}
+
+[data-theme="dark"] .li-priority .badge {
+    color: #FFE9E9;
+    background: linear-gradient(135deg, #7F1D1D, #B91C1C);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 [data-theme="dark"] a {
