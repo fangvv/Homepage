@@ -82,30 +82,30 @@
 1. **EdgeATP**: An Adaptive Tensor Parallelism Framework for Scalable and Efficient Transformer Inference on Edge Clusters. *Journal of Systems Architecture*, 2026. (SCI, CCF-B, JCR一区)
 2. **HADRL**: Joint Service Caching and Computation Offloading in Mobile Edge Networks: A Hierarchical DRL Approach with Active Inference. *IEEE Internet of Things Journal*, 2026. (SCI, JCR一区)
 3. **Edge-STGNN**: Automated Spatial-Temporal Graph Neural Network Search for Skeleton-based Human Action Recognition on Edge Devices. *IEEE Internet of Things Journal*, 2026. (SCI, JCR一区)
-4. **UAV-DDPG**: Computation Offloading Optimization for UAV-assisted Mobile Edge Computing: A Deep Deterministic Policy Gradient Approach. (GitHub ⭐716, 高引论文)
+4. **UAV-DDPG**: Computation Offloading Optimization for UAV-assisted Mobile Edge Computing: A Deep Deterministic Policy Gradient Approach. (GitHub ⭐722, 高引论文)
 
 ### 开源项目（展示工程落地能力）
 
 > 所有项目代码与说明公开在 [GitHub @fangvv](https://github.com/fangvv)，研究型项目均提供完整可复现代码、实验配置与论文链接，可全面展示实验室从理论到工程落地的全栈能力。
 
 **高星/高关注项目：**
-- [UAV-DDPG](https://github.com/fangvv/UAV-DDPG) ⭐716 — 无人机辅助移动边缘计算卸载优化（DDPG，高引论文配套代码）
-- [VN-MADDPG](https://github.com/fangvv/VN-MADDPG) ⭐343 — 车联网多智能体DRL资源分配（MADDPG，V2V/V2I通信）
+- [UAV-DDPG](https://github.com/fangvv/UAV-DDPG) ⭐722 — 无人机辅助移动边缘计算卸载优化（DDPG，高引论文配套代码）
+- [VN-MADDPG](https://github.com/fangvv/VN-MADDPG) ⭐346 — 车联网多智能体DRL资源分配（MADDPG，V2V/V2I通信）
 - [LassoADMM](https://github.com/fangvv/LassoADMM) ⭐65 — 边缘计算分布式ADMM协同回归学习（Lasso）
 - [SPBFT](https://github.com/fangvv/SPBFT) ⭐63 — 面向区块链的优化PBFT共识算法
 - [awesome-edge-intelligence-collections](https://github.com/fangvv/awesome-edge-intelligence-collections) ⭐61 — 边缘智能DNN压缩与加速资源精选清单（持续更新）
 
 **边缘AI/端侧推理系列（DNN推理加速、模型压缩、边缘部署）：**
-- [JMDC](https://github.com/fangvv/JMDC) ⭐26 — 边云协作DNN推理的模型+数据联合压缩系统
-- [RTFD-Dataset](https://github.com/fangvv/RTFD-Dataset) ⭐26 — 铁路轨道缺陷/非缺陷分类数据集
+- [JMDC](https://github.com/fangvv/JMDC) ⭐25 — 边云协作DNN推理的模型+数据联合压缩系统
+- [RTFD-Dataset](https://github.com/fangvv/RTFD-Dataset) ⭐28 — 铁路轨道缺陷/非缺陷分类数据集
 - [CPSCA](https://github.com/fangvv/CPSCA) ⭐20 — 空间+通道注意力引导的DNN通道剪枝
-- [EdgeDI](https://github.com/fangvv/EdgeDI) ⭐17 — 工业物联网集群DNN推理架构设计与工作负载分区
+- [EdgeDI](https://github.com/fangvv/EdgeDI) ⭐18 — 工业物联网集群DNN推理架构设计与工作负载分区
 - [ILMIL](https://github.com/fangvv/ILMIL) ⭐17 — 基于知识蒸馏的增量目标检测
-- [EdgeLD](https://github.com/fangvv/EdgeLD) ⭐15 — 边缘设备集群本地分布式DNN推理
+- [EdgeLD](https://github.com/fangvv/EdgeLD) ⭐16 — 边缘设备集群本地分布式DNN推理
 - [EdgeKE](https://github.com/fangvv/EdgeKE) ⭐11 — 工业边缘按需深度学习系统（早退/知识蒸馏，Jetson部署）
-- [TLEE](https://github.com/fangvv/TLEE) ⭐9 — 时序+层级双维度早退的高效视频识别
-- [RSEE](https://github.com/fangvv/RSEE) ⭐8 — 自适应分辨率+条件早退的高效视频识别
-- [MTACP](https://github.com/fangvv/MTACP) ⭐7 — 基于深度强化学习的多任务DNN自动通道剪枝
+- [TLEE](https://github.com/fangvv/TLEE) ⭐11 — 时序+层级双维度早退的高效视频识别
+- [RSEE](https://github.com/fangvv/RSEE) ⭐9 — 自适应分辨率+条件早退的高效视频识别
+- [MTACP](https://github.com/fangvv/MTACP) ⭐9 — 基于深度强化学习的多任务DNN自动通道剪枝
 - [CDNSR](https://github.com/fangvv/CDNSR) ⭐2 — 基于分类的动态网络高效超分辨率
 - [ACS](https://github.com/fangvv/ACS) ⭐2 — 自适应通道跳过的动态DNN推理加速
 - [HWGNAS](https://github.com/fangvv/HWGNAS) — 面向边缘设备的硬件感知图神经网络自动设计（NAS，与Edge-STGNN同方向）
