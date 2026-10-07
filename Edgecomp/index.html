@@ -7,60 +7,6 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="北京交通大学系统与网络实验室 - 边缘计算与边缘智能研究小组" />
-  <meta name="keywords"
-    content="北京交通大学，方维维，边缘计算，边缘智能，图像识别，目标检测，视频分析，超分辨率，神经架构搜索，联邦学习，强化学习，TinyML，NAS，Classification，Object Detection，Super Resolution，Edge Computing，Edge Intelligence，BJTU，Efficient LLM，On-Device Learning" />
-  <meta name="keywords" content="
-大语言模型, Large Language Model, LLM,
-模型部署, Model Deployment,
-边缘智能, Edge AI,
-Ollama模型, Ollama Models,
-Llama 3, Llama2, Gemma, DeepSeek-R1,
-Qwen, 通义千问, 文心一言, 混元大模型,
-Phi-3, Mistral, Yi-34B, Aquila,
-具身智能, Embodied Intelligence,
-模型量化, Model Quantization,
-低功耗AI, Low-Power AI,
-终端侧推理, On-Device Inference,
-Jetson部署, Jetson Deployment,
-Android AI, Windows端侧AI,
-NPU加速, NPU Acceleration,
-异构计算, Heterogeneous Computing,
-模型微调, Model Fine-tuning,
-知识蒸馏, Knowledge Distillation,
-国产大模型, Chinese LLM,
-AI芯片, AI Chip,
-端云协同, Edge-Cloud Collaboration,
-多模态大模型, Multimodal LLM,
-AI隐私安全, AI Privacy,
-智能体, AI Agent, Multi-Agent,
-RAG, 检索增强生成, Retrieval-Augmented Generation,
-向量数据库, Vector Database,
-提示工程, Prompt Engineering,
-思维链, Chain of Thought,
-少样本学习, Few-Shot Learning,
-RLHF, 人类反馈强化学习,
-DPO, 直接偏好优化,
-LoRA, 低秩适配, QLoRA, 量化低秩适配,
-vLLM, 高效推理引擎,
-TensorRT, NVIDIA推理优化,
-ONNX, 开放神经网络交换格式,
-GGUF, 通用模型格式,
-GPTQ, 模型量化方法, AWQ, 激活感知量化,
-树莓派, Raspberry Pi,
-NVIDIA Jetson, 边缘计算平台,
-TensorFlow Lite, 轻量级推理框架,
-PyTorch Mobile, 移动端深度学习,
-边缘服务器, Edge Server,
-物联网, IoT, Internet of Things,
-5G边缘计算, 6G边缘计算,
-边缘云, Edge Cloud,
-联邦学习, Federated Learning,
-分布式训练, Distributed Training,
-模型压缩, Model Compression,
-剪枝, Pruning,
-量化, Quantization
-">
-
   <title>北京交通大学系统与网络实验室 - 边缘计算与边缘智能研究小组</title>
   <!-- Open Graph -->
   <meta property="og:site_name" content="北京交通大学系统与网络实验室" />
@@ -71,12 +17,6 @@ PyTorch Mobile, 移动端深度学习,
   <meta property="og:image" content="https://fangvv.github.io/Homepage/Edgecomp/img/Vision.png" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome 仅用于 2 个图标；用 print-swap 手法加载，避免阻塞首屏渲染 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </noscript>
   <!-- Custom styles for this template -->
   <link href="css/round-about.css" rel="stylesheet" />
   <style>
@@ -100,7 +40,6 @@ PyTorch Mobile, 移动端深度学习,
       text-decoration: none;
       transform: translateY(0);
       transition: all 0.3s ease;
-      overflow: hidden;
     }
 
     .floating-btn:hover {
@@ -118,32 +57,14 @@ PyTorch Mobile, 移动端深度学习,
         0 0 0 1px rgba(209, 230, 255, 0.15);
     }
 
-    .floating-btn i {
+    .floating-btn .icon-emoji {
       font-size: 28px;
+      line-height: 1;
       transition: transform 0.3s ease;
     }
 
-    .floating-btn:hover i {
+    .floating-btn:hover .icon-emoji {
       transform: scale(1.1);
-    }
-
-    .floating-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.15);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s ease;
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .floating-btn:hover::before {
-      transform: scaleX(1);
     }
 
     /* 响应式设计 */
@@ -155,8 +76,17 @@ PyTorch Mobile, 移动端深度学习,
         height: 60px;
       }
 
-      .floating-btn i {
+      .floating-btn .icon-emoji {
         font-size: 24px;
+      }
+
+      .portfolio-item {
+        margin-bottom: 1.5rem;
+      }
+
+      .research-slogan .badge {
+        font-size: 1.15rem;
+        line-height: 1.35;
       }
     }
 
@@ -173,9 +103,6 @@ PyTorch Mobile, 移动端深度学习,
     .animated-vision {
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border-radius: 8px;
-    }
-
-    .animated-vision {
       animation: fadeInUpScale 1s;
     }
 
@@ -211,39 +138,10 @@ PyTorch Mobile, 移动端深度学习,
       border-color: #3068d6;
     }
 
-    .card-img-container {
-      position: relative;
-      height: 200px;
-      /* 固定高度，避免错位 */
-      overflow: hidden;
-    }
-
     .card-img-top {
-      transition: transform 0.4s ease-out;
       object-fit: cover;
       width: 100%;
       height: 100%;
-    }
-
-    .card-img-container:hover .card-img-top {
-      transform: scale(1.05);
-    }
-
-    .img-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(48, 104, 214, 0.6);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      border-radius: 12px 12px 0 0;
-      font-size: 24px;
-    }
-
-    .card-img-container:hover .img-overlay {
-      opacity: 1;
     }
 
     .research-slogan {
@@ -259,24 +157,31 @@ PyTorch Mobile, 移动端深度学习,
       padding: 0.45rem 0.8rem;
     }
 
-    /* 响应式 */
-    @media (max-width: 768px) {
-      .portfolio-item {
-        margin-bottom: 1.5rem;
-      }
+    /* 联系区（替代原先的内联 style） */
+    .contact-callout {
+      background: linear-gradient(to right, #f0f7ff, #f8fbff);
+      border-left: 5px solid #3068d6;
+      box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);
+    }
 
-      .research-slogan .badge {
-        font-size: 1.15rem;
-        line-height: 1.35;
-      }
+    .contact-callout h4 {
+      color: #3068d6;
+      font-weight: 600;
+    }
+
+    .contact-callout h4 .icon-emoji {
+      font-style: normal;
+      font-size: 1.2em;
+      vertical-align: -0.05em;
+    }
+
+    .contact-callout img {
+      vertical-align: middle;
+      mix-blend-mode: multiply;
     }
 
     .content-section {
       margin: 2rem 0;
-    }
-
-    .intro-spacer {
-      height: 1rem;
     }
 
     /* 修复宽度问题：适配原有容器，不限制最大宽度 */
@@ -306,25 +211,10 @@ PyTorch Mobile, 移动端深度学习,
       }
     }
 
-    /* 标题样式保持 */
-    .intro-section h2 {
-      color: #3068d6;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .intro-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: #3068d6;
-      border-radius: 2px;
+    /* 各 section 标题统一红色加粗（替代原先逐个 h2 挂 text-danger font-weight-bold） */
+    .container h2 {
+      color: #dc3545;
+      font-weight: 700;
     }
 
     .intro-section .lead {
@@ -371,17 +261,21 @@ PyTorch Mobile, 移动端深度学习,
     #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
       transform: scale(1.03);
       border-color: #3068d6;
-      box-shadow: 0 6px 20px rgba(48, 104, 214, 0.28);
     }
 
     /* 名字样式 */
     #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
+      color: #2d3748;
+      font-size: 1.4rem;
+      font-weight: 600;
       margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
       min-height: 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      transition: all 0.3s ease;
     }
 
     /* 有链接的名字 */
@@ -395,22 +289,8 @@ PyTorch Mobile, 移动端深度学习,
       transition: all 0.3s ease;
     }
 
-    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a:hover {
-      color: #2d3748;
-      transform: translateY(-2px);
-    }
-
-    /* 普通名字（无链接） */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
-      color: #2d3748;
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      transition: all 0.3s ease;
-    }
-
+    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a:hover,
     #team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 {
-      color: #2d3748;
       transform: translateY(-2px);
     }
 
@@ -429,17 +309,6 @@ PyTorch Mobile, 移动端深度学习,
       text-align: center;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
       letter-spacing: 0.3px;
-    }
-
-    /* 导师标签也完全一样 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4:first-child h3 small {
-      font-weight: 600;
-      padding: 0.3rem 1rem;
-      font-size: 0.8rem;
-      border-width: 1px;
-      border-color: #e2e8f0;
-      background: #f8fafc;
-      color: #4a5568;
     }
 
     /* 统一hover效果 */
@@ -548,9 +417,8 @@ PyTorch Mobile, 移动端深度学习,
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">Edge Computing & Edge Intelligence @ BJTU系统与网络实验室</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
-          class="navbar-toggler-icon"></span> </button>
+      <button class="navbar-toggler" type="button" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span>
@@ -565,15 +433,14 @@ PyTorch Mobile, 移动端深度学习,
 
   <a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" rel="noopener noreferrer"
     title="访问方老师个人主页">
-    <i class="fas fa-user-graduate"></i>
+    <span class="icon-emoji">🎓</span>
   </a>
 
 
   <!-- Page Content -->
   <div class="container">
     <header class="intro-section jumbotron my-4">
-      <h1 class="display-3">边缘计算与边缘智能</h1>
-      <div class="intro-spacer"></div>
+      <h1 class="display-3 mb-4">边缘计算与边缘智能</h1>
       <p class="lead">
         <b>边缘计算是在靠近物或数据源头的网络边缘侧，融合网络、计算、存储、应用核心能力的分布式开放平台，就近提供边缘智能服务，满足行业数字化在敏捷联接、实时业务、数据优化、应用智能、安全与隐私保护等方面的关键需求。 </b>
       </p>
@@ -588,7 +455,7 @@ PyTorch Mobile, 移动端深度学习,
 
     <section id="research">
 
-      <h2 class="my-4 text-danger font-weight-bold">核心问题</h2>
+      <h2 class="my-4">核心问题</h2>
       <div class="vision-container my-4">
         <img width="1084" height="515" src="img/Vision.png" class="img-fluid animated-vision" alt="Research Vision"
           fetchpriority="high" decoding="async">
@@ -596,14 +463,13 @@ PyTorch Mobile, 移动端深度学习,
 
       <div class="row">
         <div class="col-lg-12">
-          <h2 class="my-4 text-danger font-weight-bold">研究内容</h2>
+          <h2 class="my-4">研究内容</h2>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img width="700" height="400" class="card-img-top" src="img/1.jpg" alt="" loading="lazy"
-                decoding="async" /></a>
+            <img width="700" height="400" class="card-img-top" src="img/1.jpg" alt="" loading="lazy" decoding="async" />
             <div class="card-body">
-              <h5 class="card-title"> <a href="#">边缘计算资源的高效优化调度</a> </h5>
+              <h5 class="card-title">边缘计算资源的高效优化调度</h5>
               <p class="card-text">考虑到边缘计算对规模性、实时性和安全性等方面的要求，研究实现高效率、低能耗的分布式资源优化调度算法，实现对通信、计算、网络和存储等资源的优化利用。</p>
               <p class="research-slogan"><span class="badge badge-warning">运筹帷幄，各司其职</span></p>
             </div>
@@ -611,10 +477,9 @@ PyTorch Mobile, 移动端深度学习,
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img width="700" height="400" class="card-img-top" src="img/2.jpg" alt="" loading="lazy"
-                decoding="async" /></a>
+            <img width="700" height="400" class="card-img-top" src="img/2.jpg" alt="" loading="lazy" decoding="async" />
             <div class="card-body">
-              <h5 class="card-title"> <a href="#">边缘硬件上部署深度学习功能</a> </h5>
+              <h5 class="card-title">边缘硬件上部署深度学习功能</h5>
               <p class="card-text">传统机器学习特别是深度学习对硬件设备的计算能力要求非常高，面向具体应用需求，研究专门针对资源受限边缘设备的分布式计算训练模式和精简深度网络模型。</p>
               <p class="research-slogan"><span class="badge badge-warning">麻雀虽小，五脏俱全</span></p>
             </div>
@@ -622,10 +487,9 @@ PyTorch Mobile, 移动端深度学习,
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img width="700" height="400" class="card-img-top" src="img/3.jpg" alt="" loading="lazy"
-                decoding="async" /></a>
+            <img width="700" height="400" class="card-img-top" src="img/3.jpg" alt="" loading="lazy" decoding="async" />
             <div class="card-body">
-              <h5 class="card-title"> <a href="#">智能边缘计算技术的行业应用</a> </h5>
+              <h5 class="card-title">智能边缘计算技术的行业应用</h5>
               <p class="card-text">与轨道交通、网联汽车、船舶制造和工业控制等领域的专家、工程师协同工作，研究将边缘计算和边缘智能的研究思想和技术成果落地，投入实用，发挥其独特作用。</p>
               <p class="research-slogan"><span class="badge badge-warning">面向行业，聚焦应用</span></p>
             </div>
@@ -636,7 +500,7 @@ PyTorch Mobile, 移动端深度学习,
 
     <section id="projects" class="content-section">
       <div class="card">
-        <h2 class="card-header text-danger font-weight-bold">承担项目：感谢对我们科研工作的资助</h2>
+        <h2 class="card-header">承担项目：感谢对我们科研工作的资助</h2>
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">主持国家自然科学基金面上项目：面向工业物联网中时效敏感DNN推理计算的边缘智能关键技术研究</li>
@@ -670,7 +534,7 @@ PyTorch Mobile, 移动端深度学习,
 
     <section id="platform" class="content-section">
       <div class="card">
-        <h2 class="card-header text-danger font-weight-bold">科研平台：作真正可部署可运行的研究</h2>
+        <h2 class="card-header">科研平台：作真正可部署可运行的研究</h2>
         <img width="1099" height="428" src="img/hardware.png" class="img-fluid" loading="lazy" decoding="async">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -700,7 +564,7 @@ PyTorch Mobile, 移动端深度学习,
 
     <section id="products" class="content-section">
       <div class="card">
-        <h2 class="card-header text-danger font-weight-bold">技术输出与产品化：把论文写在祖国的大地上</h2>
+        <h2 class="card-header">技术输出与产品化：把论文写在祖国的大地上</h2>
         <img width="1033" height="925" src="img/product.png" class="img-fluid" loading="lazy" decoding="async">
         <img width="1033" height="221" src="img/product2.png" class="img-fluid" loading="lazy" decoding="async">
         <div class="card-body">
@@ -717,7 +581,7 @@ PyTorch Mobile, 移动端深度学习,
 
     <section id="publications" class="content-section">
       <div class="card">
-        <h2 class="card-header text-danger font-weight-bold">论文与获奖：当然我们也有写在纸上的研究成果</h2>
+        <h2 class="card-header">论文与获奖：当然我们也有写在纸上的研究成果</h2>
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">轨道表观伤损智能识别关键技术及应用，中国铁道学会科学技术奖二等奖(贡献排名第3), 2020.</li>
@@ -803,7 +667,7 @@ PyTorch Mobile, 移动端深度学习,
     <section id="team">
       <div class="row">
         <div class="col-lg-12">
-          <h2 class="my-4 text-danger font-weight-bold">科研团队</h2>
+          <h2 class="my-4">科研团队</h2>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt=""
@@ -906,12 +770,6 @@ PyTorch Mobile, 移动端深度学习,
           <h3>井博冉 <small>24级拔尖班本科生</small> </h3>
         </div>
 
-        <!--
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/gc.jpg" alt="" loading="lazy" decoding="async" />
-          <h3>郭超 <small>研究助理</small> </h3>
-      </div>
--->
         <div class="col-lg-4 col-sm-6 text-center mb-4">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/joinus.jpg" alt=""
             loading="lazy" decoding="async" />
@@ -923,11 +781,10 @@ PyTorch Mobile, 移动端深度学习,
 
 
     <section id="contact">
-      <div class="contact-callout mt-5 mb-4 p-4 rounded"
-        style="background: linear-gradient(to right, #f0f7ff, #f8fbff); border-left: 5px solid #3068d6; box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);">
+      <div class="contact-callout mt-5 mb-4 p-4 rounded">
         <div class="text-center">
-          <h4 class="mb-3" style="color: #3068d6; font-weight: 600;">
-            <i class="fas fa-handshake"></i> 期待与您交流合作！
+          <h4 class="mb-3">
+            <span class="icon-emoji">🤝</span> 期待与您交流合作！
           </h4>
           <p class="lead text-secondary mb-3">
             无论您是业界专家、同行学者，还是热爱科研的学子，
@@ -936,7 +793,7 @@ PyTorch Mobile, 移动端深度学习,
             我们都诚挚欢迎您来信交流，共同探索边缘计算与边缘智能的无限可能！
           </p>
           <div class="contact-info d-flex justify-content-center flex-wrap text-center">
-            <span class="mb-2 mb-md-0 mr-md-4">📧 <a href="#" onclick="location.href='mailto:'+atob('ZmFuZ3Z2QHFxLmNvbQ==');return false;"><img src="../email2.png" alt="" style="vertical-align:middle; mix-blend-mode:multiply"></a></span>
+            <span class="mb-2 mb-md-0 mr-md-4">📧 <a href="#" onclick="location.href='mailto:'+atob('ZmFuZ3Z2QHFxLmNvbQ==');return false;"><img src="../email2.png" alt=""></a></span>
             <span>📍 北京交通大学九号教学楼北201</span>
           </div>
         </div>
@@ -952,19 +809,30 @@ PyTorch Mobile, 移动端深度学习,
     </div>
     <!-- /.container -->
   </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <script>
-    var toggler = document.querySelector(".navbar-toggler");
-    $(".navbar-nav li a").on("click", function () {
-      // 移动端：点击导航项后收起折叠菜单
-      toggler.click();
-      // 将高亮（active）移动到被点击的导航项
-      $(".navbar-nav li").removeClass("active");
-      $(this).parent("li").addClass("active");
-    });
+    // 手写导航折叠：本页仅用到 Bootstrap JS 的 collapse 功能，用几行原生 JS 替代 jQuery + bootstrap.bundle（样式仍由 bootstrap.min.css 提供）
+    (function () {
+      var toggler = document.querySelector(".navbar-toggler");
+      var menu = document.getElementById("navbarResponsive");
+      toggler.addEventListener("click", function () {
+        var open = menu.classList.toggle("show");
+        toggler.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      var links = document.querySelectorAll(".navbar-nav li a");
+      for (var i = 0; i < links.length; i++) {
+        (function (link) {
+          link.addEventListener("click", function () {
+            // 移动端：点击导航项后收起折叠菜单
+            menu.classList.remove("show");
+            toggler.setAttribute("aria-expanded", "false");
+            // 将高亮（active）移动到被点击的导航项
+            var lis = document.querySelectorAll(".navbar-nav li");
+            for (var j = 0; j < lis.length; j++) lis[j].classList.remove("active");
+            link.parentElement.classList.add("active");
+          });
+        })(links[i]);
+      }
+    })();
 
     // 头像入场：滚动到 #team 时逐张浮现
     (function () {
