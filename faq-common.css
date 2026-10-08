@@ -77,15 +77,6 @@ body::before {
     letter-spacing: -0.04em;
 }
 
-.hero p {
-    position: relative;
-    z-index: 1;
-    max-width: 720px;
-    margin: 18px 0 0;
-    color: rgba(255, 255, 255, 0.84);
-    font-size: 1.05rem;
-}
-
 .content-card {
     margin-top: 28px;
     padding: 34px;
@@ -108,14 +99,6 @@ body::before {
 .lead {
     margin: 0 0 1.5rem;
     font-size: 1.04rem;
-}
-
-.alert {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: #FFF3E0;
-    border-left: 4px solid #C2410C;
-    border-radius: 14px;
 }
 
 ol {
@@ -174,22 +157,6 @@ ol li.li-priority:hover {
     box-shadow: 0 20px 42px rgba(185, 28, 28, 0.24);
 }
 
-.li-priority .badge {
-    display: inline-block;
-    margin-left: 6px;
-    padding: 1px 10px 2px;
-    color: #fff;
-    font-size: 0.72em;
-    font-weight: 700;
-    line-height: 1.8;
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-    vertical-align: 0.12em;
-    background: linear-gradient(135deg, var(--accent), #DC2626);
-    border-radius: 999px;
-    box-shadow: 0 4px 10px rgba(185, 28, 28, 0.25);
-}
-
 strong {
     color: var(--accent-text);
     font-weight: 800;
@@ -239,14 +206,6 @@ a:hover {
 .reference-list li {
     margin: 10px 0;
     padding-left: 4px;
-}
-
-.contact {
-    margin: 26px 0 0;
-    padding: 22px 24px;
-    background: linear-gradient(135deg, var(--accent-soft), #FFFFFF);
-    border: 1px solid rgba(185, 28, 28, 0.13);
-    border-radius: 22px;
 }
 
 footer {
@@ -389,12 +348,6 @@ footer {
     box-shadow: 0 20px 42px rgba(232, 93, 93, 0.22);
 }
 
-[data-theme="dark"] .li-priority .badge {
-    color: #FFE9E9;
-    background: linear-gradient(135deg, #7F1D1D, #B91C1C);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
 [data-theme="dark"] a {
     color: var(--primary);
     border-bottom-color: rgba(168, 196, 224, 0.35);
@@ -409,11 +362,6 @@ footer {
     background: linear-gradient(135deg, var(--primary-soft), #1C2840);
     border-color: rgba(168, 196, 224, 0.10);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-}
-
-[data-theme="dark"] .contact {
-    background: linear-gradient(135deg, var(--accent-soft), #1C2840);
-    border-color: rgba(232, 93, 93, 0.18);
 }
 
 .sr-only {
@@ -485,7 +433,6 @@ body,
 .content-card,
 ol li,
 .reference-list,
-.contact,
 strong,
 a,
 footer {
