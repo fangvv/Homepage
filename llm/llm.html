@@ -5,30 +5,7 @@
     <meta charset="UTF-8">
     <link rel="llms.txt" href="https://fangvv.github.io/Homepage/llms.txt" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <meta name="keywords" content="
-大语言模型, Large Language Model, LLM,
-模型部署, Model Deployment,
-边缘智能, Edge AI,
-Ollama模型, Ollama Models,
-Llama 3, Llama2, Gemma, DeepSeek-R1,
-Qwen, 通义千问, Phi-3, Mistral,
-具身智能, Embodied Intelligence,
-模型量化, Model Quantization,
-低功耗AI, Low-Power AI,
-终端侧推理, On-Device Inference,
-Jetson部署, Jetson Deployment,
-Android AI, Windows端侧AI,
-NPU加速, NPU Acceleration,
-异构计算, Heterogeneous Computing,
-模型微调, Model Fine-tuning,
-知识蒸馏, Knowledge Distillation,
-端云协同, Edge-Cloud Collaboration,
-多模态大模型, Multimodal LLM,
-Token Optimization,
-Distributed Inference,
-Speculative Decoding,
-LLM Routing
-">
+    <meta name="keywords" content="大语言模型,LLM,端侧部署,边缘智能,模型量化,终端侧推理,推理优化,Jetson,NPU加速,异构计算,Qwen,DeepSeek,Llama,Token Optimization,Speculative Decoding,Distributed Inference,LLM Routing">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>北京交通大学系统与网络实验室 - Make LLM Efficient Again | 端侧本地大模型研究</title>
     <!-- Open Graph -->
@@ -95,12 +72,16 @@ LLM Routing
         /* ============================================================
                通用卡片（所有区块共用）
                ============================================================ */
-        .card-block {
+        .card-block,
+        .direction-card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-radius: var(--radius-card);
             box-shadow: var(--card-shadow);
+        }
+
+        .card-block {
             padding: 1.8rem 2.2rem;
             margin-bottom: 2.5rem;
         }
@@ -239,8 +220,6 @@ LLM Routing
             margin: 0 5px;
             padding: 0;
             border: 0;
-            border-top: 0;
-            border-bottom: 0;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.55);
             background-clip: padding-box;
@@ -265,12 +244,24 @@ LLM Routing
 
         .direction-card {
             padding: 1.6rem 1.8rem;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-card);
-            box-shadow: var(--card-shadow);
             transition: transform 0.22s ease, box-shadow 0.22s ease;
+            --c-dot: var(--accent-blue);
+            --c-title: #2563eb;
+        }
+
+        .direction-card.accent-purple {
+            --c-dot: var(--accent-purple);
+            --c-title: #7c3aed;
+        }
+
+        .direction-card.accent-cyan {
+            --c-dot: var(--accent-cyan);
+            --c-title: #0891b2;
+        }
+
+        .direction-card.accent-orange {
+            --c-dot: var(--accent-orange);
+            --c-title: #d97706;
         }
 
         .direction-card:hover {
@@ -278,7 +269,8 @@ LLM Routing
             box-shadow: 0 14px 40px rgba(0, 0, 0, 0.10);
         }
 
-        .direction-card .card-header {
+        /* 命名避开 Bootstrap 的 .card-header,以免继承其自带的 padding/边框/背景 */
+        .direction-card .dc-header {
             display: flex;
             align-items: center;
             gap: 12px;
@@ -290,6 +282,7 @@ LLM Routing
             height: 14px;
             border-radius: 50%;
             flex-shrink: 0;
+            background: var(--c-dot);
         }
 
         .direction-card h5 {
@@ -297,6 +290,7 @@ LLM Routing
             font-weight: 700;
             font-size: 1.1rem;
             letter-spacing: -0.02em;
+            color: var(--c-title);
         }
 
         .direction-card p {
@@ -635,36 +629,36 @@ LLM Routing
         <div class="section-960 direction-grid mt-section">
             <!-- Token Optimization -->
             <div class="direction-card">
-                <div class="card-header">
-                    <span class="dot" style="background:var(--accent-blue);"></span>
-                    <h5 style="color:#2563eb;">Token Optimization</h5>
+                <div class="dc-header">
+                    <span class="dot"></span>
+                    <h5>Token Optimization</h5>
                 </div>
                 <p>token 的生成与传输是 LLM 推理的核心瓶颈之一。我们通过 token 剪枝、动态上下文压缩、KV cache 量化等技术，降低每轮交互的 token 开销，提升端侧设备的响应速度。</p>
                 <span class="card-tagline">降低 token 开销 · 适配边缘算力</span>
             </div>
             <!-- Speculative Decoding -->
-            <div class="direction-card">
-                <div class="card-header">
-                    <span class="dot" style="background:var(--accent-purple);"></span>
-                    <h5 style="color:#7c3aed;">Speculative Decoding</h5>
+            <div class="direction-card accent-purple">
+                <div class="dc-header">
+                    <span class="dot"></span>
+                    <h5>Speculative Decoding</h5>
                 </div>
                 <p>传统自回归解码串行生成，难以充分利用边缘设备的并行算力。我们以小模型草稿先行推测、大模型并行验证，在保证生成质量的同时显著提升推理吞吐量和响应速度。</p>
                 <span class="card-tagline">以草稿推测代替串行生成 · 提升并行效率</span>
             </div>
             <!-- Distributed Inference -->
-            <div class="direction-card">
-                <div class="card-header">
-                    <span class="dot" style="background:var(--accent-cyan);"></span>
-                    <h5 style="color:#0891b2;">Distributed Inference</h5>
+            <div class="direction-card accent-cyan">
+                <div class="dc-header">
+                    <span class="dot"></span>
+                    <h5>Distributed Inference</h5>
                 </div>
                 <p>单一边缘设备算力有限，难以独立运行完整大模型。我们研究跨设备模型切分与协同推理，将任务分解到多个边缘节点并行执行，在资源受限集群上实现高效部署和推理。</p>
                 <span class="card-tagline">跨节点协同推理 · 突破单设备算力天花板</span>
             </div>
             <!-- LLM Routing -->
-            <div class="direction-card">
-                <div class="card-header">
-                    <span class="dot" style="background:var(--accent-orange);"></span>
-                    <h5 style="color:#d97706;">LLM Routing</h5>
+            <div class="direction-card accent-orange">
+                <div class="dc-header">
+                    <span class="dot"></span>
+                    <h5>LLM Routing</h5>
                 </div>
                 <p>端侧环境中，任务复杂度和设备状态差异显著。我们研究智能路由分发策略，根据输入任务特性与各节点负载情况，动态调度请求至最优模型或推理端点，平衡服务质量与资源效率。</p>
                 <span class="card-tagline">动态路由调度 · 平衡质量与效率</span>
@@ -673,7 +667,7 @@ LLM Routing
 
         <!-- ===== 技术栈与硬件平台 ===== -->
         <div class="section-960 card-block mt-section">
-            <h4 class="section-title" style="margin-bottom:1.2rem;">技术栈与硬件平台</h4>
+            <h4 class="section-title">技术栈与硬件平台</h4>
 
             <!-- 模型层 -->
             <div class="tech-node">
@@ -745,7 +739,7 @@ LLM Routing
                     <path
                         d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757ZM16 4.697v7.104l-5.803-3.558L16 4.697Z" />
                 </svg>
-                <img src="../email1.png" alt="" style="vertical-align:middle">
+                <img src="../email1.png" alt="">
             </a>
         </div>
 
@@ -767,7 +761,8 @@ LLM Routing
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 仅用到轮播组件,加载不含 Popper 的 bootstrap.min.js 即可 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         var sc_project = 11657787;
         var sc_invisible = 1;
