@@ -9,7 +9,8 @@
     <link rel="canonical" href="https://fangvv.github.io/Homepage/faq.html">
     <script>
         (function () {
-            try { var t = localStorage.getItem('theme'); } catch (e) { var t = null; }
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { /* localStorage may be blocked */ }
             if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 var m = document.querySelector('meta[name="theme-color"]');
@@ -33,7 +34,7 @@
     <!-- 说明：本组近年新设卫星脑机研究方向，组会安排在每周日下午，研三为每位学生配备企业导师，请在邮件中确认可以参加组会 -->
     <main class="page">
         <section class="hero">
-            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式" aria-pressed="false">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式" aria-pressed="false">
                 <span class="icon-sun">&#9728;&#65039;</span>
                 <span class="icon-moon">&#127769;</span>
             </button>

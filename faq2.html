@@ -9,7 +9,8 @@
     <link rel="canonical" href="https://fangvv.github.io/Homepage/faq2.html">
     <script>
         (function () {
-            try { var t = localStorage.getItem('theme'); } catch (e) { var t = null; }
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { /* localStorage may be blocked */ }
             if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 var m = document.querySelector('meta[name="theme-color"]');
@@ -33,7 +34,7 @@
     <!-- 招生说明：本组卫星脑机研究方向急需人才，组会时间为每周日下午，研三为每位学生配备企业导师，请在邮件中注明对卫星脑机方向的兴趣 -->
     <main class="page">
         <section class="hero">
-            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式" aria-pressed="false">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式" aria-pressed="false">
                 <span class="icon-sun">&#9728;&#65039;</span>
                 <span class="icon-moon">&#127769;</span>
             </button>
@@ -72,7 +73,7 @@
                 <li><a href="https://www.science.org/content/article/why-i-may-hire-ai-instead-graduate-student" target="_blank" rel="noopener noreferrer">Science发文：为何我会选择AI而非研究生？</a></li>
                 <li><a href="https://www.zhihu.com/question/1903824518725755143/answer/1904984097794823188" target="_blank" rel="noopener noreferrer">知乎上的一位导师对于学生混学位的看法</a></li>
                 <li><a href="https://zhuanlan.zhihu.com/p/372884253" target="_blank" rel="noopener noreferrer">清华大学张焕晨教授观点：读博，你真的想好了吗？</a></li>
-                <li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzNjY5MjU3OA==&action=getalbum&album_id=3528375688665268224" target="_blank" rel="noopener noreferrer">班小小：我在东5的读研往事</a></li>
+                <li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzNjY5MjU3OA==&amp;action=getalbum&amp;album_id=3528375688665268224" target="_blank" rel="noopener noreferrer">班小小：我在东5的读研往事</a></li>
                 <li><a href="https://www.zhihu.com/question/487277766" target="_blank" rel="noopener noreferrer">为什么保研放老师鸽子的现象已经成为一种常态，而且都不觉得羞耻?</a></li>
             </ul>
         </section>
