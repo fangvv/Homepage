@@ -15,400 +15,19 @@
   <meta property="og:url" content="https://fangvv.github.io/Homepage/Edgecomp/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://fangvv.github.io/Homepage/Edgecomp/img/Vision.webp" />
+  <link rel="canonical" href="https://fangvv.github.io/Homepage/Edgecomp/" />
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Custom styles for this template -->
+  <!-- 自定义样式（模板样式 + 本页样式） -->
   <link href="css/round-about.css" rel="stylesheet" />
-  <style>
-    /* 漂浮按钮样式 - 不干扰原页面布局 */
-    .floating-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #f1f8ff, #d1e6ff);
-      box-shadow:
-        0 6px 16px rgba(0, 90, 255, 0.12),
-        0 0 0 1px rgba(209, 230, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      color: #3068d6;
-      text-decoration: none;
-      transform: translateY(0);
-      transition: all 0.3s ease;
-    }
-
-    .floating-btn:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow:
-        0 10px 20px rgba(0, 90, 255, 0.15),
-        0 0 0 1px rgba(209, 230, 255, 0.3);
-      background: linear-gradient(135deg, #e4f0ff, #c8e1ff);
-    }
-
-    .floating-btn:active {
-      transform: scale(0.95);
-      box-shadow:
-        0 4px 8px rgba(0, 90, 255, 0.08),
-        0 0 0 1px rgba(209, 230, 255, 0.15);
-    }
-
-    .floating-btn .icon-emoji {
-      font-size: 28px;
-      line-height: 1;
-      transition: transform 0.3s ease;
-    }
-
-    .floating-btn:hover .icon-emoji {
-      transform: scale(1.1);
-    }
-
-    /* 响应式设计 */
-    @media (max-width: 768px) {
-      .floating-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
+  <noscript>
+    <!-- 无 JS 时折叠菜单无法展开，直接常显 -->
+    <style>
+      .navbar-collapse {
+        display: block !important;
       }
-
-      .floating-btn .icon-emoji {
-        font-size: 24px;
-      }
-
-      .portfolio-item {
-        margin-bottom: 1.5rem;
-      }
-
-      .research-slogan .badge {
-        font-size: 1.15rem;
-        line-height: 1.35;
-      }
-    }
-
-    .vision-container {
-      padding: 16px;
-      background: linear-gradient(to bottom, #f8fbff, #ffffff);
-      border-radius: 12px;
-      border: 1px solid #e0ebff;
-      box-shadow: 0 2px 10px rgba(0, 90, 255, 0.06);
-      margin-bottom: 2rem;
-    }
-
-    /* 基态即动画终态：不用 fill-mode 锁住 transform，下方 hover 缩放才能生效 */
-    .animated-vision {
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border-radius: 8px;
-      animation: fadeInUpScale 1s;
-    }
-
-    .animated-vision:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 24px rgba(0, 90, 255, 0.16);
-    }
-
-    @keyframes fadeInUpScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.95) translateY(20px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-    /* 全局样式（放入 <style>） */
-    .portfolio-item .card {
-      border: 1px solid #e9ecef;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      transition: all 0.3s ease-out;
-      overflow: hidden;
-    }
-
-    .portfolio-item .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 90, 255, 0.15);
-      border-color: #3068d6;
-    }
-
-    .card-img-top {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-
-    .research-slogan {
-      margin: 1.25rem 0 0;
-      text-align: center;
-    }
-
-    .research-slogan .badge {
-      display: inline-block;
-      white-space: normal;
-      font-size: 1.45rem;
-      line-height: 1.4;
-      padding: 0.45rem 0.8rem;
-    }
-
-    /* 联系区（替代原先的内联 style） */
-    .contact-callout {
-      background: linear-gradient(to right, #f0f7ff, #f8fbff);
-      border-left: 5px solid #3068d6;
-      box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);
-    }
-
-    .contact-callout h4 {
-      color: #3068d6;
-      font-weight: 600;
-    }
-
-    .contact-callout h4 .icon-emoji {
-      font-style: normal;
-      font-size: 1.2em;
-      vertical-align: -0.05em;
-    }
-
-    .contact-callout img {
-      vertical-align: middle;
-      mix-blend-mode: multiply;
-    }
-
-    .content-section {
-      margin: 2rem 0;
-    }
-
-    /* 修复宽度问题：适配原有容器，不限制最大宽度 */
-    .intro-section {
-      animation: fadeInUp 0.8s ease-out;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      margin: 3rem 0;
-      padding: 2.5rem;
-      border-radius: 16px;
-      background: linear-gradient(to bottom, #ffffff, #f9fbff);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-      position: relative;
-      overflow: hidden;
-      /* 关键：不再限制最大宽度 */
-    }
-
-    /* 必须显式写 from：基态已改为可见，隐式 from 会让淡入失效 */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* 各 section 标题统一红色加粗（替代原先逐个 h2 挂 text-danger font-weight-bold） */
-    .container h2 {
-      color: #dc3545;
-      font-weight: 700;
-    }
-
-    .intro-section .lead {
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-      color: #444;
-      font-weight: 500;
-    }
-
-    /* transition 移到基态：写在 :hover 内部会导致鼠标移出时瞬间弹回 */
-    .intro-section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
-    }
-
-    /* 完全统一方案 - 无需修改HTML */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 {
-      transition: all 0.3s ease;
-      margin-bottom: 2rem;
-      border-radius: 16px;
-      padding: 0.75rem 0.5rem;
-    }
-
-    /* 卡片 hover 浮起：浅蓝底 + 主题色阴影，与全站卡片风格一致 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(to bottom, #ffffff, #f9fbff);
-      box-shadow: 0 10px 24px rgba(0, 90, 255, 0.08);
-    }
-
-    /* 头像样式 — 正方形居中裁剪，避免照片被拉伸变形 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 img {
-      width: 100%;
-      max-width: 200px;
-      aspect-ratio: 1 / 1;
-      height: auto;
-      object-fit: cover;
-      object-position: center 30%;
-      border: 3px solid white;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-
-    #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
-      transform: scale(1.03);
-      border-color: #3068d6;
-    }
-
-    /* 名字样式 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
-      color: #2d3748;
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-top: 1.2rem;
-      margin-bottom: 0.4rem;
-      min-height: 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    /* 有链接的名字 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a {
-      display: block;
-      color: #2d3748;
-      font-weight: 600;
-      font-size: 1.4rem;
-      text-decoration: none;
-      margin-bottom: 0.4rem;
-      transition: all 0.3s ease;
-    }
-
-    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a:hover,
-    #team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 {
-      transform: translateY(-2px);
-    }
-
-    /* 身份标签 - 完全统一 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
-      display: inline-block;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #4a5568;
-      background: #f8fafc;
-      padding: 0.3rem 1rem;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      margin-top: 0.3rem;
-      transition: all 0.3s ease;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      letter-spacing: 0.3px;
-    }
-
-    /* 统一hover效果 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4:hover h3 small {
-      transform: translateY(-1px);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      background: white;
-      border-color: #cbd5e0;
-      color: #2d3748;
-    }
-
-    /* 响应式设计 */
-    @media (max-width: 991px) {
-
-      #team .col-lg-4.col-sm-6.text-center.mb-4 h3 a,
-      #team .col-lg-4.col-sm-6.text-center.mb-4 h3 {
-        font-size: 1.3rem;
-      }
-
-      #team .col-lg-4.col-sm-6.text-center.mb-4 h3 small {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.9rem;
-      }
-    }
-
-    /* 小屏时头像缩小，保持圆形比例 */
-    @media (max-width: 576px) {
-      #team .col-lg-4.col-sm-6.text-center.mb-4 img {
-        max-width: 140px;
-      }
-    }
-
-    /* ===== 头像显示效果 =====
-       性能考量：只动 opacity/transform（合成层，不触发重排）；
-       光效限 hover 设备，触屏设备不创建该图层；尊重减少动效偏好。 */
-
-    /* 1. 入场：由 JS 在滚动到 #team 时添加 .avatar-show；--d 为同一批内的错峰延迟 */
-    #team .col-lg-4.col-sm-6.text-center.mb-4.avatar-show {
-      animation: avatarIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-      animation-delay: var(--d, 0s);
-    }
-
-    @keyframes avatarIn {
-      0% {
-        opacity: 0;
-        transform: translateY(28px) scale(0.9);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    /* 2. 悬停：光带扫过 + 头像光晕 */
-    @media (hover: hover) {
-      #team .col-lg-4.col-sm-6.text-center.mb-4 {
-        position: relative;
-        overflow: hidden;
-      }
-
-      #team .col-lg-4.col-sm-6.text-center.mb-4::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 60%;
-        height: 100%;
-        background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-        transform: skewX(-20deg) translateX(-180%);
-        transition: transform 0.55s ease;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      #team .col-lg-4.col-sm-6.text-center.mb-4:hover::before {
-        transform: skewX(-20deg) translateX(300%);
-      }
-
-      /* 模糊半径控制在卡片 padding 内，避免被 overflow 裁切；阴影层数越少重绘越省 */
-      #team .col-lg-4.col-sm-6.text-center.mb-4:hover img {
-        box-shadow:
-          0 0 0 3px rgba(48, 104, 214, 0.18),
-          0 0 12px rgba(0, 90, 255, 0.3);
-      }
-    }
-
-    /* 3. 系统要求减少动效时，所有动效退化为静态（JS 也会跳过观察器） */
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-delay: 0s !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+    </style>
+  </noscript>
 
 </head>
 
@@ -432,8 +51,8 @@
   </nav>
 
   <a href="https://faculty.bjtu.edu.cn/8530/" class="floating-btn" target="_blank" rel="noopener noreferrer"
-    title="访问方老师个人主页">
-    <span class="icon-emoji">🎓</span>
+    title="访问方老师个人主页" aria-label="访问方老师个人主页">
+    <span class="icon-emoji" aria-hidden="true">🎓</span>
   </a>
 
 
@@ -458,7 +77,7 @@
       <h2 class="my-4">核心问题</h2>
       <div class="vision-container my-4">
         <img width="1084" height="515" src="img/Vision.webp" class="img-fluid animated-vision" alt="Research Vision"
-          fetchpriority="high" decoding="async">
+          loading="lazy" decoding="async">
       </div>
 
       <div class="row">
@@ -469,7 +88,7 @@
           <div class="card h-100">
             <img width="700" height="400" class="card-img-top" src="img/1.jpg" alt="" loading="lazy" decoding="async" />
             <div class="card-body">
-              <h5 class="card-title">边缘计算资源的高效优化调度</h5>
+              <h3 class="card-title h5">边缘计算资源的高效优化调度</h3>
               <p class="card-text">考虑到边缘计算对规模性、实时性和安全性等方面的要求，研究实现高效率、低能耗的分布式资源优化调度算法，实现对通信、计算、网络和存储等资源的优化利用。</p>
               <p class="research-slogan"><span class="badge badge-warning">运筹帷幄，各司其职</span></p>
             </div>
@@ -479,7 +98,7 @@
           <div class="card h-100">
             <img width="700" height="400" class="card-img-top" src="img/2.jpg" alt="" loading="lazy" decoding="async" />
             <div class="card-body">
-              <h5 class="card-title">边缘硬件上部署深度学习功能</h5>
+              <h3 class="card-title h5">边缘硬件上部署深度学习功能</h3>
               <p class="card-text">传统机器学习特别是深度学习对硬件设备的计算能力要求非常高，面向具体应用需求，研究专门针对资源受限边缘设备的分布式计算训练模式和精简深度网络模型。</p>
               <p class="research-slogan"><span class="badge badge-warning">麻雀虽小，五脏俱全</span></p>
             </div>
@@ -489,7 +108,7 @@
           <div class="card h-100">
             <img width="700" height="400" class="card-img-top" src="img/3.jpg" alt="" loading="lazy" decoding="async" />
             <div class="card-body">
-              <h5 class="card-title">智能边缘计算技术的行业应用</h5>
+              <h3 class="card-title h5">智能边缘计算技术的行业应用</h3>
               <p class="card-text">与轨道交通、网联汽车、船舶制造和工业控制等领域的专家、工程师协同工作，研究将边缘计算和边缘智能的研究思想和技术成果落地，投入实用，发挥其独特作用。</p>
               <p class="research-slogan"><span class="badge badge-warning">面向行业，聚焦应用</span></p>
             </div>
@@ -588,7 +207,7 @@
             <li class="list-group-item">Data Sinks Deployment for Backbone-Assisted Real-Time PD-NOMA Networks: Complexity Analysis and Algorithm, Wireless Networks, Accepted.</li>
             <li class="list-group-item">Efficient Compressed Video Action Recognition via Frame Selection and Token Merging in Vision Transformers, Neural Computing and Applications, 2026.</li>
             <li class="list-group-item">EMM-CVT: An Efficient Multi-Modal Vision Transformer for Compressed Video Action Recognition. Pattern Recognition, Accepted.</li>
-            <li class="list-group-item">EdgeATP: An Adaptvie Tensor Parallelism Framework for Scalable and Efficient
+            <li class="list-group-item">EdgeATP: An Adaptive Tensor Parallelism Framework for Scalable and Efficient
               Transformer Inference on Edge Clusters, Journal of Systems Architecture, 2026.</li>
             <li class="list-group-item">Joint Service Caching and Computation Offloading in Mobile Edge Networks: A
               Hierarchical DRL Approach with Active Inference, IEEE Internet of Things Journal, 2026.</li>
@@ -600,7 +219,7 @@
               Transactions on Network Science and Engineering, 2026.</li>
             <li class="list-group-item">Joint Adaptive Resolution Selection and Conditional Early Exiting for Efficient
               Video Recognition on Edge Devices, Big Data Mining and Analytics, 2025.</li>
-            <li class="list-group-item">LyDRL: Lyapunov-guided Deep Reinforcement Learning for Stable Task Offlaoding in
+            <li class="list-group-item">LyDRL: Lyapunov-guided Deep Reinforcement Learning for Stable Task Offloading in
               Connected Autonomous Vehicles, ACM Transactions on Autonomous and Adaptive Systems, 2025.</li>
             <li class="list-group-item">Efficient NPU-GPU Scheduling for Real-time Deep Learning Inference on Mobile
               Devices, Journal of Real-time Image Processing, 2025.</li>
@@ -613,7 +232,7 @@
             <li class="list-group-item">TLEE: Temporal-wise and Layer-wise Early Exiting Network for Efficient Video
               Recognition on Edge Devices, IEEE Internet of Things Journal, 2024.</li>
             <li class="list-group-item">Model Parallelism Optimization for Distributed DNN Inference on Edge Devices,
-              PAAP Conference, 2023. <b>Runner-ups Award</b></li>
+              PAAP Conference, 2023. <b>Runner-up Award</b></li>
             <li class="list-group-item">Dynamic Deep Neural Network Inference via Adaptive Channel Skipping, Turkish
               Journal of Electrical Engineering and Computer Sciences, 2023.</li>
             <li class="list-group-item">Deep Reinforcement Learning Based Multi-Task Automated Channel Pruning for DNNs,
@@ -622,13 +241,13 @@
             <li class="list-group-item">Classification-based Dynamic Network for Efficient Super-Resolution, IEEE ICASSP
               Conference, 2023.</li>
             <li class="list-group-item">Joint Architecture Design and Workload Partitioning for DNN Inference on
-              Industrial IoT Clusters, ACM Transactions on Internet Technolog, 2023.</li>
+              Industrial IoT Clusters, ACM Transactions on Internet Technology, 2023.</li>
             <li class="list-group-item">JMDC: A Joint Model and Data Compression System for Deep Neural Networks
               Collaborative Computing in Edge-Cloud Networks, Journal of Parallel and Distributed Computing, 2023.</li>
             <li class="list-group-item">一种基于知识蒸馏的目标检测模型增量深度学习方法, 工程科学与技术, 2022. <b>该刊2024年高影响力论文</b></li>
             <li class="list-group-item">基于多智能体深度强化学习的车联网通信资源分配优化, 北京交通大学学报, 2022.</li>
             <li class="list-group-item">A Comprehensive Trustworthy Data Collection Approach in Sensor-Cloud System,
-              IEEE Transactions on Big Data, IEEE Transactions on Big Data, 2022. <b>ESI高被引论文, 广东省计算机学会优秀论文二等奖</b></li>
+              IEEE Transactions on Big Data, 2022. <b>ESI高被引论文, 广东省计算机学会优秀论文二等奖</b></li>
             <li class="list-group-item">An ADMM based Incentive Approach for Cooperative Data Analysis in Edge
               Computing, Turkish Journal of Electrical Engineering and Computer Sciences, 2021.</li>
             <li class="list-group-item">Channel Pruning Guided by Spatial and Channel Attention for DNNs in Intelligent
@@ -640,16 +259,16 @@
             <li class="list-group-item">Accelerating Federated Learning for IoT in Big Data Analytics with Pruning,
               Quantization and Selective Updating, IEEE Access, 2021.</li>
             <li class="list-group-item">EdgeLD: Locally Distributed Deep Learning Inference on Edge Device Clusters,
-              IEEE HPCC Conference, 2020</li>
-            <li class="list-group-item">面向物联网隐私数据分析的分布式弹性网络回归学习算法, 电子与信息学报, 2020</li>
+              IEEE HPCC Conference, 2020.</li>
+            <li class="list-group-item">面向物联网隐私数据分析的分布式弹性网络回归学习算法, 电子与信息学报, 2020.</li>
             <li class="list-group-item">A Markov Approximation Algorithm for Computation Offloading and Resource
               Scheduling in Mobile Edge Computing, CyberDI Conference, 2019.</li>
             <li class="list-group-item">OKRA: Optimal Task and Resource Allocation for Energy Minimization in Mobile
-              Edge Computing Systems，Wireless Networks, 2019.</li>
+              Edge Computing Systems, Wireless Networks, 2019.</li>
             <li class="list-group-item">Markov Approximation for Task Offloading and Computation Scaling in Mobile Edge
-              Computing, Mobile Information Systems，2019.</li>
+              Computing, Mobile Information Systems, 2019.</li>
             <li class="list-group-item">A Distributed ADMM Approach for Collaborative Regression Learning in Edge
-              Computing, Computers, Materials & Continua，2019. <b>Best Paper Award</b></li>
+              Computing, Computers, Materials & Continua, 2019. <b>Best Paper Award</b></li>
             <li class="list-group-item">Android Malware Identification based on Traffic Analysis, ICAIS Conference,
               2019.</li>
             <li class="list-group-item">移动边缘计算中分布式的设备发射功率优化算法, 西安交通大学学报, 2018.</li>
@@ -671,108 +290,108 @@
         <div class="col-lg-12">
           <h2 class="my-4">科研团队</h2>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fww.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3><a href="https://faculty.bjtu.edu.cn/8530/">方维维</a> <small>教授，导师</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ql.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>钱亮 <small>24级博士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lhy.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>李昊远 <small>24级博士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/sfj.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>施璠洁 <small>24级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/chw.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>蔡鸿蔚 <small>24级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tyhw.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>谭宇红玮 <small>24级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lzj.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>吕振杰 <small>25级博士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/zyj.png" alt=""
             loading="lazy" decoding="async" />
           <h3>张勇杰 <small>25级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yzy.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>尹志远 <small>25级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hyj.png" alt=""
             loading="lazy" decoding="async" />
           <h3>郝一杰 <small>25级非全硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/fkx.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>方珂欣 <small>25级非全硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/cs.png" alt=""
             loading="lazy" decoding="async" />
           <h3>陈彡 <small>26级直博生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/ycw.png" alt=""
             loading="lazy" decoding="async" />
           <h3>余承武 <small>26级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/hsy.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>何书宇 <small>26级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/tpf.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>唐鹏飞 <small>26级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yqj.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>尹庆佳 <small>26级非全硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/lrr.png" alt=""
             loading="lazy" decoding="async" />
           <h3>李融荣 <small>26级非全硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/yl.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>岳靓 <small>27级博士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/sm.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>苏门 <small>27级硕士生</small> </h3>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/jbr.png" alt=""
             loading="lazy" decoding="async" />
           <h3>井博冉 <small>24级拔尖班本科生</small> </h3>
         </div>
 
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-4 col-sm-6 text-center mb-4 member">
           <img width="200" height="200" class="rounded-circle img-fluid d-block mx-auto" src="img/joinus.jpg" alt=""
             loading="lazy" decoding="async" />
           <h3>虚位以待</h3>
@@ -786,7 +405,7 @@
       <div class="contact-callout mt-5 mb-4 p-4 rounded">
         <div class="text-center">
           <h4 class="mb-3">
-            <span class="icon-emoji">🤝</span> 期待与您交流合作！
+            <span class="icon-emoji" aria-hidden="true">🤝</span> 期待与您交流合作！
           </h4>
           <p class="lead text-secondary mb-3">
             无论您是业界专家、同行学者，还是热爱科研的学子，
@@ -795,8 +414,9 @@
             我们都诚挚欢迎您来信交流，共同探索边缘计算与边缘智能的无限可能！
           </p>
           <div class="contact-info d-flex justify-content-center flex-wrap text-center">
-            <span class="mb-2 mb-md-0 mr-md-4">📧 <a href="#" onclick="location.href='mailto:'+atob('ZmFuZ3Z2QHFxLmNvbQ==');return false;"><img src="../email2.png" alt=""></a></span>
-            <span>📍 北京交通大学九号教学楼北201</span>
+            <span class="mb-2 mb-md-0 mr-md-4"><span aria-hidden="true">📧</span> <a href="#" id="mailLink"
+                aria-label="发送邮件"><img src="../email2.png" alt="" width="137" height="22"></a></span>
+            <span><span aria-hidden="true">📍</span> 北京交通大学九号教学楼北201</span>
           </div>
         </div>
       </div>
@@ -839,7 +459,7 @@
     // 头像入场：滚动到 #team 时逐张浮现
     (function () {
       var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var cards = document.querySelectorAll("#team .col-lg-4.col-sm-6.text-center.mb-4");
+      var cards = document.querySelectorAll("#team .member");
       // 无卡片、不支持观察器、或用户要求减少动效：头像保持默认静态显示，不创建观察器
       if (!cards.length || reduce || !("IntersectionObserver" in window)) return;
       var io = new IntersectionObserver(function (entries) {
@@ -853,6 +473,16 @@
         });
       }, { threshold: 0.15 });
       cards.forEach(function (c) { io.observe(c); });
+    })();
+
+    // 邮件地址不直接写在 HTML 里，点击时再解码拼出 mailto
+    (function () {
+      var mail = document.getElementById("mailLink");
+      if (!mail) return;
+      mail.addEventListener("click", function (e) {
+        e.preventDefault();
+        location.href = "mailto:" + atob("ZmFuZ3Z2QHFxLmNvbQ==");
+      });
     })();
   </script>
 

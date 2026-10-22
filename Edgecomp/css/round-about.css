@@ -14,3 +14,393 @@ body {
   }
 }
 
+/* ===== Edgecomp 页面样式（原 index.html 内联 style） ===== */
+
+/* 漂浮按钮样式 - 不干扰原页面布局 */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f1f8ff, #d1e6ff);
+  box-shadow:
+    0 6px 16px rgba(0, 90, 255, 0.12),
+    0 0 0 1px rgba(209, 230, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: #3068d6;
+  text-decoration: none;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow:
+    0 10px 20px rgba(0, 90, 255, 0.15),
+    0 0 0 1px rgba(209, 230, 255, 0.3);
+  background: linear-gradient(135deg, #e4f0ff, #c8e1ff);
+}
+
+.floating-btn:active {
+  transform: scale(0.95);
+  box-shadow:
+    0 4px 8px rgba(0, 90, 255, 0.08),
+    0 0 0 1px rgba(209, 230, 255, 0.15);
+}
+
+.floating-btn .icon-emoji {
+  font-size: 28px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.floating-btn:hover .icon-emoji {
+  transform: scale(1.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .floating-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .floating-btn .icon-emoji {
+    font-size: 24px;
+  }
+
+  .portfolio-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .research-slogan .badge {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+}
+
+.vision-container {
+  padding: 16px;
+  background: linear-gradient(to bottom, #f8fbff, #ffffff);
+  border-radius: 12px;
+  border: 1px solid #e0ebff;
+  box-shadow: 0 2px 10px rgba(0, 90, 255, 0.06);
+  margin-bottom: 2rem;
+}
+
+/* 基态即动画终态：不用 fill-mode 锁住 transform，下方 hover 缩放才能生效 */
+.animated-vision {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 8px;
+  animation: fadeInUpScale 1s;
+}
+
+.animated-vision:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 90, 255, 0.16);
+}
+
+@keyframes fadeInUpScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 全局样式（放入 <style>） */
+.portfolio-item .card {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.portfolio-item .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 90, 255, 0.15);
+  border-color: #3068d6;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.research-slogan {
+  margin: 1.25rem 0 0;
+  text-align: center;
+}
+
+.research-slogan .badge {
+  display: inline-block;
+  white-space: normal;
+  font-size: 1.45rem;
+  line-height: 1.4;
+  padding: 0.45rem 0.8rem;
+}
+
+/* 联系区（替代原先的内联 style） */
+.contact-callout {
+  background: linear-gradient(to right, #f0f7ff, #f8fbff);
+  border-left: 5px solid #3068d6;
+  box-shadow: 0 2px 10px rgba(48, 104, 214, 0.1);
+}
+
+.contact-callout h4 {
+  color: #3068d6;
+  font-weight: 600;
+}
+
+.contact-callout h4 .icon-emoji {
+  font-style: normal;
+  font-size: 1.2em;
+  vertical-align: -0.05em;
+}
+
+.contact-callout img {
+  vertical-align: middle;
+  mix-blend-mode: multiply;
+}
+
+.content-section {
+  margin: 2rem 0;
+}
+
+/* 修复宽度问题：适配原有容器，不限制最大宽度 */
+.intro-section {
+  animation: fadeInUp 0.8s ease-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin: 3rem 0;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #ffffff, #f9fbff);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  /* 关键：不再限制最大宽度 */
+}
+
+/* 必须显式写 from：基态已改为可见，隐式 from 会让淡入失效 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 各 section 标题统一红色加粗（替代原先逐个 h2 挂 text-danger font-weight-bold） */
+.container h2 {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+.intro-section .lead {
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: #444;
+  font-weight: 500;
+}
+
+/* transition 移到基态：写在 :hover 内部会导致鼠标移出时瞬间弹回 */
+.intro-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(48, 104, 214, 0.12);
+}
+
+/* 成员卡片：统一由 .member 类标记，避免依赖 Bootstrap 栅格类名组合 */
+#team .member {
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  padding: 0.75rem 0.5rem;
+}
+
+/* 卡片 hover 浮起：浅蓝底 + 主题色阴影，与全站卡片风格一致 */
+#team .member:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(to bottom, #ffffff, #f9fbff);
+  box-shadow: 0 10px 24px rgba(0, 90, 255, 0.08);
+}
+
+/* 头像样式 — 正方形居中裁剪，避免照片被拉伸变形 */
+#team .member img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#team .member:hover img {
+  transform: scale(1.03);
+  border-color: #3068d6;
+}
+
+/* 名字样式 */
+#team .member h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* 有链接的名字 */
+#team .member h3 a {
+  display: block;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+#team .member h3 a:hover,
+#team .member:hover h3 {
+  transform: translateY(-2px);
+}
+
+/* 身份标签 - 完全统一 */
+#team .member h3 small {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4a5568;
+  background: #f8fafc;
+  padding: 0.3rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-top: 0.3rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.3px;
+}
+
+/* 统一hover效果 */
+#team .member:hover h3 small {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  background: white;
+  border-color: #cbd5e0;
+  color: #2d3748;
+}
+
+/* 响应式设计 */
+@media (max-width: 991px) {
+
+  #team .member h3 a,
+  #team .member h3 {
+    font-size: 1.3rem;
+  }
+
+  #team .member h3 small {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.9rem;
+  }
+}
+
+/* 小屏时头像缩小，保持圆形比例 */
+@media (max-width: 576px) {
+  #team .member img {
+    max-width: 140px;
+  }
+}
+
+/* ===== 头像显示效果 =====
+   性能考量：只动 opacity/transform（合成层，不触发重排）；
+   光效限 hover 设备，触屏设备不创建该图层；尊重减少动效偏好。 */
+
+/* 1. 入场：由 JS 在滚动到 #team 时添加 .avatar-show；--d 为同一批内的错峰延迟 */
+#team .member.avatar-show {
+  animation: avatarIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes avatarIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 2. 悬停：光带扫过 + 头像光晕 */
+@media (hover: hover) {
+  #team .member {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #team .member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg) translateX(-180%);
+    transition: transform 0.55s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #team .member:hover::before {
+    transform: skewX(-20deg) translateX(300%);
+  }
+
+  /* 模糊半径控制在卡片 padding 内，避免被 overflow 裁切；阴影层数越少重绘越省 */
+  #team .member:hover img {
+    box-shadow:
+      0 0 0 3px rgba(48, 104, 214, 0.18),
+      0 0 12px rgba(0, 90, 255, 0.3);
+  }
+}
+
+/* 3. 系统要求减少动效时，所有动效退化为静态（JS 也会跳过观察器） */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
