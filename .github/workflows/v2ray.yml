@@ -46,16 +46,17 @@ jobs:
               "https://raw.githubusercontent.com/alireza786786/Free-V2ray-Configs/refs/heads/main/servers/vless_servers.txt",
           ]
 
+          # 仅导入 vless / trojan;其余协议已注释停用,需要时直接取消注释即可
           schemes = (
-              "ss://",
-              "ssr://",
-              "vmess://",
+              # "ss://",
+              # "ssr://",
+              # "vmess://",
               "vless://",
+              # "hysteria://",
+              # "hysteria2://",
+              # "hy2://",
+              # "tuic://",
               "trojan://",
-              "hysteria://",
-              "hysteria2://",
-              "hy2://",
-              "tuic://",
           )
 
           def try_decode_base64(text):
