@@ -46,18 +46,25 @@ jobs:
               "https://raw.githubusercontent.com/alireza786786/Free-V2ray-Configs/refs/heads/main/servers/vless_servers.txt",
           ]
 
-          # 仅导入 vless / trojan;其余协议已注释停用,需要时直接取消注释即可
+          # 仅导入 vless;其余协议已注释停用,需要时直接取消注释即可
+          # 注意:Xray 的 trojan 同样支持 REALITY,取消 trojan 注释即可一并导入
           schemes = (
               # "ss://",
               # "ssr://",
               # "vmess://",
               "vless://",
+              # "trojan://",
               # "hysteria://",
               # "hysteria2://",
               # "hy2://",
               # "tuic://",
-              "trojan://",
           )
+
+          # 只保留使用 REALITY 的节点(链接查询串里的 security=reality)
+          # 用正则在查询串里匹配,避免 urlparse 对 [1.2.3.4] 这类畸形 host 抛 ValueError
+          def is_reality(node):
+              match = re.search(r"[?&]security=([^&#]*)", node)
+              return match is not None and match.group(1).lower() == "reality"
 
           def try_decode_base64(text):
               compact = re.sub(r"\s+", "", text)
@@ -90,6 +97,8 @@ jobs:
                   if not node or node.startswith("#"):
                       continue
                   if not node.startswith(schemes):
+                      continue
+                  if not is_reality(node):
                       continue
                   if node in seen:
                       continue
