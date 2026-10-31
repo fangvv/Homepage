@@ -44,7 +44,7 @@ jobs:
               "https://raw.githubusercontent.com/crackbest/V2ray-Config/refs/heads/main/config.txt",
               "https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt",
               "https://raw.githubusercontent.com/alireza786786/Free-V2ray-Configs/refs/heads/main/servers/vless_servers.txt",
-              “https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/output/vless.txt”,
+              "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/output/vless.txt",
               "https://raw.githubusercontent.com/wiki/gfpcom/free-proxy-list/lists/vless.txt",
           ]
 
