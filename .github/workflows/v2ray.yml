@@ -29,11 +29,13 @@ jobs:
       - name: Pull latest changes from remote
         run: git pull origin master --rebase
 
-      - name: Download, merge and deduplicate subscriptions
+      - name: Download, merge, deduplicate and probe subscriptions
         shell: python
         run: |
+          import asyncio
           import base64
           import re
+          import time
           import urllib.request
           from datetime import datetime, timezone
           from pathlib import Path
@@ -81,6 +83,44 @@ jobs:
                   return decoded
               return text
 
+          # 探测参数:并发数与单节点超时(秒)
+          PROBE_CONCURRENCY = 300
+          PROBE_TIMEOUT = 3
+
+          def endpoint_of(node):
+              # 取出 vless 链接里的 host:port,用于 TCP 连通性探测
+              match = re.match(r"vless://[^@]+@(\[[^\]]+\]|[^:/?#]+):(\d+)", node)
+              if not match:
+                  return None
+              return (match.group(1).strip("[]"), int(match.group(2)))
+
+          async def probe(host, port, semaphore):
+              async with semaphore:
+                  writer = None
+                  try:
+                      started = time.perf_counter()
+                      _, writer = await asyncio.wait_for(
+                          asyncio.open_connection(host, port), timeout=PROBE_TIMEOUT
+                      )
+                      return (host, port), time.perf_counter() - started
+                  except Exception:
+                      return (host, port), None
+                  finally:
+                      if writer is not None:
+                          try:
+                              writer.close()
+                          except Exception:
+                              pass
+
+          def probe_endpoints(endpoints):
+              # 同一 host:port 只探测一次,返回 {endpoint: 握手耗时}
+              async def run():
+                  semaphore = asyncio.Semaphore(PROBE_CONCURRENCY)
+                  results = await asyncio.gather(*(probe(h, p, semaphore) for h, p in endpoints))
+                  return {endpoint: elapsed for endpoint, elapsed in results if elapsed is not None}
+
+              return asyncio.run(run())
+
           nodes = []
           seen = set()
 
@@ -107,11 +147,29 @@ jobs:
                   seen.add(node)
                   nodes.append(node)
 
+          # TCP 连通性过滤:剔除域名失效 / 端口不通的死节点(类似客户端延迟测试的第一道筛子)
+          endpoints = {}
+          for node in nodes:
+              endpoint = endpoint_of(node)
+              if endpoint is not None:
+                  endpoints[endpoint] = None
+
+          alive = probe_endpoints(list(endpoints))
+          kept = [node for node in nodes if endpoint_of(node) in alive]
+          kept.sort(key=lambda node: alive[endpoint_of(node)])
+          print(f"Probed {len(endpoints)} endpoints, alive {len(alive)}, kept {len(kept)}/{len(nodes)} nodes")
+
+          # 防护:探测结果异常(如 runner 出网故障)时不要覆盖已有文件
+          if nodes and len(kept) < max(10, len(nodes) * 0.02):
+              raise SystemExit(
+                  f"Abort: only {len(kept)} of {len(nodes)} nodes passed the probe, keeping existing v2ray.txt"
+              )
+
           output = Path("v2ray.txt")
           output.unlink(missing_ok=True)
           generated_at = datetime.now(timezone.utc).isoformat()
-          output.write_text(f"# Generated at {generated_at}\n" + "\n".join(nodes) + ("\n" if nodes else ""), encoding="utf-8")
-          print(f"Merged {len(nodes)} unique nodes into {output}")
+          output.write_text(f"# Generated at {generated_at}\n" + "\n".join(kept) + ("\n" if kept else ""), encoding="utf-8")
+          print(f"Merged {len(kept)} unique nodes into {output}")
 
       - name: Commit and push changes
         shell: bash
