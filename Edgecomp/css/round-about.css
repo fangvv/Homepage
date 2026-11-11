@@ -227,17 +227,22 @@ body {
 }
 
 /* 成员卡片：统一由 .member 类标记，避免依赖 Bootstrap 栅格类名组合 */
+/* 性能：显式列出过渡属性，不用 transition: all——否则 box-shadow、渐变等
+   需要逐帧重绘的属性也会被插值，头像一多就掉帧 */
 #team .member {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   margin-bottom: 2rem;
   border-radius: 16px;
   padding: 0.75rem 0.5rem;
+  background-color: transparent;
 }
 
-/* 卡片 hover 浮起：浅蓝底 + 主题色阴影，与全站卡片风格一致 */
+/* 卡片 hover 浮起：浅蓝底 + 主题色阴影，与全站卡片风格一致。
+   底色用纯色而非渐变：渐变不可插值，切换时会让整张卡片重绘；
+   阴影不做过渡，避免每帧重新模糊（浮起感由 transform 完成） */
 #team .member:hover {
   transform: translateY(-3px);
-  background: linear-gradient(to bottom, #ffffff, #f9fbff);
+  background-color: #f9fbff;
   box-shadow: 0 10px 24px rgba(0, 90, 255, 0.08);
 }
 
@@ -251,7 +256,7 @@ body {
   object-position: center 30%;
   border: 3px solid white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 #team .member:hover img {
@@ -271,7 +276,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* 有链接的名字 */
@@ -282,7 +287,7 @@ body {
   font-size: 1.4rem;
   text-decoration: none;
   margin-bottom: 0.4rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #team .member h3 a:hover,
@@ -301,17 +306,16 @@ body {
   border-radius: 12px;
   border: 1px solid #e2e8f0;
   margin-top: 0.3rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   letter-spacing: 0.3px;
 }
 
-/* 统一hover效果 */
+/* 统一hover效果（不动阴影：小徽标带模糊的阴影逐帧重绘得不偿失） */
 #team .member:hover h3 small {
   transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  background: white;
+  background-color: #fff;
   border-color: #cbd5e0;
   color: #2d3748;
 }
@@ -337,6 +341,74 @@ body {
   }
 }
 
+/* ===== 团队分区：导师 / 博士生 / 硕士生 / 非全日制硕士生 / 本科生 =====
+   每个分区用 --group-color 着色，标题圆点与左侧色条同色，
+   一眼即可区分成员身份；分区标题带 id，可作为锚点直达。 */
+#team .team-group {
+  --group-color: #3068d6;
+  --group-bg: #eef4ff;
+  scroll-margin-top: 4.5rem;
+}
+
+#team .team-group-advisor {
+  --group-color: #c0392b;
+  --group-bg: #fdf0ee;
+}
+
+#team .team-group-phd {
+  --group-color: #3068d6;
+  --group-bg: #eef4ff;
+}
+
+#team .team-group-master {
+  --group-color: #1f8a70;
+  --group-bg: #ecf8f4;
+}
+
+#team .team-group-parttime {
+  --group-color: #b26a00;
+  --group-bg: #fdf6e7;
+}
+
+#team .team-group-undergrad {
+  --group-color: #7a4fbf;
+  --group-bg: #f4effc;
+}
+
+#team .team-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 2rem 0 1.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--group-color);
+  background: linear-gradient(to right, var(--group-bg), rgba(255, 255, 255, 0));
+  border-left: 5px solid var(--group-color);
+  border-radius: 0 12px 12px 0;
+}
+
+/* 标题前的圆点，避免依赖图标字体 */
+#team .team-group-title::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--group-color);
+  box-shadow: 0 0 0 4px var(--group-bg);
+}
+
+@media (max-width: 576px) {
+  #team .team-group-title {
+    margin: 1.5rem 0 1rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 1.05rem;
+  }
+}
+
 /* ===== 头像显示效果 =====
    性能考量：只动 opacity/transform（合成层，不触发重排）；
    光效限 hover 设备，触屏设备不创建该图层；尊重减少动效偏好。 */
@@ -359,7 +431,7 @@ body {
   }
 }
 
-/* 2. 悬停：光带扫过 + 头像光晕 */
+/* 2. 悬停：光带扫过（只动 transform，交给合成层，不逐帧重绘卡片） */
 @media (hover: hover) {
   #team .member {
     position: relative;
@@ -371,7 +443,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 45%;
     height: 100%;
     background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
     transform: skewX(-20deg) translateX(-180%);
@@ -381,14 +453,7 @@ body {
   }
 
   #team .member:hover::before {
-    transform: skewX(-20deg) translateX(300%);
-  }
-
-  /* 模糊半径控制在卡片 padding 内，避免被 overflow 裁切；阴影层数越少重绘越省 */
-  #team .member:hover img {
-    box-shadow:
-      0 0 0 3px rgba(48, 104, 214, 0.18),
-      0 0 12px rgba(0, 90, 255, 0.3);
+    transform: skewX(-20deg) translateX(320%);
   }
 }
 
