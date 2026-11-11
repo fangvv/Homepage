@@ -493,20 +493,31 @@
     // 头像入场：滚动到 #team 时逐张浮现
     (function () {
       var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var cards = document.querySelectorAll("#team .member");
+      var team = document.getElementById("team");
+      var cards = team ? team.querySelectorAll(".member") : [];
       // 无卡片、不支持观察器、或用户要求减少动效：头像保持默认静态显示，不创建观察器
-      if (!cards.length || reduce || !("IntersectionObserver" in window)) return;
+      if (!team || !cards.length || reduce || !("IntersectionObserver" in window)) return;
+      // 先切到“待浮现”状态；JS 之外的任何情况下卡片都是可见的（见 CSS 注释）
+      team.classList.add("reveal-ready");
       var io = new IntersectionObserver(function (entries) {
         // 只在本次进入视口的这一批内错峰，不累积历史延迟
         var i = 0;
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          entry.target.style.setProperty("--d", (Math.min(i++, 12) * 0.05) + "s");
-          entry.target.classList.add("avatar-show");
-          io.unobserve(entry.target);
+          var el = entry.target;
+          io.unobserve(el);
+          // 错峰用定时器而不是 transition-delay，免得延迟残留到 hover 动效上
+          window.setTimeout(function () { el.classList.add("avatar-show"); }, (i++) * 60);
         });
       }, { threshold: 0.15 });
-      cards.forEach(function (c) { io.observe(c); });
+      // 首屏内的卡片直接可见：手机端从导航跳转到 #team 或惯性滚动时，
+      // 观察器可能来不及回调，首屏（导师那一栏）就会一直停在透明状态。
+      // 这里对已经在视口里的卡片不做任何隐藏，彻底避开这个隐患。
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var k = 0; k < cards.length; k++) {
+        if (cards[k].getBoundingClientRect().top < vh) cards[k].classList.add("avatar-show");
+        else io.observe(cards[k]);
+      }
     })();
 
     // 邮件地址不直接写在 HTML 里，点击时再解码拼出 mailto

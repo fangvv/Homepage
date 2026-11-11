@@ -230,7 +230,9 @@ body {
 /* 性能：显式列出过渡属性，不用 transition: all——否则 box-shadow、渐变等
    需要逐帧重绘的属性也会被插值，头像一多就掉帧 */
 #team .member {
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    background-color 0.3s ease;
   margin-bottom: 2rem;
   border-radius: 16px;
   padding: 0.75rem 0.5rem;
@@ -341,12 +343,25 @@ body {
   }
 }
 
+/* 窄屏下卡片没有对应的 col 类，会缩成内容宽度；这里补齐为整行 */
+@media (max-width: 575.98px) {
+  #team .member {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 /* ===== 团队分区：导师 / 博士生 / 硕士生 / 非全日制硕士生 / 本科生 =====
    每个分区用 --group-color 着色，标题圆点与左侧色条同色，
    一眼即可区分成员身份；分区标题带 id，可作为锚点直达。 */
 #team .team-group {
   --group-color: #3068d6;
   --group-bg: #eef4ff;
+}
+
+/* 锚点跳转（导航团队 / 分区链接）时给固定导航栏留出空间，避免顶部内容被遮住 */
+#team,
+#team .team-group {
   scroll-margin-top: 4.5rem;
 }
 
@@ -413,22 +428,19 @@ body {
    性能考量：只动 opacity/transform（合成层，不触发重排）；
    光效限 hover 设备，触屏设备不创建该图层；尊重减少动效偏好。 */
 
-/* 1. 入场：由 JS 在滚动到 #team 时添加 .avatar-show；--d 为同一批内的错峰延迟 */
-#team .member.avatar-show {
-  animation: avatarIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-  animation-delay: var(--d, 0s);
-}
+/* 1. 入场：卡片默认就是可见的（无 JS、浏览器不支持观察器时也一定看得到）。
+   JS 就绪后才给 #team 加 .reveal-ready，把尚未浮现的卡片切到“待浮现”状态，
+   随后加 .avatar-show 过渡回可见。
 
-@keyframes avatarIn {
-  0% {
-    opacity: 0;
-    transform: translateY(28px) scale(0.9);
-  }
+   为什么不用 animation + backwards：backwards 会在延迟期间把元素固定在 0% 关键帧
+   （opacity: 0），一旦动画因移动端惯性滚动 / 锚点跳转没能启动，卡片就永久隐藏，
+   而 JS 已经 unobserve，不会再重试。transition 的目标值就是最终值，
+   即使某几帧被浏览器跳掉，最终也一定会落在“可见”。
 
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+   :not(.avatar-show) 多一个类，优先级高于 :hover，未浮现的卡片不会跟着浮起。 */
+#team.reveal-ready .member:not(.avatar-show) {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
 }
 
 /* 2. 悬停：光带扫过（只动 transform，交给合成层，不逐帧重绘卡片） */
